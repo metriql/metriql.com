@@ -1,0 +1,3 @@
+# for deployments of prerelease docs
+[context.next]
+  command = "make build-prerelease"

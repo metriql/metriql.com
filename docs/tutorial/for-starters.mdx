@@ -1,0 +1,44 @@
+---
+sidebar_position: 1
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# For starters
+
+<Tabs
+  defaultValue="local"
+  values={[
+    { label: 'In your local environment', value: 'local', },
+    { label: 'Rakam', value: 'rakam', }
+  ]
+}>
+<TabItem value="local">
+
+1. Install dbt (See docs)
+2. Run `dbt init`
+3. Create a file called `source.yml` under `/models` directory.
+4. Paste the following content:
+``
+version: 2
+sources:
+  - name: test
+``
+5. Run `dbt list`
+6. Install metriql (See docs)
+7. Run `metriql run`
+
+Congrats! You now have a REST API to run queries on your database.
+
+</TabItem>
+
+<TabItem value="rakam">
+
+```py
+def hello_world():
+  print 'Hello, world!'
+```
+
+</TabItem>
+</Tabs>

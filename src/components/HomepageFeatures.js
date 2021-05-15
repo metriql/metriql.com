@@ -4,32 +4,29 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Integrate with your dbt projects',
     Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        metriql integrates to dbt, an ELT tool from Fishtown Analytics. It has support for data lineage, tests, and documentation. dbt is the transformation layer and metriql is the serving layer.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Create roll-up tables automatically',
     Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        You can automatically create dbt models that can be used as roll-up tables for your raw data. No more dealing with hundreds of roll-up tables written as SQL.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Define metrics for once and all',
     Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        You can interact with the metrics using RESTFul API, or just embed them inside your SQL. While metriql is new, we work hard to integrate it to third party tools, see the progress here.
       </>
     ),
   },
@@ -39,7 +36,7 @@ function Feature({Svg, title, description}) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} alt={title} />
+        {/* <Svg className={styles.featureSvg} alt={title} /> */}
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>

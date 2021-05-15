@@ -1,0 +1,46 @@
+---
+sidebar_position: 2
+---
+
+# Introduction for dbt users
+
+If you're already using dbt, you can integrate Rakam to your dbt project connecting to your GIT repository. Click the `Integrate your GIT repository` button on Develop page and connect to your repository. Please note that if your repository is private, you need to add the generated SSH key into your repository for Rakam to be able to access your repository.
+
+Once you connect to your repository, we will automatically synchronize your `models`, `seeds`, and `sources`. By default, we create dimensions for each column definitions in your resource files but since dbt doesn't provide any way to define metrics, we make use of the `meta` property as follows:
+
+```yml
+models:
+ - name: customers
+   columns:
+     - name: country_code
+       meta:
+         rakam.dimension:
+           type: string
+     - name: city
+       meta:
+         rakam.dimension:
+           type: string
+     - name: total_customers
+       description: total number of customers defined as count(*) in sql
+       meta:
+         rakam.measure:
+    	    aggregation: sum
+```
+
+In addition to column mapping, you can also create custom measures and dimensions by defining them under `meta` or the model:
+
+```yml
+models:
+  - name: customers
+    meta:
+      rakam:
+         measures:
+            total_rows:
+               aggregation: count
+         dimensions:
+            full_location:
+	            sql: CONCAT({TABLE}.country, {TABLE}.city)   
+	            type: string
+```
+
+You can learn more about the data modeling concept in [Creating Datasets](doc:model-concept) ].
