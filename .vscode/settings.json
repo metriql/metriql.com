@@ -1,0 +1,22 @@
+{
+    "grammarly.domain": "technical",
+    "grammarly.overrides": [
+        {
+            "files": [
+                "**/docs/faq.md"
+            ],
+            "config": {
+                "audience": "knowledgeable",
+                "dialect": "american",
+                "domain": "technical",
+                "emotions": [
+                    "neutral",
+                    "analytical"
+                ],
+                "goals": [
+                    "describe"
+                ]
+            }
+        }
+    ]
+}

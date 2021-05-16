@@ -10,35 +10,50 @@ import TabItem from '@theme/TabItem';
 <Tabs
   defaultValue="local"
   values={[
-    { label: 'In your local environment', value: 'local', },
+    { label: 'metriql CLI', value: 'local', },
     { label: 'Rakam', value: 'rakam', }
   ]
 }>
 <TabItem value="local">
 
-1. Install dbt (See docs)
-2. Run `dbt init`
-3. Create a file called `source.yml` under `/models` directory.
-4. Paste the following content:
-``
+1. [Install dbt](https://docs.getdbt.com/dbt-cli/installation)
+2. Run `dbt init [project_name]` ([see docs](https://docs.getdbt.com/reference/commands/init))
+3. [Configure dbt profiles](https://docs.getdbt.com/dbt-cli/configure-your-profile)
+4. Create a file called `source.yml` under `/models` directory.
+5. Paste the following content:
+
+```yml
 version: 2
 sources:
-  - name: test
-``
+  - name: first_dataset
+    tables:
+      - name: [YOUR_TABLE_NAME_IN_DATABASE]
+        meta:
+          metriql:
+            total_rows:
+              aggregation: count
+        columns:
+          - name: [YOUR_COLUMN_NAME_IN_TABLE]
+            meta:
+              metriql.dimension:
+                name: example_dimension #if you don't define `name`, the default is column name
+                type: string  #change this if the column type is not string, see [available types](/reference/field#type)
+```
+
+This snippet above creates a dbt source and each dbt source becomes a dataset in metriql. The dataset one measure called `total_rows` and one dimension called `example_dimension`. 
+Please see the [dbt sources](https://docs.getdbt.com/docs/building-a-dbt-project/using-sources#declaring-a-source) to learn more about the concept. We use `meta` properties of dbt resources and support all the dbt resources including models, sources, and seeds. See [dataset properties](/reference/dataset) for all the metriql-specific properties. 
+
 5. Run `dbt list`
 6. Install metriql (See docs)
-7. Run `metriql run`
+7. Run `metriql run --port 3030`
 
-Congrats! You now have a REST API to run queries on your database.
+Congrats! You now have a REST API to run queries on your database. 
 
 </TabItem>
 
 <TabItem value="rakam">
 
-```py
-def hello_world():
-  print 'Hello, world!'
-```
+
 
 </TabItem>
 </Tabs>

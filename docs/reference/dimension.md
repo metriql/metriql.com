@@ -15,14 +15,14 @@ models:
         rakam:
           dimensions:
           	location:
-          	   sql: CONCAT({{TABLE}}.country, {{TABLE}}.city)
+          	   sql: CONCAT({TABLE}.country, {TABLE}.city)
           	country:
           	   column: country
 ```
 
 Please note that these fields are not required under `column.meta` as they point to the relevant `column`.
 
-**`sql:`** lets you define the complex expressions, you can compose a dimension with a combination of columns and/or columns semantically.
+**`sql:`** lets you define the complex expressions, you can compose a dimension with a combination of columns semantically.
 **`column:`** references the columns in the model target.
 
 ### `primary:`
@@ -44,19 +44,10 @@ You can let the end user see the date for different date intervals and buckets. 
 ```yml
 timeframes: [week, month, year, hour_of_day, day_of_month]
 ```
-[block:parameters]
-{
-  "data": {
-    "h-0": "Type",
-    "0-0": "timestamp",
-    "h-1": "Available Timeframes",
-    "1-0": "date",
-    "2-0": "time",
-    "0-1": "`hour`, `day`, `week`, `month`, `year`, `hour_of_day`, `day_of_month`, `week_of_year`, `month_of_year`, `quarter_of_year`, `day_of_week`",
-    "1-1": "`day`, `week`, `month`, `year`, `day_of_month`, `week_of_year`, `month_of_year`, `quarter_of_year`, `day_of_week`",
-    "2-1": "`minute`, `hour`"
-  },
-  "cols": 2,
-  "rows": 3
-}
-[/block]
+
+
+| Type      | Available Timeframes                                                                                                                     |
+|-----------|------------------------------------------------------------------------------------------------------------------------------------------|
+| timestamp | `hour`, `day`, `week`, `month`, `year`, `hour_of_day`, `day_of_month`, `week_of_year`, `month_of_year`, `quarter_of_year`, `day_of_week` |
+| date      | `day`, `week`, `month`, `year`, `day_of_month`, `week_of_year`, `month_of_year`, `quarter_of_year`, `day_of_week`                        |
+| time      | `minute`, `hour`                                                                                                                         |

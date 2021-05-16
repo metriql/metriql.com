@@ -1,6 +1,8 @@
 ---
-title: "Available adapters"
+sidebar_position: 2
 ---
+
+# Supported adapters
 
 We use dbt's `profiles.yml` files when connecting your databases. If you didn't setup dbt yet, please go through the [dbt documentation](https://docs.getdbt.com/reference/profiles.yml/). Once you setup your database profiles, metriql CLI reads your [`profiles.yml`](/metriql-cli/cli-overview) file and connect your database using these credentials.
 

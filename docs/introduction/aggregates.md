@@ -1,10 +1,11 @@
 ---
 title: "Aggregates"
-sidebar_position: 4
+sidebar_position: 3
 ---
-Aggregates speed up your reports by creating roll-up models as part of your dbt project. You can use them in your dbt `source`s, `model`s, or `seed`s. While the data analysts are able to create roll-up models in their dbt project, we can automate the work by creating dbt models automatically when you define `aggregates` in your dbt resource files. The roll-up tables are hidden to the end-users, instead, they are being used by our query engine if the users run `segmentation` queries that can be answered by the roll-up tables. They're particularly useful for the following cases:
 
-1. If you're dealing with huge time-series data and looking for a way to give access to non-technical people to analyze the data. (i.e. customer event data)
+Aggregates speed up your reports by creating roll-up models as part of your dbt project. You can use them in your dbt `source`s, `model`s, or `seed`s. While the data analysts can create roll-up models in their dbt project, we can automate the work by creating dbt models automatically when you define `aggregates` in your dbt resource files. The roll-up tables are hidden from the end-users. Instead, they are being used by our query engine if the users run `segmentation` queries that can be answered by the roll-up tables. They're particularly useful for the following cases:
+
+1. If you're dealing with time-series data and looking for a way to give access to non-technical people to analyze the data. (i.e. customer event data)
 2. If you're building consumer-facing applications that need to run queries in low latency. (i.e. embedded analytics)
 3. If you don't want to spend time writing basic roll-up models in your dbt project.
 

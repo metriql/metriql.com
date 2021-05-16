@@ -7,11 +7,7 @@ Measures are the business metrics that calculate a value for a model. Here are a
 
 * `total_rows` compiles to `count(*)`,
 * `unique_users` compiles `count(distinct user_id)` in SQL. 
-[block:api-header]
-{
-  "title": "Measure Fields"
-}
-[/block]
+
 ### `dimension: | column: | sql:`
 
 One of `dimension`, `column`, and `sql` should be set in order to define the measures under `model.meta.rakam.measures`. If it's not set, the measure simply counts the all rows (i.e. `count(*)`). Here are a few examples:

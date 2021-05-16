@@ -8,8 +8,9 @@ metriql comes with a CLI that generates roll-up models and serves them to the en
 Usage: commands [OPTIONS] COMMAND [ARGS]...
 
 Options:
-  -d, --debug           Enable debugging
-  --manifest-json TEXT  The URI of the manifest.json, `file`, `http`, and `https` is supported
+  -d, --debug           Enable debugging Default is `false`.
+  --manifest-json TEXT  The URI of the manifest.json, `file`, `http`, and `https` is supported. 
+                        Default is `file:/target/manifest.json`
   -h, --help            Show this message and exit
 
 Commands:
@@ -17,4 +18,4 @@ Commands:
   [run](run)       Spins up an HTTP server serving your datasets
 ```
 
-The CLI interact with the dbt via Metadata API. You need to run `dbt compile` and generate `target/manifest.json` and pass the URI of the file as an option.
+The CLI interacts with the dbt via Metadata API. You need to run `dbt compile` and generate `target/manifest.json` and pass the URI of the file as an option.

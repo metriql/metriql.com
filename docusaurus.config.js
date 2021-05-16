@@ -91,7 +91,7 @@ module.exports = {
     },
     navbar: {
       logo: {
-        src: '/img/dbt-logo-full-white.png',
+        src: '/img/logo.svg',
         alt: 'ΣQL',
       },
       items: [

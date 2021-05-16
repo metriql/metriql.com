@@ -103,7 +103,7 @@ models:
 	                     sql: "{{TABLE}}.column1 * 2"
 ```
 
-For more information, see [Measure properties](doc:measure) ]
+For more information, see [Measure properties](/reference/measure) ]
 
 ### `dimensions:` 
 

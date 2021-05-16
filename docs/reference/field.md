@@ -6,14 +6,27 @@ sidebar_position: 2
 We call `measure`, `dimension`,  and `relation` properties as `field`. The following properties can be used in fields:
 
 ### `name:`
-The unique identifier of the metric. If you set the name, you can reference the metric from other metrics.
+The unique identifier of metric. If you set the name, you can reference the metric from other metrics.
 
 ```yml
 name: total_events
 ```
 
+### `type:`
+The metriql type of the field.
+
+Available values are: 
+
+* `string`, `boolean`, `array_string`, `map_string`
+* `date`, `timestamp`, `time` supports [timeframes](/reference/dimension#timeframes)
+* `integer`, `decimal`, `double`, `long` supports [custom formatting](#report)
+
+```yml
+type: string
+```
+
 ### `label:`
-The value will be shown in the user interface. If the label is not set, the default label is `name`.
+The value that will be visible in the user interface. If the label is not set, the default label is `name`.
 
 ```yml
 label: Total Events
@@ -28,8 +41,19 @@ category: Product
 
 ### `hidden:`
 
-If the value is `true`, the model will not show up in the user interface.
+If the value is `true`, the model won't be visible in the user interface.
 
 ```yml
 hidden: false
+```
+
+### `report:`
+
+An object that defines how the value will be shown to the end-user. Currently, metriql supports `format_numbers`.
+
+Example:
+
+```yml
+report:
+  format_numbers: 0.0%
 ```
