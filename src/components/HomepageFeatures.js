@@ -8,16 +8,7 @@ const FeatureList = [
     // Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        metriql integrates to dbt, an ELT tool from Fishtown Analytics. It has support for data lineage, tests, and documentation. dbt is the transformation layer and metriql is the serving layer.
-      </>
-    ),
-  },
-  {
-    title: 'Create roll-up tables automatically',
-    // Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        You can automatically create dbt models that can be used as roll-up tables for your raw data. No more dealing with hundreds of roll-up tables written as SQL.
+        metriql integrates to dbt, an ELT tool from Fishtown Analytics. It has support for data lineage, tests, and documentation. metriql can create dbt roll-up models automaticly in order to save your time.
       </>
     ),
   },
@@ -30,6 +21,15 @@ const FeatureList = [
       </>
     ),
   },
+  {
+    title: 'Consume data in a reliable way',
+    // Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
+    description: (
+      <>
+        Use metriql as the serving layer of your data. Connect it from your BI tool, use metriql API in SQL queries via JDBC or build embedded analytical applications using the REST API. 
+      </>
+    ),
+  }
 ];
 
 function Feature({Svg, title, description}) {

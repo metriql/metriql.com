@@ -2,7 +2,10 @@
    "definitions": {
       "SegmentationQuery": {
          "properties": {
-            "": {
+            "type": {
+               "enum": "segmentation"
+            },
+            "report": {
                "$ref": "https://app.rakam.io/schema/report-options/segmentation.json"
             }
          }
@@ -1003,13 +1006,13 @@
             ]
          }
       },
-      "/v0/query/segmentation": {
+      "/v0/query": {
          "post": {
             "consumes": [  "application/json"    ],
-            "operationId": "SegmentationQuery",
+            "operationId": "Execute query",
             "externalDocs": {
-               "description": "Learn more about segmentation report type",
-               "url": "/query/segmentation"
+               "description": "Learn more about report types",
+               "url": "/query/introduction"
             },
             "parameters": [
                {
@@ -1022,6 +1025,8 @@
                {
                   "in": "path",
                   "name": "initialWaitInSeconds",
+                  "default": 50,
+                  "nullable": true,
                   "schema": {
                      "type": "int"
                   }
@@ -1041,7 +1046,15 @@
                "content": {
                   "application/json": {
                      "schema": {
-                        "$ref": "#/definitions/SegmentationQuery"
+                        "discriminator": {
+                           "propertyName": "type",
+                           "mapping": {
+                              "segmentation": "#/definitions/SegmentationQuery"
+                           }
+                        },
+                        "anyOf": [
+                           {"$ref": "#/definitions/SegmentationQuery"}
+                        ]
                      }
                   }
                }
@@ -1055,165 +1068,6 @@
                }
             },
             "summary": "Query segmentation",
-            "tags": [
-               "query"
-            ]
-         }
-      },
-      "/v0/query/funnel": {
-         "post": {
-            "consumes": [  "application/json"    ],
-            "operationId": "FunnelQuery",
-            "parameters": [
-               {
-                  "in": "path",
-                  "name": "useCache",
-                  "schema": {
-                     "type": "boolean"
-                  }
-               },
-               {
-                  "in": "path",
-                  "name": "initialWaitInSeconds",
-                  "schema": {
-                     "type": "int"
-                  }
-               },
-               {
-                  "in": "path",
-                  "name": "dryRun",
-                  "schema": {
-                     "type": "boolean"
-                  }
-               }
-            ],
-            "produces": [
-               "application/json"
-            ],
-            "requestBody": {
-               "content": {
-                  "application/json": {
-                     "schema": {
-                        "$ref": "#/definitions/FunnelQuery"
-                     }
-                  }
-               }
-            },
-            "responses": {
-               "200": {
-                  "description": "Successful request",
-                  "schema": {
-                     "$ref": "#/definitions/TaskTicketQueryResult"
-                  }
-               }
-            },
-            "summary": "Query funnel",
-            "tags": [
-               "query"
-            ]
-         }
-      },
-      "/v0/query/retention": {
-         "post": {
-            "consumes": [  "application/json"    ],
-            "operationId": "RetentionQuery",
-            "parameters": [
-               {
-                  "in": "path",
-                  "name": "useCache",
-                  "schema": {
-                     "type": "boolean"
-                  }
-               },
-               {
-                  "in": "path",
-                  "name": "initialWaitInSeconds",
-                  "schema": {
-                     "type": "int"
-                  }
-               },
-               {
-                  "in": "path",
-                  "name": "dryRun",
-                  "schema": {
-                     "type": "boolean"
-                  }
-               }
-            ],
-            "produces": [
-               "application/json"
-            ],
-            "requestBody": {
-               "content": {
-                  "application/json": {
-                     "schema": {
-                        "$ref": "#/definitions/RetentionQuery"
-                     }
-                  }
-               }
-            },
-            "responses": {
-               "200": {
-                  "description": "Successful request",
-                  "schema": {
-                     "$ref": "#/definitions/TaskTicketQueryResult"
-                  }
-               }
-            },
-            "summary": "Query retention",
-            "tags": [
-               "query"
-            ]
-         }
-      },
-      "/v0/query/sql": {
-         "post": {
-            "consumes": [  "application/json"    ],
-            "operationId": "SqlQuery",
-            "parameters": [
-               {
-                  "in": "path",
-                  "name": "useCache",
-                  "schema": {
-                     "type": "boolean"
-                  }
-               },
-               {
-                  "in": "path",
-                  "name": "initialWaitInSeconds",
-                  "schema": {
-                     "type": "int"
-                  }
-               },
-               {
-                  "in": "path",
-                  "name": "dryRun",
-                  "schema": {
-                     "type": "boolean"
-                  }
-               }
-            ],
-            "produces": [
-               "application/json"
-            ],
-            "requestBody": {
-               "content": {
-                  "application/json": {
-                     "schema": {
-                        "$ref": "#/definitions/SqlQuery"
-                     }
-                  }
-               }
-            },
-            "responses": {
-               "200": {
-                  "description": "Successful request",
-                  "schema": {
-                     "$ref": "#/definitions/TaskTicketQueryResult"
-                  }
-               }
-            },
-            "summary": "Query sql",
             "tags": [
                "query"
             ]
