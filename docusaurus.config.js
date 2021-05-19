@@ -46,7 +46,7 @@ if (!PRERELEASE) {
 
 module.exports = {
   title: 'metriql Docs',
-  tagline: 'The metrics layer for your data - Headless BI',
+  tagline: 'The metrics layer for your data',
   url: SITE_URL,
   baseUrl: '/',
   onBrokenLinks: 'throw',

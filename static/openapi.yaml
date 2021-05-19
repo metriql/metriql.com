@@ -1,0 +1,241 @@
+openapi: "3.1.0"
+info:
+  version: 1.0.0
+  title: Metriql REST API
+components:
+  schemas:
+    SegmentationQuery:
+      properties:
+        type:
+          enum: [segmentation]
+        report:
+          $ref: "https://app.rakam.io/schema/report-options/segmentation.json"
+    QueryError:
+      properties:
+        charPositionInLine:
+          format: int32
+          type: integer
+        errorCode:
+          format: int32
+          type: integer
+        errorLine:
+          format: int32
+          type: integer
+        message:
+          type: string
+        sqlState:
+          type: string
+      type: object
+    QueryColumn:
+      properties:
+        dbType:
+          type: string
+        name:
+          type: string
+        position:
+          format: int32
+          type: integer
+        type:
+          enum:
+            - STRING
+            - INTEGER
+            - DECIMAL
+            - DOUBLE
+            - LONG
+            - BOOLEAN
+            - DATE
+            - TIME
+            - TIMESTAMP
+            - BINARY
+            - ARRAY_STRING
+            - ARRAY_INTEGER
+            - ARRAY_DOUBLE
+            - ARRAY_LONG
+            - ARRAY_BOOLEAN
+            - ARRAY_DATE
+            - ARRAY_TIME
+            - ARRAY_TIMESTAMP
+            - MAP_STRING
+            - UNKNOWN
+          type: string
+      required:
+        - name
+        - position
+      type: object
+    QueryResult:
+      properties:
+        error:
+          "$ref": "#/components/schemas/QueryError"
+        metadata:
+          items:
+            "$ref": "#/components/schemas/QueryColumn"
+          type: array
+        properties:
+          additionalProperties:
+            type: object
+          type: object
+        result:
+          items:
+            items:
+              type: object
+            type: array
+          type: array
+      type: object
+
+    TaskTicketQueryResult:
+      properties:
+        id:
+          format: uuid
+          type: string
+        result:
+          "$ref": "#/components/schemas/QueryResult"
+        startedAt:
+          format: date-time
+          type: string
+        status:
+          enum:
+            - IDLE
+            - RUNNING
+            - CANCELED
+            - FINISHED
+          type: string
+        update:
+          type: object
+      required:
+        - startedAt
+        - status
+      type: object
+    SuccessMessage:
+      properties:
+        message:
+          type: string
+        success:
+          type: boolean
+      required:
+        - success
+      type: object
+    TaskTicketObject:
+      properties:
+        id:
+          format: uuid
+          type: string
+        result:
+          type: object
+        startedAt:
+          format: date-time
+          type: string
+        status:
+          enum:
+            - IDLE
+            - RUNNING
+            - CANCELED
+            - FINISHED
+          type: string
+        update:
+          type: object
+      required:
+        - startedAt
+        - status
+      type: object
+paths:
+  /api/task/cancel:
+    post:
+      description: ""
+      operationId: CancelQuery
+      parameters: []
+      responses:
+        200:
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SuccessMessage"
+      summary: Cancel a query
+      tags:
+        - task
+  /api/task/status:
+    get:
+      description: "Get status of running query"
+      operationId: Status
+      parameters: []
+      responses:
+        200:
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TaskTicketObject"
+      summary: View task status
+      tags:
+        - task
+  /v0/metadata:
+    get:
+      description: "Get dataset schema"
+      operationId: Metadata
+      responses:
+        200:
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "https://app.rakam.io/schema/report-options/dbt.schema.json"
+                type: array
+      summary: Get metadata
+      tags:
+        - admin
+  "/v0/query":
+    post:
+      operationId: Execute query
+      externalDocs:
+        description: Learn more about report types
+        url: https://metriql.com/query/introduction
+      parameters:
+        - in: query
+          name: useCache
+          schema:
+            type: boolean
+        - in: query
+          name: initialWaitInSeconds
+          schema:
+            default: 50
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              discriminator:
+                propertyName: type
+                mapping:
+                  segmentation: "#/components/schemas/SegmentationQuery"
+              anyOf:
+                - $ref: "#/components/schemas/SegmentationQuery"
+      responses:
+        200:
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TaskTicketQueryResult"
+      summary: Query segmentation
+      tags:
+        - query
+  "/v0/update-manifest":
+    put:
+      description: ""
+      operationId: UpdateManifest
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SuccessMessage"
+      summary: Update manifest.json file
+      responses:
+        200:
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SuccessMessage"
+      tags:
+        - admin

@@ -57,7 +57,32 @@ Congrats! You now have a REST API to run queries on your database.
 
 <TabItem value="rakam">
 
+1. Sign up on Rakam [here](https://app.rakam.io/register) and create a project by entering your data warehouse credentials. If your organization already has a Rakam project, ask them to invite you to the preoject on the [team page](https://app.rakam.io/_/settings/team/users)
+![Connect](/img/connect.png)
 
+## Creating your own recipe:
+
+2. Click the `Create recipe from scratch` button on `Develop` page.  If you have a repository that includes your dbt project, please skip to [Introduction for dbt users](https://metriql.com/tutorial/for-dbt-users)
+![Create recipe](/img/createrecipe.png)
+3. Give a name to your repository and we’ll start creating your first dataset([See docs](https://metriql.com/creating-datasets)) from your data warehouse tables.
+4. Click `+ create` in the sidebar and click `create source from DW tables`.
+![Create dataset](/img/createdataset.png)
+5. Select the data warehouse table names that you would like to use and click the `import as models` button. 
+![Import Models](/img/importasmodels.png)
+6. IDE will create a dbt sources.yml file that you can modify for your use case later. Rakam automatically creates dimensions for each column in your resource files. You can create custom measures and dimensions under meta or model property. [See docs](https://metriql.com/creating-datasets) to learn more about creating datasets and how to define your metrics.
+8. Once you're done with metric definitions and modeling, you can click the `Save locally` button to come back and continue later or `Commit main branch` to ship it to production. 
+![Save or commit](/img/saveorcommit.png)
+9. Go to `Explore` page, select the reporting feature you’d like to use (among `segmentation`, `funnel`, `retention` and `flow`) and test out your metric definitions with your data in real time. Noticed anything that isn’t supposed to be like that? Go to `Develop` page and edit your dataset.
+![Explore Segmentation](/img/explore-segmentation.png)
+
+## Installing pre-defined recipes:
+
+Recipes are pre-defined datasets for different database schemas. If you're using any of the solutions that Rakam has an [integration](https://rakam.io/integrations) with to collect data into your database, you can install the [recipe](https://github.com/rakam-recipes) and use the dashboards & datasets in order to analyze the data. You can install the recipes on the `Develop` page as follows:
+
+10. Click the `install` button in the right-bottom corner of the recipe you'd like to use.
+![Install recipe](/img/installrecipe.png)
+11. Select the variables that are asked in the following page. These variables can be `database` `schema` and `table` names. When you select the variables, they're passed as an argument to recipes so that they can dynamically build up the models. You can later customize the recipes and create custom metric definitions.
 
 </TabItem>
+
 </Tabs>
