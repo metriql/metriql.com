@@ -192,7 +192,7 @@ module.exports = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
 
-          editUrl: 'https://github.com/metriql/metriql.com/edit/' + GIT_BRANCH + '/website/',
+          editUrl: 'https://github.com/metriql/metriql.com/edit/' + GIT_BRANCH + '/',
           showLastUpdateTime: false,
           //showLastUpdateAuthor: false,
         }
