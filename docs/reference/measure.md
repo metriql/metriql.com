@@ -35,7 +35,7 @@ Please note that these fields are not required under `column.meta` as they point
 **`dimension:`** references the dimensions within the same model.
 
 **`sql:`** lets you define the complex expression, where column type measure is not capable of. 
-For referencing other entities inside a measure checkout the [SQL Context](/advanved/sql-context).
+For referencing other entities inside a measure checkout the [SQL Context](/advanced/sql-context).
 
 ### `aggregation:`
 
