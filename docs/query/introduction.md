@@ -3,6 +3,8 @@ title: Introduction
 sidebar_position: 1
 ---
 
+# Querying datasets
+
 When you model the data and create datasets, you can analyze the data using the REST API or JDBC Adapter. metriql provides different reporting features for different use-cases and lets you interact with the data in different ways.
 
 You use the `measure` and `dimension` references of your datasets, filter the data using them and calculate different metrics depending on the report type. See the available report types:
@@ -14,7 +16,12 @@ You use the `measure` and `dimension` references of your datasets, filter the da
 | [Funnel](funnel) | Analyze customer event data and understand the user journey |  <sub>[user_id*](/reference/mapping#user_id), [event_timestamp*](/reference/mapping#event_timestamp)</sub> |
 | [Retention](retention) | Analyze customer event data and build cohort tables | <sub>[user_id*](/reference/mapping#user_id), [event_timestamp*](/reference/mapping#event_timestamp) </sub> |
 
-------
+
+:::tip
+If you're using metriql in a BI tool, you're mostly like be executing [Segmentation](segmentation) queries.
+:::
+
+---
 
 Here are the common features of the available report types:
 

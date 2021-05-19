@@ -115,7 +115,7 @@ module.exports = {
         },
         {
           to: '/query/introduction',
-          label: 'Querying data',
+          label: 'Querying',
           position: 'left',
           activeBasePath: 'query/introduction'
         },
@@ -124,9 +124,9 @@ module.exports = {
           position: 'left',
           items: [
             {
-              to: '/rest-api',
+              to: '/integrations/rest-api',
               label: 'REST API',
-              activeBasePath: 'rest-api'
+              activeBasePath: 'integrations/rest-api'
             },
             {
               to: '/integrations/jdbc-driver',
@@ -134,9 +134,9 @@ module.exports = {
               activeBasePath: 'integrations/jdbc-driver'
             },
             {
-              to: '/integrations/index',
+              to: '/integrations/build',
               label: 'Build +',
-              activeBasePath: 'integrations/index'
+              activeBasePath: 'integrations/build'
             },
           ],
         },

@@ -2,7 +2,7 @@
 title: "Aggregate properties"
 sidebar_position: 6
 ---
-Please refer to [Aggregates](doc:aggregates) yo learn about the aggregate property. It supports the following properties:
+Please refer to [Aggregates](/advanced/aggregates) to learn about the aggregate property. It supports the following properties:
 
 ### `measures:`
 It's an array of measure references within the same model. We support measure references that come from relations. Here are a few examples:
