@@ -1,0 +1,1249 @@
+{
+   "definitions": {
+      "SegmentationQuery": {
+         "properties": {
+            "": {
+               "$ref": "https://app.rakam.io/schema/report-options/segmentation.json"
+            }
+         }
+      },
+      "FunnelQuery": {
+         "properties": {
+            "": {
+               "$ref": "https://app.rakam.io/schema/report-options/funnel.json"
+            }
+         }
+      },
+      "RetentionQuery": {
+         "properties": {
+            "": {
+               "$ref": "https://app.rakam.io/schema/report-options/retention.json"
+            }
+         }
+      },
+      "SqlQuery": {
+         "properties": {
+            "": {
+               "$ref": "https://app.rakam.io/schema/report-options/sql.json"
+            }
+         }
+      },
+      "Column": {
+         "allOf": [
+            {
+               "$ref": "#/definitions/MeasureValue"
+            },
+            {
+               "properties": {
+                  "aggregation": {
+                     "enum": [
+                        "COUNT",
+                        "COUNT_UNIQUE",
+                        "SUM",
+                        "MINIMUM",
+                        "MAXIMUM",
+                        "AVERAGE",
+                        "APPROXIMATE_UNIQUE",
+                        "SUM_DISTINCT",
+                        "AVERAGE_DISTINCT"
+                     ],
+                     "type": "string"
+                  },
+                  "column": {
+                     "type": "string"
+                  }
+               },
+               "required": [
+                  "aggregation"
+               ],
+               "type": "object"
+            }
+         ]
+      },
+      "ColumnValue": {
+         "allOf": [
+            {
+               "$ref": "#/definitions/RelationValue"
+            },
+            {
+               "properties": {
+                  "sourceColumn": {
+                     "type": "string"
+                  },
+                  "targetColumn": {
+                     "type": "string"
+                  }
+               },
+               "required": [
+                  "sourceColumn",
+                  "targetColumn"
+               ],
+               "type": "object"
+            }
+         ]
+      },
+      "DimensionReference": {
+         "properties": {
+            "name": {
+               "$ref": "#/definitions/MetricReference"
+            },
+            "timeframe": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "name"
+         ],
+         "type": "object"
+      },
+      "DimensionValue": {
+         "type": "object"
+      },
+      "Enum": {
+         "type": "object"
+      },
+      "ErrorMessage": {
+         "properties": {
+            "errors": {
+               "items": {
+                  "$ref": "#/definitions/JsonAPIError"
+               },
+               "type": "array"
+            },
+            "meta": {
+               "additionalProperties": {
+                  "type": "object"
+               },
+               "type": "object"
+            }
+         },
+         "required": [
+            "errors",
+            "meta"
+         ],
+         "type": "object"
+      },
+      "Filter": {
+         "properties": {
+            "operator": {
+               "$ref": "#/definitions/Enum"
+            },
+            "value": {
+               "type": "object"
+            },
+            "valueType": {
+               "enum": [
+                  "STRING",
+                  "INTEGER",
+                  "DECIMAL",
+                  "DOUBLE",
+                  "LONG",
+                  "BOOLEAN",
+                  "DATE",
+                  "TIME",
+                  "TIMESTAMP",
+                  "BINARY",
+                  "ARRAY_STRING",
+                  "ARRAY_INTEGER",
+                  "ARRAY_DOUBLE",
+                  "ARRAY_LONG",
+                  "ARRAY_BOOLEAN",
+                  "ARRAY_DATE",
+                  "ARRAY_TIME",
+                  "ARRAY_TIMESTAMP",
+                  "MAP_STRING",
+                  "UNKNOWN"
+               ],
+               "type": "string"
+            }
+         },
+         "required": [
+            "operator",
+            "valueType"
+         ],
+         "type": "object"
+      },
+      "FilterReference": {
+         "properties": {
+            "dimension": {
+               "$ref": "#/definitions/DimensionReference"
+            },
+            "mapping": {
+               "type": "string"
+            },
+            "measure": {
+               "$ref": "#/definitions/MetricReference"
+            },
+            "operator": {
+               "type": "string"
+            },
+            "value": {
+               "type": "object"
+            }
+         },
+         "required": [
+            "operator"
+         ],
+         "type": "object"
+      },
+      "FilterValue": {
+         "type": "object"
+      },
+      "Function": {
+         "allOf": [
+            {
+               "$ref": "#/definitions/ReportMetric"
+            },
+            {
+               "properties": {
+                  "name": {
+                     "enum": [
+                        "COUNT"
+                     ],
+                     "type": "string"
+                  },
+                  "parameters": {
+                     "items": {
+                        "$ref": "#/definitions/ReportMetric"
+                     },
+                     "type": "array"
+                  }
+               },
+               "required": [
+                  "name",
+                  "parameters"
+               ],
+               "type": "object"
+            }
+         ]
+      },
+      "Materialize": {
+         "properties": {
+            "name": {
+               "type": "string"
+            },
+            "reportType": {
+               "enum": [
+                  "SEGMENTATION",
+                  "FUNNEL",
+                  "FLOW",
+                  "RETENTION",
+                  "SQL"
+               ],
+               "type": "string"
+            },
+            "value": {
+               "$ref": "#/definitions/SegmentationMaterialize"
+            }
+         },
+         "required": [
+            "name",
+            "reportType",
+            "value"
+         ],
+         "type": "object"
+      },
+      "Measure": {
+         "properties": {
+            "aggregation": {
+               "enum": [
+                  "COUNT",
+                  "COUNT_UNIQUE",
+                  "SUM",
+                  "MINIMUM",
+                  "MAXIMUM",
+                  "AVERAGE",
+                  "APPROXIMATE_UNIQUE",
+                  "SUM_DISTINCT",
+                  "AVERAGE_DISTINCT"
+               ],
+               "type": "string"
+            },
+            "category": {
+               "type": "string"
+            },
+            "description": {
+               "type": "string"
+            },
+            "drills": {
+               "items": {
+                  "$ref": "#/definitions/ReportMetric"
+               },
+               "type": "array"
+            },
+            "fieldType": {
+               "enum": [
+                  "string",
+                  "integer",
+                  "decimal",
+                  "double",
+                  "long",
+                  "boolean",
+                  "date",
+                  "time",
+                  "timestamp",
+                  "binary",
+                  "array_string",
+                  "map_string"
+               ],
+               "type": "string"
+            },
+            "filters": {
+               "items": {
+                  "$ref": "#/definitions/ReportFilter"
+               },
+               "type": "array"
+            },
+            "hidden": {
+               "type": "boolean"
+            },
+            "label": {
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            },
+            "reportOptions": {
+               "type": "object"
+            },
+            "type": {
+               "enum": [
+                  "COLUMN",
+                  "DIMENSION",
+                  "SQL"
+               ],
+               "type": "string"
+            },
+            "value": {
+               "$ref": "#/definitions/MeasureValue"
+            }
+         },
+         "required": [
+            "name",
+            "type",
+            "value"
+         ],
+         "type": "object"
+      },
+      "MeasureValue": {
+         "type": "object"
+      },
+      "MetricReference": {
+         "properties": {
+            "isMappingDimension": {
+               "type": "boolean"
+            },
+            "name": {
+               "type": "string"
+            },
+            "relation": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "isMappingDimension",
+            "name"
+         ],
+         "type": "object"
+      },
+      "Model": {
+         "properties": {
+            "alwaysFilters": {
+               "items": {
+                  "$ref": "#/definitions/FilterReference"
+               },
+               "type": "array"
+            },
+            "category": {
+               "type": "string"
+            },
+            "description": {
+               "type": "string"
+            },
+            "dimensions": {
+               "items": {
+                  "$ref": "#/definitions/Measure"
+               },
+               "type": "array"
+            },
+            "hidden": {
+               "type": "boolean"
+            },
+            "id": {
+               "format": "int32",
+               "type": "integer"
+            },
+            "label": {
+               "type": "string"
+            },
+            "mappings": {
+               "additionalProperties": {
+                  "type": "string"
+               },
+               "type": "object"
+            },
+            "materializes": {
+               "items": {
+                  "$ref": "#/definitions/Materialize"
+               },
+               "type": "array"
+            },
+            "measures": {
+               "items": {
+                  "$ref": "#/definitions/Measure"
+               },
+               "type": "array"
+            },
+            "name": {
+               "type": "string"
+            },
+            "recipeId": {
+               "format": "int32",
+               "type": "integer"
+            },
+            "recipePath": {
+               "type": "string"
+            },
+            "relations": {
+               "items": {
+                  "$ref": "#/definitions/Relation"
+               },
+               "type": "array"
+            },
+            "target": {
+               "$ref": "#/definitions/Target"
+            }
+         },
+         "required": [
+            "dimensions",
+            "hidden",
+            "mappings",
+            "measures",
+            "name",
+            "relations",
+            "target"
+         ],
+         "type": "object"
+      },
+      "PostOperation": {
+         "properties": {
+            "type": {
+               "enum": [
+                  "TIMESTAMP",
+                  "DATE",
+                  "TIME"
+               ],
+               "type": "string"
+            },
+            "value": {
+               "$ref": "#/definitions/Enum"
+            }
+         },
+         "required": [
+            "type",
+            "value"
+         ],
+         "type": "object"
+      },
+      "QueryColumn": {
+         "properties": {
+            "dbType": {
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            },
+            "position": {
+               "format": "int32",
+               "type": "integer"
+            },
+            "type": {
+               "enum": [
+                  "STRING",
+                  "INTEGER",
+                  "DECIMAL",
+                  "DOUBLE",
+                  "LONG",
+                  "BOOLEAN",
+                  "DATE",
+                  "TIME",
+                  "TIMESTAMP",
+                  "BINARY",
+                  "ARRAY_STRING",
+                  "ARRAY_INTEGER",
+                  "ARRAY_DOUBLE",
+                  "ARRAY_LONG",
+                  "ARRAY_BOOLEAN",
+                  "ARRAY_DATE",
+                  "ARRAY_TIME",
+                  "ARRAY_TIMESTAMP",
+                  "MAP_STRING",
+                  "UNKNOWN"
+               ],
+               "type": "string"
+            }
+         },
+         "required": [
+            "name",
+            "position"
+         ],
+         "type": "object"
+      },
+      "QueryError": {
+         "properties": {
+            "charPositionInLine": {
+               "format": "int32",
+               "type": "integer"
+            },
+            "errorCode": {
+               "format": "int32",
+               "type": "integer"
+            },
+            "errorLine": {
+               "format": "int32",
+               "type": "integer"
+            },
+            "message": {
+               "type": "string"
+            },
+            "sqlState": {
+               "type": "string"
+            }
+         },
+         "type": "object"
+      },
+      "QueryResult": {
+         "properties": {
+            "error": {
+               "$ref": "#/definitions/QueryError"
+            },
+            "metadata": {
+               "items": {
+                  "$ref": "#/definitions/QueryColumn"
+               },
+               "type": "array"
+            },
+            "properties": {
+               "additionalProperties": {
+                  "type": "object"
+               },
+               "type": "object"
+            },
+            "result": {
+               "items": {
+                  "items": {
+                     "type": "object"
+                  },
+                  "type": "array"
+               },
+               "type": "array"
+            }
+         },
+         "type": "object"
+      },
+      "Relation": {
+         "properties": {
+            "description": {
+               "type": "string"
+            },
+            "hidden": {
+               "type": "boolean"
+            },
+            "joinType": {
+               "enum": [
+                  "INNER_JOIN",
+                  "LEFT_JOIN",
+                  "RIGHT_JOIN",
+                  "FULL_JOIN"
+               ],
+               "type": "string"
+            },
+            "label": {
+               "type": "string"
+            },
+            "modelName": {
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            },
+            "relationType": {
+               "enum": [
+                  "ONE_TO_ONE",
+                  "ONE_TO_MANY",
+                  "MANY_TO_ONE",
+                  "MANY_TO_MANY"
+               ],
+               "type": "string"
+            },
+            "type": {
+               "enum": [
+                  "DIMENSION",
+                  "COLUMN",
+                  "SQL"
+               ],
+               "type": "string"
+            },
+            "value": {
+               "$ref": "#/definitions/RelationValue"
+            }
+         },
+         "required": [
+            "joinType",
+            "modelName",
+            "name",
+            "relationType",
+            "type",
+            "value"
+         ],
+         "type": "object"
+      },
+      "RelationValue": {
+         "type": "object"
+      },
+      "ReportDimension": {
+         "allOf": [
+            {
+               "$ref": "#/definitions/ReportMetric"
+            },
+            {
+               "properties": {
+                  "modelName": {
+                     "type": "string"
+                  },
+                  "name": {
+                     "type": "string"
+                  },
+                  "pivot": {
+                     "type": "boolean"
+                  },
+                  "postOperation": {
+                     "$ref": "#/definitions/PostOperation"
+                  },
+                  "relationName": {
+                     "type": "string"
+                  }
+               },
+               "required": [
+                  "name"
+               ],
+               "type": "object"
+            }
+         ]
+      },
+      "ReportFilter": {
+         "properties": {
+            "type": {
+               "enum": [
+                  "SQL_FILTER",
+                  "METRIC_FILTER"
+               ],
+               "type": "string"
+            },
+            "value": {
+               "$ref": "#/definitions/FilterValue"
+            }
+         },
+         "required": [
+            "type",
+            "value"
+         ],
+         "type": "object"
+      },
+      "ReportMappingDimension": {
+         "allOf": [
+            {
+               "$ref": "#/definitions/ReportMetric"
+            },
+            {
+               "properties": {
+                  "name": {
+                     "enum": [
+                        "EVENT_TIMESTAMP",
+                        "INCREMENTAL",
+                        "USER_ID",
+                        "DEVICE_ID",
+                        "SESSION_ID"
+                     ],
+                     "type": "string"
+                  },
+                  "postOperation": {
+                     "$ref": "#/definitions/PostOperation"
+                  }
+               },
+               "required": [
+                  "name"
+               ],
+               "type": "object"
+            }
+         ]
+      },
+      "ReportMeasure": {
+         "allOf": [
+            {
+               "$ref": "#/definitions/ReportMetric"
+            },
+            {
+               "properties": {
+                  "modelName": {
+                     "type": "string"
+                  },
+                  "name": {
+                     "type": "string"
+                  },
+                  "relationName": {
+                     "type": "string"
+                  }
+               },
+               "required": [
+                  "modelName",
+                  "name"
+               ],
+               "type": "object"
+            }
+         ]
+      },
+      "ReportMetric": {
+         "type": "object"
+      },
+      "SegmentationMaterialize": {
+         "properties": {
+            "dimensions": {
+               "items": {
+                  "$ref": "#/definitions/DimensionReference"
+               },
+               "type": "array"
+            },
+            "filters": {
+               "items": {
+                  "$ref": "#/definitions/FilterReference"
+               },
+               "type": "array"
+            },
+            "measures": {
+               "items": {
+                  "$ref": "#/definitions/MetricReference"
+               },
+               "type": "array"
+            }
+         },
+         "required": [
+            "measures"
+         ],
+         "type": "object"
+      },
+      "Sql": {
+         "allOf": [
+            {
+               "$ref": "#/definitions/FilterValue"
+            },
+            {
+               "properties": {
+                  "sql": {
+                     "type": "string"
+                  }
+               },
+               "required": [
+                  "sql"
+               ],
+               "type": "object"
+            }
+         ]
+      },
+      "SqlValue": {
+         "allOf": [
+            {
+               "$ref": "#/definitions/RelationValue"
+            },
+            {
+               "properties": {
+                  "sql": {
+                     "type": "string"
+                  }
+               },
+               "required": [
+                  "sql"
+               ],
+               "type": "object"
+            }
+         ]
+      },
+      "SuccessMessage": {
+         "properties": {
+            "message": {
+               "type": "string"
+            },
+            "success": {
+               "type": "boolean"
+            }
+         },
+         "required": [
+            "success"
+         ],
+         "type": "object"
+      },
+      "Table": {
+         "allOf": [
+            {
+               "$ref": "#/definitions/TargetValue"
+            },
+            {
+               "properties": {
+                  "database": {
+                     "type": "string"
+                  },
+                  "schema": {
+                     "type": "string"
+                  },
+                  "table": {
+                     "type": "string"
+                  }
+               },
+               "required": [
+                  "table"
+               ],
+               "type": "object"
+            }
+         ]
+      },
+      "Target": {
+         "properties": {
+            "type": {
+               "enum": [
+                  "TABLE",
+                  "SQL"
+               ],
+               "type": "string"
+            },
+            "value": {
+               "$ref": "#/definitions/TargetValue"
+            }
+         },
+         "required": [
+            "type",
+            "value"
+         ],
+         "type": "object"
+      },
+      "TargetValue": {
+         "type": "object"
+      },
+      "TaskTicket": {
+         "properties": {
+            "id": {
+               "format": "uuid",
+               "type": "string"
+            },
+            "result": {
+               "type": "object"
+            },
+            "startedAt": {
+               "format": "date-time",
+               "type": "string"
+            },
+            "status": {
+               "enum": [
+                  "IDLE",
+                  "RUNNING",
+                  "CANCELED",
+                  "FINISHED"
+               ],
+               "type": "string"
+            },
+            "update": {
+               "type": "object"
+            }
+         },
+         "required": [
+            "startedAt",
+            "status"
+         ],
+         "type": "object"
+      },
+      "TaskTicketObject": {
+         "properties": {
+            "id": {
+               "format": "uuid",
+               "type": "string"
+            },
+            "result": {
+               "type": "object"
+            },
+            "startedAt": {
+               "format": "date-time",
+               "type": "string"
+            },
+            "status": {
+               "enum": [
+                  "IDLE",
+                  "RUNNING",
+                  "CANCELED",
+                  "FINISHED"
+               ],
+               "type": "string"
+            },
+            "update": {
+               "type": "object"
+            }
+         },
+         "required": [
+            "startedAt",
+            "status"
+         ],
+         "type": "object"
+      },
+      "TaskTicketQueryResult": {
+         "properties": {
+            "id": {
+               "format": "uuid",
+               "type": "string"
+            },
+            "result": {
+               "$ref": "#/definitions/QueryResult"
+            },
+            "startedAt": {
+               "format": "date-time",
+               "type": "string"
+            },
+            "status": {
+               "enum": [
+                  "IDLE",
+                  "RUNNING",
+                  "CANCELED",
+                  "FINISHED"
+               ],
+               "type": "string"
+            },
+            "update": {
+               "type": "object"
+            }
+         },
+         "required": [
+            "startedAt",
+            "status"
+         ],
+         "type": "object"
+      }
+   },
+   "paths": {
+      "/api/task/cancel": {
+         "post": {
+            "consumes": [
+               "application/json"
+            ],
+            "description": "",
+            "operationId": "CancelQuery",
+            "parameters": [ ],
+            "produces": [
+               "application/json"
+            ],
+            "responses": {
+               "200": {
+                  "description": "Successful request",
+                  "schema": {
+                     "$ref": "#/definitions/SuccessMessage"
+                  }
+               }
+            },
+            "summary": "Cancel a query",
+            "tags": [
+               "task"
+            ]
+         }
+      },
+      "/api/task/status": {
+         "get": {
+            "consumes": [
+               "application/json"
+            ],
+            "description": "",
+            "operationId": "Status",
+            "parameters": [ ],
+            "produces": [
+               "application/json"
+            ],
+            "responses": {
+               "200": {
+                  "description": "Successful request",
+                  "schema": {
+                     "$ref": "#/definitions/TaskTicketObject"
+                  }
+               }
+            },
+            "summary": "View task status",
+            "tags": [
+               "task"
+            ]
+         }
+      },
+      "/v0/metadata": {
+         "get": {
+            "consumes": [
+               "application/json"
+            ],
+            "description": "",
+            "operationId": "Metadata",
+            "produces": [
+               "application/json"
+            ],
+            "responses": {
+               "200": {
+                  "description": "Successful request",
+                  "schema": {
+                     "items": {
+                        "$ref": "#/definitions/Model"
+                     },
+                     "type": "array"
+                  }
+               }
+            },
+            "summary": "Get metadata",
+            "tags": [
+               "admin"
+            ]
+         }
+      },
+      "/v0/query/segmentation": {
+         "post": {
+            "consumes": [  "application/json"    ],
+            "operationId": "SegmentationQuery",
+            "externalDocs": {
+               "description": "Learn more about segmentation report type",
+               "url": "/query/segmentation"
+            },
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "useCache",
+                  "schema": {
+                     "type": "boolean"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "initialWaitInSeconds",
+                  "schema": {
+                     "type": "int"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "dryRun",
+                  "schema": {
+                     "type": "boolean"
+                  }
+               }
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "requestBody": {
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/definitions/SegmentationQuery"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "description": "Successful request",
+                  "schema": {
+                     "$ref": "#/definitions/TaskTicketQueryResult"
+                  }
+               }
+            },
+            "summary": "Query segmentation",
+            "tags": [
+               "query"
+            ]
+         }
+      },
+      "/v0/query/funnel": {
+         "post": {
+            "consumes": [  "application/json"    ],
+            "operationId": "FunnelQuery",
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "useCache",
+                  "schema": {
+                     "type": "boolean"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "initialWaitInSeconds",
+                  "schema": {
+                     "type": "int"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "dryRun",
+                  "schema": {
+                     "type": "boolean"
+                  }
+               }
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "requestBody": {
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/definitions/FunnelQuery"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "description": "Successful request",
+                  "schema": {
+                     "$ref": "#/definitions/TaskTicketQueryResult"
+                  }
+               }
+            },
+            "summary": "Query funnel",
+            "tags": [
+               "query"
+            ]
+         }
+      },
+      "/v0/query/retention": {
+         "post": {
+            "consumes": [  "application/json"    ],
+            "operationId": "RetentionQuery",
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "useCache",
+                  "schema": {
+                     "type": "boolean"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "initialWaitInSeconds",
+                  "schema": {
+                     "type": "int"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "dryRun",
+                  "schema": {
+                     "type": "boolean"
+                  }
+               }
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "requestBody": {
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/definitions/RetentionQuery"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "description": "Successful request",
+                  "schema": {
+                     "$ref": "#/definitions/TaskTicketQueryResult"
+                  }
+               }
+            },
+            "summary": "Query retention",
+            "tags": [
+               "query"
+            ]
+         }
+      },
+      "/v0/query/sql": {
+         "post": {
+            "consumes": [  "application/json"    ],
+            "operationId": "SqlQuery",
+            "parameters": [
+               {
+                  "in": "path",
+                  "name": "useCache",
+                  "schema": {
+                     "type": "boolean"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "initialWaitInSeconds",
+                  "schema": {
+                     "type": "int"
+                  }
+               },
+               {
+                  "in": "path",
+                  "name": "dryRun",
+                  "schema": {
+                     "type": "boolean"
+                  }
+               }
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "requestBody": {
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/definitions/SqlQuery"
+                     }
+                  }
+               }
+            },
+            "responses": {
+               "200": {
+                  "description": "Successful request",
+                  "schema": {
+                     "$ref": "#/definitions/TaskTicketQueryResult"
+                  }
+               }
+            },
+            "summary": "Query sql",
+            "tags": [
+               "query"
+            ]
+         }
+      },
+      "/v0/update-manifest": {
+         "put": {
+            "consumes": [
+               "application/json"
+            ],
+            "description": "",
+            "operationId": "UpdateManifest",
+            "parameters": [ ],
+            "produces": [
+               "application/json"
+            ],
+            "responses": {
+               "200": {
+                  "description": "Successful request",
+                  "schema": {
+                     "$ref": "#/definitions/SuccessMessage"
+                  }
+               }
+            },
+            "summary": "Update manifest.json file",
+            "tags": [
+               "admin"
+            ]
+         }
+      }
+   },
+   "swagger": "2.0"
+}

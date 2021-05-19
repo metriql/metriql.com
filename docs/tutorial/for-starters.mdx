@@ -22,6 +22,8 @@ import TabItem from '@theme/TabItem';
 4. Create a file called `source.yml` under `/models` directory.
 5. Paste the following content:
 
+<File name='models/schema.yml'>
+
 ```yml
 version: 2
 sources:
@@ -40,7 +42,9 @@ sources:
                 type: string  #change this if the column type is not string, see [available types](/reference/field#type)
 ```
 
-This snippet above creates a dbt source and each dbt source becomes a dataset in metriql. The dataset one measure called `total_rows` and one dimension called `example_dimension`. 
+</File>
+
+This snippet above creates a dbt source, and each dbt source becomes a dataset in metriql. The dataset one measure called `total_rows` and one dimension called `example_dimension`. 
 Please see the [dbt sources](https://docs.getdbt.com/docs/building-a-dbt-project/using-sources#declaring-a-source) to learn more about the concept. We use `meta` properties of dbt resources and support all the dbt resources including models, sources, and seeds. See [dataset properties](/reference/dataset) for all the metriql-specific properties. 
 
 5. Run `dbt list`

@@ -4,7 +4,7 @@ import Redoc from '@theme/Redoc';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 // const STATIC_SPEC = 'https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/examples/v2.0/json/petstore-simple.json';
-const STATIC_SPEC = 'openapi.json';
+const STATIC_SPEC = 'schema/openapi.json';
 
 function CustomPage() {
   return (

@@ -8613,7 +8613,7 @@
   dependencies:
     "minimatch" "3.0.4"
 
-"redoc@^2.0.0-rc.41", "redoc@^2.0.0-rc.53":
+"redoc@^2.0.0-rc.53":
   "integrity" "sha512-nyHIEIVo+kxsMfAy7nkYSlU7qjXZAARcj0INaRwCoy/DG9BMMi3xLcpo0CmarL9XeI891+VN2tpyTJ8jhZUtPw=="
   "resolved" "https://registry.npmjs.org/redoc/-/redoc-2.0.0-rc.53.tgz"
   "version" "2.0.0-rc.53"

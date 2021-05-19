@@ -114,15 +114,20 @@ module.exports = {
           activeBasePath: 'metriql-cli'
         },
         {
-          to: '/rest-api',
-          label: 'REST API',
+          to: '/query/introduction',
+          label: 'Querying data',
           position: 'left',
-          activeBasePath: 'rest-api'
+          activeBasePath: 'query/introduction'
         },
         {
           label: 'Integrations',
           position: 'left',
           items: [
+            {
+              to: '/rest-api',
+              label: 'REST API',
+              activeBasePath: 'rest-api'
+            },
             {
               to: '/integrations/jdbc-driver',
               label: 'JDBC Driver',
