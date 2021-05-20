@@ -35,16 +35,16 @@ models:
    columns:
      - name: country_code
        meta:
-         rakam.dimension:
+         metriql.dimension:
            type: string
      - name: city
        meta:
-         rakam.dimension:
+         metriql.dimension:
            type: string
      - name: total_customers
        description: total number of customers defined as count(*) in sql
        meta:
-         rakam.measure:
+         metriql.measure:
     	    aggregation: sum
 ```
 
@@ -54,7 +54,7 @@ In addition to column mapping, you can also create custom measures and dimension
 models:
   - name: customers
     meta:
-      rakam:
+      metriql:
          measures:
             total_rows:
                aggregation: count

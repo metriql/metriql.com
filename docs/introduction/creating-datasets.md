@@ -25,16 +25,16 @@ models:
    columns:
      - name: country_code
        meta:
-         rakam.dimension:
+         metriql.dimension:
            type: string
      - name: city
        meta:
-         rakam.dimension:
+         metriql.dimension:
            type: string
      - name: total_customers
        description: total number of customers defined as count(*) in sql
        meta:
-         rakam.measure:
+         metriql.measure:
     	    aggregation: sum
 ```
 
@@ -44,7 +44,7 @@ In addition to column mapping, you can also create custom measures and dimension
 models:
   - name: customers
     meta:
-      rakam:
+      metriql:
          measures:
             total_rows:
                aggregation: count
@@ -66,14 +66,14 @@ sources:
     tables:
       - name: pageview
         meta:
-          rakam:
+          metriql:
              measures:
                 total_pageviews:
                 aggregation: count
         columns:
           - name: url
             meta:
-              rakam.dimension:
+              metriql.dimension:
                 type: string
 ```
 
@@ -84,7 +84,7 @@ If you're analyzing the time-series data, you can also define `mappings` so that
 models:
   - name: events
     meta:
-      rakam:
+      metriql:
 	      mappings:
 	        event_timestamp: event_occurred_at
 	        userId: user_id
@@ -101,16 +101,16 @@ seeds:
     docs:
       show: true
     meta:
-      rakam:
+      metriql:
         measures:
         #
     columns:
       - name: iso_code
         meta:
-          rakam.dimension:
+          metriql.dimension:
       - name: user_friendly_name
         meta:
-          rakam.dimension: 
+          metriql.dimension: 
             type: string
 models:
   - name: pageviews
@@ -121,7 +121,7 @@ models:
           - relationships:
               to: ref('countries')
               field: iso_code
-              rakam: # Includes info about the relationship
+              metriql: # Includes info about the relationship
                    join: left_join 
                    type: many_to_many
 ```

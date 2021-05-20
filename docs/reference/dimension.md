@@ -12,7 +12,7 @@ One of `column`, and `sql` should be set in order to define the dimensions under
 models:
    - name: events
      meta:
-        rakam:
+        metriql:
           dimensions:
           	location:
           	   sql: CONCAT({TABLE}.country, {TABLE}.city)

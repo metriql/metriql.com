@@ -22,7 +22,7 @@ models:
           - relationships:
               to: ref('countries')
               field: iso_code
-              rakam: # Includes info about the relationship
+              metriql: # Includes info about the relationship
                    type: left_join 
                    relationship: many_to_many
 ```
@@ -39,7 +39,7 @@ seeds:
 models:
   - name: pageviews
     meta:
-      rakam:
+      metriql:
         relations:
           countries:
             to: ref('countries')
@@ -132,7 +132,7 @@ Rather than calculating the number of unique users who came from a specific camp
       relationship: many_to_one
       type: left_join
       to: ref('ad_networks')
-      sql: '{TARGET}}id = {relation.campaign.dimension.ad_network_id}'
+      sql: '{TARGET}.id = {relation.campaign.dimension.ad_network_id}'
 ```
 
 Since you're `sql` references the `campaign` relation in `events` model, the join statements for both `campaigns` and `ad_networks` model will be included automatically when you select a dimension from `ad_network` model.

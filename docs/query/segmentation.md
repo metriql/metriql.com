@@ -23,7 +23,7 @@ sources:
         columns:
           - name: country
           - nps:
-              rakam.measure:
+              metriql.measure:
                  - average
 ```
 
@@ -77,3 +77,7 @@ with top_users_by_country AS (
 )
 select * from top_users_by_country
 ```
+
+:::tip
+If you have [event_timestamp](/reference/mapping#event_timestamp) mapping, the dataset will be marked as time-series data.
+:::

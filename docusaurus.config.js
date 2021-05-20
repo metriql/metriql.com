@@ -10,7 +10,7 @@ if (!process.env.CONTEXT || process.env.CONTEXT == 'production') {
 
 var ALGOLIA_API_KEY;
 if (!process.env.ALGOLIA_API_KEY) {
-  ALGOLIA_API_KEY = '68c0488de48d64722725e38c6c44f2ec';
+  ALGOLIA_API_KEY = 'ca56d2ec2d55ebbf3e47dbb455ab5d08';
 } else {
   ALGOLIA_API_KEY = process.env.ALGOLIA_API_KEY;
 }
@@ -24,7 +24,7 @@ if (!process.env.CONTEXT || process.env.CONTEXT == 'production') {
 
 var ALGOLIA_INDEX_NAME;
 if (!process.env.ALGOLIA_INDEX_NAME) {
-  ALGOLIA_INDEX_NAME = 'metriql-docs';
+  ALGOLIA_INDEX_NAME = 'metriql';
 } else {
   ALGOLIA_INDEX_NAME = process.env.ALGOLIA_INDEX_NAME;
 }

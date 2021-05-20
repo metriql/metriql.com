@@ -10,14 +10,14 @@ Measures are the business metrics that calculate a value for a model. Here are a
 
 ### `dimension: | column: | sql:`
 
-One of `dimension`, `column`, and `sql` should be set in order to define the measures under `model.meta.rakam.measures`. If it's not set, the measure simply counts the all rows (i.e. `count(*)`). Here are a few examples:
+One of `dimension`, `column`, and `sql` should be set in order to define the measures under `model.meta.metriql.measures`. If it's not set, the measure simply counts the all rows (i.e. `count(*)`). Here are a few examples:
 
 
 ```yml title="models/events.yml"
 models:
    - name: events
      meta:
-        rakam:
+        metriql:
           measures:
 				total_rows:
 				   aggregation: count

@@ -19,7 +19,7 @@ Most of the data people feel comfortable with Python, and some even hate the JVM
 
 [<b>Minerva</b>](https://medium.com/airbnb-engineering/how-airbnb-achieved-metric-consistency-at-scale-f23cc53dea70) is Airbnb's internal metrics platform. We only know quite a few information as there is only one blog post about it and it's not open-source yet. It's an end-to-end tool, from data ingestion to serving layer and people interact with the metrics via an API. While it looks like a great idea, not all the companies have the luxury to implement an architecture as Airbnb. metriql works on top of your data-warehouse and it makes use of [Aggregates](/advanced/aggregates) for rollup tables which doesn't move the data out of your data warehouse. It's just the metadata layer for your data, not an end-to-end tool. 
 
-[<b>Cube.js</b>](http://cube.dev) is a analytics backend for embedded applications. It lets data people define the metrics in Javascript and build an API for their data. Cube has integrations with most of the front-end frameworks so that you can build custom user interfaces for your internal applications. They also have two level caching mechanism similar to metriql's [Aggregates](/advanced/aggregates) but they ingest the data into its own storage, built with Rust. Cube is more suitable if your data is already modeled and you're building an high concurrency analytical application as it doesn't provide data lineage and ingest the data through its own storage. 
+[<b>Cube.js</b>](http://cube.dev) is an backend for embedded applications. It lets data people define the metrics in Javascript and build an API for their data. Cube has integrations with most of the front-end frameworks so that you can build custom user interfaces for your internal applications. They also have two level caching mechanism similar to metriql's [Aggregates](/advanced/aggregates) but they ingest the data into its own storage, built with Rust. Cube is more suitable if your data is already modeled and you're building an high concurrency analytical application as it doesn't provide data lineage and ingest the data through its own storage. 
 
 #### 3. What's Rakam, and how it's related to metriql?
 
@@ -27,7 +27,7 @@ Rakam, Inc. is the company that built metriql. We use dbt internally for the las
 
 #### 4. Do I need to use dbt for metriql?
 
-If your data is already modeled, you can use dbt's [sources](https://docs.getdbt.com/docs/building-a-dbt-project/using-sources) to create datasets in metriql. [Here is an example project)(https://github.com/rakam-recipes/tenjin) that doesn't need any transformation.
+If your data is already modeled, you can use dbt's [sources](https://docs.getdbt.com/docs/building-a-dbt-project/using-sources) to create datasets in metriql. [Here is an example project](https://github.com/rakam-recipes/tenjin) that doesn't need any transformation.
 
 #### 4. Does metriql run my dbt models?
 

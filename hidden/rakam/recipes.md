@@ -10,4 +10,4 @@ The recipes correspond to dbt projects, an open-source data modeling tool by Fis
 
 Once you create [your first recipe](https://docs.rakam.io/docs/introduction#creating-your-own-recipe), you can create your first model from your tables in your database. In dbt, the resource is called as `source`. 
  
-In order to create a source, click the `+ Create` dropdown in the sidebar, click the `Create file` button and select the tables that you're going to analyze. Once you import the tables, The IDE will create a dbt resource file that can be modified for your use case. 
+To create a source, click the `+ Create` dropdown in the sidebar, click the `Create file` button and select the tables that you're going to analyze. Once you import the tables, The IDE creates a dbt resource file that can be modified for your use case. 

@@ -10,7 +10,7 @@ models:
   - name: customers
     description: List of customers
     meta:
-     rakam:
+     metriql:
       [label](#label): Customers
       [hidden](#hidden): false
       [measures](measure):
@@ -40,7 +40,7 @@ models:
        country:
          description: The country the user signed up from
          meta:
-           rakam.dimension:
+           metriql.dimension:
               [type](field#type) string
               [label](field#label) User Country
               [category](field#category) Location
@@ -49,12 +49,12 @@ models:
               [name](field#name) location_country
        created_at:
          meta:
-           rakam.dimension:
+           metriql.dimension:
               type: timestamp
               [timeframes](dimension#timeframes) [day, week, month, year] # only available for timestamp columns
        total_sales:
          meta:
-           rakam.measure:
+           metriql.measure:
               [aggregation](measure#aggregation) sum
 ```
 
@@ -85,18 +85,18 @@ There are two ways to define a measure; under `<model l seed | source>.columns.m
 ```yml
 created_at:
     meta:
-        rakam.measure:
+        metriql.measure:
             aggregation: count_unique
             column: user_id
 ```
 
- or `<model l seed | source>.meta.rakam.measures` for measures that will be written as SQL:
+ or `<model l seed | source>.meta.metriql.measures` for measures that will be written as SQL:
 
 ```yml
 models:
        - name: facebook_ads
          meta:
-              rakam:
+              metriql:
                    measures:
                         custom_measure:
 	                     aggregation: sum
@@ -112,18 +112,18 @@ There is two ways to define a dimension; under `<model l seed | source>.columns.
 ```yml
 created_at:
          meta:
-           rakam.dimension:
+           metriql.dimension:
 	      type: timestamp
 	      timeframes: [day, week, month, year] # only available for timestamp columns
 ```
 
- or `<model l seed | source>.meta.rakam.dimension` for measures that will be written as SQL:
+ or `<model l seed | source>.meta.metriql.dimension` for measures that will be written as SQL:
 
 ```yml
 models:
        - name: facebook_ads
          meta:
-              rakam:
+              metriql:
                    dimensions:
                         custom_dimension:
 	                     sql: "{{TABLE}}.column1 * 2"
@@ -137,7 +137,7 @@ The relations in between the models can be defined under `<model l seed | source
 models:
        - name: events
          meta:
-              rakam:
+              metriql:
                    relations:
                         user_attributes:
 	                     model: users

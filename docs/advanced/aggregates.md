@@ -17,7 +17,7 @@ sources:
      tables:
         - name: pageview
           meta:
-             - rakam:
+             - metriql:
                   mappings:
                       - event_timestamp: occurred_at
                   aggregates:
