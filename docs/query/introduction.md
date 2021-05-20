@@ -107,25 +107,67 @@ filters: [{dimension: is_upgraded, operator: is, value: true}]
 
 ##### Relative values
 
-When you select a
+You can add timestamp filters relative to current timestamp as follows:
+
+```yml
+filters: [{dimension: created_at, operator: between, value: '1 day'}]
+```
+
+The filter above compiles to the following SQL:
+
+```sql
+WHERE 
+    created_at >= CAST(DATEADD(DAY, -1, to_date(date_trunc('day', CURRENT_TIMESTAMP)) AS TIMESTAMP)) 
+    AND created_at < CAST(DATEADD(DAY, 1, to_date(date_trunc('day', CURRENT_TIMESTAMP)) AS TIMESTAMP))
+```
+
+metriql filters the data from the beginning of previous day to the end of current day for `1 day`.
+
+The date period can be one of `minute`, `hour`, `day`, `week`, `month`, `year`. metriql also supports the plural versions such as `minutes`.
 
 ##### Absolute values
 
----
+If you want to select based on absolute date intervals, the value must be an object as follows:
+
+```yml
+filters: [{dimension: created_at, operator: between, value: {start: '2020-01-10', end: '2020-01-20'}}]
+```
+
+The filter above compiles to following SQL:
+
+```sql
+created_at >= CAST('2020-01-10' AS TIMESTAMP) AND created_at < CAST('2020-01-20' AS TIMESTAMP)
+```
+
+:::tip
+If you set the timezone defined in your config file, all the timestamp references are wrapped with timezone conversion function. For example, in Snowflake it's `CONVERT_TIMEZONE('UTC', CAST('2020-01-20' AS TIMESTAMP))`
+:::
+
 #### For `date`:
 
-`equals`, `less_than`, `greater_than`, `between`
+`equals`, `less_than`, `greater_than`, `between`. The value ben be defined as absolute or relative values similar to timestamp type.
 
 ---
 #### For `time`:
 
-`equals`, `less_than`, `greater_than`
+`equals`, `less_than`, `greater_than`. The value should be a string as follows:
+
+```yml
+filters: [{dimension: occurred_at_time, operator: equals, value: '16:00'}]
+```
+
+If you set the timezone defined in your config file, the time value will be shifted for your timezone.
 
 ---
 #### For `array_string`:
 
-`includes`, `not_includes`
+`includes`, `not_includes`.
 
+```yml
+filters: [{dimension: items, operator: includes, value: 'array_item'}]
+```
+
+metriql actually has types `array_*` for all primitives
 
 ### Referencing fields from other datasets through relations
 
