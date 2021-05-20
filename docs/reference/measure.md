@@ -65,7 +65,7 @@ You can restrict a measure to aggregate only certain dimension values, without a
 ```yml
 event_last_week:
    aggregation: count
-   filters: [{dimension: occurred_at, value: 1 week, operator: between}]
+   filters: [{dimension: occurred_at, operator: between, value: '1 week'}]
 ```
 
 The measure above compiles to the following SQL expression:
@@ -73,3 +73,5 @@ The measure above compiles to the following SQL expression:
 ```sql
 COUNT(CASE WHEN WEEK(now(), occurred_at) < 1 THEN NULL ELSE 1)
 ```
+
+Learn more about the filter operators [here](/query/introduction/#measure).

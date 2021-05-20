@@ -56,7 +56,7 @@ dimension_name::time_of_day
 ```
 
 
-## Filters
+## Filter
 
 You can filter the datasets by its dimensions and measures. There are different operators avaiable for different types.
 
@@ -82,6 +82,7 @@ You can filter the datasets by its dimensions and measures. There are different 
 filters: [{measure: vendor_type, operator: is_set}]
 ```
 
+---
 #### For `integer`, `decimal`, `double`, `long`:
 
 `not_equals` , `less_than`, `equals`, `greater_than`. The value must be a numeric value
@@ -90,6 +91,7 @@ filters: [{measure: vendor_type, operator: is_set}]
 filters: [{measure: time_spent_on_page, operator: greater_than, value: 10}]
 ```
 
+---
 #### For `boolean`:
 
 `is` can be used for boolean equity check. The value can be either `true` or `false`
@@ -98,6 +100,7 @@ filters: [{measure: time_spent_on_page, operator: greater_than, value: 10}]
 filters: [{dimension: is_upgraded, operator: is, value: true}]
 ```
 
+---
 #### For `timestamp`:
 
 `equals`, `less_than`, `greater_than`, `between`. The value ben be defined as absolute or relative values.
@@ -108,15 +111,17 @@ When you select a
 
 ##### Absolute values
 
-
+---
 #### For `date`:
 
 `equals`, `less_than`, `greater_than`, `between`
 
+---
 #### For `time`:
 
 `equals`, `less_than`, `greater_than`
 
+---
 #### For `array_string`:
 
 `includes`, `not_includes`
