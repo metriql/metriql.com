@@ -17,7 +17,7 @@ if (!process.env.ALGOLIA_API_KEY) {
 
 var GIT_BRANCH;
 if (!process.env.CONTEXT || process.env.CONTEXT == 'production') {
-  GIT_BRANCH = 'current';
+  GIT_BRANCH = 'main';
 } else {
   GIT_BRANCH = process.env.HEAD;
 }
