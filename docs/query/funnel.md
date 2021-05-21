@@ -19,7 +19,7 @@ steps:
   - dataset: transaction
 [dimension](#dimension):
 [window](#window): {value: 1, type: hour} # the maximum time period in between the events
-[connector](#connector): user_id # optional, the default is [user_id mapping](/reference/manning#user_id)
+[connector](#connector): user_id # optional, the default is [user_id mapping](/reference/mapping#user_id)
 ```
 
 metriql compiles the funnel query above to a SQL query if you're using Postgresql as follows:
