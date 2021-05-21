@@ -177,7 +177,7 @@ module.exports = {
       //   src: 'img/oss_logo.png',
       //   href: 'https://rakam.io',
       // },
-      copyright: `From the makers of <a href="https://rakam.io">rakam</a>`,
+      copyright: `From the makers of <a href="https://rakam.io" target="_blank">rakam</a>`,
     },
   },
   presets: [
