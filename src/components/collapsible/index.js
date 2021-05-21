@@ -11,11 +11,11 @@ function Collapsible({children, header, expand}) {
 
   return (
     <>
-        <h2 onClick={toggleExpanded}>
+        <h4 onClick={toggleExpanded} style={{cursor:'pointer'}}>
             { expanded ?  '➖'  : '➕' }
             {header}
-        </h2>
-        { expanded ? children : <span>Click to expand</span> }
+        </h4>
+        { expanded ? children : '' }
     </>
   );
 }
