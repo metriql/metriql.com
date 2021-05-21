@@ -2,9 +2,9 @@
 title: "Relation properties"
 sidebar_position: 5
 ---
-Relations enable the non-technical users to use dimensions and measures from other datasets when there is a relation between the source dataset and the target datasets. Typically, Rakam generates JOIN statements in SQL.
+Relations enable the non-technical users to use dimensions and measures from other datasets when there is a relation between the source dataset and the target datasets. Typically, metriql generates JOIN statements in SQL.
 
-There are two different ways to define the relations, either via `relationships` test in dbt or under `meta.rakam.relations` in you have more complex logic.
+There are two different ways to define the relations, either via `relationships` test in dbt or under `meta.metriql.relations` in you have more complex logic.
 
 #### Creating relation via dbt test
 
@@ -27,9 +27,9 @@ models:
                    relationship: many_to_many
 ```
 
-#### Creating relation via `meta.rakam`
+#### Creating relation via `meta.metriql`
 
-In some cases, you need to write a SQL expression to build up a relation between the datasets. In this case, you can use `meta.rakam.relations` as follows:
+In some cases, you need to write a SQL expression to build up a relation between the datasets. In this case, you can use `meta.metriql.relations` as follows:
 
 ```yml
 seeds:

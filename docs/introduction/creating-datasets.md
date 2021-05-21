@@ -3,7 +3,7 @@ title: "Creating Datasets"
 sidebar_position: 3
 ---
 
-A dataset represents a dataset in your data warehouse. Rakam automatically creates datasets from your dbt [`models`](https://docs.getdbt.com/docs/building-a-dbt-project/building-models), [`sources`](https://docs.getdbt.com/docs/building-a-dbt-project/using-sources), and [`seeds`](https://docs.getdbt.com/docs/building-a-dbt-project/seeds). You can also semantically define your datasets as SQL using our [`view`](https://docs.rakam.io/docs/semantic-models) resource in a semantic way.
+A dataset represents a dataset in your data warehouse. metriql automatically creates datasets from your dbt [`models`](https://docs.getdbt.com/docs/building-a-dbt-project/building-models), [`sources`](https://docs.getdbt.com/docs/building-a-dbt-project/using-sources), and [`seeds`](https://docs.getdbt.com/docs/building-a-dbt-project/seeds). 
 
 A dataset has three important properties:
 
@@ -13,9 +13,7 @@ A dataset has three important properties:
 
 **relation** defines a join in between the datasets. metriql automatically generates SQL join logic to bring in all fields from another dataset correctly then the user analyzes a specific dataset.
 
-Rakam makes use of dbt as the data modeling language by extending dbt for metric definition. Your dbt projects can be integrated to Rakam via GIT and we automatically synchronize the dbt `models`, `seeds`, and `sources`. However; dbt doesn't know about business metrics (aka. `measures`) so we have an additional field that will be used inside `yml` files.
-
-## Integrate dbt models
+## Integrate existing dbt models
 
 You can map your columns as dimensions and measures under the `meta` property of `columns` as follows:
 
@@ -77,7 +75,7 @@ sources:
                 type: string
 ```
 
-If you're analyzing the time-series data, you can also define `mappings` so that Rakam understands your data in a better way and lets you access specific features such as funnel and retention:
+If you're analyzing the time-series data, you can also define `mappings` so that metriql understands your data in a better way and lets you access specific features such as funnel and retention:
 
 
 ```yml
@@ -132,7 +130,7 @@ metriql automatically creates the relation from `pageview` to a hidden `countrie
 
 We make use of your dbt test definitions in order to understand your data in a better way. Here is the list of column tests we currently support:
 
-* `unique` enables Rakam to be able to calculate symmetric aggregates as there must be a unique key in a model.
+* `unique` enables metriql to be able to calculate symmetric aggregates as there must be a unique key in a model.
 * `not_null` hides the `is not set` filter to the user in the user interface.
-* `accepted_values` makes Rakam suggests the values to the end-user in the user interface. It disables the automatic suggestion in favor of performance.
+* `accepted_values` makes metriql suggests the values to the end-user in the user interface. It disables the automatic suggestion in favor of performance.
 * `relationships` automatically creates the relations between the models. We extend it with `join` and `type` properties in order to resolve the relation.

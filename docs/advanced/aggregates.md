@@ -9,7 +9,7 @@ Aggregates speed up your reports by creating roll-up models as part of your dbt 
 2. If you're building consumer-facing applications that need to run queries in low latency. (i.e. embedded analytics)
 3. If you don't want to spend time writing basic roll-up models in your dbt project.
 
-In order to make use of aggregates, you can use `aggregates`  property under `source | model | seed.meta.rakam`. Here is an example:
+In order to make use of aggregates, you can use `aggregates`  property under `source | model | seed.meta.metriql`. Here is an example:
 
 ```yml
 sources:
@@ -27,7 +27,7 @@ sources:
                          filters: [{dimension: platform, operator: equals, value: Android}]
 ```
 
-When you create the model above, Rakam will create a dbt model called `events_pageview_event_counts` with the following SQL:
+When you create the model above, metriql will create a dbt model called `events_pageview_event_counts` with the following SQL:
 
 ```sql
 {{ config(materialized='incremental') }}
@@ -41,4 +41,4 @@ We automatically create an `incremental` model because you have `event_timestamp
 
 If the users run a segmentation query with `total_events` measure, the system figures out that this data is available in `events_pageview_event_counts` model and makes use of this aggregated table instead of the `pageview` table. It can speed up the reports dramatically based on the number of rows in the `events` table because  `events_pageview_event_counts` model has only a few thousand row whereas `events` table potentially has billions of rows.
 
-If your model has an `event_timestamp` mapping, we require the dimension to be included in the `aggregate.dimensions` in order to be able to use in our `segmentation` reports because we require a date filter in the user interface. If you have `day` timeframe for a timestamp dimension reference, Rakam can also make use of the aggregated table for other timeframes such as `week`, 'month', or `year` automatically.
+If your model has an `event_timestamp` mapping, we require the dimension to be included in the `aggregate.dimensions` in order to be able to use in our `segmentation` reports because we require a date filter in the user interface. If you have `day` timeframe for a timestamp dimension reference, metriql can also make use of the aggregated table for other timeframes such as `week`, 'month', or `year` automatically.

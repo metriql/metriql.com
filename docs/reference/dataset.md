@@ -131,7 +131,7 @@ models:
 
 ### `relations:`
 
-The relations in between the models can be defined under `<model l seed | source>.meta.rakam.relations` as follows:
+The relations in between the models can be defined under `<model l seed | source>.meta.metriql.relations` as follows:
 
 ```yml
 models:
@@ -148,9 +148,9 @@ models:
 
 ### `aggregates:`
 
-Aggregates should be defined under `<model | seed | source>.meta.rakam.aggregates`. You can see the [Aggregate properties](aggregate-properties) ] or learn more about the concept on [Aggregates](/advanced/aggregates).
+Aggregates should be defined under `<model | seed | source>.meta.metriql.aggregates`. You can see the [Aggregate properties](aggregate-properties) ] or learn more about the concept on [Aggregates](/advanced/aggregates).
 
 
 ### `always_filters:`
 
-If you define `always_filters` for a `view`, the system pushes the relevant filter for all the queries that are executed in Rakam. 
+If you define `always_filters` for a `view`, the system pushes the relevant filter for all the queries that are executed in metriql. 
