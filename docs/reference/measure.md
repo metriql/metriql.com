@@ -74,4 +74,4 @@ The measure above compiles to the following SQL expression:
 COUNT(CASE WHEN WEEK(now(), occurred_at) < 1 THEN NULL ELSE 1)
 ```
 
-Learn more about the filter operators [here](/query/introduction/#measure).
+Learn more about the filter operators [here](/query/introduction/#filter).

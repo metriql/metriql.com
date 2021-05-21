@@ -4,7 +4,19 @@
      "version": "1.0.0",
      "title": "Metriql REST API"
    },
+   "security": [
+      {
+         "bearerAuth": []
+      }
+   ],
    "components": {
+     "securitySchemes": {
+      "bearerAuth": {
+         "type": "http",
+         "scheme": "bearer",
+         "bearerFormat": "JWT"
+      }
+     },
      "schemas": {
        "SegmentationQuery": {
          "properties": {
@@ -237,6 +249,8 @@
          "operationId": "CancelQuery",
          "parameters": [],
          "responses": {
+         "401": {
+         },
            "200": {
              "description": "Successful request",
              "content": {

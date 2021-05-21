@@ -52,7 +52,7 @@ metriql automatically maps all your columns as dimensions. If the column name ha
 If you're referencing a `date`, `timestamp`, `time` dimension, you can use the timeframes as follows:
 
 ```
-dimension_name::time_of_day
+dimension_name::[month_of_year](/reference/dimension#timeframes)
 ```
 
 
@@ -60,19 +60,25 @@ dimension_name::time_of_day
 
 You can filter the datasets by its dimensions and measures. There are different operators avaiable for different types.
 
-```javascript
-{
-    # one of `dimension` or `measure` is required
-    "dimension": "country", # adds a WHERE condition to the query. Use `:name` for referencing a mapping (ex. [`:user_id`](/reference/mapping#user_id))
-    "measure": "total_revenue", # adds a HAVING condition to the query
+Referencing dimensions in filter. You can also reference mappings with `:` prefix. For example, use [`:user_id`](/reference/mapping#user_id) in dimension if you want to filter by user_id.
+```yml
+filters: 
+ - dimensions: country # adds a WHERE condition to the query.
+   [operator](#operator): equals
+   value: value_for_operator
+```
 
-    # see [operators](#operator) for possible values
-    "operator": "equals", 
-    "value": "value_for_operator"
-}
+or, you can reference a measure in the filter:
+```yml
+filters: 
+ - measure: total_revenue # adds a HAVING condition to the query
+   [operator](#operator): equals
+   value: value_for_operator
 ```
 
 ### Operator
+
+For different [field types](/reference/field#type), metriql offers different operators to filter the data.
 
 #### For all types:
 
