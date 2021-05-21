@@ -3,9 +3,7 @@ title: "Creating Datasets"
 sidebar_position: 3
 ---
 
-A dataset represents a dataset in your data warehouse. metriql automatically creates datasets from your dbt [`models`](https://docs.getdbt.com/docs/building-a-dbt-project/building-models), [`sources`](https://docs.getdbt.com/docs/building-a-dbt-project/using-sources), and [`seeds`](https://docs.getdbt.com/docs/building-a-dbt-project/seeds). 
-
-A dataset has three important properties:
+A dataset represents a dataset in your data warehouse. metriql automatically creates datasets from your dbt [`models`](https://docs.getdbt.com/docs/building-a-dbt-project/building-models), [`sources`](https://docs.getdbt.com/docs/building-a-dbt-project/using-sources), and [`seeds`](https://docs.getdbt.com/docs/building-a-dbt-project/seeds). A dataset has three important properties:
 
 **dimension** lets you drill down into the dataset, it can be used to filter query results. It can be either a column in your table or a SQL expression that processes a single row and returns a value.
 
