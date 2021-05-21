@@ -26,13 +26,13 @@ with nps_by_customer AS (
 select * from nps_by_customer
 ```
 
-That way, you can reference your metrics in your SQL queries and transform that as you wish. The JDBC driver is built for integrating Metriql to your internal apps and third-party BI tools.
+That way, you can reference your metrics in your SQL queries and transform that as you wish. 
 
 The following Jinja functions are available in the context:
 
 ##### sql(type: string, options : object)
 ```
-It generates the SQL query for the `report type` given the report options. See the quer
+It generates the SQL query for the `report type` given the report options. See the [available report types](/query/introduction).
 
 ```
 
