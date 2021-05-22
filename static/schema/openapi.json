@@ -386,6 +386,59 @@
          "summary": "Execute query"
        }
      },
+     "/v0/sql": {
+      "post": {
+        "operationId": "CompileQuery",
+        "externalDocs": {
+          "description": "Learn more about report types",
+          "url": "https://metriql.com/query/introduction"
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "discriminator": {
+                  "propertyName": "type",
+                  "mapping": {
+                    "segmentation": "#/components/schemas/SegmentationQuery",
+                    "funnel": "#/components/schemas/FunnelQuery",
+                    "retention": "#/components/schemas/RetentionQuery",
+                    "sql": "#/components/schemas/SqlQuery"
+                  }
+                },
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/SegmentationQuery"
+                  },
+                  {
+                    "$ref": "#/components/schemas/FunnelQuery"
+                  },
+                  {
+                    "$ref": "#/components/schemas/RetentionQuery"
+                  },
+                  {
+                    "$ref": "#/components/schemas/SqlQuery"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Compile SQL query"
+      }
+    },
      "/v0/update-manifest": {
        "put": {
          "description": "",
