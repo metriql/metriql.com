@@ -50,9 +50,7 @@ models:
 	            type: string
 ```
 
-You can see the full list of properties that you can use under `model.meta` and `column.meta` here.
-
-[comment]: <> (the word here should be a hyperlink that redirects to another page)
+You can see the full list of properties that you can use under `model.meta` and `column.meta` [here](/reference/dataset.md).
 
 ## Mapping sources as models
 
