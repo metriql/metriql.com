@@ -4,7 +4,7 @@ sidebar_position: 5
 ---
 Relations enable the non-technical users to use dimensions and measures from other datasets when there is a relation between the source dataset and the target datasets. Typically, metriql generates JOIN statements in SQL.
 
-There are two different ways to define the relations, either via `relationships` test in dbt or under `meta.metriql.relations` in you have more complex logic.
+There are two different ways to define the relations, either via `relationships` test in dbt or under `meta.metriql.relations` if you have more complex logic.
 
 #### Creating relation via dbt test
 
@@ -29,7 +29,7 @@ models:
 
 #### Creating relation via `meta.metriql`
 
-In some cases, you need to write a SQL expression to build up a relation between the datasets. In this case, you can use `meta.metriql.relations` as follows:
+In some cases, you need to write an SQL expression to build up a relation between the datasets. In this case, you can use `meta.metriql.relations` as follows:
 
 ```yml
 seeds:
@@ -55,8 +55,8 @@ Here is the full list of properties that you can use:
 Available values are `one_to_one`, `one_to_many`, `many_to_many`, and `many_to_many`.
 
 The default is:
-```
-type: one_to_one
+```yml
+relationship: one_to_one
 ```
 
 ### `type:`
@@ -70,28 +70,28 @@ LEFT JOIN target ON (source.source_col = target.target_col)
 ```
 
 The default is:
-```
+```yml
 type: left_join
 ```
 ### `label:`
 The value that will be visible in the user interface. The default value is the relation name but you can override it as follows:
 
-```
+```yml
 label: Countries
 ```
 
 ### `description:`
 
 Example:
-```
+```yml
 label: The country the user signed up from
 ```
 
 ### `hidden:`
-Hides the relation in the user interface. It's useful in case you want to test the relationship in the ELT layer with dbt but hide it from the end-users.
+Hides the relation in the user interface. It's useful in case you want to test the relationship in the ELT layer with dbt but hide it from the end users.
 
-Default:
-```
+The default is:
+```yml
 hidden: false
 ```
 
@@ -135,4 +135,4 @@ Rather than calculating the number of unique users who came from a specific camp
       sql: '{TARGET}.id = {relation.campaign.dimension.ad_network_id}'
 ```
 
-Since you're `sql` references the `campaign` relation in `events` model, the join statements for both `campaigns` and `ad_networks` model will be included automatically when you select a dimension from `ad_network` model.
+Since your `sql` references the `campaign` relation in `events` model, the join statements for both `campaigns` and `ad_networks` model will be included automatically when you select a dimension from `ad_network` model.

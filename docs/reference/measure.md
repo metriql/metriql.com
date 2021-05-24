@@ -10,7 +10,7 @@ Measures are the business metrics that calculate a value for a model. Here are a
 
 ### `dimension: | column: | sql:`
 
-One of `dimension`, `column`, and `sql` should be set in order to define the measures under `model.meta.metriql.measures`. If it's not set, the measure simply counts the all rows (i.e. `count(*)`). Here are a few examples:
+You should set either `dimension`, `column`, or `sql` in order to define the measures under `model.meta.metriql.measures`. If it's not set, the measure simply counts the all rows (i.e. `count(*)`). Here are a few examples:
 
 
 ```yml title="models/events.yml"
@@ -19,7 +19,7 @@ models:
      meta:
         metriql:
           measures:
-				total_rows:
+			   total_rows:
 				   aggregation: count
 				unique_users:
 				   aggregation: count_unique
@@ -34,7 +34,8 @@ Please note that these fields are not required under `column.meta` as they point
 
 **`dimension:`** references the dimensions within the same model.
 
-**`sql:`** lets you define the complex expression, where column type measure is not capable of. 
+**`sql:`** lets you define complex expressions that column type measure is not capable of. 
+
 For referencing other entities inside a measure checkout the [SQL Context](/advanced/sql-context).
 
 ### `aggregation:`
@@ -53,7 +54,7 @@ total_users:
 
 `aggregation` is not required if the `sql` is defined. Here is an example:
 
-```
+```yml
 total_events_user_ratio:
 	sql: {{measure.total_rows}} / {{measure.total_users}} 
 ```

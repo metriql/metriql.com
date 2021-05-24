@@ -6,7 +6,7 @@ Dimensions let you drill down a model by filtering, grouping, and pivoting. They
 
 ### `column: | sql:`
 
-One of `column`, and `sql` should be set in order to define the dimensions under `dimension`. If your data is already modeled and clean, a model usually points to a table in your database, and dimensions point to the columns under the table. If you're using complex types such as JSON, you can define dimensions by making use of `sql`.
+You should set either `column` or `sql` in order to define the dimensions under `model.meta.metriql.dimensions`. If your data is already modeled and clean, a model usually points to a table in your database, and dimensions point to the columns under the table. If you're using complex types such as JSON, you can define dimensions by making use of `sql`.
 
 ```yml
 models:
