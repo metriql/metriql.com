@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Segmentation
 
-Segmentation lets you analyze the data with `measure` and `dimension` pairs. You select a dataset using `dataset` property and specify the measures and dimensions under the dataset as part of the request, and a SQL query is generated depending on the field definitions. You can also `filter` the data using field references.
+Segmentation lets you analyze the data with `measure` and `dimension` pairs. You select a dataset using `dataset` property and specify the measures and dimensions under the dataset as part of the request, and an SQL query is generated depending on the field definitions. You can also `filter` the data using field references.
 
 Here is an example dataset:
 

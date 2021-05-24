@@ -31,15 +31,15 @@ That way, you can reference your metrics in your SQL queries and transform that 
 The following Jinja functions are available in the context:
 
 ##### sql(type: string, options : object)
-```
+
 It generates the SQL query for the `report type` given the report options. See the [available report types](/query/introduction).
 
-```
+
 
 ##### var(name : string)
-```
+
 It returns the variable given by `--vars` options to the REST server.
-```
+
 
 ### limit
 
