@@ -5,9 +5,9 @@ sidebar_position: 3
 
 A dataset represents a dataset in your data warehouse. metriql automatically creates datasets from your dbt [`models`](https://docs.getdbt.com/docs/building-a-dbt-project/building-models), [`sources`](https://docs.getdbt.com/docs/building-a-dbt-project/using-sources), and [`seeds`](https://docs.getdbt.com/docs/building-a-dbt-project/seeds). A dataset has three important properties:
 
-**dimension** lets you drill down into the dataset, it can be used to filter query results. It can be either a column in your table or a SQL expression that processes a single row and returns a value.
+**dimension** lets you drill down into the dataset, it can be used to filter query results. It can be either a column in your table or an SQL expression that processes a single row and returns a value.
 
-**measure** is a field that uses a SQL aggregate function, such as `count`, `sum`, or `average`. Measures can be used to aggregate dimensions. For example, measures for a `Sales` model might include total items sold (a count), total sales price (a sum), and the average sales price (an average). 
+**measure** is a field that uses anSQL aggregate function, such as `count`, `sum`, or `average`. Measures can be used to aggregate dimensions. For example, measures for a `Sales` model might include total items sold (a count), total sales price (a sum), and the average sales price (an average). 
 
 **relation** defines a join in between the datasets. metriql automatically generates SQL join logic to bring in all fields from another dataset correctly then the user analyzes a specific dataset.
 
@@ -51,6 +51,8 @@ models:
 ```
 
 You can see the full list of properties that you can use under `model.meta` and `column.meta` here.
+
+[comment]: <> (the word here should be a hyperlink that redirects to another page)
 
 ## Mapping sources as models
 
