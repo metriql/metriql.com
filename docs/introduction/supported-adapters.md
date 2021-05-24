@@ -4,9 +4,9 @@ sidebar_position: 2
 
 # Supported adapters
 
-We use dbt's `profiles.yml` files when connecting your databases. If you didn't setup dbt yet, please go through the [dbt documentation](https://docs.getdbt.com/reference/profiles.yml/). Once you setup your database profiles, metriql CLI reads your [`profiles.yml`](/metriql-cli/cli-overview) file and connect your database using these credentials.
+We use dbt's `profiles.yml` files when connecting to your databases. If you haven't set up dbt yet, please go through the [dbt documentation](https://docs.getdbt.com/reference/profiles.yml/). Once you set up your database profiles, metriql CLI reads your [`profiles.yml`](/metriql-cli/cli-overview) file and connects to your database using these credentials.
 
-metriql doesn't support all the dbt adapters at the moment because unlike dbt, metriql needs to understand the SQL dialect and generate relevant SQL expressions when you run ad-hoc questions. Here is the list of adapters metriql supports:
+metriql doesn't support all the dbt adapters at the moment because, unlike dbt, metriql needs to understand the SQL dialect and generate relevant SQL expressions when you run ad-hoc questions. Here is the list of adapters metriql supports:
 
 | Adapter for | Added version | Supported by dbt | Available report types                       | Documentation                                              |
 |-------------|---------------|------------------|----------------------------------------------|------------------------------------------------------------|
@@ -21,4 +21,4 @@ metriql doesn't support all the dbt adapters at the moment because unlike dbt, m
 
 # Creating a new adapter
 
-You can build new adapters using our SPI, build a JAR and include it in the classpath. See [Creating new adapter](/contributing/creating-new-adapter)
+You can build new adapters using our SPI, build a JAR, and include it in the classpath. See [Creating new adapter](/contributing/creating-new-adapter)
