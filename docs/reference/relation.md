@@ -97,7 +97,17 @@ hidden: false
 
 ## Symmetric Aggregates
 
-If there is a
+If there is a `one_to_many` or `many_to_many` in between the two datasets, joining fields form multiple datasets and result in invalid calculation of measures. You may run [into](https://stackoverflow.com/questions/59881785/sql-aggregation-function-to-choose-the-only-value) [this](https://stackoverflow.com/questions/4611897/group-by-aggregate-function-confusion-in-sql) [problem](https://stackoverflow.com/questions/3333541/aggregate-functions-return-wrong-values-when-joining-more-tables) [dealing](https://stackoverflow.com/questions/20547503/left-outer-join-on-aggregate-queries) [with](https://stackoverflow.com/questions/14140288/mysql-aggregate-functions-in-query-with-two-joins-gives-unexpected-results) [SQL](https://community.cloudera.com/t5/Support-Questions/aggregate-function-with-join-gives-wrong-value-in-hive/m-p/152203) but there is not an easy [solution](https://fivetran.com/blog/how-to-use-measures-with-one-to-many-joins). metriql automatically finds out the symmetric issues depending on the [`aggregation`](/reference/measure#aggregation) of your measure and uses your [primary key dimension](/reference/dimension#primary) to calculate the correct measures. 
+
+It uses the following algorithm from [Looker](https://help.looker.com/hc/en-us/articles/360023722974-A-Simple-Explanation-of-Symmetric-Aggregates-or-Why-On-Earth-Does-My-SQL-Look-Like-That-);
+
+```sql
+SUM(DISTINCT big_unique_number + total) - SUM(DISTINCT big_unique_number)
+```
+
+:::warning
+If you don't have a dimension marked as [primary key](/reference/dimension#primary), metriql can't generate the SQL query and throws an exception.
+:::
 
 ## Self joins
 You can join the same table or model more than once by specifying multiple join relations with different names. Here is an example:

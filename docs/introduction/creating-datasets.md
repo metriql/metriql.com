@@ -128,7 +128,7 @@ metriql automatically creates the relation from `pageview` to a hidden `countrie
 
 We make use of your dbt test definitions in order to understand your data in a better way. Here is the list of column tests we currently support:
 
-* `unique` enables metriql to be able to calculate symmetric aggregates as there must be a unique key in a model.
+* `unique` marks the dimension as primary key. metriql needs a primary key dimension to calculate [symmetric aggregates](/reference/relation/#symmetric-aggregates) as there must be a unique key in a model.
 * `not_null` hides the `is not set` filter to the user in the user interface.
 * `accepted_values` makes metriql suggests the values to the end-user in the user interface. It disables the automatic suggestion in favor of performance.
 * `relationships` automatically creates the relations between the models. We extend it with `join` and `type` properties in order to resolve the relation.

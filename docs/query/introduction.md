@@ -34,21 +34,30 @@ models:
     meta:
       metriql:
         measures:
-          *total_events*:
+          total_events:
             aggregation: count
     columns:
       - name: revenue
         meta:
           metriql.measure:
             aggregation: sum
-            name: *total_revenue*
+            name: total_revenue
 ```
 
 For the `events` dataset here, `total_events` and `total_revenue` are the available measures that you can reference in the queries.
 
 ## Dimension
 
-metriql automatically maps all your columns as dimensions. If the column name has non-ascii characters
+metriql automatically maps all your columns as dimensions. If the column name has non-ascii characters, you should define `name` of the dimension explicitly to be able to reference as follows:
+
+```yml
+columns:
+    - name: "test column"
+    meta:
+        metriql.dimension:
+        name: test_column
+```
+
 If you're referencing a `date`, `timestamp`, `time` dimension, you can use the timeframes as follows:
 
 ```
@@ -167,13 +176,17 @@ If you set the timezone defined in your config file, the time value will be shif
 ---
 #### For `array_string`:
 
-`includes`, `not_includes`.
+`includes`, `not_includes`. You can use the filters as follows:
 
 ```yml
 filters: [{dimension: items, operator: includes, value: 'array_item'}]
 ```
 
-metriql actually has types `array_*` for all primitives
+metriql actually has types `array_*` for all primitive types and the value can be set based on the primitive type as follows:
+
+```yml
+filters: [{dimension: array_integer_dimension, operator: includes, value: 4}]
+```
 
 ### Referencing fields from other datasets through relations
 
