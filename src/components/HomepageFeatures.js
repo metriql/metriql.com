@@ -4,29 +4,29 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Integrate with your dbt projects',
+    title: 'Define your metrics centrally',
     // Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        metriql integrates to dbt, an ELT tool from Fishtown Analytics. It has support for data lineage, tests, and documentation. metriql can create dbt roll-up models automaticly in order to save your time.
+        Metriql lets you define metrics centrally in a single place for once and all. No more defining metrics for each data tool you’re using. You can interact with the metrics using RESTful API or by embedding them in your SQL queries.
       </>
     ),
   },
   {
-    title: 'Define metrics for once and all',
+    title: 'Integrate with your dbt projects',
     // Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        You can interact with the metrics using RESTFul API, or just embed them inside your SQL. While metriql is new, we work hard to integrate it to third party tools, see the progress here.
+        Metriql integrates with dbt, an ELT tool from Fishtown Analytics and creates datasets from your dbt models. It also creates automatic dbt roll-up models to save data teams time and money.
       </>
     ),
   },
   {
-    title: 'Consume data in a reliable way',
+    title: 'Sync your metrics globally.',
     // Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Use metriql as the serving layer of your data. Connect it from your BI tool, use metriql API in SQL queries via JDBC or build embedded analytical applications using the REST API. 
+        Metriql serves as the central metric definition layer of your data. You can connect it to any other data tools you’re using via JDBC or you can build embedded analytics applications via REST API. 
       </>
     ),
   }
