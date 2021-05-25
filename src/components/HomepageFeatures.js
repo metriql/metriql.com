@@ -17,7 +17,7 @@ const FeatureList = [
     // Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Metriql integrates with <a target="_blank" href="https://getdbt.com">dbt</a>, an ELT tool from Fishtown Analytics and creates datasets from your dbt resources. It also creates automatic dbt roll-up models to save data teams time.
+        Metriql integrates with <a target="_blank" href="https://getdbt.com">dbt</a>, an ELT tool from Fishtown Analytics and creates datasets from your dbt resources. It also creates automatic dbt roll-up models to save data teams' time.
       </>
     ),
   },
