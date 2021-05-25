@@ -7,7 +7,7 @@ sidebar_position: 1
 
 When you model the data and create datasets, you can analyze the data using the REST API or JDBC Adapter. metriql provides different reporting features for different use-cases and lets you interact with the data in different ways.
 
-You use the `measure` and `dimension` references of your datasets, filter the data using them and calculate different metrics depending on the report type. See the available report types:
+You can use the `measure` and `dimension` references of your datasets, filter the data using them and calculate different metrics depending on the report type. See the available report types:
 
 | Name | Description | Mappings <br /><sub>(* is required)</sub> |
 |-------------|-------------|-------------|
@@ -18,7 +18,7 @@ You use the `measure` and `dimension` references of your datasets, filter the da
 
 
 :::tip
-If you're using metriql in a BI tool, you're mostly like be executing [Segmentation](segmentation) queries.
+If you're using metriql in a BI tool, you will most likely be executing [Segmentation](segmentation) queries.
 :::
 
 ---
@@ -60,16 +60,16 @@ columns:
 
 If you're referencing a `date`, `timestamp`, `time` dimension, you can use the timeframes as follows:
 
-```
+```yml
 dimension_name::[month_of_year](/reference/dimension#timeframes)
 ```
 
 
 ## Filter
 
-You can filter the datasets by its dimensions and measures. There are different operators avaiable for different types.
+You can filter datasets by their dimensions and measures. There are different operators available for different types.
 
-Referencing dimensions in filter. You can also reference mappings with `:` prefix. For example, use [`:user_id`](/reference/mapping#user_id) in dimension if you want to filter by user_id.
+You can reference dimensions in the filter as shown below. You can also reference mappings with `:` prefix. For example, use [`:user_id`](/reference/mapping#user_id) in dimension if you want to filter by user_id.
 ```yml
 filters: 
  - dimensions: country # adds a WHERE condition to the query.
@@ -91,7 +91,7 @@ For different [field types](/reference/field#type), metriql offers different ope
 
 #### For all types:
 
-`is_set` and `is_not_set` can be used for NULL checks. The value must be not be set.
+`is_set` and `is_not_set` can be used for NULL checks. The `value` must not be set.
 
 ```yml
 filters: [{measure: vendor_type, operator: is_set}]
@@ -100,7 +100,7 @@ filters: [{measure: vendor_type, operator: is_set}]
 ---
 #### For `integer`, `decimal`, `double`, `long`:
 
-`not_equals` , `less_than`, `equals`, `greater_than`. The value must be a numeric value
+`not_equals` , `less_than`, `equals`, `greater_than`. The `value` must be a numeric value
 
 ```yml
 filters: [{measure: time_spent_on_page, operator: greater_than, value: 10}]
@@ -109,7 +109,7 @@ filters: [{measure: time_spent_on_page, operator: greater_than, value: 10}]
 ---
 #### For `boolean`:
 
-`is` can be used for boolean equity check. The value can be either `true` or `false`
+`is` can be used for boolean equity checks. The `value` can be either `true` or `false`
 
 ```yml
 filters: [{dimension: is_upgraded, operator: is, value: true}]
@@ -118,11 +118,11 @@ filters: [{dimension: is_upgraded, operator: is, value: true}]
 ---
 #### For `timestamp`:
 
-`equals`, `less_than`, `greater_than`, `between`. The value ben be defined as absolute or relative values.
+`equals`, `less_than`, `greater_than`, `between`. The `value` can be defined as absolute or relative values.
 
 ##### Relative values
 
-You can add timestamp filters relative to current timestamp as follows:
+You can add timestamp filters relative to the current timestamp as follows:
 
 ```yml
 filters: [{dimension: created_at, operator: between, value: '1 day'}]
@@ -136,9 +136,9 @@ WHERE
     AND created_at < CAST(DATEADD(DAY, 1, to_date(date_trunc('day', CURRENT_TIMESTAMP)) AS TIMESTAMP))
 ```
 
-metriql filters the data from the beginning of previous day to the end of current day for `1 day`.
+metriql filters the data from the beginning of the previous day to the end of the current day for `1 day`.
 
-The date period can be one of `minute`, `hour`, `day`, `week`, `month`, `year`. metriql also supports the plural versions such as `minutes`.
+The date period can be either `minute`, `hour`, `day`, `week`, `month`, or `year`. metriql also supports the plural versions such as `minutes`.
 
 ##### Absolute values
 
@@ -148,7 +148,7 @@ If you want to select based on absolute date intervals, the value must be an obj
 filters: [{dimension: created_at, operator: between, value: {start: '2020-01-10', end: '2020-01-20'}}]
 ```
 
-The filter above compiles to following SQL:
+The filter above compiles to the following SQL:
 
 ```sql
 created_at >= CAST('2020-01-10' AS TIMESTAMP) AND created_at < CAST('2020-01-20' AS TIMESTAMP)
@@ -158,14 +158,16 @@ created_at >= CAST('2020-01-10' AS TIMESTAMP) AND created_at < CAST('2020-01-20'
 If you set the timezone defined in your config file, all the timestamp references are wrapped with timezone conversion function. For example, in Snowflake it's `CONVERT_TIMEZONE('UTC', CAST('2020-01-20' AS TIMESTAMP))`
 :::
 
+ ---
+
 #### For `date`:
 
-`equals`, `less_than`, `greater_than`, `between`. The value ben be defined as absolute or relative values similar to timestamp type.
+`equals`, `less_than`, `greater_than`, `between`. The `value` can be defined as absolute or relative values similar to timestamp type.
 
 ---
 #### For `time`:
 
-`equals`, `less_than`, `greater_than`. The value should be a string as follows:
+`equals`, `less_than`, `greater_than`. The `value` should be a string as follows:
 
 ```yml
 filters: [{dimension: occurred_at_time, operator: equals, value: '16:00'}]
@@ -190,7 +192,7 @@ filters: [{dimension: array_integer_dimension, operator: includes, value: 4}]
 
 ### Referencing fields from other datasets through relations
 
-If you define a relation in between multiple datasets, you can also access the measures and dimensions in the target datasets.
+If you define a relation between multiple datasets, you can also access the measures and dimensions in the target datasets.
 
 
 ```yml
@@ -215,4 +217,4 @@ models:
                    type: many_to_many
 ```
 
-In this case, the reference `countries.total_countries` from the dataset `pageviews` automatically creates a join in your SQL query. Learn more about the relations from [here](/reference/relation).
+In this case, the reference `countries.total_countries` from the dataset `pageviews` automatically creates a join in your SQL query. Learn more about the relations [here](/reference/relation).

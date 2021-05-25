@@ -70,13 +70,13 @@ label: Facebook Ads
 ### `hidden:`
 If the value is true, the model will not show up in the user interface.
 
-```
+```yml
 hidden: false
 ```
 
 ### `category:`
 
-If you set the category field in your models, the system requires the end-user to select one of the categories before selecting the actual model. Otherwise, all the models under the same page will be listed in a single select box. It's a good practice to set the category field for accessibility if you have more than 20 models. If you have set the category in at least one of the models, the models that don't belong to a category will be grouped as *Uncategorized* in the user interface.
+If you set the `category` field in your models, the system requires the end user to select one of the categories before selecting the actual model. Otherwise, all the models under the same page will be listed in a single select box. It's good practice to set the category field for accessibility if you have more than 20 models. If you have set the category in at least one of the models, the models that don't belong to a category will be grouped as *Uncategorized* in the user interface.
 
 ### `measures:`
 
@@ -103,11 +103,11 @@ models:
 	                     sql: "{{TABLE}}.column1 * 2"
 ```
 
-For more information, see [Measure properties](/reference/measure) ]
+For more information, see [Measure properties](/reference/measure)
 
 ### `dimensions:` 
 
-There is two ways to define a dimension; under `<model l seed | source>.columns.meta.dimension`:
+There are two ways to define a dimension; under `<model l seed | source>.columns.meta.dimension`:
 
 ```yml
 created_at:
@@ -131,7 +131,7 @@ models:
 
 ### `relations:`
 
-The relations in between the models can be defined under `<model l seed | source>.meta.metriql.relations` as follows:
+The relations between the models can be defined under `<model l seed | source>.meta.metriql.relations` as follows:
 
 ```yml
 models:
@@ -148,7 +148,7 @@ models:
 
 ### `aggregates:`
 
-Aggregates should be defined under `<model | seed | source>.meta.metriql.aggregates`. You can see the [Aggregate properties](aggregate-properties) ] or learn more about the concept on [Aggregates](/advanced/aggregates).
+Aggregates should be defined under `<model | seed | source>.meta.metriql.aggregates`. You can see the [Aggregate properties](aggregate-properties) or learn more about the concept on [Aggregates](/advanced/aggregates).
 
 
 ### `always_filters:`
