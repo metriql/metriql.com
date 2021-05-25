@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # What is metriql?
 
-metriql lets you define your metrics centrally for once and synchronize them globally to every other tool you're using. People talk about metrics and KPIs, not database tables and columns. While there are great tools, such as [dbt](https://getdbt.com) for the transformation layer, the metadata layer was an unsolved problem. Each BI tool introduces its way of defining metrics and dimensions. Most of them don't provide a well-defined API so that you can share the metrics with the other tools.
+metriql lets you define your metrics centrally for once and synchronize them globally to every other tool you're using. People talk about metrics and KPIs, not database tables and columns. While there are great tools, such as [dbt](https://getdbt.com) from Fishtown Analytics for the transformation layer, the metadata layer was an unsolved problem. Each BI tool introduces its way of defining metrics and dimensions. Most of them don't provide a well-defined API so that you can share the metrics with the other tools.
 
 We believe that the data warehouse is the [single source of truth](https://en.wikipedia.org/wiki/Single_source_of_truth). As you load tons of data into your data warehouse, it gets hard to maintain and make them useful for your organization. You're also likely to consume the data in a lot of different ways: 
 
