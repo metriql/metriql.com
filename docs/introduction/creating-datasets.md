@@ -7,7 +7,7 @@ A dataset represents a dataset in your data warehouse. metriql automatically cre
 
 **dimension** lets you drill down into the dataset, it can be used to filter query results. It can be either a column in your table or an SQL expression that processes a single row and returns a value.
 
-**measure** is a field that uses anSQL aggregate function, such as `count`, `sum`, or `average`. Measures can be used to aggregate dimensions. For example, measures for a `Sales` model might include total items sold (a count), total sales price (a sum), and the average sales price (an average). 
+**measure** is a field that uses an SQL aggregate function, such as `count`, `sum`, or `average`. Measures can be used to aggregate dimensions. For example, measures for a `Sales` model might include total items sold (a count), total sales price (a sum), and the average sales price (an average). 
 
 **relation** defines a join in between the datasets. metriql automatically generates SQL join logic to bring in all fields from another dataset correctly then the user analyzes a specific dataset.
 
