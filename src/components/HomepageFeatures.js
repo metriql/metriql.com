@@ -8,7 +8,7 @@ const FeatureList = [
     // Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Metriql lets you define metrics centrally in a single place for once and all. No more defining metrics for each data tool one by one. You can interact with the metrics via RESTful API or by embedding them in your SQL queries.
+        Define metrics centrally in a single place for once and all. No more defining metrics for each data tool one by one.
       </>
     ),
   },
@@ -17,16 +17,16 @@ const FeatureList = [
     // Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Metriql integrates with dbt, an ELT tool from Fishtown Analytics and creates datasets from your dbt models. It also creates automatic dbt roll-up models to save data teams time and money.
+        Metriql integrates with <a target="_blank" href="https://getdbt.com">dbt</a>, an ELT tool from Fishtown Analytics and creates datasets from your dbt resources. It also creates automatic dbt roll-up models to save data teams time.
       </>
     ),
   },
   {
-    title: 'Sync your metrics globally',
+    title: 'Consume your metrics reliably',
     // Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Metriql serves as the central metric definition layer of your data. You can connect it to any other data tools you’re using via JDBC or you can build embedded analytics applications via REST API. 
+        Once you define your metrics, you can syncronize and use them in your BI tools or build embedded analytics applications via REST API. 
       </>
     ),
   }

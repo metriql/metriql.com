@@ -152,6 +152,10 @@ module.exports = {
             {
               to: '/faq',
               label: 'FAQs',
+            },
+            {
+              to: '/blog',
+              label: 'Blog',
             }
           ],
         },
@@ -195,7 +199,11 @@ module.exports = {
           editUrl: 'https://github.com/metriql/metriql.com/edit/' + GIT_BRANCH + '/',
           showLastUpdateTime: false,
           //showLastUpdateAuthor: false,
-        }
+        },
+        blog: {
+          blogTitle: 'metriql Blog',
+          blogDescription: 'Blog posts about metriql',
+        },
       },
     ],
     [
