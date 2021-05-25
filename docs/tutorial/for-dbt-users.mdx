@@ -13,7 +13,7 @@ sidebar_position: 2
 }>
 <TabItem value="local">
 
-  All dbt projects are also valid metriql projects. metriql created [datasets](/introduction/creating-datasets) from all your `models`, `seeds`, and `sources`. The only missing part is the metric (aka measure) definitions. metriql makes use of dbt's `meta` properties so you can model your data by adding extra properties to the [`meta`](https://docs.getdbt.com/reference/resource-properties/meta) field. 
+  All dbt projects are also valid metriql projects. metriql creates [datasets](/introduction/creating-datasets) from all your dbt `models`, `seeds`, and `sources`. The only missing part is the metric (aka measure) definitions. metriql makes use of dbt's `meta` properties so you can model your data by adding extra properties to the [`meta`](https://docs.getdbt.com/reference/resource-properties/meta) field. 
 
 </TabItem>
 
@@ -27,7 +27,7 @@ Once you connect to your repository, we will automatically synchronize your `mod
 </TabItem>
 </Tabs>
 
-metriql creates dimensions for each column definitions in your resource files but since dbt doesn't provide any way to define metrics, it makes use of the `meta` property as follows:
+metriql automatically creates dimensions for each column definitions in your resource files and you can add your custom metric definitions under `meta` property as follows:
 
 ```yml
 models:
