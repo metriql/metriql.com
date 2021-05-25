@@ -8,7 +8,7 @@ const FeatureList = [
     // Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Metriql lets you define metrics centrally in a single place for once and all. No more defining metrics for each data tool one by one. You can interact with metrics via RESTful API or by embedding them in your SQL queries.
+        Metriql lets you define metrics centrally in a single place for once and all. No more defining metrics for each data tool one by one. You can interact with the metrics via RESTful API or by embedding them in your SQL queries.
       </>
     ),
   },
