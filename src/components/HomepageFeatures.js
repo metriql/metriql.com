@@ -4,20 +4,20 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Define your metrics centrally',
+    title: 'Integrate with your dbt projects',
     // Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Define metrics centrally in a single place for once and all. No more defining metrics for each data tool one by one.
+        Metriql integrates with <a target="_blank" href="https://getdbt.com">dbt</a> and creates datasets from your dbt resources. It also creates automatic dbt roll-up models to save data teams time.
       </>
     ),
   },
   {
-    title: 'Integrate with your dbt projects',
+    title: 'Define your metrics centrally',
     // Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Metriql integrates with <a target="_blank" href="https://getdbt.com">dbt</a> and creates datasets from your dbt resources. It also creates automatic dbt roll-up models to save data teams time.
+        Define metrics centrally in a single place for once and all. No more defining metrics for each data tool one by one.
       </>
     ),
   },
