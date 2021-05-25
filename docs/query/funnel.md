@@ -4,9 +4,9 @@ sidebar_position: 3
 
 # Funnel
 
-The funnel reporting type is built for customer event data. If you have your user behavior data in your data warehouse, you can understand *if your users are performing a series of events* with funnels. For example, let's say that you have `pageview`, `add_to_basket` and `transaction` events stored in a database and you want to calculate metric called cart abandonment rate (i.e. people who added an item to their basket but didn't make any purchase). 
+The funnel reporting type is built for customer event data. If you have your user behavior data in your data warehouse, you can understand *if your users are performing a series of events* with funnels. For example, let's say that you have `pageview`, `add_to_basket` and `transaction` events stored in a database and you want to calculate a metric called cart abandonment rate (i.e. people who added an item to their basket but didn't make any purchase). 
 
-Most of the BI tools let you ask [Segmentation](/query/segmentation) questions but it's not easy to build funnel metrics since it doesn't play well with the customer behavioral data. If you're familiar with SQL, you can write a complex SQL query that calculates the card abandonment rate and share it with your product people. While you can parametrize the SQL query in your BI tool, the product people won't have much flexibility to compare the different user segment, define different funnel steps or filter by an event property.
+Most of the BI tools let you ask [Segmentation](/query/segmentation) questions but it's not easy to build funnel metrics since it doesn't play well with the customer behavioral data. If you're familiar with SQL, you can write a complex SQL query that calculates the cart abandonment rate and share it with your product people. While you can parametrize the SQL query in your BI tool, the product people won't have much flexibility to compare the different user segments, define different funnel steps, or filter by an event property.
 
 That's why metriql provides different reporting types for different use-cases. Let's see a typical funnel query:
 
@@ -22,7 +22,7 @@ steps:
 [connector](#connector): user_id # optional, the default is [user_id mapping](/reference/mapping#user_id)
 ```
 
-metriql compiles the funnel query above to a SQL query if you're using Postgresql as follows:
+metriql compiles the funnel query above to an SQL query if you're using PostgreSQL as follows:
 
 <Collapsible header="Click to see SQL">
 
@@ -91,13 +91,13 @@ FROM
 
 </Collapsible>
 
-The compiled SQL queries uses advanced SQL features such as window functions and not that easy to read. It's primarily because the behavioral analytics doesn't fit in SQL linear algebra. However; product people often need to run ad-hoc funnel queries and metriql tries reduce the time the data analysts dealing with report requests. Most of the companies that have modern data stack have their customer event data in the data warehouse.  The new generation data warehouses are able to run these queries efficiently.
+The compiled SQL queries use advanced SQL features such as window functions that are not that easy to read. It's primarily because behavioral analytics doesn't fit in SQL linear algebra. However; product people often need to run ad-hoc funnel queries and metriql tries to reduce the time data analysts need to deal with report requests. Most of the companies that have modern data stacks have their customer event data in the data warehouse.  The new generation data warehouses are able to run these queries efficiently.
 
-metriql makes use of advaned SQL features such as [match_recognize](https://docs.snowflake.com/en/sql-reference/constructs/match_recognize.html) and [HyperLogLog++](https://cloud.google.com/bigquery/docs/reference/standard-sql/hll_functions) depending on your adapter and tries to build the most efficient query for the funnel.
+metriql makes use of advanced SQL features such as [match_recognize](https://docs.snowflake.com/en/sql-reference/constructs/match_recognize.html) and [HyperLogLog++](https://cloud.google.com/bigquery/docs/reference/standard-sql/hll_functions) depending on your adapter and tries to build the most efficient query for the funnel.
 
 ### `window:`
 
-Set the maximum duration in between two steps. `window.type` can be one of `minute`, `hour`, `day`. The default is unbounded.
+Set the maximum duration between two steps. `window.type` can be either `minute`, `hour`, or `day`. The default is unbounded.
 
 ### `excluded_steps:`
 
@@ -115,19 +115,19 @@ excluded_steps:
 
 ### `connector:`
 
-By default, metriql uses [user_id mapping](/reference/mapping#user_id) constructing funnel queries, if you want to use another connector which buckets the data into individual segments and see if the buckets are performing the steps, use `connector`. It's usually makes sense if you're analyzing the user events within a single session id or device id.
+By default, metriql uses [user_id mapping](/reference/mapping#user_id) to contruct funnel queries, if you want to use another connector that buckets the data into individual segments and see if the buckets are performing the steps, use `connector`. It usually makes sense if you're analyzing the user events within a single session id or device id.
 
 ### `approximate:`
 
-If the data warehouse supports approximation, you can enable the approximation using this parameter. Currently, BigQuery and Snowflake supports it.
+If the data warehouse supports approximation, you can enable the approximation using this parameter. Currently, BigQuery and Snowflake support it.
 
 ### `strictly_ordered:`
 
-If the data warehouse supports strictly ordered funnel queries you can use this parameter. Since the relational SQL model doesn't fit in event data model, most of the data warehouses don't support strictly order funnel queries unless the ones that supports [`match_recognize`](https://docs.snowflake.com/en/sql-reference/constructs/match_recognize.html). Currently, only Snowflake supoorts this parameter.
+If the data warehouse supports strictly ordered funnel queries you can use this parameter. Since the relational SQL model doesn't fit in an event data model, most of the data warehouses don't support strictly ordered funnel queries except for the ones that support [`match_recognize`](https://docs.snowflake.com/en/sql-reference/constructs/match_recognize.html). Currently, only Snowflake supports this parameter.
 
 ### `dimension:`
 
-You can breakdown funnels into different groups using a dimension in a funnel step. It's useful if you're comparing different user segments. Here is an example:
+You can break down funnels into different groups using a dimension in a funnel step. It's useful if you're comparing different user segments. Here is an example:
 
 ```yml
 steps:

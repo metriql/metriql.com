@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="local">
 
 1. [Install dbt](https://docs.getdbt.com/dbt-cli/installation)
-2. Run `dbt init [project_name]` ([see docs](https://docs.getdbt.com/reference/commands/init))
+2. Run `dbt init [project_name]` ([See docs](https://docs.getdbt.com/reference/commands/init))
 3. [Configure dbt profiles](https://docs.getdbt.com/dbt-cli/configure-your-profile)
 4. Create a file called `source.yml` under `/models` directory.
 5. Paste the following content:
@@ -44,11 +44,11 @@ sources:
 
 </File>
 
-This snippet above creates a dbt source, and each dbt source becomes a dataset in metriql. The dataset one measure called `total_rows` and one dimension called `example_dimension`. 
+This snippet above creates a dbt source, and each dbt source becomes a dataset in metriql. The dataset measure called `total_rows`, and dimension called `example_dimension`. 
 Please see the [dbt sources](https://docs.getdbt.com/docs/building-a-dbt-project/using-sources#declaring-a-source) to learn more about the concept. We use `meta` properties of dbt resources and support all the dbt resources including models, sources, and seeds. See [dataset properties](/reference/dataset) for all the metriql-specific properties. 
 
 5. Run `dbt list`
-6. Install metriql (See docs)
+6. Install metriql (See [docs](/metriql-cli/cli-overview.md))
 7. Run `metriql run --port 3030`
 
 Congrats! You now have a REST API to run queries on your database. 
@@ -64,12 +64,12 @@ Congrats! You now have a REST API to run queries on your database.
 
 2. Click the `Create recipe from scratch` button on the `Develop` page.  If you have a repository that includes your dbt project, please skip to [Introduction for dbt users](https://metriql.com/tutorial/for-dbt-users)
 ![Create recipe](/img/createrecipe.png)
-3. Give a name to your repository and we’ll start creating your first dataset([See docs](https://metriql.com/creating-datasets)) from your data warehouse tables.
+3. Give a name to your repository and we’ll start creating your first dataset ([See docs](https://metriql.com/introduction/creating-datasets)) from your data warehouse tables.
 4. Click `+ create` in the sidebar and click `create source from DW tables`.
 ![Create dataset](/img/createdataset.png)
 5. Select the data warehouse table names that you would like to use and click the `import as models` button. 
 ![Import Models](/img/importasmodels.png)
-6. IDE will create a dbt sources.yml file that you can modify for your use case later. Rakam automatically creates dimensions for each column in your resource files. You can create custom measures and dimensions under meta or model property. [See docs](https://metriql.com/creating-datasets) to learn more about creating datasets and how to define your metrics.
+6. IDE will create a dbt `sources.yml` file that you can modify for your use case later. Rakam automatically creates dimensions for each column in your resource files. You can create custom measures and dimensions under meta or model property. [See docs](https://metriql.com/introduction/creating-datasets) to learn more about creating datasets and how to define your metrics.
 8. Once you're done with metric definitions and modeling, you can click the `Save locally` button to come back and continue later or `Commit main branch` to ship it to production. 
 ![Save or commit](/img/saveorcommit.png)
 9. Go to the `Explore` page, select the reporting feature you’d like to use (among `segmentation`, `funnel`, `retention` and `flow`) and test out your metric definitions with your data in real-time. Noticed anything that isn’t supposed to be like that? Go to the `Develop` page and edit your dataset.
@@ -77,11 +77,11 @@ Congrats! You now have a REST API to run queries on your database.
 
 ## Installing a pre-defined recipe:
 
-Recipes are pre-defined datasets for different database schemas. If you're using any of the solutions that Rakam has an [integration](https://rakam.io/integrations) with to collect data into your database, you can install the [recipe](https://github.com/rakam-recipes) and use the dashboards & datasets to analyze the data. You can install the recipes on the `Develop` page as follows:
+Recipes are pre-defined datasets for different database schemas. If you're using any of the solutions that Rakam has an [integration](https://rakam.io/integrations) with to collect data into your database, you can install the [recipe](https://github.com/rakam-recipes) and use the dashboards and datasets to analyze the data. You can install the recipes on the `Develop` page as follows:
 
 10. Click the `install` button in the right-bottom corner of the recipe you'd like to use.
 ![Install recipe](/img/installrecipe.png)
-11. Select the variables that are asked on the following page. These variables can be `database` `schema` and `table` names. When you select the variables, they're passed as an argument to recipes so that they can dynamically build up the models. You can later customize the recipes and create custom metric definitions.
+11. Select the variables that are asked on the following page. These variables can be `database`, `schema`, and `table` names. When you select the variables, they're passed as an argument to recipes so that they can dynamically build up the models. You can later customize the recipes and create custom metric definitions.
 
 </TabItem>
 
