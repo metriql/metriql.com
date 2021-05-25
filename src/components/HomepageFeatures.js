@@ -8,7 +8,7 @@ const FeatureList = [
     // Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Metriql integrates with <a target="_blank" href="https://getdbt.com">dbt</a> and creates datasets from your dbt resources. It also creates automatic roll up tables.
+        Metriql integrates with <a target="_blank" href="https://getdbt.com">dbt</a> and creates datasets from your dbt resources. It also creates automatic dbt roll-up tables.
       </>
     ),
   },
