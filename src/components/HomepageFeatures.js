@@ -8,7 +8,7 @@ const FeatureList = [
     // Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Metriql integrates with <a target="_blank" href="https://getdbt.com">dbt</a> and maps dbt resources as <a href="/tutorial/for-dbt-users">datasets</a>. It can also create automatic dbt roll-up models to save data teams' time.
+        Metriql integrates with <a target="_blank" href="https://getdbt.com">dbt</a> and maps dbt resources as <a href="/tutorial/for-dbt-users">datasets</a>. It can also create automatic dbt roll-up models to save data teams time.
       </>
     ),
   },
