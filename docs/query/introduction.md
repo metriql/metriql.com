@@ -23,9 +23,33 @@ If you're using metriql in a BI tool, you will most likely be executing [Segment
 
 ---
 
-Here are the common features of the available report types:
+Here are the common properties of the available report types:
 
-## Measure
+## `dataset`
+
+You can reference datasets using the `ref` or `source` functions in your dbt project as follows:
+
+```yml
+dataset: source('events', 'pageview')
+```
+
+Alternatively, you can override the dataset name using `meta.metriql.name` property as follows:
+
+```yml
+models:
+  - events
+    meta:
+      metriql:
+        name: events
+```
+
+and reference the `events` model as follows:
+
+```yml
+dataset: events # alternative to ref('events')
+```
+
+## `measure`
 You can reference the measures by their name. If you're using `column.meta.metriql.measure`, you need to specify the name of the measure explicity as follows:
 
 ```yml
@@ -46,7 +70,7 @@ models:
 
 For the `events` dataset here, `total_events` and `total_revenue` are the available measures that you can reference in the queries.
 
-## Dimension
+## `dimension`
 
 metriql automatically maps all your columns as dimensions. If the column name has non-ascii characters, you should define `name` of the dimension explicitly to be able to reference as follows:
 
@@ -65,7 +89,7 @@ dimension_name::[month_of_year](/reference/dimension#timeframes)
 ```
 
 
-## Filter
+## `filter`
 
 You can filter datasets by their dimensions and measures. There are different operators available for different types.
 

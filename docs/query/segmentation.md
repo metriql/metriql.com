@@ -38,12 +38,12 @@ sources:
 }>
 <TabItem value="rest">
 
-You can query the data using [REST API](/rest-api#operation/SegmentationQuery) as follows:
+You can query the data using [REST API](/rest-api-endpoints#operation/ExecuteQuery) as follows:
 
 
 ```json
 {
-  "dataset": "users",
+  "[dataset](introduction#dataset)": "users",
   "[measures](introduction#measure)": ["total_users"],
   "[dimensions](introduction#dimension)": ["country"],
   "[filters](introduction#filter)": [
@@ -58,7 +58,7 @@ Alternatively, you can compile the SQL as follows:
 
 ```sql
 with top_users_by_country AS (
-  {{sql('segmentation', dataset = 'users', 
+  {{sql('segmentation', [dataset](introduction#dataset) = 'users', 
             [measures](introduction#measure) = ['total_users'], 
             [dimensions](introduction#dimension) = ['country'], 
             [filters](introduction#filter) = [{dimension: 'nps', operator: 'greater_than', value: 10}])}}
