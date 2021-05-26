@@ -26,7 +26,7 @@ const FeatureList = [
     // Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Synchronize your metrics to your BI tools or build embedded analytics applications via REST API. 
+        Synchronize your metrics to your BI tools or build embedded analytics applications via the REST API. 
       </>
     ),
   }
