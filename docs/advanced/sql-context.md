@@ -60,5 +60,5 @@ For example, composing a measure that aggregates a dimension: `SUM({dimension.pr
 
 
 :::info
-Are you missing any convenience function for your problem? [Let us know](https://community.metriql.com) in Slack!
+Are you missing any convenience function for your problem? [Let us know](https://join.slack.com/t/metriql/shared_invite/zt-qp9ds5te-EqzlN79caX76uH~2yqygpA) in Slack!
 :::
