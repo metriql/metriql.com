@@ -11,24 +11,15 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)} style={{background: 'linear-gradient(33deg, rgba(34,193,195,1) 14%, rgba(135,12,254,1) 100%)'}}>
       <div className="container">
-        <h1 className="hero__title">{siteConfig.title} <a href="https://github.com/metriql/metriql" target="_blank"><img src="img/github.png" style={{height:'35px', top:'3px', position: 'relative', opacity: '.5'}}></img></a></h1>
+        <h1 className="hero__title">{siteConfig.title} <a href="https://github.com/metriql/metriql" target="_blank"><img src="img/github.png" style={{height:'35px', marginTop:'16px', marginLeft:'10px', position: 'absolute', opacity: '.5'}}></img></a></h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
 
         <p className="hero__subtitle" style={{opacity: '0.6'}}>
-          metriql tutorial - 5min ⏱️
+          
         </p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/tutorial/for-starters">
-            for starters
-          </Link>
 
-          <Link
-            className="button button--secondary button--lg"
-            to="/tutorial/for-dbt-users" style={{ marginLeft: '10px' }}>
-            for dbt users
-          </Link>
+        <div className={styles.centerizedContent}>
+          <img src="/img/testnew.svg" style={{height: '300px'}}></img>
         </div>
       </div>
     </header>
@@ -44,6 +35,11 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+
+        <div style={{textAlign: 'center'}}>
+          <h3>How would I need metriql?</h3>
+          metriql is very much under active development. We absolutely would welcome any help from feature requests, discussion in issues, help with database connector testing to actual code changes! 🤗
+        </div>
       </main>
     </Layout>
   );

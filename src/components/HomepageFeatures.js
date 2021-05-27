@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './HomepageFeatures.module.css';
+import Link from '@docusaurus/Link';
 
 const FeatureList = [
   {
@@ -9,6 +10,12 @@ const FeatureList = [
     description: (
       <>
         Metriql integrates with <a target="_blank" href="https://getdbt.com">dbt</a> and maps dbt resources as <a href="/tutorial/for-dbt-users">datasets</a>. It can also create automatic dbt <a href="/advanced/aggregates">roll-up models</a> to save data teams time.
+          <Link
+            className="button button--secondary button--sm"
+            style={{display: 'block',marginTop: '10px'}}
+            to="/tutorial/for-dbt-users">
+            tutorial for dbt users
+          </Link>
       </>
     ),
   },
@@ -18,6 +25,12 @@ const FeatureList = [
     description: (
       <>
         Define metrics centrally in a single place for once and all. No more defining metrics for each data tool one by one.
+        <Link
+            className="button button--secondary button--sm"
+            style={{display: 'block',marginTop: '10px'}}
+            to="/tutorial/for-starters">
+            tutorial for starters
+          </Link>
       </>
     ),
   },
@@ -26,7 +39,13 @@ const FeatureList = [
     // Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Synchronize your metrics to your BI tools or build embedded analytics applications via the REST API. 
+        Synchronize your metrics to your BI tools, use them in Python or build embedded analytics applications via the REST API. 
+        <Link
+            className="button button--secondary button--sm"
+            style={{display: 'block',marginTop: '10px'}}
+            to="/tutorial/for-starters">
+            see available integrations
+          </Link>
       </>
     ),
   }
