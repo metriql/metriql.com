@@ -9,12 +9,18 @@ const FeatureList = [
     // Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Metriql integrates with <a target="_blank" href="https://getdbt.com">dbt</a> and maps dbt resources as <a href="/tutorial/for-dbt-users">datasets</a>. It can also create automatic dbt <a href="/advanced/aggregates">roll-up models</a> to save data teams time.
+        Metriql integrates with <a target="_blank" href="https://getdbt.com">dbt</a> and maps dbt resources as datasets. It can also create automatic dbt roll-up models to save data teams time.
           <Link
             className="button button--secondary button--sm"
-            style={{display: 'block',marginTop: '10px'}}
+            style={{marginTop: '10px', borderRadius: '3px 0 0 3px'}}
             to="/tutorial/for-dbt-users">
-            tutorial for dbt users
+            Tutorial for dbt users
+          </Link>
+          <Link
+            className="button button--secondary button--sm"
+            style={{marginTop: '10px',borderRadius: '0 3px 3px 0'}}
+            to="/advanced/aggregates">
+            Learn about Aggregates
           </Link>
       </>
     ),
@@ -29,7 +35,7 @@ const FeatureList = [
             className="button button--secondary button--sm"
             style={{display: 'block',marginTop: '10px'}}
             to="/tutorial/for-starters">
-            tutorial for starters
+            Tutorial for starters
           </Link>
       </>
     ),
@@ -58,6 +64,12 @@ const FeatureList = [
             style={{marginTop: '10px', borderRadius: '0 3px 3px 0'}}
             to="/tutorial/for-starters">
             BI Tools
+          </Link>
+          <Link
+            className="button button--secondary button--sm"
+            style={{marginTop: '10px', borderRadius: '0 3px 3px 0'}}
+            to="/tutorial/for-starters">
+            Embedded
           </Link>
       </>
     ),
