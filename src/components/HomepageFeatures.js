@@ -21,7 +21,7 @@ const FeatureList = [
             className="button button--secondary button--sm"
             style={{marginTop: '10px',borderRadius: '0 3px 3px 0'}}
             to="/advanced/aggregates">
-            Learn about Aggregates
+            Aggregates
           </Link>
       </>
     ),
