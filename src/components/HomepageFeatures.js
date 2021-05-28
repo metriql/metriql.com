@@ -15,13 +15,13 @@ const FeatureList = [
             className="button button--secondary button--sm"
             style={{marginTop: '10px', borderRadius: '3px 0 0 3px'}}
             to="/tutorial/for-dbt-users">
-            Tutorial
+            Integrate metriql
           </Link>
           <Link
             className="button button--secondary button--sm"
             style={{marginTop: '10px',borderRadius: '0 3px 3px 0'}}
             to="/advanced/aggregates">
-            Aggregates
+            Learn Aggregates
           </Link>
       </>
     ),
