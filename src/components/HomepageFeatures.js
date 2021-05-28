@@ -12,14 +12,14 @@ const FeatureList = [
         Metriql integrates with <a target="_blank" href="https://getdbt.com">dbt</a> and maps dbt resources as datasets. It can also create automatic dbt roll-up models to save data teams time.
         <br />
           <Link
-            className="button button--secondary button--sm"
-            style={{marginTop: '10px', borderRadius: '3px 0 0 3px'}}
+            className="button button--secondary button--md"
+            style={{marginTop: '10px', borderRadius: '5px 0 0 5px'}}
             to="/tutorial/for-dbt-users">
             Integrate metriql
           </Link>
           <Link
-            className="button button--secondary button--sm"
-            style={{marginTop: '10px',borderRadius: '0 3px 3px 0'}}
+            className="button button--secondary button--md"
+            style={{marginTop: '10px',borderRadius: '0 5px 5px 0'}}
             to="/advanced/aggregates">
             Learn Aggregates
           </Link>
@@ -32,9 +32,10 @@ const FeatureList = [
     description: (
       <>
         Define metrics centrally in a single place for once and all. No more defining metrics for each data tool one by one.
+        <br />
         <Link
-            className="button button--secondary button--sm"
-            style={{display: 'block',marginTop: '10px'}}
+            className="button button--secondary button--md"
+            style={{marginTop: '10px'}}
             to="/tutorial/for-starters">
             Tutorial for starters
           </Link>
@@ -49,20 +50,20 @@ const FeatureList = [
         Synchronize your metrics to your BI tools, use them in Python or build embedded analytics applications via the REST API. 
         <br />
           <Link
-            className="button button--secondary button--sm"
-            style={{marginTop: '10px', borderRadius: '0 0 0 0'}}
+            className="button button--secondary button--md"
+            style={{marginTop: '10px', borderRadius: '5px 0 0 5px'}}
             to="/integrations/rest-api">
             REST API
           </Link>
           <Link
-            className="button button--secondary button--sm"
+            className="button button--secondary button--md"
             style={{marginTop: '10px', borderRadius: '0 0 0 0'}}
             to="/integrations/bi-tools">
             BI Tools
           </Link>
           <Link
-            className="button button--secondary button--sm"
-            style={{marginTop: '10px', borderRadius: '0 3px 3px 0'}}
+            className="button button--secondary button--md"
+            style={{marginTop: '10px', borderRadius: '0 5px 5px 0'}}
             to="/integrations/embedded">
             Embedded
           </Link>

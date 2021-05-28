@@ -5,7 +5,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
-import { ReactComponent as ReactLogo } from '../components/Group 34.svg';
+import { ReactComponent as HomepageDiagram } from '../components/homepage-diagram.svg';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -20,7 +20,8 @@ function HomepageHeader() {
         </p>
 
         <div className={styles.centerizedContent}>
-          <ReactLogo src="/img/Group 34.svg" style={{ height: '300px', marginLeft: '1.5%' }} />
+          {/* <HomepageDiagram src="/img/homepage-diagram.svg" style={{ height: '300px', marginLeft: '1.5%' }} /> */}
+          <img src="img/homepage-diagram.png" style={{ height: '300px', marginLeft: '1.5%' }}/>
         </div>
       </div>
     </header>
