@@ -15,17 +15,17 @@
     "icons": [
       {
         "src": "img/logo/logo-72.png",
-        "sizes": "72x72",
+        "sizes": "72x30",
         "type": "image/png"
       },
       {
         "src": "img/logo/logo-144.png",
-        "sizes": "144x144",
+        "sizes": "59",
         "type": "image/png"
       },
       {
         "src": "img/logo/logo-512.png",
-        "sizes": "512x512",
+        "sizes": "512x211",
         "type": "image/png"
       }
     ]
