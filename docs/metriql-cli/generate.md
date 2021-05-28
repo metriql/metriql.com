@@ -4,7 +4,7 @@ label: generate
 
 If you're using `aggregates` in resource files, metriql needs to create the dbt models under `models/metriql` directory of your dbt project. You can run this command every time you push a commit to GIT repository to update the aggregate models.
 
-Please see [Aggregates](/advanced/aggregates) to learn more about this feature.
+Please see [Aggregates](/introduction/aggregates) to learn more about this feature.
 
 ### ./metriql.sh generate --help
 ```shell

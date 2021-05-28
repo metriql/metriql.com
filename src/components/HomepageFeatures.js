@@ -20,7 +20,7 @@ const FeatureList = [
           <Link
             className="button button--secondary button--md"
             style={{marginTop: '10px',borderRadius: '0 5px 5px 0'}}
-            to="/advanced/aggregates">
+            to="/introduction/aggregates">
             Learn Aggregates
           </Link>
       </>
