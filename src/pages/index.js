@@ -5,6 +5,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
+import {ReactComponent as ReactLogo} from '../components/Group 34.svg';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -19,7 +20,7 @@ function HomepageHeader() {
         </p>
 
         <div className={styles.centerizedContent}>
-          <img src="/img/testnew.svg" style={{height: '300px'}}></img>
+          <ReactLogo src="/img/Group 34.svg" style={{height: '300px', marginLeft: '1.5%'}} />
         </div>
       </div>
     </header>
@@ -36,10 +37,22 @@ export default function Home() {
       <main>
         <HomepageFeatures />
 
-        <div style={{textAlign: 'center'}}>
-          <h3>How would I need metriql?</h3>
-          metriql is very much under active development. We absolutely would welcome any help from feature requests, discussion in issues, help with database connector testing to actual code changes! 🤗
-        </div>
+        <div className="container">
+        <div className="row">
+        <div className={clsx('col col--4')} class="alert alert-warning">
+          metriql is very much under active development. We absolutely would welcome any help from feature requests, discussion in issues, help with database connector testing to actual code changes!
+          </div>
+        <div className={clsx('col col--8')}>
+        <h3>Why would I need metriql?</h3>
+          <ul>
+            <li>You don't want to create metrics in your BI tools and suffer from vendor-lock.</li>
+            <li>You want to share your business metrics across your organization.</li>
+            <li><a href="/faq">See FAQ for more information.</a></li>
+          </ul>
+          </div>
+          
+          </div>
+          </div>
       </main>
     </Layout>
   );

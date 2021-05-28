@@ -40,11 +40,24 @@ const FeatureList = [
     description: (
       <>
         Synchronize your metrics to your BI tools, use them in Python or build embedded analytics applications via the REST API. 
+        <br />
         <Link
             className="button button--secondary button--sm"
-            style={{display: 'block',marginTop: '10px'}}
+            style={{marginTop: '10px', borderRadius: '3px 0 0 3px'}}
             to="/tutorial/for-starters">
-            see available integrations
+            JDBC
+          </Link>
+          <Link
+            className="button button--secondary button--sm"
+            style={{marginTop: '10px', borderRadius: '0 0 0 0'}}
+            to="/tutorial/for-starters">
+            REST API
+          </Link>
+          <Link
+            className="button button--secondary button--sm"
+            style={{marginTop: '10px', borderRadius: '0 3px 3px 0'}}
+            to="/tutorial/for-starters">
+            BI Tools
           </Link>
       </>
     ),
