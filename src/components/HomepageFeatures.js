@@ -50,25 +50,25 @@ const FeatureList = [
         <Link
             className="button button--secondary button--sm"
             style={{marginTop: '10px', borderRadius: '3px 0 0 3px'}}
-            to="/tutorial/for-starters">
+            to="/integrations/jdbc-driver">
             JDBC
           </Link>
           <Link
             className="button button--secondary button--sm"
             style={{marginTop: '10px', borderRadius: '0 0 0 0'}}
-            to="/tutorial/for-starters">
+            to="/integrations/rest-api">
             REST API
           </Link>
           <Link
             className="button button--secondary button--sm"
             style={{marginTop: '10px', borderRadius: '0 3px 3px 0'}}
-            to="/tutorial/for-starters">
+            to="/integrations/bi-tools">
             BI Tools
           </Link>
           <Link
             className="button button--secondary button--sm"
             style={{marginTop: '10px', borderRadius: '0 3px 3px 0'}}
-            to="/tutorial/for-starters">
+            to="/integrations/embedded">
             Embedded
           </Link>
       </>

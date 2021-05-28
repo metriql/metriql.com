@@ -1,8 +1,9 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # JDBC Driver
+
 Metriql has a proxy JDBC driver that lets you reference metrics in the SQL queries that you run. It simply needs to be used along with the underlying JDBC Driver as it doesn't actually run any queries. You can connect Metriql JDBC driver if you use a URL similar to as follows:
 
 ```yml
