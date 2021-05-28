@@ -25,7 +25,7 @@ models:
 				   aggregation: count_unique
 				   dimension: user_id
 				unique_users_total_rows_ratio:
-				   sql: {{measure.total_rows}}/{{measure.unique_users}}
+				   sql: {measure.total_rows}/{measure.unique_users}
 ```
 
 Please note that these fields are not required under `column.meta` as they point to the relevant `column`.
@@ -56,7 +56,7 @@ total_users:
 
 ```yml
 total_events_user_ratio:
-	sql: {{measure.total_rows}} / {{measure.total_users}} 
+	sql: {measure.total_rows} / {measure.total_users}
 ```
 
 ### `filters:`
