@@ -1,0 +1,32 @@
+{
+    "name": "metriql",
+    "short_name": "metriql Docs",
+    "theme_color": "#1890ff",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "scope": "./",
+    "start_url": "./index.html",
+    "related_applications": [
+      {
+        "platform": "webapp",
+        "url": "https://metriql.com/manifest.json"
+      }
+    ],
+    "icons": [
+      {
+        "src": "img/logo/logo-72.png",
+        "sizes": "72x72",
+        "type": "image/png"
+      },
+      {
+        "src": "img/logo/logo-144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+      },
+      {
+        "src": "img/logo/logo-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }

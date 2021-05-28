@@ -229,6 +229,34 @@ module.exports = {
   ],
   plugins: [
     path.resolve('plugins/svg'),
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: false,
+        offlineModeActivationStrategies: [
+          'appInstalled',
+          'standalone',
+          'queryString',
+        ],
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/logo/logo-72.png',
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json',
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: '#1890ff',
+          },
+        ],
+      },
+    ],
   ],
   scripts: [
     'https://code.jquery.com/jquery-3.4.1.min.js',
