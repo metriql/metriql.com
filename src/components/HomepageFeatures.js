@@ -10,11 +10,12 @@ const FeatureList = [
     description: (
       <>
         Metriql integrates with <a target="_blank" href="https://getdbt.com">dbt</a> and maps dbt resources as datasets. It can also create automatic dbt roll-up models to save data teams time.
+        <br />
           <Link
             className="button button--secondary button--sm"
             style={{marginTop: '10px', borderRadius: '3px 0 0 3px'}}
             to="/tutorial/for-dbt-users">
-            Tutorial for dbt users
+            Tutorial
           </Link>
           <Link
             className="button button--secondary button--sm"
@@ -57,7 +58,7 @@ const FeatureList = [
             className="button button--secondary button--sm"
             style={{marginTop: '10px', borderRadius: '0 0 0 0'}}
             to="/integrations/rest-api">
-            REST API
+            REST
           </Link>
           <Link
             className="button button--secondary button--sm"

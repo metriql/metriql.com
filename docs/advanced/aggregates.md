@@ -31,13 +31,17 @@ When you create the model above, metriql will create a dbt model called `events_
 
 ```sql
 {{ config(materialized='incremental') }}
-SELECT timestamp_trunc('day', occurred_at), count(*) pageview GROUP BY 1
+
+SELECT timestamp_trunc('day', occurred_at), count(*) pageview 
+GROUP BY 1
+WHERE platform = 'Android'
+
 {% if is_incremental() %}
-   WHERE occurred_at > (select max(occurred_at) from {{ this }})
+   AND occurred_at > (select max(occurred_at) from {{ this }})
 {% endif %}
 ```
 
-We automatically create an `incremental` model because you have `event_timestamp` mapping so we know that this is time-series data. If you don't have the `event_timestamp` mapping, we create a `table` model as well. 
+We automatically create an `incremental` model because you have `event_timestamp` mapping as we know that the dataset represents a time-series data. If you don't have the `event_timestamp` mapping, we use `table` materialization. 
 
 If the users run a segmentation query with `total_events` measure, the system figures out that this data is available in `events_pageview_event_counts` model and makes use of this aggregated table instead of the `pageview` table. It can speed up the reports dramatically based on the number of rows in the `events` table because  `events_pageview_event_counts` model has only a few thousand rows whereas `events` table potentially has billions of rows.
 
