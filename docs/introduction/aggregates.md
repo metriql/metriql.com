@@ -49,8 +49,8 @@ SELECT
   count(*) as total_events, 
   [HLL_ACCUMULATE](https://docs.snowflake.com/en/sql-reference/functions/hll_accumulate.html)(user_id) as unique_users
 FROM pageview
-GROUP BY 1
 WHERE platform = 'Android'
+GROUP BY 1
 
 {% if is_incremental() %}
    AND occurred_at > (select max(occurred_at) from {{ this }})
@@ -84,10 +84,10 @@ SELECT date_trunc('week', occurred_at_day),
        sum(total_events), 
        cardinality([HLL_COMBINE](https://docs.snowflake.com/en/sql-reference/functions/hll_combine.html)(unique_users))
 FROM metriql_aggregates.source_events_pageview_event_counts
-GROUP BY 1
 WHERE platform = 'Android' and 
   occurred_at >= DATEADD(WEEK, -2, to_date(date_trunc('month', CURRENT_TIMESTAMP))) AND 
   occurred_at < DATEADD(DAY, 1, to_date(date_trunc('month', CURRENT_TIMESTAMP)))
+GROUP BY 1
 ```
 
 If you wouldn't have `event_counts` aggregate or run the dbt models, metriql runs the following query:
@@ -97,10 +97,10 @@ SELECT date_trunc('week', occurred_at),
        count(*) as total_events,
        [APPROX_COUNT_DISTINCT](https://docs.snowflake.com/en/sql-reference/functions/approx_count_distinct.html)(user_id)
 FROM pageview
-GROUP BY 1
 WHERE platform = 'Android' and 
   occurred_at >= DATEADD(WEEK, -2, to_date(date_trunc('month', CURRENT_TIMESTAMP))) AND 
-  occurred_at < DATEADD(DAY, 1, to_date(date_trunc('month', CURRENT_TIMESTAMP)))
+  occurred_at < DATEADD(DAY, 1, to_date(date_trunc('month', CURRENT_TIMESTAMP)))\
+GROUP BY 1
 ```
 
 It can speed up the reports dramatically based on the number of rows in the `events` table because  `source_events_pageview_event_counts` model has only a few thousand rows whereas `events` table potentially has billions of rows.
