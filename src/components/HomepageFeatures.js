@@ -13,13 +13,13 @@ const FeatureList = [
         <br />
           <Link
             className="button button--secondary button--md"
-            style={{marginTop: '10px', borderRadius: '5px 0 0 5px'}}
+            style={{marginTop: '10px', marginRight: '10px', borderRadius: '3px'}}
             to="/tutorial/for-dbt-users">
             Integrate metriql
           </Link>
           <Link
             className="button button--secondary button--md"
-            style={{marginTop: '10px',borderRadius: '0 5px 5px 0'}}
+            style={{marginTop: '10px', borderRadius: '3px'}}
             to="/introduction/aggregates">
             Learn Aggregates
           </Link>
@@ -35,7 +35,7 @@ const FeatureList = [
         <br />
         <Link
             className="button button--secondary button--md"
-            style={{marginTop: '10px'}}
+            style={{marginTop: '10px', borderRadius: '3px'}}
             to="/tutorial/for-starters">
             Tutorial for starters
           </Link>
@@ -51,19 +51,19 @@ const FeatureList = [
         <br />
           <Link
             className="button button--secondary button--md"
-            style={{marginTop: '10px', borderRadius: '5px 0 0 5px'}}
+            style={{marginTop: '10px', marginRight: '10px', borderRadius: '3px'}}
             to="/integrations/rest-api">
             REST API
           </Link>
           <Link
             className="button button--secondary button--md"
-            style={{marginTop: '10px', borderRadius: '0 0 0 0'}}
+            style={{marginTop: '10px', marginRight: '10px', borderRadius: '3px'}}
             to="/integrations/bi-tools">
             BI Tools
           </Link>
           <Link
             className="button button--secondary button--md"
-            style={{marginTop: '10px', borderRadius: '0 5px 5px 0'}}
+            style={{marginTop: '10px', borderRadius: '3px'}}
             to="/integrations/embedded">
             Embedded
           </Link>
