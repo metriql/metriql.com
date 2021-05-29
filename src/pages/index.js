@@ -51,10 +51,10 @@ export default function Home() {
           <div style={{ textAlign: 'center' }}>
             <h3 >Why would you need metriql?</h3>
             <ul style={{ listStyle: 'inside', padding: '0' }}>
-              <li>You want to be able to switch in between BI tools easily.</li>
-              <li>You want to share company metrics across all your organization.</li>
-              <li>You're a data analyst and you spend too much time building roll-up tables.</li>
-              <li><a href="/faq">See FAQ for more information and comparison with alternatives.</a></li>
+              <li>You want to be able to easily change or add BI tools to your stack.</li>
+              <li>You want to share metric definitions across all your organization.</li>
+              <li>You spend too much time building roll-up tables and want to automate it.</li>
+              <li><a href="/faq">See FAQ</a> for more information and comparison with alternatives.</li>
             </ul>
           </div>
 
