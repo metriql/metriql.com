@@ -31,6 +31,6 @@ If your data is already modeled, you can use dbt's [sources](https://docs.getdbt
 
 #### 4. Does metriql run my dbt models?
 
-No, it does not. If you have `table` or `incremental` models, you need to run dbt yourself. We advise and usually use [dbt Cloud](https://cloud.getdbt.com/) from Fishtown Analytics, but you can also use Github Actions or Gitlab CI you don't want to use a Cloud IDE.
+No, it does not. If you have `table` or `incremental` models, you need to run dbt yourself. We suggest using [dbt Cloud](https://cloud.getdbt.com/) from Fishtown Analytics, but you can also run dbt locally or use a CI system such as Github Actions or Gitlab CI if you don't want to use a Cloud IDE.
 
 #### You have another question, [come Slack](https://join.slack.com/t/metriql/shared_invite/zt-qp9ds5te-EqzlN79caX76uH~2yqygpA) and ask us!
