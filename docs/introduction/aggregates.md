@@ -77,9 +77,6 @@ filters:
 metriql figures out that this data is available in `source_events_pageview_event_counts` model and makes use of this aggregated table instead of the `pageview` table by re-writing the SQL query as follows:
 
 ```sql
-/*
-  Unable to use materialize source_events_pageview_event_counts: The target table metriql_aggregates.source_events_pageview_event_counts doesn't exist
-*/
 SELECT date_trunc('week', occurred_at_day), 
        sum(total_events), 
        cardinality([HLL_COMBINE](https://docs.snowflake.com/en/sql-reference/functions/hll_combine.html)(unique_users))
@@ -104,3 +101,13 @@ GROUP BY 1
 ```
 
 It can speed up the reports dramatically based on the number of rows in the `events` table because  `source_events_pageview_event_counts` model has only a few thousand rows whereas `events` table potentially has billions of rows.
+
+---
+
+If the dbt model table doesn't exist, metriql prepends the following comment to the generated query and runs the query on raw data.
+
+```sql
+/*
+  Unable to use materialize source_events_pageview_event_counts: The target table metriql_aggregates.source_events_pageview_event_counts doesn't exist
+*/
+```
