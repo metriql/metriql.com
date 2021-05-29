@@ -3,7 +3,7 @@ title: "Aggregates"
 sidebar_position: 4
 ---
 
-Aggregates speeds up your reports by creating roll-up models as part of your dbt project. You can use them in your dbt's `source`, `model`, or `seed`. While the data analysts can create roll-up models in their dbt project, metriql can automate the work by creating dbt models automatically when you define `aggregates` in your dbt resource files. The roll-up tables are hidden from the end users. Instead, they are being used by our query engine if the users run `segmentation` queries that can be answered by the roll-up tables. They're particularly useful for the following cases:
+Aggregates speed up your reports by creating roll-up models as part of your dbt project. You can use them in your dbt's `source`, `model`, or `seed`. While the data analysts can create roll-up models in their dbt project, metriql can automate the work by creating dbt models automatically when you define `aggregates` in your dbt resource files. The roll-up tables are hidden from the end-users. Instead, they are being used by our query engine if the users run `segmentation` queries that can be answered by the roll-up tables. They're particularly useful for the following cases:
 
 1. If you're dealing with time-series data and looking for a way to give access to non-technical people to analyze the data. (i.e. customer event data)
 2. If you're building consumer-facing applications that need to run queries in low latency. (i.e. embedded analytics)
@@ -39,7 +39,7 @@ sources:
                 aggregation: approximate_unique
 ```
 
-When you create the model above, metriql will create a dbt model called `source_events_pageview_event_counts` with the following SQL:
+When you create the model above for Snowflake adapter, metriql will create a dbt model called `source_events_pageview_event_counts` with the following SQL:
 
 ```sql
 {{ config(materialized='incremental') }}
