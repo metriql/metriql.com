@@ -96,7 +96,7 @@ SELECT date_trunc('week', occurred_at),
 FROM pageview
 WHERE platform = 'Android' and 
   occurred_at >= DATEADD(WEEK, -2, to_date(date_trunc('month', CURRENT_TIMESTAMP))) AND 
-  occurred_at < DATEADD(DAY, 1, to_date(date_trunc('month', CURRENT_TIMESTAMP)))\
+  occurred_at < DATEADD(DAY, 1, to_date(date_trunc('month', CURRENT_TIMESTAMP)))
 GROUP BY 1
 ```
 

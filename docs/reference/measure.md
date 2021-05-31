@@ -36,11 +36,11 @@ Please note that these fields are not required under `column.meta` as they point
 
 **`sql:`** lets you define complex expressions that column type measure is not capable of. 
 
-For referencing other entities inside a measure checkout the [SQL Context](/advanced/sql-context).
+For referencing other entities inside a measure checkout the [SQL Context](/reference/sql-context).
 
 ### `aggregation:`
 
-The aggregation function that will be applied to to the measure value `dimension | column | sql`.
+The aggregation function of the measure value `dimension | column | sql`.
 
 Here are the valid values:
 
