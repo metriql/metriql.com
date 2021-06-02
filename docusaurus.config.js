@@ -129,9 +129,14 @@ module.exports = {
               activeBasePath: 'integrations/rest-api'
             },
             {
-              to: '/integrations/jdbc-driver',
-              label: 'JDBC Driver',
-              activeBasePath: 'integrations/jdbc-driver'
+              to: '/integrations/bi-tools',
+              label: 'BI tools',
+              activeBasePath: 'integrations/bi-tools'
+            },
+            {
+              to: '/integrations/embedded',
+              label: 'Embedded analytics',
+              activeBasePath: 'integrations/embedded'
             },
             {
               to: '/integrations/build',
@@ -166,6 +171,10 @@ module.exports = {
             {
               label: 'metriql Slack',
               href: 'https://community.metriql.com/',
+            },
+            {
+              label: 'Blog',
+              to: '/blog',
             },
             {
               label: 'GitHub',

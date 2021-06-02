@@ -17,7 +17,7 @@ If you don't have a standardized way of sharing data within your organization, e
 
 We realize that you may need to transform the data because metric and dimension definitions are only one part of the problem. We don't want to introduce another way to transform the data though, as it's a solved problem with [dbt](https://getdbt.com). That's why metriql works as an extension of dbt, you can use dbt to transform the data and implement metriql in your existing project without learning a brand new technology. If you don't need to transform the data, you can also use dbt's [sources](https://docs.getdbt.com/docs/building-a-dbt-project/using-sources) for metriql.
 
-The problem is defined as [the missing piece of the modern data stack](https://benn.substack.com/p/metrics-layer), and [headless Business Intelligence](https://basecase.vc/blog/headless-bi). If you haven't read thesee articles, we strongly advise you to do so. 
+The problem is defined as [the missing piece of the modern data stack](https://benn.substack.com/p/metrics-layer), and [Headless BI](https://basecase.vc/blog/headless-bi). If you haven't read thesee articles, we strongly advise you to do so. 
 
 
 Still not clear? See [FAQ](/faq).
