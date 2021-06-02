@@ -54,7 +54,7 @@ export default function Home() {
               <li>You want to be able to easily change or add BI tools to your stack.</li>
               <li>You want to share metric definitions across all your organization.</li>
               <li>You spend too much time building roll-up tables and want to automate it.</li>
-              <li><a href="/faq">See FAQ</a> for more information and comparison with alternatives.</li>
+              <li>See the <a href="introduction/intro">docs</a> or<a href="/faq">See FAQ</a> for more information and comparison with alternatives.</li>
             </ul>
           </div>
 

@@ -1,8 +1,9 @@
 ---
 label: run
+sidebar_position: 1
 ---
 
-If you want to consume the data or share your metrics via REST API, metriql has an embedded HTTP server that reads your `manifest.json` file generated as dbt artifact and serves it to the end user.
+If you want to consume the data or share your metrics via REST API, metriql has an embedded HTTP server that reads your `manifest.json` file generated as dbt artifact and serves it to the end-user.
 
 Please see [REST API](/rest-api) for specification.
 
