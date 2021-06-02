@@ -15,22 +15,22 @@ A more comparable alternative would be LookML, Looker's data modeling language. 
 
 Most of the data people feel comfortable with Python, and some even hate the JVM world, we get it. That being said, metriql has fundamental differences compared to dbt. dbt runs on schedule to transform your data whereas metriql is usually used as [an HTTP server](/rest-api). Also, metriql needs to understand the SQL dialect to be able to generate ad-hoc queries, therefore we need battle-tested database drivers. We use [JDBC](https://en.wikipedia.org/wiki/Java_Database_Connectivity), the technology behind many other BI tools, such as Looker, Tableau, and Metabase. While we agree that Java is verbose, [Kotlin is worth learning](https://github.com/Khan/kotlin-for-python-developers).
 
-#### How is this different from [x]?
+#### 3. How is this different from [x]?
 
 [<b>Minerva</b>](https://medium.com/airbnb-engineering/how-airbnb-achieved-metric-consistency-at-scale-f23cc53dea70) is Airbnb's internal metrics platform. We only know quite little information as there is only one blog post about it and it's not open-source yet. It's an end-to-end tool, from data ingestion to serving layer and people interact with the metrics via an API. While it looks like a great idea, not all companies have the luxury to implement an architecture as Airbnb. metriql works on top of your data-warehouse and it makes use of [Aggregates](/introduction/aggregates) for rollup tables that don't move the data out of your data warehouse. It's just the metadata layer for your data, not an end-to-end tool. 
 
 [<b>Cube.js</b>](http://cube.dev) is a backend for embedded applications. It lets data people define the metrics in Javascript and build an API for their data. Cube has integrations with most of the front-end frameworks so that you can build custom user interfaces for your internal applications. They also have a two-level caching mechanism similar to metriql's [Aggregates](/introduction/aggregates) but they ingest the data into its own storage, built with Rust. Cube is more suitable if your data is already modeled and you're building a high concurrency analytical application as it doesn't provide data lineage and ingest the data through its own storage. 
 
-#### 3. What's Rakam, and how it's related to metriql?
+#### 4. What's Rakam, and how it's related to metriql?
 
 Rakam, Inc. is the company that built metriql. We have been using dbt internally for the last 2 years, and we believe in [their viewpoint](https://docs.getdbt.com/docs/about/viewpoint). We tested metriql for our customers and found out that it can also be used outside of Rakam. We're also using tons of open-source technologies, and the founders also have [open-source background](https://github.com/rakam-io/rakam-api). We decided to open-source metriql under a vendor-neutral organization using the same open-source license as dbt.
 
-#### 4. Do I need to use dbt for metriql?
+#### 5. Do I need to use dbt for metriql?
 
 If your data is already modeled, you can use dbt's [sources](https://docs.getdbt.com/docs/building-a-dbt-project/using-sources) to create datasets in metriql. [Here is an example project](https://github.com/rakam-recipes/tenjin) that doesn't need any transformation.
 
-#### 4. Does metriql run my dbt models?
+#### 6. Does metriql run my dbt models?
 
 No, it does not. If you have `table` or `incremental` models, you need to run dbt yourself. We suggest using [dbt Cloud](https://cloud.getdbt.com/) from Fishtown Analytics, but you can also run dbt locally or use a CI system such as Github Actions or Gitlab CI if you don't want to use a Cloud IDE.
 
-#### You have another question, [come Slack](https://join.slack.com/t/metriql/shared_invite/zt-qp9ds5te-EqzlN79caX76uH~2yqygpA) and ask us!
+#### If you have other questions, join the conversation on [Slack](https://join.slack.com/t/metriql/shared_invite/zt-qp9ds5te-EqzlN79caX76uH~2yqygpA)
