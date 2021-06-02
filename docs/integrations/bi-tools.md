@@ -19,9 +19,9 @@ While we will develop the support for some of the most popular BI tools but we n
 | Google Data Studio | [🚧 In progress](https://github.com/metriql/metriql/issues/1)  | REST API  |
 | Tableau            | [🚧 In progress](https://github.com/metriql/metriql/issues/6)  | Native support via JDBC      |
 | Power BI           | [🚧 Queued](https://github.com/metriql/metriql/issues/7)  | XMLA Service  |   
-| Metabase           | [🙋 Waiting community support](https://github.com/metriql/metriql/issues/6)  | JDBC (❓)      |
-| Superset           | [🙋 Waiting community support](https://github.com/metriql/metriql/issues/10) | REST API (❓) |
-| Looker             | [🙋 Waiting community support](https://github.com/metriql/metriql/issues/9)  | CLI command to create LookML files (❓)      |
+| Metabase           | [🙋 Waiting for community support](https://github.com/metriql/metriql/issues/6)  | JDBC (❓)      |
+| Superset           | [🙋 Waiting for community support](https://github.com/metriql/metriql/issues/10) | REST API (❓) |
+| Looker             | [🙋 Waiting for community support](https://github.com/metriql/metriql/issues/9)  | CLI command to create LookML files (❓)      |
 
 
 You can also see our roadmap for the integrations [here](https://github.com/metriql/metriql/projects/1).
