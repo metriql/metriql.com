@@ -6,7 +6,7 @@ sidebar_position: 1
 
 While metriql is a relatively new project, we're working on integrating BI tools using our low-level integrations such as [REST API](rest-api) and [JDBC driver](jdbc-driver).
 
-While we will develop the support for some of the most popular BI tools, we need help from the community to integrate metriql to the BI tools of your choice. 
+While we will develop the support for some of the most popular BI tools but we need help from the community to integrate metriql to the BI tools of your choice. 
 
 1. Please see the relevant Github issue if you would like to contribute.
 2. Let us know if you would like to suggest a new integration on [Github](https://github.com/metriql/metriql/issues/new)
