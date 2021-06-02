@@ -7,7 +7,7 @@ sidebar_position: 8
 
 #### 1. Why would I need metriql if I'm already using dbt?
 
-dbt lets you transform, test, and document your data but its output is still the database tables. You can analyze these modeled tables in your BI tool, use them as the data source for your analytical applications but you need to define metrics in each tool that you're using. Most of the BI tools provide ways to define metrics either using their GUI or programmatically. However, it can't be shared with the other tools that you're using. metriql standardizes the metric definitions and serves as the metadata layer for all your company data. 
+[dbt](https://www.getdbt.com) lets you transform, test, and document your data but its output is still the database tables. You can analyze these modeled tables in your BI tool, use them as the data source for your analytical applications but you need to define metrics in each tool that you're using. Most of the BI tools provide ways to define metrics either using their GUI or programmatically. However, it can't be shared with the other tools that you're using. metriql standardizes the metric definitions and serves as the metadata layer for all your company data. 
 
 A more comparable alternative would be LookML, Looker's data modeling language. Tristan, one of the dbt founders has [a blog post](https://blog.getdbt.com/-how-do-you-decide-what-to-model-in-dbt-vs-lookml--/) explaining the differences between LookML and dbt. Typically, if you need to perform complex transformations, you can use dbt materializations. Otherwise, you can use metriql [Aggregates](/introduction/aggregates) for roll-up tables, define your metrics in dbt resource files without learning a brand new data modeling tool, such as LookML.
 
