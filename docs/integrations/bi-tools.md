@@ -16,10 +16,10 @@ While we will develop the support for some of the most popular BI tools but we n
 | BI Tool            | Status             | Integration Method  |
 |--------------------|--------------------|---------------------|
 | rakam              | Completed  ✅    |  Native                                            |   
-| Google Data Studio | [🚧 In progress (deadline is 2021-06-12)](https://github.com/metriql/metriql/issues/1)  | REST API  |
-| Tableau            | [🚧 In progress (deadline is 2021-06-20)](https://github.com/metriql/metriql/issues/6)  | Native support via JDBC      |
-| Power BI           | [🚧 Queued](https://github.com/metriql/metriql/issues/7)  | XMLA Service  |   
-| Metabase           | [🙋 Waiting for community support](https://github.com/metriql/metriql/issues/6)  | JDBC (❓)      |
+| Google Data Studio | [🚧 In progress (deadline is 2021-06-16)](https://github.com/metriql/metriql/issues/1)  | REST API  |
+| Tableau            | [🚧 In progress (deadline is 2021-07-01)](https://github.com/metriql/metriql/issues/6)  | Trino JDBC      |
+| Power BI           | [🚧 Queued](https://github.com/metriql/metriql/issues/7)  | XMLA or Trino-ODBC bridge  |   
+| Metabase           | [🙋 Waiting for community support](https://github.com/metriql/metriql/issues/6)  | Trino-JDBC (❓)      |
 | Superset           | [🙋 Waiting for community support](https://github.com/metriql/metriql/issues/10) | REST API (❓) |
 | Looker             | [🙋 Waiting for community support](https://github.com/metriql/metriql/issues/9)  | CLI command to create LookML files (❓)      |
 
