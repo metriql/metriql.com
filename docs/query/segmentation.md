@@ -43,7 +43,7 @@ You can query the data using [REST API](/rest-api-endpoints#operation/ExecuteQue
 
 ```json
 {
-  "[dataset](introduction#dataset)": "users",
+  "[dataset](introduction#dataset)": "source('first_dataset', 'users')",
   "[measures](introduction#measure)": ["total_users"],
   "[dimensions](introduction#dimension)": ["country"],
   "[filters](introduction#filter)": [
