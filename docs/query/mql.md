@@ -22,6 +22,7 @@ metriql parse the SQL query, convert it to [Segmentation query](/query/segmentat
   "measures": ["total_users"],
   "dimensions": ["plan_type"]
 }
+```
 
 
 MQL is intended to be used as an integration with BI tools. If your BI tool supports [Trino](https://trino.io) (formerly Prestodb), you can use the metriql URL and connect to your data-warehouse. Note that the syntax doesn't support Jinja expressions unlike the [SQL query](/query/sql), and the advanced SQL syntax such as subqueries, WINDOW operations and even JOINs as they need to be implemented in the data modeling.
