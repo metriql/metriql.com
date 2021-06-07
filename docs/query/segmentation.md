@@ -69,7 +69,7 @@ select * from top_users_by_country
 </Tabs>
 
 
-The metriql queries above compiles to the following query when you use the REST API SQL or JDBC API:
+The metriql queries above compile to the following query when you use the REST API SQL or JDBC API:
 
 ```sql
 with top_users_by_country AS (
