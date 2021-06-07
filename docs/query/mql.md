@@ -2,6 +2,8 @@
 sidebar_position: 6
 ---
 
+# MQL
+
 MQL is a SQL syntax that only supports a subset of the ANSI SQL standard. It lets us query the models directly using SQL interface. Let's say that you have [source here](/query/segmentation). You can run the following query:
 
 ```yml
