@@ -3,7 +3,7 @@ title: "Aggregates"
 sidebar_position: 4
 ---
 
-Exposing huge datasets to BI tools is often either expensive or slow (or both). Aggregates speed up your BI tools or other data tools by creating roll-up models inside your dbt project from your dbt `sources`, `models`, and `seeds`. 
+Exposing huge datasets to BI tools is often either expensive or slow (or both). Aggregates speed up your BI and other data tools by creating roll-up models inside your dbt project from your dbt `sources`, `models`, and `seeds`. 
 
 Metriql creates roll-up models programmatically when you define `aggregates` in your dbt resource files. The roll-up tables are not exposed to end-users. Instead, metriql re-writes your queries if the users run `segmentation` queries to use the roll-up tables. They're handy for the following cases:
 
