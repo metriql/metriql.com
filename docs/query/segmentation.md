@@ -49,6 +49,7 @@ You can query the data using [REST API](/rest-api-endpoints#operation/ExecuteQue
   "[filters](introduction#filter)": [
     {"dimension": "nps", "operator": "greater_than", "value": 10}
   ]
+  "limit": 1000
 }
 ```
 </TabItem>
