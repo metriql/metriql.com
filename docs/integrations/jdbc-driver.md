@@ -4,18 +4,20 @@ sidebar_position: 3
 
 # JDBC Driver
 
-Metriql has a JDBC driver that lets you reference metrics in the SQL queries that you run. It simply needs to be used along with the underlying JDBC Driver as it doesn't run any queries. You can connect Metriql JDBC driver if you use a URL similar to as follows:
+Metriql supports [Trino](http://trino.io) (formerly Prestodb) JDBC driver. If your data tool already supports Trino or Prestodb out of the box, you can use metriql URL instead of Trino cluster URL and connect to metriql. While metriql uses Trino protocol, it doesn't actually process any data. Instead, it returns your semantic data models as data tables and the fields (dimension and measures) as columns and run the queries directly on your database by re-writing your query for the underlying data warehouse. 
+
+By default, JDBC connector uses [MQL](/query/mql) reporting type. That enables BI tools to use [Aggregates](/introduction/aggregates) without any extra step but MQL syntax is limited by design. If you want to run ad-hoc SQL queries via the JDBC connector, you can switch mode as follows:
+
+```sql
+-- @mode:sql
+with nps_by_customer AS (
+        {{sql('segmentation', dataset = 'source('first_dataset', 'users')', measures=['nps'], dimensions=['plan_type'], )}}
+    )
+    select * from nps_by_customer
+```
+
+If you want to use metriql's JDBC connector, you can [download the driver](https://trino.io/docs/current/installation/jdbc.html) on Trino.io and use the following JDBC URL:
 
 ```
-jdbc:metriql:METRIQL_URL
+jdbc:trino:YOUR_METRIQL_URL
 ```
-
-Alternatively, if you want to run JDBC driver embedded in your environment you can enable the proxy and directly connect to your database as follows:
-
-```
-jdbc:metriqlproxy:postgresql://HOST:PORT/DATABASE
-```
-
-Internally, Metriql creates a connection to the PostgreSQL driver by removing the `metriql` in the JDBC URL, but it compiles your SQL queries in Jinja before sending the SQL query to the underlying JDBC driver. The JDBC driver is built for integrating metriql to your internal apps and third-party BI tools.
-
-See [SQL reporting type](/query/sql) to learn more about the details.
