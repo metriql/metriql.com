@@ -7,8 +7,8 @@ Exposing huge datasets to BI tools is often either expensive or slow (or both). 
 
 Metriql creates roll-up models programmatically when you define `aggregates` in your dbt resource files. The roll-up tables are not exposed to end-users. Instead, metriql re-writes your queries if the users run `segmentation` queries to use the roll-up tables. They're handy for the following cases:
 
-1. If you're dealing with time-series data and looking for a way to access non-technical people to analyze the data. (i.e. customer event data)
-2. If you're building consumer-facing applications that need to run queries in low latency. (i.e. embedded analytics)
+1. Dealing with time-series data and looking for a way to access non-technical people to analyze the data. (i.e. customer event data)
+2. Building consumer-facing applications that need to run queries in low latency. (i.e. embedded analytics)
 3. If you don't want to spend time writing basic roll-up models in your dbt project.
 
 In order to make use of aggregates, you can use `aggregates`  property under `source | model | seed.meta.metriql`. Here is an example:
