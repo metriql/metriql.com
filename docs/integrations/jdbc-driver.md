@@ -11,9 +11,9 @@ By default, JDBC connector uses [MQL](/query/mql) reporting type. That enables B
 ```sql
 -- @mode:sql
 with nps_by_customer AS (
-        {{sql('segmentation', dataset = 'source('first_dataset', 'users')', measures=['nps'], dimensions=['plan_type'], )}}
-    )
-    select * from nps_by_customer
+    {{sql('segmentation', dataset = 'source('first_dataset', 'users')', measures=['nps'], dimensions=['plan_type'], )}}
+)
+select * from nps_by_customer
 ```
 
 If you want to use metriql's JDBC connector, you can [download the driver](https://trino.io/docs/current/installation/jdbc.html) on Trino.io and use the following JDBC URL:
