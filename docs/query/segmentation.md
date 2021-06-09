@@ -38,10 +38,10 @@ sources:
 }>
 <TabItem value="rest">
 
-You can query the data using [REST API](/rest-api-endpoints#operation/ExecuteQuery) as follows:
+You can query the data using as follows:
 
 
-```json
+```yml
 {
   "[dataset](introduction#dataset)": "source('first_dataset', 'users')",
   "[measures](introduction#measure)": ["total_users"],
