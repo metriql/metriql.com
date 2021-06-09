@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Segmentation
 
-Segmentation lets you analyze the data with `measure` and `dimension` pairs. You select a dataset using `dataset` property and specify the measures and dimensions under the dataset as part of the request, and an SQL query is generated depending on the field definitions. You can also `filter` the data using field references.
+Segmentation lets you analyze the data with `measure` and dimension` pairs. You select a dataset using `dataset` property and specify the measures and dimensions under the dataset as part of the request, and an SQL query is generated depending on the field definitions. You can also `filter` the data using field references.
 
 Here is an example dataset:
 
@@ -32,25 +32,22 @@ sources:
 <Tabs
   defaultValue="rest"
   values={[
-    { label: 'REST API', value: 'rest', },
+    { label: 'API', value: 'api', },
     { label: 'SQL', value: 'sql', }
   ]
 }>
-<TabItem value="rest">
+<TabItem value="api">
 
 You can query the data using as follows:
 
 
 ```yml
-{
-  "[dataset](introduction#dataset)": "source('first_dataset', 'users')",
-  "[measures](introduction#measure)": ["total_users"],
-  "[dimensions](introduction#dimension)": ["country"],
-  "[filters](introduction#filter)": [
-    {"dimension": "nps", "operator": "greater_than", "value": 10}
-  ]
-  "limit": 1000
-}
+[dataset](introduction#dataset): source('first_dataset', 'users')
+[measures](introduction#measure): ["total_users"],
+[dimensions](introductiondimension): ["country"],
+[filters](introduction#filter):
+  - {dimension: nps, operator: greater_than, value: 10}
+limit: 1000
 ```
 </TabItem>
 <TabItem value="sql">
@@ -61,8 +58,8 @@ Alternatively, you can compile the SQL as follows:
 with top_users_by_country AS (
   {{sql('segmentation', [dataset](introduction#dataset) = 'users', 
             [measures](introduction#measure) = ['total_users'], 
-            [dimensions](introduction#dimension) = ['country'], 
-            [filters](introduction#filter) = [{dimension: 'nps', operator: 'greater_than', value: 10}])}}
+            [dimensions](introductiondimension) = ['country'], 
+            [filters](introduction#filter) = [dimension: 'nps', operator: 'greater_than', value: 10}])}}
 )
 select * from top_users_by_country
 ```
