@@ -30,7 +30,7 @@ sources:
 </File>
 
 <Tabs
-  defaultValue="rest"
+  defaultValue="api"
   values={[
     { label: 'API', value: 'api', },
     { label: 'SQL', value: 'sql', }
