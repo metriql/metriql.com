@@ -13,7 +13,7 @@ query_options:
   limit: 1000
 ```
 
-metriql parse the SQL query, convert it to [Segmentation query](/query/segmentation) as follows:
+metriql parses the SQL query and converts it to [Segmentation query](/query/segmentation) as follows:
 
 ```yml
 dataset: source('first_dataset', 'users')
