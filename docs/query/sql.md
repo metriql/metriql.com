@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # SQL
 
-You can run SQL queries in metriql API just like the other reporting types. metriql compiles your SQL queries with Jinja so you can run queries similar to the following one:
+You can run ad-hoc SQL queries using metriql just like the other reporting types. metriql compiles your SQL queries with Jinja. Here is an example query:
 
 ```yml
 query: >
