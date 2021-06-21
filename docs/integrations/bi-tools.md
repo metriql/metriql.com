@@ -16,12 +16,12 @@ While we will develop the support for some of the most popular BI tools but we n
 | BI Tool            | Status             | Integration Method  |
 |--------------------|--------------------|---------------------|
 | rakam              | Completed  ✅    |  Native                                            |   
-| Google Data Studio | [🚧 In progress](https://github.com/metriql/metriql/issues/1)  | REST API  |
-| Tableau            | [🚧 In progress](https://github.com/metriql/metriql/issues/6)  | Trino JDBC      |
-| Power BI           | [🚧 Queued](https://github.com/metriql/metriql/issues/7)  | XMLA or Trino-ODBC bridge  |   
-| Metabase           | [🙋 Waiting for community support](https://github.com/metriql/metriql/issues/6)  | Trino-JDBC (❓)      |
-| Superset           | [🙋 Waiting for community support](https://github.com/metriql/metriql/issues/10) | REST API (❓) |
-| Looker             | [🙋 Waiting for community support](https://github.com/metriql/metriql/issues/9)  | CLI command to create LookML files (❓)      |
+| Google Data Studio | Completed  ✅  | REST API  |
+| Looker             | [🚧 In progress](https://github.com/metriql/metriql/issues/9)  | CLI command to create LookML files     |
+| Tableau            | [🚧 In progress](https://github.com/metriql/metriql/issues/6)  | Trino client      |
+| Metabase           | [🙋 Queued](https://github.com/metriql/metriql/issues/6)  | Trino client      |
+| Superset           | [🙋 Queued](https://github.com/metriql/metriql/issues/10) | Trino client |
+| Power BI           | [🙋 Queued](https://github.com/metriql/metriql/issues/7)  | XMLA or Trino-ODBC bridge  |   
 
 
 You can also see our roadmap for the integrations [here](https://github.com/metriql/metriql/projects/1).
