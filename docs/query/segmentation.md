@@ -43,9 +43,9 @@ You can query the data using as follows:
 
 ```yml
 [dataset](introduction#dataset): source('first_dataset', 'users')
-[measures](introduction#measure): ["total_users"],
-[dimensions](introduction#dimension): ["country"],
-[filters](introduction#filter):
+[measures](introduction#measure): ["total_users"]
+[dimensions](introduction#dimension): ["country"]
+[filters](introduction#filter)
   - {dimension: nps, operator: greater_than, value: 10}
 limit: 1000
 ```

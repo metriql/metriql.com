@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Headless BI - model your data once and consume it wherever you want">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
