@@ -158,10 +158,10 @@ module.exports = {
               to: '/faq',
               label: 'FAQs',
             },
-            {
-              to: '/blog',
-              label: 'Blog',
-            }
+            // {
+            //   to: '/blog',
+            //   label: 'Blog',
+            // }
           ],
         },
         {
