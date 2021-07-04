@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Installation
 
 metriql comes with a CLI that `generate`s [Aggregates](/introduction/aggregates) and serves them to the end-user via `run` command. You need to have Java 8 installed on your machine to run metriql.
@@ -5,14 +9,32 @@ metriql comes with a CLI that `generate`s [Aggregates](/introduction/aggregates)
 Please note that you need to [install dbt](https://docs.getdbt.com/dbt-cli/installation) to use metriql. We recommend you use install metriql using one of four tried and tested methods:
 
 <Tabs
-  defaultValue="binary"
+  defaultValue="homebrew"
   values={[
     { label: 'Install via binary', value: 'binary', },
     { label: 'Docker', value: 'docker', },
     { label: 'From Source', value: 'source', }
   ]
 }>
+<TabItem value="homebrew">
 
+Install [Homebrew](http://brew.sh/), and [dbt CLI](https://docs.getdbt.com/dbt-cli/installation#homebrew). Then, run:
+
+```bash
+brew update
+brew tap metriql/metriql
+brew install metriql
+```
+
+You can also upgrade metriql as follows:
+
+```bash
+brew update
+brew upgrade metriql
+```
+
+Test your installation with `metriql --help`:
+</TabItem>
 
 <TabItem value="binary">
 
