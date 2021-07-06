@@ -13,16 +13,16 @@ While we will develop the support for some of the most popular BI tools but we n
 3. If you're a BI vendor looking for a way to integrate metriql, join our community on [Slack](https://join.slack.com/t/metriql/shared_invite/zt-qp9ds5te-EqzlN79caX76uH~2yqygpA).
 
 
-| BI Tool            | Status             | Integration Method  | Source  |
+| BI Tool            | Status             | Source  |
 |--------------------|--------------------|---------------------|
-| rakam              | Completed  ✅    |  Native                                            |   - |
-| Google Data Studio | Completed  ✅  | REST API  | [Google Marketplace](https://datastudio.google.com/datasources/create?connectorId=AKfycbw8o0F6LEr0epNSNVWqNzlqo7R-6jRYxxSxBspzyg2Xi6SDFItLN_aM3l_U56Z0obwS) |
-| Looker             | Completed  ✅  | CLI command to create LookML files     | [Github](https://github.com/metriql/metriql-lookml)
+| rakam              | Completed  ✅    |  Native                                          
+| Google Data Studio | Completed  ✅  | [Google Marketplace](https://datastudio.google.com/datasources/create?connectorId=AKfycbw8o0F6LEr0epNSNVWqNzlqo7R-6jRYxxSxBspzyg2Xi6SDFItLN_aM3l_U56Z0obwS) |
+| Looker             | Completed  ✅  | [Github](https://github.com/metriql/metriql-lookml)
 | Tableau            | Completed  ✅  | [Github](https://github.com/metriql/metriql-tableau)      |
-| Metabase           | [🚧 In Progress](https://github.com/metriql/metriql/issues/6)  | Trino client  |
-| Superset           | [🚧 In Progress](https://github.com/metriql/metriql/issues/10) | Trino client |
-| Redash           | [🙋 Needs testing](https://github.com/metriql/metriql/issues/10) | [Presto](https://redash.io/data-sources/presto) |
-| Mode Analytics           | [🙋 Needs testing](https://github.com/metriql/metriql/issues/10) | [Presto](https://mode.com/presto/) |
+| Metabase           | [🚧 In Progress](https://github.com/metriql/metriql/issues/6)  | Trino  |
+| Superset           | [🚧 In Progress](https://github.com/metriql/metriql/issues/10) | Trino |
+| Redash           | [🙋 Needs testing](https://github.com/metriql/metriql/issues/10) | [Trino](https://redash.io/data-sources/presto) |
+| Mode Analytics           | [🙋 Needs testing](https://github.com/metriql/metriql/issues/10) | [Trino](https://mode.com/help/articles/supported-databases/#trino) |
 | Qlik           | [🙋 Needs testing](https://github.com/metriql/metriql/issues/7)  | [Presto](https://help.qlik.com/en-US/connectors/Subsystems/ODBC_connector_help/Content/Connectors_ODBC/Presto/Create-Presto-connection.htm)  |   
 | Sisense           | [🙋 Needs testing](https://github.com/metriql/metriql/issues/7)  | [Presto](https://www.sisense.com/data-connectors/presto/)  |   
 | MicroStrategy           | [🙋 Needs testing](https://github.com/metriql/metriql/issues/7)  | [Presto](https://community.microstrategy.com/s/article/How-to-Connect-to-Presto?language=en_US)  |   
