@@ -13,15 +13,17 @@ While we will develop the support for some of the most popular BI tools but we n
 3. If you're a BI vendor looking for a way to integrate metriql, join our community on [Slack](https://join.slack.com/t/metriql/shared_invite/zt-qp9ds5te-EqzlN79caX76uH~2yqygpA).
 
 
-| BI Tool            | Status             | Integration Method  |
+| BI Tool            | Status             | Integration Method  | Source  |
 |--------------------|--------------------|---------------------|
-| rakam              | Completed  ✅    |  Native                                            |   
-| Google Data Studio | Completed  ✅  | REST API  |
-| Looker             | [🚧 In progress](https://github.com/metriql/metriql/issues/9)  | CLI command to create LookML files     |
-| Tableau            | [🚧 In progress](https://github.com/metriql/metriql/issues/6)  | Trino client      |
-| Metabase           | [🙋 Queued](https://github.com/metriql/metriql/issues/6)  | Trino client      |
-| Superset           | [🙋 Queued](https://github.com/metriql/metriql/issues/10) | Trino client |
-| Power BI           | [🙋 Queued](https://github.com/metriql/metriql/issues/7)  | XMLA or Trino-ODBC bridge  |   
+| rakam              | Completed  ✅    |  Native                                            |   - |
+| Google Data Studio | Completed  ✅  | REST API  | [Google Marketplace](https://datastudio.google.com/datasources/create?connectorId=AKfycbw8o0F6LEr0epNSNVWqNzlqo7R-6jRYxxSxBspzyg2Xi6SDFItLN_aM3l_U56Z0obwS) |
+| Looker             | Completed  ✅  | CLI command to create LookML files     | [Github](https://github.com/metriql/metriql-lookml)
+| Tableau            | Completed  ✅  | [Github](https://github.com/metriql/metriql-tableau)      |
+| Metabase           | [🚧 In Progress](https://github.com/metriql/metriql/issues/6)  | Trino client      |
+| Superset           | [🚧 In Progress](https://github.com/metriql/metriql/issues/10) | Trino client |
+| Power BI           | [🙋 Waiting for community help](https://github.com/metriql/metriql/issues/7)  | XMLA or Trino-ODBC bridge  |   
 
+
+Please note that all the integrations are in alpha stage at the moment.
 
 You can also see our roadmap for the integrations [here](https://github.com/metriql/metriql/projects/1).
