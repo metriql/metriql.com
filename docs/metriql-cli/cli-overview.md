@@ -9,10 +9,10 @@ metriql comes with a CLI that `generate`s [Aggregates](/introduction/aggregates)
 Please note that you need to [install dbt](https://docs.getdbt.com/dbt-cli/installation) to use metriql. We recommend you use install metriql using one of four tried and tested methods:
 
 <Tabs
-  defaultValue="homebrew"
+  defaultValue="docker"
   values={[
+      { label: 'Docker', value: 'docker', },
     { label: 'Install via binary', value: 'binary', },
-    { label: 'Docker', value: 'docker', },
     { label: 'From Source', value: 'source', }
   ]
 }>
@@ -53,8 +53,14 @@ docker pull buremba/metriql:latest
 
 And run the following command:
 
+
 ```
-docker run buremba/metriql:latest --help
+export DBT_PROJECT_DIR=${PWD}
+export DBT_PROFILES_DIR=${HOME}/.dbt
+export METRIQL_PORT=5656
+
+docker run -it -p "${METRIQL_PORT}:5656" -v "${DBT_PROJECT_DIR}:/root/app" -v "${DBT_PROFILES_DIR}:/root/.dbt" -e METRIQL_RUN_HOST=0.0.0.0 -e DBT_PROJECT_DIR=/root/app buremba/metriql \
+ run
 ```
 
 </TabItem>
