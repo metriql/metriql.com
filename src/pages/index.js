@@ -5,7 +5,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
-import { ReactComponent as HomepageDiagram } from '../components/homepage-diagram.svg';
+import { ReactComponent as HomepageDiagram } from '../components/homepage-diagram2.svg';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
