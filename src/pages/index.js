@@ -1,11 +1,9 @@
 import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
-import { ReactComponent as HomepageDiagram } from '../components/homepage-diagram2.svg';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -20,7 +18,6 @@ function HomepageHeader() {
         </p>
 
         <div className={styles.centerizedContent}>
-          {/* <HomepageDiagram src="/img/homepage-diagram.svg" style={{ height: '300px', marginLeft: '1.5%' }} /> */}
           <img src="img/homepage-diagram2.svg" style={{ height: '300px', marginLeft: '1.5%' }}/>
         </div>
       </div>
