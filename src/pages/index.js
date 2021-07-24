@@ -21,7 +21,7 @@ function HomepageHeader() {
 
         <div className={styles.centerizedContent}>
           {/* <HomepageDiagram src="/img/homepage-diagram.svg" style={{ height: '300px', marginLeft: '1.5%' }} /> */}
-          <img src="img/homepage-diagram1.svg" style={{ height: '300px', marginLeft: '1.5%' }}/>
+          <img src="img/homepage-diagram2.svg" style={{ height: '300px', marginLeft: '1.5%' }}/>
         </div>
       </div>
     </header>
