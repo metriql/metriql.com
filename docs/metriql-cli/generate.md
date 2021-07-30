@@ -9,16 +9,21 @@ Please see [Aggregates](/introduction/aggregates) to learn more about this featu
 
 ### ./metriql.sh generate --help
 ```shell
-Usage: commands generate [OPTIONS] --target-name
+Usage: commands generate [OPTIONS]
 
   Generates dbt models for aggregates
 
 Options:
-  --project-dir TEXT  Which directory to look in for the dbt_project.yml file.
-                      Default is the current working directory and its parents.
-  --output-dir TEXT   Which directory to create aggregate models.
-  -h, --help          Show this message and exit
-
-Arguments:
-  --target-name  Database dialect that you have in `profile.type`
+  -d, --debug              Enable debugging
+  --profiles-dir TEXT      Which directory to look in for the profiles.yml
+                           file. Default = ~/.dbt
+  --profiles-content TEXT  Profiles content as YML, overrides --profiles-dir
+                           option
+  --profile TEXT           Which profile to load. Overrides setting in
+                           dbt_project.yml.
+  --project-dir TEXT       Which directory to look in for the dbt_project.yml
+                           file. Default is the current working directory and
+                           its parents.
+  -o, --output-dir TEXT    Which directory to create aggregate models.
+  -h, --help               Show this message and exit
 ```

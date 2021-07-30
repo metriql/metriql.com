@@ -89,17 +89,6 @@ If you want to run the application via an IDE, the main class should be `com.met
 ```bash 
 Usage: commands [OPTIONS] COMMAND [ARGS]...
 
-Options:
-  -d, --debug          Enable debugging
-  --profiles-dir TEXT  Which directory to look in for the profiles.yml file.
-                       Default = ~/.dbt
-  --profile TEXT       Which profile to load. Overrides setting in
-                       dbt_project.yml.
-  --project-dir TEXT   Which directory to look in for the dbt_project.yml
-                       file. Default is the current working directory and its
-                       parents.
-  -h, --help           Show this message and exit
-
 Commands:
   [generate](generate)  Generates dbt models for aggregates
   [run](run)       Spins up an HTTP server serving your datasets
