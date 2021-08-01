@@ -2,16 +2,28 @@
 sidebar_position: 1
 ---
 
+# metriql cli
+
+The metriql cli tool has two commands:
+
+* `metriql generate`
+
+The generate command generates [Aggregate](/introduction/aggregates) dbt models in dbt project (nb: requires dbt cli).
+
+* `metriql run`
+
+The run command executes queries against the metriql application.
+
 # Installation
 
-metriql comes with a CLI that `generate`s [Aggregates](/introduction/aggregates) and serves them to the end-user via `run` command. You need to have Java 8 installed on your machine to run metriql.
+Please note that you need to [install dbt](https://docs.getdbt.com/dbt-cli/installation) to use metriql. 
 
-Please note that you need to [install dbt](https://docs.getdbt.com/dbt-cli/installation) to use metriql. We recommend you use install metriql using one of four tried and tested methods:
+We recommend you use install metriql using one of three tried and tested methods:
 
 <Tabs
   defaultValue="docker"
   values={[
-      { label: 'Docker', value: 'docker', },
+    { label: 'Docker', value: 'docker', },
     { label: 'Install via binary', value: 'binary', },
     { label: 'From Source', value: 'source', }
   ]
@@ -20,7 +32,7 @@ Please note that you need to [install dbt](https://docs.getdbt.com/dbt-cli/insta
 
 Install [Homebrew](http://brew.sh/), and [dbt CLI](https://docs.getdbt.com/dbt-cli/installation#homebrew). Then, run:
 
-```bash
+``` bash
 brew update
 brew tap metriql/metriql
 brew install metriql
@@ -28,7 +40,7 @@ brew install metriql
 
 You can also upgrade metriql as follows:
 
-```bash
+``` bash
 brew update
 brew upgrade metriql
 ```
@@ -47,14 +59,14 @@ Test the CLI application with  `./bin/metriql --help`:
 
 <TabItem value="docker">
 
-```
+``` bash
 docker pull buremba/metriql:latest
 ```
 
 And run the following command:
 
 
-```
+``` bash
 export DBT_PROJECT_DIR=${PWD}
 export DBT_PROFILES_DIR=${HOME}/.dbt
 export METRIQL_PORT=5656
@@ -67,7 +79,7 @@ docker run -it -p "${METRIQL_PORT}:5656" -v "${DBT_PROJECT_DIR}:/root/app" -v "$
 
 <TabItem value="source">
 
-```bash
+``` bash
 git clone https://github.com/metriql/metriql.git
 cd metriql
 ./mvnw clean install -DskipTests
@@ -75,7 +87,7 @@ cd metriql
 
 Run the following command:
 
-```
+``` bash
 target/metriql-*-bundle/metriql-*/bin/metriql --help
 ```
 
@@ -83,10 +95,9 @@ If you want to run the application via an IDE, the main class should be `com.met
 
 </TabItem>
 
-
 </Tabs>
 
-```bash 
+``` bash 
 Usage: commands [OPTIONS] COMMAND [ARGS]...
 
 Commands:
