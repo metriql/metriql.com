@@ -6,9 +6,9 @@ sidebar_position: 1
 
 metriql CLI has two commands:
 
-* [`metriql generate`](generate) generates [Aggregate](/introduction/aggregates) dbt models in dbt project (nb: requires dbt cli).
+* [`generate`](generate) generates [Aggregate](/introduction/aggregates) dbt models in dbt project (nb: requires dbt cli).
 
-* [`metriql serve`](serve) creates an HTTP server that you can connect to your data tools.
+* [`serve`](serve) creates an HTTP server that you can connect to your data tools.
 
 The CLI interacts with the dbt via Metadata API. You need to run `dbt compile` and generate `target/manifest.json` and pass the URI of the file as an option.
 
