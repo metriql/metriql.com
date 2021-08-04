@@ -10,6 +10,8 @@ metriql CLI has two commands:
 
 * [`metriql serve`](serve) creates an HTTP server that you can connect to your data tools.
 
+The CLI interacts with the dbt via Metadata API. You need to run `dbt compile` and generate `target/manifest.json` and pass the URI of the file as an option.
+
 # Installation
 
 Please note that you need to [install dbt](https://docs.getdbt.com/dbt-cli/installation) to use metriql. 
@@ -68,7 +70,7 @@ export DBT_PROFILES_DIR=${HOME}/.dbt
 export METRIQL_PORT=5656
 
 docker run -it -p "${METRIQL_PORT}:5656" -v "${DBT_PROJECT_DIR}:/root/app" -v "${DBT_PROFILES_DIR}:/root/.dbt" -e METRIQL_RUN_HOST=0.0.0.0 -e DBT_PROJECT_DIR=/root/app buremba/metriql \
- run
+ serve
 ```
 
 </TabItem>
@@ -92,13 +94,3 @@ If you want to run the application via an IDE, the main class should be `com.met
 </TabItem>
 
 </Tabs>
-
-``` bash 
-Usage: commands [OPTIONS] COMMAND [ARGS]...
-
-Commands:
-  [generate](generate)  Generates dbt models for aggregates
-  [run](run)       Spins up an HTTP server serving your datasets
-```
-
-The CLI interacts with the dbt via Metadata API. You need to run `dbt compile` and generate `target/manifest.json` and pass the URI of the file as an option.
