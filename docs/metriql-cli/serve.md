@@ -1,5 +1,5 @@
 ---
-label: run
+label: serve
 sidebar_position: 1
 ---
 
@@ -7,9 +7,9 @@ If you want to consume the data or share your metrics via REST API, metriql has 
 
 Please see [REST API](/rest-api) for specification.
 
-### ./metriql.sh run --help
+### ./metriql.sh serve --help
 ```shell
-Usage: commands run [OPTIONS]
+Usage: commands serve [OPTIONS]
 
   Spins up an HTTP server serving your datasets
 

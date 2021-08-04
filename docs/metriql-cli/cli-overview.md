@@ -4,15 +4,11 @@ sidebar_position: 1
 
 # metriql cli
 
-The metriql cli tool has two commands:
+metriql CLI has two commands:
 
-* `metriql generate`
+* [`metriql generate`](generate) generates [Aggregate](/introduction/aggregates) dbt models in dbt project (nb: requires dbt cli).
 
-The generate command generates [Aggregate](/introduction/aggregates) dbt models in dbt project (nb: requires dbt cli).
-
-* `metriql run`
-
-The run command executes queries against the metriql application.
+* [`metriql serve`](serve) creates an HTTP server that you can connect to your data tools.
 
 # Installation
 

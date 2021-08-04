@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # REST API
 
-The most common way to interact with datasets is via the REST API. [`./metriql run`](/metriql-cli/run) command creates an HTTP server that takes dbt's artifact called `manifest.json`.
+The most common way to interact with datasets is via the REST API. [`./metriql run`](/metriql-cli/run) command creates an HTTP server that takes dbt Core artifact called `manifest.json`.
 
 [See the API specification here](/rest-api-endpoints).
 
