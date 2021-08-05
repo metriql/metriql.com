@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# BI Tools
+# Introduction
 
 While metriql is a relatively new project, we're working on integrating BI tools using our low-level integrations such as [REST API](rest-api) and [JDBC driver](jdbc-driver). If your BI tool already integrates with Trino (formerly Presto), you can use the metriql URL and port `5656` to connect your metriql server. Note that metriql doesn't embed Trino, it acts as Trino for the BI tools. However, it actually rewrites the query and directly runs it on your database.
 
@@ -12,7 +12,7 @@ Let us know if you would like to suggest a new integration on [Github](https://g
 | BI Tool            | Status             | Source  |
 |--------------------|--------------------|---------------------|
 | rakam              | Completed  ✅    |  Native                                          
-| Google Data Studio | Completed  ✅  | [Google Marketplace](https://datastudio.google.com/datasources/create?connectorId=AKfycbw8o0F6LEr0epNSNVWqNzlqo7R-6jRYxxSxBspzyg2Xi6SDFItLN_aM3l_U56Z0obwS) |
+| [Google Data Studio](google-data-studio) | Completed  ✅  | [Google Marketplace](https://datastudio.google.com/datasources/create?connectorId=AKfycbw8o0F6LEr0epNSNVWqNzlqo7R-6jRYxxSxBspzyg2Xi6SDFItLN_aM3l_U56Z0obwS) |
 | Looker             | Completed  ✅  | [Github](https://github.com/metriql/metriql-lookml)
 | Tableau            | Completed  ✅  | [Github](https://github.com/metriql/metriql-tableau)      |
 | Metabase           | [🚧 In Progress](https://github.com/metriql/metriql/issues/6)  | Trino  |

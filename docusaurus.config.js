@@ -129,9 +129,16 @@ module.exports = {
               activeBasePath: 'integrations/rest-api'
             },
             {
-              to: '/integrations/bi-tools',
+              to: '/integrations/bi-tools/index',
               label: 'BI tools',
-              activeBasePath: 'integrations/bi-tools'
+              activeBasePath: 'integrations/bi-tools/index',
+              items: [
+                {
+                  to: '/integrations/bi-tools/google-data-studio',
+                  label: 'Data Studio',
+                  activeBasePath: 'integrations/bi-tools/google-data-studio'
+                }
+              ]
             },
             {
               to: '/integrations/embedded',

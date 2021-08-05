@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# metriql cli
+# metriql CLI
 
 metriql CLI has two commands:
 

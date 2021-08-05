@@ -58,7 +58,7 @@ const FeatureList = [
           <Link
             className="button button--secondary button--md"
             style={{marginTop: '10px', marginRight: '10px', borderRadius: '3px'}}
-            to="/integrations/bi-tools">
+            to="/integrations/bi-tools/index">
             BI Tools
           </Link>
           <Link
