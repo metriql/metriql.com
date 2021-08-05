@@ -165,6 +165,10 @@ module.exports = {
               to: '/faq',
               label: 'FAQs',
             },
+            {
+              label: 'Youtube',
+              href: 'https://www.youtube.com/channel/UCm8bxKrtZyggJ8W9TVaNoPw',
+            },
             // {
             //   to: '/blog',
             //   label: 'Blog',
