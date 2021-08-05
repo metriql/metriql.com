@@ -181,7 +181,7 @@ module.exports = {
           items: [
             {
               label: 'metriql Slack',
-              href: 'https://join.slack.com/t/metriql/shared_invite/zt-qp9ds5te-EqzlN79caX76uH~2yqygpA',
+              href: 'https://join.slack.com/t/metriql/shared_invite/zt-tz1nzvyd-ker8LGcBQmzrwvfAkFO1qQ',
             },
             // {
             //   label: 'Blog',
