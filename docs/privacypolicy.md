@@ -1,6 +1,6 @@
 ---
 label: Privacy Policy
-sidebar_position: 13
+sidebar_position: 10
 ---
 
 # Privacy Policy
