@@ -9,7 +9,7 @@ You can run ad-hoc SQL queries using metriql just like the other reporting types
 ```yml
 query: >
     with nps_by_customer AS (
-        {{sql('segmentation', dataset = 'source('first_dataset', 'users')', measures=['nps'], dimensions=['plan_type'], )}}
+        {{sql('segmentation', dataset = 'source('first_dataset', 'users')', measures=['nps'], dimensions=['plan_type'] )}}
     )
     select * from nps_by_customer
 query_options:
