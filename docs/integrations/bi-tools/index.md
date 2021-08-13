@@ -13,8 +13,8 @@ Let us know if you would like to suggest a new integration on [Github](https://g
 |--------------------|--------------------|---------------------|
 | rakam              | Completed  ✅    |  Native                                          
 | [Google Data Studio](google-data-studio) | Completed  ✅  | [Google Marketplace](https://datastudio.google.com/datasources/create?connectorId=AKfycbw8o0F6LEr0epNSNVWqNzlqo7R-6jRYxxSxBspzyg2Xi6SDFItLN_aM3l_U56Z0obwS) |
-| Looker             | Completed  ✅  | [Github](https://github.com/metriql/metriql-lookml)
-| Tableau            | Completed  ✅  | [Github](https://github.com/metriql/metriql-tableau)      |
+| [Looker](looker)             | Completed  ✅  | [Github](https://github.com/metriql/metriql-lookml)
+| [Tableau](tableau)            | Completed  ✅  | [Github](https://github.com/metriql/metriql-tableau)      |
 | Metabase           | [🚧 In Progress](https://github.com/metriql/metriql/issues/6)  | Trino  |
 | Superset           | [🚧 In Progress](https://github.com/metriql/metriql/issues/10) | Trino |
 | Redash           | [🙋 Needs testing](https://github.com/metriql/metriql/issues/10) | [Trino](https://redash.io/data-sources/presto) |
