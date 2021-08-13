@@ -110,16 +110,14 @@ seeds:
             type: string
 models:
   - name: pageviews
-    columns:
-      - name: country
-        tests:
-          - not_null
-          - relationships:
-              to: ref('countries')
-              field: iso_code
-              metriql: # Includes info about the relationship
-                   join: left_join 
-                   type: many_to_many
+    meta:
+      metriql:
+        relations:
+          countries:
+            to: ref('countries')
+            sql: "{TABLE}.country = {TARGET}.iso_code"
+            type: left_join 
+            relationship: many_to_many
 ```
 
 metriql automatically creates the relation from `pageview` to a hidden `countries` model so that the users can drill down by `user_friendly_name` when they're analyzing `pageviews`.
@@ -131,4 +129,3 @@ We make use of your dbt test definitions in order to understand your data in a b
 * `unique` marks the dimension as primary key. metriql needs a primary key dimension to calculate [symmetric aggregates](/reference/relation/#symmetric-aggregates) as there must be a unique key in a model.
 * `not_null` hides the `is not set` filter to the user in the user interface.
 * `accepted_values` makes metriql suggests the values to the end-user in the user interface. It disables the automatic suggestion in favor of performance.
-* `relationships` automatically creates the relations between the models. We extend it with `join` and `type` properties in order to resolve the relation.

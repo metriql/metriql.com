@@ -229,16 +229,14 @@ seeds:
             aggregation: count
 models:
   - name: pageviews
-    columns:
-      - name: country
-        tests:
-          - not_null
-          - relationships:
-              to: ref('countries')
-              field: iso_code
-              metriql: # Includes info about the relationship
-                   join: left_join 
-                   type: many_to_many
+    meta:
+      metriql:
+        relations:
+          country:
+            to: ref('countries')
+            sql: "{TABLE}.country = {TARGET}.iso_code"
+            type: left_join 
+            relationship: many_to_many
 ```
 
 In this case, the reference `countries.total_countries` from the dataset `pageviews` automatically creates a join in your SQL query. Learn more about the relations [here](/reference/relation).

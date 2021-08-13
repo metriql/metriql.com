@@ -2,9 +2,7 @@
 title: "Relation properties"
 sidebar_position: 5
 ---
-Relations enable the non-technical users to use dimensions and measures from other datasets when there is a relation between the source dataset and the target datasets. Typically, metriql generates JOIN statements in SQL.
-
-There are two different ways to define the relations, either via `relationships` test in dbt or under `meta.metriql.relations` if you have more complex logic.
+Relations enable the non-technical users to use dimensions and measures from other datasets when there is a relation between the source dataset and the target datasets. Typically, metriql generates JOIN statements in SQL. You can define relations under `meta.metriql.relations` property.
 
 #### Creating relation via dbt test
 
@@ -15,16 +13,14 @@ seeds:
       - name: iso_code
 models:
   - name: pageviews
-    columns:
-      - name: country
-        tests:
-          - not_null
-          - relationships:
-              to: ref('countries')
-              field: iso_code
-              metriql: # Includes info about the relationship
-                   type: left_join 
-                   relationship: many_to_many
+    meta:
+      metriql:
+        relations:
+          country:
+            to: ref('countries')
+            sql: "{TABLE}.country = {TARGET}.iso_code"
+            type: left_join 
+            relationship: many_to_many
 ```
 
 #### Creating relation via `meta.metriql`

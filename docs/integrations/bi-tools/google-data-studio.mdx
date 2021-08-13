@@ -6,6 +6,8 @@ This integration is currently in beta and not verified by Google yet so it's not
 
 metriql has a community connector for Data Studio that converts Data Studio queries into metriql queries (segmentation), run the query on your data warehouse and let you visualize the data in Google Data Studio. In order to run the queries efficiently, the connector uses [segmentation](/query/segmentation) feature. 
 
+<YoutubeVideo id="qdy5dgcD0sI" />
+
 #### Step 1:
 <a href="https://datastudio.google.com/datasources/create?connectorId=AKfycbw8o0F6LEr0epNSNVWqNzlqo7R-6jRYxxSxBspzyg2Xi6SDFItLN_aM3l_U56Z0obwS" target="_blank">Connect your metriql on Google Data Studio</a>
 
@@ -49,5 +51,7 @@ Congratulations, you're ready to create reports! 🎉
 1. Since metriql doesn't support ad-hoc aggregations on dimensions, you should not drag & drop dimensions into metric as seen in the picture. GDS calculates the `sum(o_orderkey)` itself while `total_orders` is a measure defined in the metriql. If you have more than the maximum rows parameter, the value of `sum(o_orderkey)` won't be correct.
 
 2. You can only use the fields in dimension & metric in the sorting. GDS doesn't pushdown this information to the connector so if you have a sorting field that is not being used as part of dimension & metric, metriql treats the sorting field as a dimension field.
+
+3. You should not be using a DATE dimension in filter if it's not included in the dimensions section. We filed the bug to GDS, you can find the relevant info here: https://support.google.com/datastudio/thread/121049694/forfilteronly-field-is-not-set-for-date-filters?hl=en
 
 <img src="/img/integrations/gds-report.png" alt="GDS Report" />
