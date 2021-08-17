@@ -53,7 +53,7 @@ It's not realistic to expect every company to have the luxury to teach SQL to al
 
 * Advantages
     * Powerful visualization
-    * Ability to analyze the data much faster if your data source is slow
+    * Ability to analyze the data much faster by extracting the data if your data source is slow
     * Better community
 
 * Drawbacks
