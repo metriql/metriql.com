@@ -25,7 +25,7 @@ As your data model gets more advanced, you start to calculate the metrics such a
 [Total Expenses Metric] / [Total Customers Metric]
 ```
 
-If you use SQL to define this metric in your data model, you can’t just use an aggregation function such as SUM to calculate this metric. Instead, it should be calculated on the fly directly from your visualization tool from the source data. That’s why Tableau has [calculations](https://help.tableau.com/current/pro/desktop/en-us/calculations_calculatedfields_lod.htm), Metabase has [custom expressions](https://www.metabase.com/learn/questions/custom-expressions), PowerBI has [DAX](https://docs.microsoft.com/en-us/power-bi/transform-model/desktop-quickstart-learn-dax-basics). SQL is not enough anymore even though you can write the same expression in SQL, you need to learn these custom expression languages to be able to define your metrics, usually using their GUI.
+If you use SQL to define this metric in your data model, you can’t just use an aggregation function such as SUM to calculate this metric. Instead, it should be calculated on the fly directly in an ad-hoc SQL query for the report you're generating. That’s why Tableau has [calculations](https://help.tableau.com/current/pro/desktop/en-us/calculations_calculatedfields_lod.htm), Metabase has [custom expressions](https://www.metabase.com/learn/questions/custom-expressions), PowerBI has [DAX](https://docs.microsoft.com/en-us/power-bi/transform-model/desktop-quickstart-learn-dax-basics). SQL is not enough anymore even though you can write the same expression in SQL, you need to learn these custom expression languages to be able to define your metrics, usually using their GUI.
 
 ### Window measures
 
