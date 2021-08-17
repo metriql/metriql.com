@@ -7,11 +7,15 @@ author_url: https://github.com/buremba
 author_image_url: https://avatars.githubusercontent.com/u/82745
 tags: [announcement]
 hide_table_of_contents: true
+draft: false
+unlisted: true
 ---
 
 Metric definitions is a hot topic most people are talking about lately. Ben has written [The missing piece of the modern data stack](https://benn.substack.com/p/metrics-layer) and Basecamp came up with the [Headless BI](https://basecase.vc/blog/headless-bi) concept in the last few months.
 
 We have been also giving careful thoughts to this particular problem for a while. The way we think about metrics is not just about the definitions, instead, a better integration between data tools and data warehouses. Most companies already use a modern data warehouse and have adopted the data warehouse as the single source of truth. They ingest data in real-time, run ELT jobs directly in their data warehouse, run ad-hoc queries and get the results in low-latency, and even run ML jobs on them.
+
+<!--truncate-->
 
 If you’re using a data transformation tool such as dbt, you can model your data and expose it to your data tools but that’s not often enough for the data tools, we often found ourselves doing extra data modeling in data tools for metric definitions. This is primarily because most of the data tools introduce different ways to define metrics and you need to adopt it to be able to analyze the data reliably using these tools. There are 3 common metric definition types that we've identified, let me explain what they are and how they're defined differently in each BI tool:
 
@@ -91,4 +95,4 @@ If you don't have a standardized way of sharing the data across your organizatio
 
 What we came to understanding of by working with data-driven and succesful companies in the past years is that they use the right tool for the right, they don't try to force one tool to fit all use cases. BI tools are now the front-end of your data and your business stakeholders should have the option to choose any front-end depending on their preferences and needs. While the Headless BI concept is relatively new and still in the early stages, it has many use-cases that save data teams time just like how dbt saves time by replacing the data transformation within BI tools. Happy and excited to be one of the first companies in this space! 🤞
 
-We already released some metriql [integrations](https://metriql.com/integrations/bi-tools/index) including rakam, Tableau, Google Data Studio, Looker, Python, Rest API. We aim to build integrations with other modern data stack tools as fast as we can and let companies sync their metrics with every data tool they are using. Happy to accept contributions, ideas or integration requests on [GitHub](https://github.com/metriql/metriql/projects/1)! 
+We already released some metriql [integrations](https://metriql.com/integrations/bi-tools/index) including rakam, Tableau, Google Data Studio, Looker, Python, Rest API. We aim to build integrations with other modern data stack tools as fast as we can and let companies sync their metrics with every data tool they are using. Happy to accept contributions, ideas or integration requests on [GitHub](https://github.com/metriql/metriql/projects/1) and brainstorm about your use-cases [on Slack](https://join.slack.com/t/metriql/shared_invite/zt-tz1nzvyd-ker8LGcBQmzrwvfAkFO1qQ)! 
