@@ -9,12 +9,12 @@ While metriql is a relatively new project, we're working on integrating BI tools
 Let us know if you would like to suggest a new integration on [Github](https://github.com/metriql/metriql/issues/new) or if you're a BI vendor looking to integrate metriql, join our community on [Slack](https://join.slack.com/t/metriql/shared_invite/zt-tz1nzvyd-ker8LGcBQmzrwvfAkFO1qQ).
 
 
-| BI Tool            | Status             | Source  |
+| BI Tool            | Status             | Integration Method  |
 |--------------------|--------------------|---------------------|
 | rakam              | Completed  ✅    |  Native                                          
-| [Google Data Studio](google-data-studio) | Completed  ✅  | [Google Marketplace](https://datastudio.google.com/datasources/create?connectorId=AKfycbw8o0F6LEr0epNSNVWqNzlqo7R-6jRYxxSxBspzyg2Xi6SDFItLN_aM3l_U56Z0obwS) |
-| [Looker](looker)             | Completed  ✅  | [Github](https://github.com/metriql/metriql-lookml)
-| [Tableau](tableau)            | Completed  ✅  | [Github](https://github.com/metriql/metriql-tableau)      |
+| [Google Data Studio](google-data-studio) | Completed  ✅  | Community Connector |
+| [Looker](looker)             | Completed  ✅  | Trino + LookML project |
+| [Tableau](tableau)            | Completed  ✅  |  Presto  |
 | Metabase           | [🚧 In Progress](https://github.com/metriql/metriql/issues/6)  | Trino  |
 | Superset           | [🚧 In Progress](https://github.com/metriql/metriql/issues/10) | Trino |
 | Redash           | [🙋 Needs testing](https://github.com/metriql/metriql/issues/10) | [Trino](https://redash.io/data-sources/presto) |
