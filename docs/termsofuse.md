@@ -1,6 +1,7 @@
 ---
 label: Terms of Use
-sidebar_position: 9
+sidebar_position: 12
+hide_in_sidebar: true
 ---
 
 # Terms of Use
