@@ -15,8 +15,6 @@ Metric definitions is a hot topic that most people are talking about lately. Ben
 
 We have been also giving careful thoughts to this particular problem for a while. The way we think about metrics is not just about the definitions, instead, a better integration between data tools and data warehouses. Most companies already use a modern data warehouse and have adopted the data warehouse as the single source of truth. They ingest data in real-time, run ELT jobs directly in their data warehouse, run ad-hoc queries and get the results in low-latency, and even run ML jobs on them.
 
-<!--truncate-->
-
 If you’re using a data transformation tool such as dbt, you can model your data and expose it to your data tools but that’s not often enough for the data tools, we often found ourselves doing extra data modeling in data tools for metric definitions. This is primarily because most of the data tools introduce different ways to define metrics and you need to adopt it to be able to analyze the data reliably using these tools. There are 3 common metric definition types that we've identified, let me explain what they are and how they're defined differently in each BI tool:
 
 ### Aggregate measures
