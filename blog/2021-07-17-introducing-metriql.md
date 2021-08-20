@@ -11,7 +11,7 @@ draft: false
 unlisted: true
 ---
 
-Metric definitions is a hot topic most people are talking about lately. Ben has written [The missing piece of the modern data stack](https://benn.substack.com/p/metrics-layer) and Basecamp came up with the [Headless BI](https://basecase.vc/blog/headless-bi) concept in the last few months.
+Metric definitions is a hot topic that most people are talking about lately. Ben has written [The missing piece of the modern data stack](https://benn.substack.com/p/metrics-layer) and Basecamp came up with the [Headless BI](https://basecase.vc/blog/headless-bi) concept.
 
 We have been also giving careful thoughts to this particular problem for a while. The way we think about metrics is not just about the definitions, instead, a better integration between data tools and data warehouses. Most companies already use a modern data warehouse and have adopted the data warehouse as the single source of truth. They ingest data in real-time, run ELT jobs directly in their data warehouse, run ad-hoc queries and get the results in low-latency, and even run ML jobs on them.
 
