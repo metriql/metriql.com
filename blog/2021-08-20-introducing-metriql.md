@@ -1,6 +1,6 @@
 ---
 slug: introducing-metriql
-title: Introducing metriql
+title: Introducing metriql: Open-source metric store
 author: Burak Kabakci
 author_title: Core Team
 author_url: https://github.com/buremba
@@ -11,7 +11,7 @@ draft: false
 unlisted: true
 ---
 
-Metric definitions is a hot topic that most people are talking about lately. Ben has written [The missing piece of the modern data stack](https://benn.substack.com/p/metrics-layer) and Basecamp came up with the [Headless BI](https://basecase.vc/blog/headless-bi) concept.
+Today, most data-led/driven companies successfully establish the data warehouse as the single source of truth for their data and collect all their data into their data warehouse through ETL jobs. However, ETL is only one part of the whole process. Companies want to collect and own their data because they want to consume it in various ways to grow their business whether it might be building analytical dashboards for stakeholders or building an ML application. To consume the data via BI or data tools, companies need to model their data, define business metrics and KPIs so stakeholders can have an agreement in the definition of the data. Establishing the single source of truth for metadata is a very difficult because tools and even teams consume the data in different methods than each other. This topic has also been addressed by many data folks recently: Ben has written [The missing piece of the modern data stack](https://benn.substack.com/p/metrics-layer) and Basecamp came up with the [Headless BI](https://basecase.vc/blog/headless-bi) concept, Airbnb introduced [Minerva](https://medium.com/airbnb-engineering/airbnb-metric-computation-with-minerva-part-2-9afe6695b486).
 
 We have been also giving careful thoughts to this particular problem for a while. The way we think about metrics is not just about the definitions, instead, a better integration between data tools and data warehouses. Most companies already use a modern data warehouse and have adopted the data warehouse as the single source of truth. They ingest data in real-time, run ELT jobs directly in their data warehouse, run ad-hoc queries and get the results in low-latency, and even run ML jobs on them.
 
@@ -85,7 +85,7 @@ However; Looker is still an enterprise product just like Tableau and PowerBI and
 
 > metriql is LookML for all the BI tools in the market. You transform, test, and document your data with dbt, define your metrics with metriql and serve data models to your data tools in a consistent way.
 
-metriql is an open-source project that lets you define your company metrics as code in a single central metric repository using dbt and later let you sync the data models to all your data tools at once.
+metriql is an open-source project that lets you define your company metrics as code in a central metric store using dbt and later let you sync the data models to all your data tools at once.
 
 metriql sits between your data-warehouse and the data tools. It doesn’t have its query engine, instead leverages your existing data warehouse. While it has a REST API, it’s often not enough. A more tight integration was required for the BI tools so we built MQL, a SQL dialect for your metriql datasets. We have native integrations with multiple tools such as Google Sheets and Google Data Studio and use Trino-interface for some others such as Looker & Tableau.
 
