@@ -262,7 +262,7 @@ module.exports = {
           {
             tagName: 'link',
             rel: 'icon',
-            href: '/logo/logo-72.png',
+            href: '/img/logo/logo-72.png',
           },
           {
             tagName: 'link',
