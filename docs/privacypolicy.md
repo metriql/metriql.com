@@ -1,6 +1,6 @@
 ---
 label: Privacy Policy
-sidebar_position: 10
+sidebar_position: 13
 hide_in_sidebar: true
 ---
 
