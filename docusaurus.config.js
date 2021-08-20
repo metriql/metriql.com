@@ -56,7 +56,7 @@ module.exports = {
   projectName: 'metriql', 
   themeConfig: {
     sidebarCollapsible: true,
-    image: '/img/avatar.png',
+    image: '/img/logo/logo-144.png',
     announcementBar: WARNING_BANNER,
 
     algolia: {
