@@ -169,10 +169,10 @@ module.exports = {
               label: 'Youtube',
               href: 'https://www.youtube.com/channel/UCm8bxKrtZyggJ8W9TVaNoPw',
             },
-            // {
-            //   to: '/blog',
-            //   label: 'Blog',
-            // }
+            {
+              to: '/blog',
+              label: 'Blog',
+            }
           ],
         },
         {
@@ -183,10 +183,10 @@ module.exports = {
               label: 'metriql Slack',
               href: 'https://join.slack.com/t/metriql/shared_invite/zt-tz1nzvyd-ker8LGcBQmzrwvfAkFO1qQ',
             },
-            // {
-            //   label: 'Blog',
-            //   to: '/blog',
-            // },
+            {
+              label: 'Blog',
+              to: '/blog',
+            },
             {
               label: 'GitHub',
               href: 'https://github.com/metriql/metriql',
