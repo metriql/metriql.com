@@ -1,6 +1,6 @@
 ---
 slug: introducing-metriql
-title: "Introducing metriql: Open-source metric store"
+title: "Introducing metriql: Open-source metrics store"
 author: Burak Kabakci
 author_title: Core Team
 author_url: https://github.com/buremba
