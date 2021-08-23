@@ -25,6 +25,9 @@ Information automatically collected
 In Short: Some information — such as your Internet Protocol (IP) address and/or browser and device characteristics — is collected automatically when you visit our Website.
  
 We automatically collect certain information when you visit, use or navigate the Website. This information does not reveal your specific identity (like your name or contact information) but may include device and usage information, such as your IP address, browser and device characteristics, operating system, language preferences, referring URLs, device name, country, location, information about who and when you use our Website and other technical information. This information is primarily needed to maintain the security and operation of our Website, and for our internal analytics and reporting purposes.
+
+metriql connectors may have rights to access your Google Account to verify the user by his/her email address. metriql does not share your data with any third party companies. You can revoke metriql’s right to access your data at any point from your Google account control panel (https://security.google.com/settings/security/permissions).
+metriql can cache your data for the time required to serve you in an efficient manner. In almost all cases, data remains in short-lived encrypted caches and never leaves your environment.
  
 Like many businesses, we also collect information through cookies and similar technologies.  
  
