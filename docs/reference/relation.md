@@ -76,13 +76,6 @@ The value that will be visible in the user interface. The default value is the r
 label: Countries
 ```
 
-### `description:`
-
-Example:
-```yml
-label: The country the user signed up from
-```
-
 ### `hidden:`
 Hides the relation in the user interface. It's useful in case you want to test the relationship in the ELT layer with dbt but hide it from the end users.
 

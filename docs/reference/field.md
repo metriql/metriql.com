@@ -39,6 +39,13 @@ If you have many different fields for different use-cases, you can group them un
 category: Product
 ```
 
+### `description:`
+
+Example:
+```yml
+label: The country the user signed up from
+```
+
 ### `hidden:`
 
 If the value is `true`, the model won't be visible in the user interface.
