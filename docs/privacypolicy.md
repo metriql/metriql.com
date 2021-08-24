@@ -6,7 +6,7 @@ hide_in_sidebar: true
 
 # Privacy Policy
 
-Thank you for choosing to be part of our community at metriql (“Company”, “we”, “us”, or “our”). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regards to your personal information, please contact us at emre@rakam.io.
+Thank you for choosing to be part of our community at metriql (“Company”, “we”, “us”, or “our”). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regards to your personal information, please contact us at support@rakam.io.
 When you visit our website https://www.metriql.com (the "Website"), and more generally, use any of our services (the "Services", which include the Website), we appreciate that you are trusting us with your personal information. We take your privacy very seriously. In this privacy notice, we seek to explain to you in the clearest way possible what information we collect, how we use it and what rights you have in relation to it. We hope you take some time to read through it carefully, as it is important. If there are any terms in this privacy notice that you do not agree with, please discontinue use of our Services immediately.
 This privacy notice applies to all information collected through our Services (which, as described above, includes our Website), as well as any related services, sales, marketing or events.
 Please read this privacy notice carefully as it will help you understand what we do with the information that we collect.
@@ -42,7 +42,7 @@ In Short:  We process your information for purposes based on legitimate business
 We use personal information collected via our Website for a variety of business purposes described below. We process your personal information for these purposes in reliance on our legitimate business interests, in order to enter into or perform a contract with you, with your consent, and/or for compliance with our legal obligations. We indicate the specific processing grounds we rely on next to each purpose listed below.
 
 We use the information we collect or receive:
-To post testimonials: We post testimonials on our Website that may contain personal information. Prior to posting a testimonial, we will obtain your consent to use your name and the consent of the testimonial. If you wish to update, or delete your testimonial, please contact us at emre@rakam.io and be sure to include your name, testimonial location, and contact information.
+To post testimonials: We post testimonials on our Website that may contain personal information. Prior to posting a testimonial, we will obtain your consent to use your name and the consent of the testimonial. If you wish to update, or delete your testimonial, please contact us at support@rakam.io and be sure to include your name, testimonial location, and contact information.
 To request feedback: We may use your information to request feedback and to contact you about your use of our Website.
 To enable user-to-user communications: We may use your information in order to enable user-to-user communications with each user's consent.
 To manage user accounts: We may use your information for the purposes of managing our account and keeping it in working order.
@@ -87,7 +87,7 @@ When we have no ongoing legitimate business need to process your personal inform
 #### 8. DO WE COLLECT INFORMATION FROM MINORS?
 
 In Short:  We do not knowingly collect data from or market to children under 18 years of age.
-We do not knowingly solicit data from or market to children under 18 years of age. By using the Website, you represent that you are at least 18 or that you are the parent or guardian of such a minor and consent to such minor dependent’s use of the Website. If we learn that personal information from users less than 18 years of age has been collected, we will deactivate the account and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18, please contact us at emre@rakam.io.
+We do not knowingly solicit data from or market to children under 18 years of age. By using the Website, you represent that you are at least 18 or that you are the parent or guardian of such a minor and consent to such minor dependent’s use of the Website. If we learn that personal information from users less than 18 years of age has been collected, we will deactivate the account and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18, please contact us at support@rakam.io.
  
 #### 9. WHAT ARE YOUR PRIVACY RIGHTS?
 
@@ -97,7 +97,7 @@ If we are relying on your consent to process your personal information, you have
 If you are resident in the European Economic Area and you believe we are unlawfully processing your personal information, you also have the right to complain to your local data protection supervisory authority. You can find their contact details here: http://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm.
 If you are resident in Switzerland, the contact details for the data protection authorities are available here: https://www.edoeb.admin.ch/edoeb/en/home.html.
  
-If you have questions or comments about your privacy rights, you may email us at emre@rakam.io.
+If you have questions or comments about your privacy rights, you may email us at support@rakam.io.
  
 #### Account Information
 
@@ -211,7 +211,7 @@ How do we use and share your personal information?
  
 More information about our data collection and sharing practices can be found in this privacy notice.
  
-You may contact us by email at emre@rakam.io, or by referring to the contact details at the bottom of this document.
+You may contact us by email at support@rakam.io, or by referring to the contact details at the bottom of this document.
  
 If you are using an authorized agent to exercise your right to opt-out, we may deny a request if the authorized agent does not submit proof that they have been validly authorized to act on your behalf.
  
@@ -257,7 +257,7 @@ you may object to the processing of your personal data
 you may request correction of your personal data if it is incorrect or no longer relevant, or ask to restrict the processing of the data
 you can designate an authorized agent to make a request under the CCPA on your behalf. We may deny a request from an authorized agent that does not submit proof that they have been validly authorized to act on your behalf in accordance with the CCPA.
 you may request to opt-out from future selling of your personal information to third parties. Upon receiving a request to opt-out, we will act upon the request as soon as feasibly possible, but no later than 15 days from the date of the request submission.
-To exercise these rights, you can contact us by email at emre@rakam.io, or by referring to the contact details at the bottom of this document. If you have a complaint about how we handle your data, we would like to hear from you.
+To exercise these rights, you can contact us by email at support@rakam.io, or by referring to the contact details at the bottom of this document. If you have a complaint about how we handle your data, we would like to hear from you.
  
 #### 12. DO WE MAKE UPDATES TO THIS NOTICE?
 
@@ -266,14 +266,14 @@ We may update this privacy notice from time to time. The updated version will be
  
 #### 13. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
 
-If you have questions or comments about this notice, you may email us at emre@rakam.io or by post to:
+If you have questions or comments about this notice, you may email us at support@rakam.io or by post to:
 Rakam Inc. 
 1355 MARKET ST, SUITE #488
 SAN FRANCISCO, CA 94103
  
 #### 14. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?
 
-Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it in some circumstances. To request to review, update, or delete your personal information, please send an email to: emre@rakam.io. We will respond to your request within 30 days.
+Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it in some circumstances. To request to review, update, or delete your personal information, please send an email to: support@rakam.io. We will respond to your request within 30 days.
 
 #### 15. Cookie Policy
 
