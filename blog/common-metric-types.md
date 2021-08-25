@@ -1,6 +1,6 @@
 ---
 slug: common-metric-types
-title: "Common-metric-types"
+title: "Common Metric Types"
 author: Burak Kabakci
 author_title: Core Team
 author_url: https://github.com/buremba
