@@ -1,6 +1,6 @@
 ---
-slug: metric-types
-title: "Metric-types"
+slug: common-metric-types
+title: "Common-metric-types"
 author: Burak Kabakci
 author_title: Core Team
 author_url: https://github.com/buremba
