@@ -1,5 +1,5 @@
 ---
-slug: introducing-metriql
+slug: introducing-metriql-open-source-metrics-store
 title: "Introducing metriql: Open-source metrics store"
 author: Burak Kabakci
 author_title: Core Team
