@@ -11,7 +11,7 @@ draft: false
 unlisted: true
 ---
 
-![Introduction](/img/introductionm.svg)
+![Introduction](/img/introduction.png)
 
 Today, most data-led/driven companies successfully establish the data warehouse as the single source of truth for their data and collect all their data into their data warehouse through ETL jobs. However, ETL is only one part of the whole process. Companies want to collect and own their data because they want to consume it in various ways to grow their business whether it might be building analytical dashboards for stakeholders or building an ML application. To consume the data via BI or data tools, companies need to model their data, define business metrics and KPIs so stakeholders can have an agreement in the definition of the data. Establishing the single source of truth for metadata is very difficult because tools and even teams consume the data in different methods than each other. This topic has also been addressed by many data folks recently: Ben has written [The missing piece of the modern data stack](https://benn.substack.com/p/metrics-layer) and Basecamp came up with the [Headless BI](https://basecase.vc/blog/headless-bi) concept, Airbnb introduced [Minerva](https://medium.com/airbnb-engineering/airbnb-metric-computation-with-minerva-part-2-9afe6695b486).
 
