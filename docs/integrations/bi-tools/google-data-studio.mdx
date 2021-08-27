@@ -46,6 +46,8 @@ Please refer to the [Google Data Studio documentation](https://developers.google
 
 Congratulations, you're ready to create reports! 🎉
 
+If your metriql deployment runs behind the firewall, you need to whitelist [Google Data Studio IPs](https://support.google.com/datastudio/answer/7288010?hl=en&ref_topic=7332343#zippy=%2Cin-this-article#notes) in your firewall. 
+
 ## Limitations
 
 1. Since metriql doesn't support ad-hoc aggregations on dimensions, you should not drag & drop dimensions into metric as seen in the picture. Google Data Studio calculates the `sum(o_orderkey)` itself while `total_orders` is a measure defined in the metriql. If you have more than the maximum rows parameter, the value of `sum(o_orderkey)` won't be correct.
