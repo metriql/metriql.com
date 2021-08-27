@@ -6,7 +6,8 @@ sidebar_position: 2
 We call `measure`, `dimension`,  and `relation` properties as `field`. The following properties can be used in fields:
 
 ### `name:`
-The unique identifier of a metric. If you set the name, you can reference the metric from other metrics.
+The unique identifier of a metric. If you set the name, you can reference the metric from other metrics. 
+The names must be lowercase and does not have any special character except `_`. Metriql will complain if the field names that has whitespace, non-ascii, or any upppercase character.
 
 ```yml
 name: total_events
