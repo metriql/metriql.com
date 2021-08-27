@@ -76,3 +76,14 @@ COUNT(CASE WHEN WEEK(now(), occurred_at) < 1 THEN NULL ELSE 1)
 ```
 
 Learn more about the filter operators [here](/query/introduction/#filter).
+
+
+### `window:`
+
+If you use [WINDOW operations](https://en.wikipedia.org/wiki/Window_function_(SQL)) in your `sql` expressions, you must set this property to `true` so that metriql constructs the SQL queries using a subquery. 
+
+```yml
+revenue_increase:
+  sql: '{measure.revenue} - LAG({measure.revenue}) OVER ({TABLE}.month)'
+  window: true
+```
