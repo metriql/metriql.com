@@ -19,7 +19,7 @@ models:
           [dimension | column | sql](measure#dimension--column--sql) <reference>
           [filters](measure#filters) <filters>
              // filtered measure
-      [dimension](dimension)
+      [dimensions](dimension)
         full_location:
           [column | sql](dimension#column--sql) <reference>
           type: string
@@ -94,13 +94,13 @@ created_at:
 
 ```yml
 models:
-       - name: facebook_ads
-         meta:
-              metriql:
-                   measures:
-                        custom_measure:
-	                     aggregation: sum
-	                     sql: "{{TABLE}}.column1 * 2"
+  - name: facebook_ads
+    meta:
+      metriql:
+        measures:
+          custom_measure:
+            aggregation: sum
+            sql: "{TABLE}.column1 * 2"
 ```
 
 For more information, see [Measure properties](/reference/measure)
@@ -135,15 +135,16 @@ The relations between the models can be defined under `<model l seed | source>.m
 
 ```yml
 models:
-       - name: events
-         meta:
-              metriql:
-                   relations:
-                        user_attributes:
-	                     model: users
-                             sql: ''
-                             relationship: many_to_one
-                             type: left_join
+  - name: events
+    meta:
+      metriql:
+        relations:
+          user_attributes:
+            model: users
+            sql: "{TABLE}.user_id = {TARGET}.id"
+            relationship: many_to_one
+            type: left_join
+
 ```
 
 ### `aggregates:`
