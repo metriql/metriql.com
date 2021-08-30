@@ -15,9 +15,9 @@ Let us know if you would like to suggest a new integration on [Github](https://g
 | [Google Data Studio](google-data-studio) | Completed  ✅  | Community Connector |
 | [Looker](looker)             | Completed  ✅  | Trino + LookML project |
 | [Tableau](tableau)            | Completed  ✅  |  Presto  |
+| Redash           | Completed  ✅ | [Trino / Presto](https://redash.io/data-sources/presto) |
 | Metabase           | [🚧 In Progress](https://github.com/metriql/metriql/issues/6)  | Trino  |
 | Superset           | [🚧 In Progress](https://github.com/metriql/metriql/issues/10) | Trino |
-| Redash           | [🙋 Needs testing](https://github.com/metriql/metriql/issues/10) | [Trino](https://redash.io/data-sources/presto) |
 | Mode Analytics           | [🙋 Needs testing](https://github.com/metriql/metriql/issues/10) | [Trino](https://mode.com/help/articles/supported-databases/#trino) |
 | Qlik           | [🙋 Needs testing](https://github.com/metriql/metriql/issues/7)  | [Presto](https://help.qlik.com/en-US/connectors/Subsystems/ODBC_connector_help/Content/Connectors_ODBC/Presto/Create-Presto-connection.htm)  |   
 | Sisense           | [🙋 Needs testing](https://github.com/metriql/metriql/issues/7)  | [Presto](https://www.sisense.com/data-connectors/presto/)  |   
