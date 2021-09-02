@@ -156,5 +156,18 @@ Aggregates should be defined under `<model | seed | source>.meta.metriql.aggrega
 
 If you define `always_filters` for a `view`, the system pushes the relevant filter for all the queries that are executed in metriql. 
 
+```yml
+models:
+  - name: pageview_events
+    extens: ref('all_events')
+```
+
 ### `extends`
 
+If you want to re-use the `dimensions`, `measures`, `relations`, and `mappings` of another model or source in a dbt project, you can extend from it. When you extend from another dbt model, metriql automatically re-use the fields in the current model. If you have additional fields, it tries to merge all the fields that are defined in the current model.
+
+```yml
+models:
+  - name: pageview_events
+    extens: ref('all_events')
+```
