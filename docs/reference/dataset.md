@@ -155,3 +155,6 @@ Aggregates should be defined under `<model | seed | source>.meta.metriql.aggrega
 ### `always_filters:`
 
 If you define `always_filters` for a `view`, the system pushes the relevant filter for all the queries that are executed in metriql. 
+
+### `extends`
+

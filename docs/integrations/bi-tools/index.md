@@ -12,11 +12,11 @@ Let us know if you would like to suggest a new integration on [Github](https://g
 | BI Tool            | Status             | Integration Method  |
 |--------------------|--------------------|---------------------|
 | rakam              | Completed  ✅    |  Native                                          
-| [Google Data Studio](google-data-studio) | Completed  ✅  | Community Connector |
-| [Looker](looker)             | Completed  ✅  | Trino + LookML project |
-| [Tableau](tableau)            | Completed  ✅  |  Presto  |
+| [Google Data Studio](google-data-studio) | Completed  ✅  | [Community Connector](https://datastudio.google.com/datasources/create?connectorId=AKfycbw8o0F6LEr0epNSNVWqNzlqo7R-6jRYxxSxBspzyg2Xi6SDFItLN_aM3l_U56Z0obwS) |
+| [Looker](looker)             | Completed  ✅  | [Trino + LookML project](https://docs.looker.com/setup-and-management/database-config/prestodb) |
+| [Tableau](tableau)            | Completed  ✅  |  [Presto](https://help.tableau.com/current/pro/desktop/en-us/examples_presto.htm)  |
 | Redash           | Completed  ✅ | [Trino / Presto](https://redash.io/data-sources/presto) |
-| Metabase           | [🚧 In Progress](https://github.com/metriql/metriql/issues/6)  | Trino  |
+| Metabase           | [🚧 In Progress](https://github.com/metriql/metriql/issues/6)  | [Trino / Presto](https://www.metabase.com/docs/latest/administration-guide/01-managing-databases.html#officially-supported-databases)  |
 | Superset           | [🚧 In Progress](https://github.com/metriql/metriql/issues/10) | Trino |
 | Mode Analytics           | [🙋 Needs testing](https://github.com/metriql/metriql/issues/10) | [Trino](https://mode.com/help/articles/supported-databases/#trino) |
 | Qlik           | [🙋 Needs testing](https://github.com/metriql/metriql/issues/7)  | [Presto](https://help.qlik.com/en-US/connectors/Subsystems/ODBC_connector_help/Content/Connectors_ODBC/Presto/Create-Presto-connection.htm)  |   
