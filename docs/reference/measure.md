@@ -87,3 +87,5 @@ revenue_increase:
   sql: '{measure.revenue} - LAG({measure.revenue}) OVER ({TABLE}.month)'
   window: true
 ```
+
+Please note that you need to use the referenced measures in your query, otherwise the queries will complain that the measures not available.
