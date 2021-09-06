@@ -1,3 +1,6 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c9e688f3-471f-4927-bb4c-96e42ca84932/deploy-status)](https://app.netlify.com/sites/elated-bartik-ac72de/deploys)
+
+
 # Website
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
