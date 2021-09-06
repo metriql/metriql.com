@@ -16,13 +16,14 @@ Let us know if you would like to suggest a new integration on [Github](https://g
 | [Looker](looker)             | Completed  ✅  | [Trino + LookML project](https://docs.looker.com/setup-and-management/database-config/prestodb) |
 | [Tableau](tableau)            | Completed  ✅  |  [Presto](https://help.tableau.com/current/pro/desktop/en-us/examples_presto.htm)  |
 | Redash           | Completed  ✅ | [Trino / Presto](https://redash.io/data-sources/presto) |
-| Metabase           | [🚧 In Progress](https://github.com/metriql/metriql/issues/6)  | [Trino / Presto](https://www.metabase.com/docs/latest/administration-guide/01-managing-databases.html#officially-supported-databases)  |
-| Superset           | Completed  ✅ | [Trino](https://superset.apache.org/docs/databases/trino) |
+| [Superset](superset)           | Completed  ✅ | [Trino](https://superset.apache.org/docs/databases/trino) |
 | Mode Analytics           | [🙋 Needs testing](https://github.com/metriql/metriql/issues/10) | [Trino](https://mode.com/help/articles/supported-databases/#trino) |
+| Metabase           | [🚧 In Progress](https://github.com/metriql/metriql/issues/6)  | [Trino / Presto](https://www.metabase.com/docs/latest/administration-guide/01-managing-databases.html#officially-supported-databases)  |
 | Qlik           | [🙋 Needs testing](https://github.com/metriql/metriql/issues/7)  | [Presto](https://help.qlik.com/en-US/connectors/Subsystems/ODBC_connector_help/Content/Connectors_ODBC/Presto/Create-Presto-connection.htm)  |   
 | Sisense           | [🙋 Needs testing](https://github.com/metriql/metriql/issues/7)  | [Presto](https://www.sisense.com/data-connectors/presto/)  |   
 | MicroStrategy           | [🙋 Needs testing](https://github.com/metriql/metriql/issues/7)  | [Presto](https://community.microstrategy.com/s/article/How-to-Connect-to-Presto?language=en_US)  |   
 | Power BI           | [Queued](https://github.com/metriql/metriql/issues/7)  | XMLA or Trino-ODBC bridge  |   
+| Thoughtspot           | [Queued](https://github.com/metriql/metriql/issues/7)  | [Presto](https://docs.thoughtspot.com/6.2/data-integrate/dataflow/dataflow-presto.html)  |   
 
 
 Please note that all the integrations are in alpha stage at the moment.
