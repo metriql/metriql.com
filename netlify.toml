@@ -1,3 +1,7 @@
 # for deployments of prerelease docs
 [context.next]
   command = "make build-prerelease"
+
+[[redirects]]
+  from = "/slack"
+  to = "https://join.slack.com/t/metriql/shared_invite/zt-tz1nzvyd-ker8LGcBQmzrwvfAkFO1qQ"
