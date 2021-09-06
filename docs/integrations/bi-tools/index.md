@@ -15,7 +15,7 @@ While metriql is a relatively new project, we're working on integrating BI tools
 | [Tableau](/integrations/bi-tools/tableau)            | Ready  ✅  |  [Presto](https://help.tableau.com/current/pro/desktop/en-us/examples_presto.htm)  |
 | Redash           | Ready  ✅ | [Trino / Presto](https://redash.io/data-sources/presto) |
 | [Superset](/integrations/bi-tools/superset)           | Ready  ✅ | [Trino](https://superset.apache.org/docs/databases/trino) |
-| Metabase           | [🚧 In Progress](https://github.com/metriql/metriql/issues/6)  | [Trino / Presto](https://www.metabase.com/docs/latest/administration-guide/01-managing-databases.html#officially-supported-databases)  |
+| Metabase           | [🚧 In Progress](https://github.com/metriql/metriql/issues/13)  | [Trino / Presto](https://www.metabase.com/docs/latest/administration-guide/01-managing-databases.html#officially-supported-databases)  |
 | Mode Analytics           | [🙋 Needs testing](#needs-testing) | [Trino](https://mode.com/help/articles/supported-databases/#trino) |
 | Qlik           | [🙋 Needs testing](#needs-testing)  | [Presto](https://help.qlik.com/en-US/connectors/Subsystems/ODBC_connector_help/Content/Connectors_ODBC/Presto/Create-Presto-connection.htm)  |   
 | Sisense / Periscope           | [🙋 Needs testing](#needs-testing)  | [Presto](https://www.sisense.com/data-connectors/presto/)  |   
