@@ -141,7 +141,7 @@ module.exports = {
               ]
             },
             {
-              to: '/integrations/services',
+              to: '/integrations/services/index',
               label: 'Data Applications',
               activeBasePath: 'integrations/services'
             },
