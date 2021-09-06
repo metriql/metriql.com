@@ -1,0 +1,1 @@
+You can run queries direcly from Google Spreadsheets and update them periodically using metriql Google Sheets connector.
