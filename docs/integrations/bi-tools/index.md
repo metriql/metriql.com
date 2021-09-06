@@ -10,11 +10,11 @@ While metriql is a relatively new project, we're working on integrating BI tools
 | BI Tool            | Status             | Integration Method  |
 |--------------------|--------------------|---------------------|
 | rakam              | Completed  ✅    |  Native                                          
-| [Google Data Studio](google-data-studio) | Completed  ✅  | [Community Connector](https://datastudio.google.com/datasources/create?connectorId=AKfycbw8o0F6LEr0epNSNVWqNzlqo7R-6jRYxxSxBspzyg2Xi6SDFItLN_aM3l_U56Z0obwS) |
-| [Looker](looker)             | Completed  ✅  | [Trino + LookML project](https://docs.looker.com/setup-and-management/database-config/prestodb) |
-| [Tableau](tableau)            | Completed  ✅  |  [Presto](https://help.tableau.com/current/pro/desktop/en-us/examples_presto.htm)  |
+| [Google Data Studio](/integrations/bi-tools/google-data-studio) | Completed  ✅  | [Community Connector](https://datastudio.google.com/datasources/create?connectorId=AKfycbw8o0F6LEr0epNSNVWqNzlqo7R-6jRYxxSxBspzyg2Xi6SDFItLN_aM3l_U56Z0obwS) |
+| [Looker](/integrations/bi-tools/looker)             | Completed  ✅  | [Trino + LookML project](https://docs.looker.com/setup-and-management/database-config/prestodb) |
+| [Tableau](/integrations/bi-tools/tableau)            | Completed  ✅  |  [Presto](https://help.tableau.com/current/pro/desktop/en-us/examples_presto.htm)  |
 | Redash           | Completed  ✅ | [Trino / Presto](https://redash.io/data-sources/presto) |
-| [Superset](superset)           | Completed  ✅ | [Trino](https://superset.apache.org/docs/databases/trino) |
+| [Superset](/integrations/bi-tools/superset)           | Completed  ✅ | [Trino](https://superset.apache.org/docs/databases/trino) |
 | Mode Analytics           | [🙋 Needs testing](https://github.com/metriql/metriql/issues/10) | [Trino](https://mode.com/help/articles/supported-databases/#trino) |
 | Metabase           | [🚧 In Progress](https://github.com/metriql/metriql/issues/6)  | [Trino / Presto](https://www.metabase.com/docs/latest/administration-guide/01-managing-databases.html#officially-supported-databases)  |
 | Qlik           | [🙋 Needs testing](https://github.com/metriql/metriql/issues/7)  | [Presto](https://help.qlik.com/en-US/connectors/Subsystems/ODBC_connector_help/Content/Connectors_ODBC/Presto/Create-Presto-connection.htm)  |   

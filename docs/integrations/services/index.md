@@ -8,7 +8,7 @@ We aim to support data applications where you want to visualize, display, or do 
 
 | Data Applications            | Status             | Integration Method  |
 |--------------------|--------------------|---------------------|
-| [Google Sheets](google-sheets) | Completed  ✅  | [Marketplace Add-on](https://developers.google.com/workspace/add-ons/editors/sheets) |
+| [Google Sheets](/integrations/services/google-sheets) | Completed  ✅  | [Marketplace Add-on](https://developers.google.com/workspace/add-ons/editors/sheets) |
 | Zapier             | Queued  | [Partner Integration](https://platform.zapier.com/partners/lifecycle-planning) |
 | Airtable             | Queued  | [Developer App](https://www.airtable.com/developers/apps/guides/building-a-new-app) |
 
