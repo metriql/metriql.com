@@ -141,6 +141,11 @@ module.exports = {
               ]
             },
             {
+              to: '/integrations/services',
+              label: 'Data Applications',
+              activeBasePath: 'integrations/services'
+            },
+            {
               to: '/integrations/embedded',
               label: 'Embedded analytics',
               activeBasePath: 'integrations/embedded'
