@@ -9,7 +9,7 @@ While metriql is a relatively new project, we're working on integrating BI tools
 
 | BI Tool            | Status             | Integration Method  |
 |--------------------|--------------------|---------------------|
-| rakam              | Ready  ✅    |  Native                                          
+| rakam              | Ready  ✅    |  [Native](https://rakam.io/product)                                          
 | [Google Data Studio](/integrations/bi-tools/google-data-studio) | Ready  ✅  | [Community Connector](https://datastudio.google.com/datasources/create?connectorId=AKfycbw8o0F6LEr0epNSNVWqNzlqo7R-6jRYxxSxBspzyg2Xi6SDFItLN_aM3l_U56Z0obwS) |
 | [Looker](/integrations/bi-tools/looker)             | Ready  ✅  | [Trino + LookML project](https://docs.looker.com/setup-and-management/database-config/prestodb) |
 | [Tableau](/integrations/bi-tools/tableau)            | Ready  ✅  |  [Presto](https://help.tableau.com/current/pro/desktop/en-us/examples_presto.htm)  |
