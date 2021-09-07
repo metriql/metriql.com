@@ -130,7 +130,7 @@ module.exports = {
             },
             {
               to: '/integrations/bi-tools/index',
-              label: 'BI tools',
+              label: 'BI Tools / Data Applications',
               activeBasePath: 'integrations/bi-tools/index',
               items: [
                 {
@@ -139,11 +139,6 @@ module.exports = {
                   activeBasePath: 'integrations/bi-tools/google-data-studio'
                 }
               ]
-            },
-            {
-              to: '/integrations/services/index',
-              label: 'Data Applications',
-              activeBasePath: 'integrations/services'
             },
             {
               to: '/integrations/embedded',
