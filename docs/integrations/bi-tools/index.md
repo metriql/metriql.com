@@ -30,10 +30,11 @@ While metriql is a relatively new project, we're working on integrating BI tools
 | Airtable             | Queued  | [Developer App](https://www.airtable.com/developers/apps/guides/building-a-new-app) |
 | Slack             | Queued  | [Bolt API](https://api.slack.com/start/building/bolt-python) |
 
+Let us know if you would like to suggest a new integration on [Github](https://github.com/metriql/metriql/issues/new) or if you're a BI vendor looking to integrate metriql, join our community on [Slack](https://join.slack.com/t/metriql/shared_invite/zt-tz1nzvyd-ker8LGcBQmzrwvfAkFO1qQ).
+
+
 ## Needs testing?
 
 If the BI tool already supports Trino or Presto, you can connect to Metriql using that interface. You should use Metriql URL and port and all your datasets will be exposed to your BI tools as database tables & columns. You can reference your measures & dimensions using [MQL reporting type](/query/mql), metriql will parse the query and compile to SQL for the target data warehouse. For the BI tools that don't have a free trial, we're not able to test and verify if metriql is working fine. I appreciate if you would like to test and share a short demo video in that case!
-
-Also, let us know if you would like to suggest a new integration on [Github](https://github.com/metriql/metriql/issues/new) or if you're a BI vendor looking to integrate metriql, join our community on [Slack](https://join.slack.com/t/metriql/shared_invite/zt-tz1nzvyd-ker8LGcBQmzrwvfAkFO1qQ).
 
 Please note that all the integrations are in alpha stage at the moment. You can also see our roadmap for the integrations [here](https://github.com/metriql/metriql/projects/1).
