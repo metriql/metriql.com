@@ -23,16 +23,16 @@
                 "**/blog/2021-09-07-olap-in-modern-data-stack.md"
             ],
             "config": {
-                "audience": "general",
+                "audience": "knowledgeable",
                 "dialect": "american",
                 "domain": "technical",
                 "emotions": [
+                    "optimistic",
                     "analytical"
                 ],
                 "goals": [
                     "inform",
-                    "describe",
-                    "convince"
+                    "describe"
                 ]
             }
         }
