@@ -10,6 +10,8 @@ hide_table_of_contents: false
 
 OLAP is almost 30 years old and has often been used in different contexts over the last 10 years. It's a huge market, and there are many enterprise software in the space. OLAP is simply pre-aggregated data from your raw data, and it's not for everyone. If you're working for a startup that doesn't have petabytes of data, you probably don't need OLAP because you can efficiently run ad-hoc queries on your raw data (also known as [fact tables](https://en.wikipedia.org/wiki/Fact_table)). However, when you have petabytes of data and have tens of people who rely on it to make decisions, you don't want to make them wait 10 minutes for a simple query. Let's breakdown the OLAP into two categories:
 
+<!--truncate-->
+
 ## Multidimensional OLAP (MOLAP)
 
 Most of them have their proprietary storage and compute engines and provide fast access to data across different dimensions. You store your data in your data lake or warehouse, duplicate it into their system, and slice/dice the data using their query engine. We call this type of OLAP Multidimensional OLAP (MOLAP) because they have their storage/compute engine to run the queries. [Apache Kylin](http://kylin.apache.org/), [Druid](https://druid.apache.org/), and [Pinot](https://pinot.apache.org/) are the open-source products in this space and well-know enterprise alternatives are [Arcadia Data](https://www.arcadiadata.com/), [Atscale](https://www.atscale.com/), [Kyligence](https://kyligence.io/).
