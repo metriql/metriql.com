@@ -38,14 +38,14 @@ if (!PRERELEASE) {
   WARNING_BANNER = {
     id: 'prerelease', // Any value that will identify this message.
     content:
-      'CAUTION: Prerelease! This documentation reflects the next minor version of metriql. <a href="https://metriql.com">View current docs</a>.',
+      'CAUTION: Prerelease! This documentation reflects the next minor version of Metriql. <a href="https://metriql.com">View current docs</a>.',
     backgroundColor: '#ffa376', // Defaults to `#fff`.
     textColor: '#033744', // Defaults to `#000`.
   }
 }
 
 module.exports = {
-  title: 'metriql Docs',
+  title: 'Metriql Docs',
   tagline: 'Headless BI for all your company data',
   url: SITE_URL,
   baseUrl: '/',
@@ -180,7 +180,7 @@ module.exports = {
           position: 'right',
           items: [
             {
-              label: 'metriql Slack',
+              label: 'Metriql Slack',
               href: 'https://join.slack.com/t/metriql/shared_invite/zt-tz1nzvyd-ker8LGcBQmzrwvfAkFO1qQ',
             },
             {
@@ -221,7 +221,7 @@ module.exports = {
           //showLastUpdateAuthor: false,
         },
         blog: {
-          blogTitle: 'metriql Blog',
+          blogTitle: 'Metriql Blog',
           blogDescription: 'Blog posts about metriql',
           blogSidebarCount: 0
         },
