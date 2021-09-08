@@ -46,7 +46,7 @@ export default function Home() {
           </div>
 
           <div style={{ textAlign: 'center' }}>
-            <h3 >Why would you need metriql?</h3>
+            <h3 >Why would you need Metriql?</h3>
             <ul style={{ listStyle: 'inside', padding: '0' }}>
               <li>You want to be able to easily change or add BI tools to your stack.</li>
               <li>You want to share metric definitions across all your organization.</li>
