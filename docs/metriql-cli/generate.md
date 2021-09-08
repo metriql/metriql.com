@@ -1,4 +1,4 @@
-Metriql---
+---
 label: generate
 sidebar_position: 1
 ---

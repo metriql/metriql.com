@@ -1,4 +1,4 @@
-MetriqlMetriql---
+---
 title: "Common field properties"
 sidebar_position: 2
 ---

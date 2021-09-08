@@ -1,4 +1,4 @@
-MetriqlMetriql---
+---
 title: "Aggregates"
 sidebar_position: 4
 ---

@@ -1,4 +1,4 @@
-Metriql---
+---
 label: FAQs
 sidebar_position: 8
 ---

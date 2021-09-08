@@ -1,4 +1,4 @@
-Metriqlconst path = require('path');
+const path = require('path');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 var SITE_URL;

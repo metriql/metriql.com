@@ -1,4 +1,4 @@
-Metriql---
+---
 title: "Dataset properties"
 sidebar_position: 1
 ---
