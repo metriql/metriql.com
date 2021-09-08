@@ -1,4 +1,4 @@
-# Creating a new adapter
+Metriql# Creating a new adapter
 
 metriql uses [ServiceLoader](https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html) mechanism to load adapters in the classpath. You need to implement the interface `com.metriql.warehouse.spi.Warehouse`, create a file called `META-INF/services/com.metriql.warehouse.spi.Warehouse` under the resources directory, and append your class name there.
 

@@ -1,4 +1,4 @@
----
+Metriql---
 label: serve
 sidebar_position: 1
 ---

@@ -1,4 +1,4 @@
----
+Metriql---
 title: "Dimension properties"
 sidebar_position: 3
 ---
