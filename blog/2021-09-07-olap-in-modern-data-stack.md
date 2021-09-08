@@ -22,23 +22,23 @@ The good part is that they can guarantee to run ad-hoc queries in less than a fe
 
 With the new modern data stack, companies usually start collecting all their data into a modern data warehouse. Essentially, the data warehouse becomes their [single source of truth](https://en.wikipedia.org/wiki/Single_source_of_truth#Data_warehouse_(DW)). Duplicating the data from the single source of truth usually leads to data inconsistency issues, and copying massive datasets is slow and expensive in most cloud providers. Luckily, modern data warehouses are efficient enough to answer ad-hoc queries; you don't need to run Hadoop jobs that take hours/days to finish anymore. However, they also can't guarantee performance for ad-hoc queries. You need to leverage their advanced features to be able to cover OLAP use-cases affordably. Here are some of these techniques:
 
-### 1. BigQuery: [BI Engine](https://cloud.google.com/bi-engine/docs)
+#### 1. BigQuery: [BI Engine](https://cloud.google.com/bi-engine/docs)
 
 BigQuery is a fully-managed data warehouse solution from Google. You pay for the data processing for each query that you're running. If you're running ad-hoc queries on raw data, it becomes expensive, and you can't guarantee to run the queries in less than a few seconds. Luckily, you can create dimensional tables from your raw data under a schema and buy BI Engine slots that store all the data in your dimensional tables in memory and let you run OLAP queries efficiently for a fixed price.
 
-### 2. Clickhouse: [Aggregating Merge Tree](https://clickhouse.tech/docs/en/engines/table-engines/mergetree-family/aggregatingmergetree/)
+#### 2. Clickhouse: [Aggregating Merge Tree](https://clickhouse.tech/docs/en/engines/table-engines/mergetree-family/aggregatingmergetree/)
 
 Clickhouse is an open-source OLAP database from Yandex. It supports SQL, and the performance is [mind-blowing](https://clickhouse.tech/benchmark/dbms/) given that it doesn't use GPUs. It also offers some exciting table layouts for pre-aggregating the data storing the intermediate state inside database tables. AggregatingmMergeTree lets you create views and update them transparently when you insert data into the raw tables. It's suitable for immutable time-series data such as customer event data, and it makes sense given that Yandex initially developed Clickhouse for their Google Analytics alternative, [Yandex Metrica](https://clickhouse.tech/docs/en/introduction/history/).
 
-### 3. Snowflake: [Search Optimization Service](https://docs.snowflake.com/en/user-guide/search-optimization-service.html)
+#### 3. Snowflake: [Search Optimization Service](https://docs.snowflake.com/en/user-guide/search-optimization-service.html)
 
 If you heard about the term modern data stack before, you probably know about Snowflake. While they're not the first to come up with the concept of separating the compute and storage layer in the data warehouse industry (looking at you, Trino!), they proved that the approach scales well. It's usually cheaper than the alternatives if you have petabytes of data and want to run ad-hoc analytics queries on your raw data. However, you need too many compute resources to run ad-hoc queries concurrently, so it's still better to transform the data and create dimensional tables from the raw data. If you enable the search optimization service that enables fast access to random rows, the latency matches the MOLAP engines.
 
-### 4. Postgresql: [Grouping sets](https://www.postgresql.org/docs/devel/queries-table-expressions.html#QUERIES-GROUPING-SETS) & [B-tree Indexing](https://www.postgresql.org/docs/11/btree-intro.html)
+#### 4. Postgresql: [Grouping sets](https://www.postgresql.org/docs/devel/queries-table-expressions.html#QUERIES-GROUPING-SETS) & [B-tree Indexing](https://www.postgresql.org/docs/11/btree-intro.html)
 
 Our old friend, Postgresql is an excellent solution for serving the pre-aggregated data. For raw data, you can leverage advanced techniques such as partitioning and BRIN indexes. Still, since Postgresql stores the data in a row-oriented format and doesn't have vectorized execution, the latency will not be comparable to cloud data warehouses. If you pre-aggregate your data with grouping sets and index the dimension columns, you can access the pre-aggregated metrics efficiently.
 
-### 5. Redshift's [Autorefreshing Materialized views](https://docs.aws.amazon.com/redshift/latest/dg/materialized-view-refresh.html) and Snowflake's [Materialized views](https://docs.snowflake.com/en/user-guide/views-materialized.html#advantages-of-materialized-views)
+#### 5. Redshift's [Autorefreshing Materialized views](https://docs.aws.amazon.com/redshift/latest/dg/materialized-view-refresh.html) and Snowflake's [Materialized views](https://docs.snowflake.com/en/user-guide/views-materialized.html#advantages-of-materialized-views)
 
 Redshift recently added support for materialized views that are up-to-date all the time. I didn't try it yet, but Snowflake's materialized views don't work reliably for my use case. They're usually not transparent, and they can't guarantee the low-latency ad-hoc queries to materialized views because they need to update the materialized tables every time you insert data. It is usually a better approach to use a transformation tool such as dbt or Airflow to transform the data and update the tables manually and transparently and use [lambda views](https://discourse.getdbt.com/t/how-to-create-near-real-time-models-with-just-dbt-sql/1457) for more deterministic and reliable workloads. Most data analysts that I talked to don't like black-boxes nowadays.
 
