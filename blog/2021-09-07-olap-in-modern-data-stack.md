@@ -1,5 +1,5 @@
 ---
-title: "OLAP in modern data stack"
+title: "OLAP in the modern data stack"
 author: Burak Kabakci
 author_title: Core Team
 author_url: https://github.com/buremba
