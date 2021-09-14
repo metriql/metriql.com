@@ -1,0 +1,15 @@
+# Mode Analytics
+
+Mode Analytics is a BI tool for data scientists and analysts. It doesn't provide any way to define the metrics. Instead, it provides a notebook interface that you can run SQL queries. 
+You can connect to Metriql from Mode using its Trino connection as follows:
+
+<img src="/img/integrations/mode-connect.png" alt="Mode Connection Screen" style={{maxWidth: '500px'}}/>
+
+Once you connect to Metriql, you can use [MQL](/query/mql) to run queries on your data warehouse:
+
+<img src="/img/integrations/mode-query.png" alt="Mode Connection Screen"/>
+
+
+Under the hood, Metriql compiles your query to:
+
+<img src="/img/integrations/mode-query-debug.png" alt="Mode Connection Screen"/>

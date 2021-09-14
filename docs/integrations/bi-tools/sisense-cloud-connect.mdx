@@ -1,0 +1,15 @@
+# Sisense Cloud
+
+Sisense Cloud (formerly Periscope Data) is a BI tool for data scientists and analysts. It doesn't provide any way to define the metrics. Instead, it provides a notebook interface that you can run SQL queries. 
+You can connect to Metriql from Sisense Cloud using its Presto connection as follows:
+
+<img src="/img/integrations/sisensecloud-connect.png" alt="Sisense Cloud Connection Screen" style={{maxWidth: '500px'}}/>
+
+Once you connect to Metriql, you can use [MQL](/query/mql) to run queries on your data warehouse:
+
+<img src="/img/integrations/sisensecloud-query.png" alt="Sisense Cloud Connection Screen"/>
+
+
+Under the hood, Metriql compiles your query to:
+
+<img src="/img/integrations/sisensecloud-query-debug.png" alt="Sisense Cloud Connection Screen"/>
