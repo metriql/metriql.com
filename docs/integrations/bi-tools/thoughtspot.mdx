@@ -1,1 +1,24 @@
 # Thoughtspot
+
+
+#### Step 1: Connect your Metriql to Thoughtspot
+
+<img src="/img/integrations/thoughtspot-connect1.png" alt="Mode Connection Screen" style={{maxWidth: '700px'}}/>
+
+<img src="/img/integrations/thoughtspot-connect2.png" alt="Mode Connection Screen" style={{maxWidth: '700px'}}/>
+
+<img src="/img/integrations/thoughtspot-connect3.png" alt="Mode Connection Screen" style={{maxWidth: '700px'}}/>
+
+#### Step 2: Model the data
+
+Thoughtspot automatically discovers the Metriql datasets and fields (dimensions and measures). You don't need to define the join relations in the data models as Metriql returns the denormalized datasets. 
+For now, you should update the field types (dimensions & measures) and Thoughtspot specific properties (Gop, Currency, etc.) in the UI. However; we're waiting for Thoughtspot to support GIT so that we can generate [TML files](https://docs.thoughtspot.com/software/7.0/tml.html) and syncronize the data models through GIT.
+
+If you would like to collaborate, we have [pending issue on Github](https://github.com/metriql/metriql/issues/26).
+
+#### Step 3: Visualize
+
+Once you model the data, you will be able to query the data in Thoughtspot directly on database tables so you don't need to use worksheets.
+
+
+
