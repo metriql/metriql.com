@@ -8,7 +8,7 @@ Metriql lets you define your metrics centrally for once and synchronize them glo
 
 We believe that the data warehouse is the [single source of truth](https://en.wikipedia.org/wiki/Single_source_of_truth). As you load tons of data into your data warehouse, it gets hard to maintain and make them useful for your organization. You're also likely to consume the data in a lot of different ways: 
 
-1. Business, finance,  and marketing departments use Business Intelligence tools.
+1. Business, finance, and marketing departments use Business Intelligence tools.
 2. Product managers use product analytics tools.
 3. Data analysts use SQL 
 4. Data scientists use a variety of tools such as Python, R, and APIs.
@@ -17,7 +17,7 @@ If you don't have a standardized way of sharing data within your organization, e
 
 We realize that you may need to transform the data because metric and dimension definitions are only one part of the problem. We don't want to introduce another way to transform the data though, as it's a solved problem with [dbt Core](https://getdbt.com). That's why Metriql works as an extension of dbt, you can use dbt to transform the data and implement Metriql in your existing project without learning a brand new technology. If you don't need to transform the data, you can also use dbt's [sources](https://docs.getdbt.com/docs/building-a-dbt-project/using-sources) for Metriql.
 
-The problem is defined as [the missing piece of the modern data stack](https://benn.substack.com/p/metrics-layer), and [Headless BI](https://basecase.vc/blog/headless-bi). If you haven't read thesee articles, we strongly advise you to do so. 
+The problem is defined as [the missing piece of the modern data stack](https://benn.substack.com/p/metrics-layer), and [Headless BI](https://basecase.vc/blog/headless-bi). If you haven't read these articles, we strongly advise you to do so. 
 
 
 Still not clear? See [FAQ](/faq).
