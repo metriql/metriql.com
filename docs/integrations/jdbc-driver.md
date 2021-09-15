@@ -8,6 +8,14 @@ Metriql supports [Trino](http://trino.io) (formerly Prestodb) JDBC driver. If yo
 
 By default, JDBC connector uses [MQL](/query/mql) reporting type. That enables BI tools to use [Aggregates](/introduction/aggregates) without any extra step but MQL syntax is limited by design. If you want to run ad-hoc SQL queries via the JDBC connector, you can switch mode as follows:
 
+Default mode:
+
+```sql
+select "orders.category", nps from "source('first_dataset', 'customer')"
+```
+
+SQL mode:
+
 ```sql
 -- @mode:sql
 with nps_by_customer AS (
@@ -16,7 +24,7 @@ with nps_by_customer AS (
 select * from nps_by_customer
 ```
 
-If you want to use metriql's JDBC connector, you can [download the driver](https://trino.io/docs/current/installation/jdbc.html) on Trino.io and use the following JDBC URL:
+If you want to use Metriql's JDBC connector, you can [download the driver](https://trino.io/docs/current/installation/jdbc.html) on Trino.io and use the following JDBC URL:
 
 ```
 jdbc:trino:YOUR_METRIQL_URL
