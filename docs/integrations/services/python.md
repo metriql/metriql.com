@@ -28,6 +28,10 @@ conn = trino.dbapi.connect(
 )
 cur = conn.cursor()
 all_datasets = cur.execute('SHOW TABLES').fetchall()
-orders_dataset = cur.execute('SHOW COLUMNS FROM "ref(\'orders\')"').fetchall()
-total_orders = cur.execute('SELECT total_orders FROM "ref(\'orders\')"').fetchall()
+orders_dataset = cur.execute("""
+    SHOW COLUMNS FROM "ref('orders')"
+    """).fetchall()
+total_orders = cur.execute("""
+    SELECT total_orders FROM "ref('orders')"
+    """).fetchall()
 ```
