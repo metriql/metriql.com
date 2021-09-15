@@ -2,7 +2,7 @@
 
 You can run [MQL](/query/mql) queries directly from your CLI using Trino's command-line application. Please refer to [Trino CLI](https://trino.io/docs/current/installation/cli.html) for documentation.
 
-### Installation
+### Usage
 
 
 <Tabs
