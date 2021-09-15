@@ -34,6 +34,8 @@ While metriql is a relatively new project, we're working on integrating BI tools
 |--------------------|--------------------|---------------------|
 | [Dbveaver](/integrations/services/dbeaver) | Ready  ✅  | Trino / Presto JDBC |
 | [Jetbrains DataGrip](/integrations/services/datagrip) | Ready  ✅  | Trino / Presto JDBC |
+| [CLI](/integrations/services/cli) | Ready  ✅  | Trino / Presto CLI |
+| [Python](/integrations/services/python) | Ready  ✅  | Trino / Presto Python Package |
 
 
 Let us know if you would like to suggest a new integration on [Github](https://github.com/metriql/metriql/issues/new) or if you're a BI vendor looking to integrate metriql, join our community on [Slack](https://join.slack.com/t/metriql/shared_invite/zt-tz1nzvyd-ker8LGcBQmzrwvfAkFO1qQ).
