@@ -18,7 +18,7 @@ function HomepageHeader() {
 
         </p>
 
-      <div style={{margin: '0 0 10px'}}> 
+      <div style={{margin: '0 0 20px'}}> 
         <Link className="button button--lg button-overlay"
             style={{marginTop: '10px', widtsh:'180px',}}
             to="https://demo.metriql.com/ui/?utm_source=landing">
