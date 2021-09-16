@@ -19,12 +19,12 @@ function HomepageHeader() {
         </p>
 
       <div style={{margin: '0 0 10px'}}> 
-        <Link className="button button--lg"
+        <Link className="button button--lg button-overlay"
             style={{marginTop: '10px', widtsh:'180px',}}
             to="https://demo.metriql.com/ui/?utm_source=landing">
             🧙‍♂️ Live Demo
           </Link>
-          <Link className="button button--lg"
+          <Link className="button button--lg button-overlay"
             style={{marginTop: '10px', marginLeft: '10px', widsth:'180px', backgsround:'black'}}
             to="https://github.com/metriql/metriql">
             🧑‍💻 Github
@@ -32,7 +32,7 @@ function HomepageHeader() {
           </div>
 
         <div className={styles.centerizedContent}>
-          <img src="img/homepage-diagram2.svg" style={{ height: '300px', marginLeft: '1.5%' }}/>
+          <img src="img/homepage-diagram2.svg" style={{ height: '300px' }}/>
         </div>
       </div>
     </header>
