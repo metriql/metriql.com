@@ -23,11 +23,3 @@
   align-items: center;
   justify-content: center;
 }
-
-.button-overlay {
-  border: 1px solid 
-}
-
-.button-overlay:hover {
-  background: #ffffff24; 
-}

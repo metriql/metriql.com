@@ -33,3 +33,11 @@ h1, h2, h3, h4, h5 {
   border: 1px solid #ddd;
   border-radius: 3px;
 }
+
+.button-overlay {
+  border: 1px solid 
+}
+
+.button-overlay:hover {
+  background: #ffffff24; 
+}
