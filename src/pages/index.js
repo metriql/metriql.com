@@ -4,18 +4,32 @@ import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
+import Link from '@docusaurus/Link';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)} style={{ background: 'linear-gradient(33deg, rgba(34,193,195,1) 14%, rgba(135,12,254,1) 100%)' }}>
       <div className="container">
-        <h1 className="hero__title">{siteConfig.title} <a href="https://github.com/metriql/metriql" target="_blank"><img src="img/github.png" style={{ height: '35px', marginTop: '16px', marginLeft: '10px', position: 'absolute', opacity: '.5' }}></img></a></h1>
+        <h1 className="hero__title">{siteConfig.title} </h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
 
         <p className="hero__subtitle" style={{ opacity: '0.6' }}>
 
         </p>
+
+      <div style={{margin: '0 0 10px'}}> 
+        <Link className="button button--lg"
+            style={{marginTop: '10px', widtsh:'180px',}}
+            to="https://demo.metriql.com/ui/?utm_source=landing">
+            🧙‍♂️ Live Demo
+          </Link>
+          <Link className="button button--lg"
+            style={{marginTop: '10px', marginLeft: '10px', widsth:'180px', backgsround:'black'}}
+            to="https://github.com/metriql/metriql">
+            🧑‍💻 Github
+          </Link>
+          </div>
 
         <div className={styles.centerizedContent}>
           <img src="img/homepage-diagram2.svg" style={{ height: '300px', marginLeft: '1.5%' }}/>

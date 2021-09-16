@@ -3,9 +3,31 @@ title: "Google Sheets"
 sidebar_position: 2
 ---
 
-<YoutubeVideo id="7uk2GcieLbo" />
-
-
-You can run queries directly from Google Spreadsheets and update them periodically using metriql Google Sheets connector.
+You can pull your metrics & KPIs to Google Sheets directly from Metriql using metriql Google Sheets app. Here is how it works:
 
 <img src="/img/integrations/google-sheets-demo.png" alt="Google Sheets Sample Metriql Report" style={{maxWidth: '600px'}}/>
+
+The app lets you pull data and periodically update the reports inside the Google Sheets. 
+You need to enter your Metriql URL and credentials in the sidebar, and then you can use the following methods to pull the data:
+
+### Using query builder in the sidebar
+
+If you want to pull the data into a cell and update it periodically, you should create a new query and save it on the Metriql sidebar. 
+
+### Calling custom functions
+
+Metriql app comes with two functions:
+
+#### `=IMPORTMETRIQL("segmentation", "{'dataset': '“test_dataset”', 'dimensions': [], 'measures': [], 'filters': [], 'orders': [], 'limit': 100}“)`
+
+`IMPORTMETRIQL` is the generic way to run ad-hoc queries in Metriql. If you have a static report that you want to run or use different reporting types such as funnel and retention, it's the recommended custom function.
+
+#### `=IMPORTMETRIQLSEGMENTATION(“test_dataset”, {“measure1"}, {“dimension1”}, {"orderfield"}, 1000)`
+
+`IMPORTMETRIQLSEGMENTATION` function lets you build up segmentation queries dynamically. 
+You can pass array values to the function as arguments, and the function builds the segmentation report itself. If you would like to reference cells in the query or would like to have better readability when executing segmentation queries, it's the recommended custom function.
+
+
+Here is a full demo:
+
+<YoutubeVideo id="7uk2GcieLbo" />
