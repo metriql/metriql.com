@@ -27,7 +27,7 @@ function HomepageHeader() {
           <Link className="button button--lg button-overlay"
             style={{marginTop: '10px', marginLeft: '10px', widsth:'180px', backgsround:'black'}}
             to="https://github.com/metriql/metriql">
-            🧑‍💻 Github
+            🧑‍💻 GitHub
           </Link>
           </div>
 
