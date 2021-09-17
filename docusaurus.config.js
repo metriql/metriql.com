@@ -109,7 +109,7 @@ module.exports = {
         },
         {
           to: '/metriql-cli/cli-overview',
-          label: 'metriql CLI',
+          label: 'Metriql CLI',
           position: 'left',
           activeBasePath: 'metriql-cli'
         },
