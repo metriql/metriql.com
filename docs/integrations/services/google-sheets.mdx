@@ -18,7 +18,7 @@ If you want to pull the data into a cell and update it periodically, you should 
 
 Metriql app comes with two functions:
 
-#### `=IMPORTMETRIQL("segmentation", "{'dataset': '“test_dataset”', 'dimensions': [], 'measures': [], 'filters': [], 'orders': [], 'limit': 100}“)`
+#### `=IMPORTMETRIQL("segmentation", "{'dataset': '“test_dataset”', 'measures': ['measure1']}“)`
 
 `IMPORTMETRIQL` is the generic way to run ad-hoc queries in Metriql. If you have a static report that you want to run or use different reporting types such as funnel and retention, it's the recommended custom function.
 
@@ -31,3 +31,9 @@ You can pass array values to the function as arguments, and the function builds 
 Here is a full demo:
 
 <YoutubeVideo id="7uk2GcieLbo" />
+
+## Caveats
+
+1. When you have multiple Google accounts logged-in in the browser, you might not be able to login because Google App Script doesn't support authorization when the user is logged-in into multiple Google Accounts. Please see the relevant links here:
+
+* [https://developers.google.com/apps-script/guides/support/troubleshooting#issues_with_multiple_google_accounts](https://developers.google.com/apps-script/guides/support/troubleshooting#issues_with_multiple_google_accounts)
