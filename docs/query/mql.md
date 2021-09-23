@@ -38,7 +38,7 @@ If you have a join relation from the `customer` dataset to an `orders` dataset, 
 
 ```sql
 select "customer.c_mktsegment", "customer.total_customers", total_orders 
-FROM "source('orders')"
+FROM "ref('orders')"
 ```
 
 metriql parses your query, finds out measure & dimension pairs, and compiles it to a native SQL query with joins and projections as follows:
@@ -58,5 +58,5 @@ FROM "orders" AS "model_my_new_project_orders"
 ```
 
 :::tip
-metriql's JDBC driver makes use of MQL under the hood. While your BI tool thinks that it's connecting to a Trino cluster, metriql doesn't have an execution engine. It just understands the SQL syntax and re-writes it to be executed on your database.
+metriql's JDBC driver makes use of MQL under the hood. While your BI tool thinks it's connecting to a Trino cluster, metriql doesn't have an execution engine. It just understands the SQL syntax and re-writes it to be executed on your database.
 :::
