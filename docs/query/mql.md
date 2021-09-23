@@ -27,12 +27,26 @@ If you have a join relation from the `customer` dataset to an `orders` dataset, 
 
 ```
 query: >
-    select "orders.category", avg(nps) from "source('first_dataset', 'customer')" group by 1
+    select "customer.c_mktsegment", "customer.total_customers", total_orders FROM "source('orders')"
 query_options:
   limit: 1000
 ```
 
-metriql parses your query, finds out measure & dimension pairs, and compiles it to a native SQL query with joins and projections.
+metriql parses your query, finds out measure & dimension pairs, and compiles it to a native SQL query with joins and projections as follows:
+
+```
+SELECT customer_c_mktsegment AS "customer.c_mktsegment", "customer_total_customers" AS "customer.total_customers", "total_orders" AS "total_orders" FROM (
+SELECT 
+    "model_my_new_project_customer"."c_mktsegment" AS "customer_c_mktsegment",
+    count(*) AS "customer_total_customers",
+    count(*) AS "total_orders"
+FROM "orders" AS "model_my_new_project_orders"
+ LEFT JOIN "customer" AS "model_my_new_project_customer" ON ("model_my_new_project_orders"."o_custkey" = "model_my_new_project_customer"."c_custkey") 
+    GROUP BY
+    1 
+
+) AS "model_my_new_project_orders"
+```
 
 :::tip
 metriql's JDBC driver makes use of MQL under the hood. While your BI tool thinks that it's connecting to a Trino cluster, metriql doesn't have an execution engine. It just understands the SQL syntax and re-writes it to be executed on your database.
