@@ -37,7 +37,8 @@ MQL is a SQL dialect for querying semantic datasets in metriql. It makes it poss
 If you have a join relation from the `customer` dataset to an `orders` dataset, you can reference the dimensions from `orders` dataset as follows:
 
 ```sql
-select "customer.c_mktsegment", "customer.total_customers", total_orders FROM "source('orders')"
+select "customer.c_mktsegment", "customer.total_customers", total_orders 
+FROM "source('orders')"
 ```
 
 metriql parses your query, finds out measure & dimension pairs, and compiles it to a native SQL query with joins and projections as follows:
