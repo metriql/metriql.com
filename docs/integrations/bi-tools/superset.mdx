@@ -15,3 +15,15 @@ Once you start Metriql, you should enter your Superset URL and credentials in th
 When you click synchronize database button, we create all the Metriql datasets under the data or edit them if they're already created.
 
 <img src="/img/integrations/superset-chart.png" alt="Superset Query" style={{maxWidth: '800px'}}/>
+
+### FAQ
+
+#### Why don't you use Superset API?
+
+While Superset provides an API, it doesn't let updating / creating datasets and databases. Therefore, we create session tokens using internal APIs and interact with the internal APIs.
+
+#### Do you support Preset Cloud?
+
+Yes! Preset offers [an API](https://docs.preset.io/docs/using-the-preset-api) in their Enterprise Plan, and you can use the API tokens to be able to synchronize the metrics of Superset deployments in your Preset account. The `token` in the picture below should be passed as `--superset-username`, and the value of `secret` should be passed as `--superset-password`:
+
+![Preset API Token](/preset-token-image.png)
