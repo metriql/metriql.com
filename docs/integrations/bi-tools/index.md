@@ -14,6 +14,7 @@ While metriql is a relatively new project, we're working on integrating BI tools
 | [Looker](/integrations/bi-tools/looker)             | Ready  ✅  | [Trino + LookML project](https://docs.looker.com/setup-and-management/database-config/prestodb) |
 | [Tableau](/integrations/bi-tools/tableau)            | Ready  ✅  |  [Presto](https://help.tableau.com/current/pro/desktop/en-us/examples_presto.htm)  |
 | [Redash](/integrations/bi-tools/redash)           | Ready  ✅ | [Trino / Presto](https://redash.io/data-sources/presto) |
+| [SeekTable](/integrations/bi-tools/seektable)           | Ready  ✅ | [Trino / Presto](https://www.seektable.com/help/presto-trino-pivot-table) |
 | [Superset](/integrations/bi-tools/superset)           | Ready  ✅ | [Trino](https://superset.apache.org/docs/databases/trino) |
 | [Mode Analytics](/integrations/bi-tools/mode)           | Ready  ✅ | [Trino](https://mode.com/help/articles/supported-databases/#trino) |
 | [Sisense Cloud (formerly Periscope)](/integrations/bi-tools/sisense-cloud)           | Ready  ✅  | [Presto](https://www.sisense.com/data-connectors/presto/)  |   
