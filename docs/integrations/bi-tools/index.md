@@ -25,7 +25,7 @@ While metriql is a relatively new project, we're working on integrating BI tools
 
 
 | Data Application            | Status             | Integration Method  |
-|-------Ï-------------|--------------------|---------------------|
+|--------------------|--------------------|---------------------|
 | [Google Sheets](/integrations/services/google-sheets) | Ready  ✅  | [Marketplace Add-on](https://gsuite.google.com/marketplace/app/metriql/218048854372) |
 | Zapier             | Queued  | [Partner Integration](https://platform.zapier.com/partners/lifecycle-planning) |
 | Airtable             | Queued  | [Developer App](https://www.airtable.com/developers/apps/guides/building-a-new-app) |
