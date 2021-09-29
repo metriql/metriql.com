@@ -57,7 +57,7 @@ FROM "orders" AS "model_my_new_project_orders"
 ) AS "model_my_new_project_orders"
 ```
 
-If you're using [Aggregates](/introduction/aggregates), Metriql will automatically use them and reference the roll-up tables in the compiled SQL query.
+If you're using [Aggregates](/introduction/aggregates), Metriql automatically utilizes them and reference the roll-up tables in the compiled SQL query.
 
 :::tip
 Metriql's JDBC driver makes use of MQL under the hood. While your BI tool thinks it's connecting to a Trino cluster, metriql doesn't have an execution engine. It just understands the SQL syntax and re-writes it to be executed on your database.
