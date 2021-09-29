@@ -1,0 +1,11 @@
+# SeekTable
+
+SeekTable is a BI tool for data exploration and operational reporting. It supports [Presto as a data source](https://www.seektable.com/help/presto-trino-pivot-table) which is suitable for Metriql as well:
+
+<img src="/img/integrations/seektable-connect.png" alt="SeekTable Connection Screen" style={{maxWidth: '500px'}}/>
+
+Once you connect to Metriql, you can create pivot tables/charts and run queries on your data warehouse (without need to write a SQL code):
+
+<img src="/img/integrations/seektable-pivot-table-chart.png" alt="SeekTable Report" style={{maxWidth: '900px'}}/>
+
+Under the hood SeekTable wraps cube's base query with `GROUP BY`, to avoid that a flat-table report type may be used instead.
