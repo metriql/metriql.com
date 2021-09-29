@@ -23,12 +23,14 @@ While metriql is a relatively new project, we're working on integrating BI tools
 | Qlik           | [🙋 Needs testing](#needs-testing)  | [Presto](https://help.qlik.com/en-US/connectors/Subsystems/ODBC_connector_help/Content/Connectors_ODBC/Presto/Create-Presto-connection.htm)  |   
 | MicroStrategy           | [🙋 Needs testing](#needs-testing) | [Presto](https://community.microstrategy.com/s/article/How-to-Connect-to-Presto?language=en_US)  |   
 
+
 | Data Application            | Status             | Integration Method  |
 |-------Ï-------------|--------------------|---------------------|
 | [Google Sheets](/integrations/services/google-sheets) | Ready  ✅  | [Marketplace Add-on](https://gsuite.google.com/marketplace/app/metriql/218048854372) |
 | Zapier             | Queued  | [Partner Integration](https://platform.zapier.com/partners/lifecycle-planning) |
 | Airtable             | Queued  | [Developer App](https://www.airtable.com/developers/apps/guides/building-a-new-app) |
 | Slack             | Queued  | [Bolt API](https://api.slack.com/start/building/bolt-python) |
+
 
 | SQL Client            | Status             | Integration Method  |
 |--------------------|--------------------|---------------------|
