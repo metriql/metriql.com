@@ -1,5 +1,5 @@
 ---
-title: "Best Practices to Optimize the Query Costs in BigQuery"
+title: "Best Practices to optimize the query costs in BigQuery"
 author: Emre Semercioglu
 author_title: Core Team
 author_url: https://github.com/emresemercioglu
