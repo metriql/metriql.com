@@ -27,7 +27,7 @@ Remember that SELECT * is the most expensive way to query data because it will q
 
 ![Introduction](/img/bigqueryquery.png) 
 
-### 3) Cache the query results.
+### 3) Cache the query results
 Caching query results can drastically reduce the load in your BigQuery and boost your performance. You won't also be charged for the results retrieved from the cached tables. By default, cache preference is turned on for 24 hours in BigQuery but you can customize it depending on your use case.
 
 ### 4) Pre-aggregate the data in your fact tables
@@ -36,6 +36,6 @@ BigQuery has [materialized views](https://cloud.google.com/bigquery/docs/materia
 ### 5) Use BigQuery BI Engine
 You can allocate slots from BI engine to keep the data in tables in memory and avoid BigQuery’s processing cost. BI Engine has fixed cost and pricing which are based on the memory that you allocate. So if you can pre-aggregate the data in your fact tables and query them, you can efficiently run queries without paying any extra processing fee. Metriql can help you build an [OLAP engine](https://metriql.com/blog/2021/09/07/olap-in-modern-data-stack/#1-bigquery-bi-engine) using BigQuery and expose the metadata to your favorite downstream tools via its [integrations](https://metriql.com/integrations/bi-tools/index).
 
-### 6) Lastly, know when you need to switch from on-demand to flat-rate.
+### 6) Lastly, know when you need to switch from on-demand to flat-rate
 Once your BigQuery monthly bill hits north of $10,000, check your BigQuery cost for processing queries to see if flat-rate pricing could be a better choice.
 
