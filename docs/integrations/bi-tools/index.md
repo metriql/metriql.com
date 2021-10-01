@@ -19,7 +19,7 @@ While metriql is a relatively new project, we're working on integrating BI tools
 | [Mode Analytics](/integrations/bi-tools/mode)           | Ready  ✅ | [Trino](https://mode.com/help/articles/supported-databases/#trino) |
 | [Sisense Cloud (formerly Periscope)](/integrations/bi-tools/sisense-cloud)           | Ready  ✅  | [Presto](https://www.sisense.com/data-connectors/presto/)  |   
 | [Thoughtspot](/integrations/bi-tools/thoughtspot)           | (Partially) Ready  ✅  | [Presto](https://docs.thoughtspot.com/6.2/data-integrate/dataflow/dataflow-presto.html)  |   
-| Metabase           | [🚧 In Progress](https://github.com/metriql/metriql/issues/13)  | [Trino / Presto](https://www.metabase.com/docs/latest/administration-guide/01-managing-databases.html#officially-supported-databases)  |
+| [Metabase](/integrations/bi-tools/metabase)           | Ready  ✅  | [Trino / Presto](https://www.metabase.com/docs/latest/administration-guide/01-managing-databases.html#officially-supported-databases)  |
 | Power BI           | [🚧 In Progress](https://github.com/metriql/metriql/issues/7)  | XMLA server |   
 | Qlik           | [🙋 Needs testing](#needs-testing)  | [Presto](https://help.qlik.com/en-US/connectors/Subsystems/ODBC_connector_help/Content/Connectors_ODBC/Presto/Create-Presto-connection.htm)  |   
 | MicroStrategy           | [🙋 Needs testing](#needs-testing) | [Presto](https://community.microstrategy.com/s/article/How-to-Connect-to-Presto?language=en_US)  |   

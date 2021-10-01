@@ -1,0 +1,26 @@
+# Metabase
+
+:::info
+This integration is currently in beta; please let us know if you run into any issues.
+:::
+
+<YoutubeVideo id="mfPJHB-BRVk" />
+
+You can connect to Metriql from Metabase using Presto driver to query the datasets using its query builder or SQL via custom questions. In addition to the Presto driver, we also provide native integration with our [open-source Metabase driver](https://github.com/metriql/metriql-metabase) to synchronize Metriql datasets as Metabase data models with metrics & column definitions.
+
+Here is a sample database configuration on Metabase:
+
+<img src="/img/integrations/metabase-connect.png" alt="Metabase Databate Connection" style={{maxWidth: '600px'}}/>
+
+
+Once you start Metriql, you should enter your Metabase URL and credentials in the dashboard as follows:
+
+<img src="/img/integrations/superset-connect.png" alt="Metriql Superset Dashboard" style={{maxWidth: '600px'}}/>
+
+When you click synchronize database button, we create all the Metriql datasets under the data or edit them if they're already created.
+
+<img src="/img/integrations/superset-chart.png" alt="Superset Query" style={{maxWidth: '800px'}}/>
+
+#### Do you support Metabase Cloud?
+
+Yes!
