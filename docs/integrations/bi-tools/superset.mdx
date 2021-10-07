@@ -27,3 +27,11 @@ While Superset provides an API, it doesn't let updating / creating datasets and 
 Yes! Preset offers [an API](https://docs.preset.io/docs/using-the-preset-api) in their Enterprise Plan, and you can use the API tokens to be able to synchronize the metrics of Superset deployments in your Preset account. The `token` in the picture below should be passed as `--superset-username`, and the value of `secret` should be passed as `--superset-password`:
 
 ![Preset API Token](https://raw.githubusercontent.com/metriql/metriql-superset/main/preset-token-image.png)
+
+### I'm not able to connect Metriql using SSL.
+
+You need to enter the following setting in your Superset connection:
+
+```json
+  "engine_params": {"connect_args": {"http_scheme": "https"}},
+```
