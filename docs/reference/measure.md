@@ -56,12 +56,12 @@ total_users:
 
 ```yml
 total_events_user_ratio:
-	sql: {measure.total_rows} / {measure.total_users}
+	sql: "{measure.total_rows} / {measure.total_users}"
 ```
 
 ### `filters:`
 
-You can restrict a measure to aggregate only certain dimension values, without applying a filter to an entire query. Here is an example:
+You can restrict a measure to aggregate only specific dimension values without applying a filter to an entire query. Here is an example:
 
 ```yml
 event_last_week:
