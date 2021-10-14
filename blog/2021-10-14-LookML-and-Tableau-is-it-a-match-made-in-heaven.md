@@ -21,10 +21,16 @@ Today, In the modern data stack, companies tend to collect all their data into a
 
 If the company wants to use Tableau in a live connection with their data warehouse, they can define their datasets using LookML and connect to this semantic layer from Tableau. That seems like a great strategy at first, but this approach has some difficulties: You can't just use LookML; you need to purchase the whole Looker platform. 
 
-Looker isn't a cheap product; it's an enterprise product and is considered one of the most expensive tools in the market because it comes with extensive capabilities: Self-service Data exploration and visualization, semantic layer(LookML), Looker actions, etc. If your company has already purchased both of these tools, you can easily use this integration without paying extra money, which is excellent! However, if your company was only using Tableau, it probably doesn't make sense to buy Looker just for the sake of using the LookML semantic layer. There are better and free alternatives of LookML that you can use to create a universal semantic layer. (looking at you, **dbt** and **Metriql**)
+Looker isn't a cheap product; it's an enterprise product and is considered one of the most expensive tools in the market because it comes with extensive capabilities: Self-service Data exploration and visualization, semantic layer (LookML), Looker actions, etc. If your company has already purchased both of these tools, you can easily use this integration without paying extra money, which is excellent! However, if your company was only using Tableau, it probably doesn't make sense to buy Looker just for the sake of using the LookML semantic layer. There are better and free alternatives of LookML that you can use to create a universal semantic layer. (looking at you, **dbt** and **Metriql**)
 
 [dbt](https://www.getdbt.com) is an open-source transformation tool that enables data teams to transform, test and document data in the cloud data warehouses. [Metriql](https://metriql.com) is also an open-source project that lets companies create a semantic layer of their data by extending dbt for metrics definitions and syncing these data models to their preferred BI tools through [integrations](https://metriql.com/integrations/bi-tools/index). Instead of purchasing Looker, you can set up dbt and Metriql for free, create a universal semantic layer and expose your data not only to Tableau but all other BI and data tools that your company wants to use.
 
-Metriql can be the single source of truth for your metadata and let your teams build, collaborate, and test their data models in a vendor-neutral environment where they don't need to fear of being vendor locked in.
+Metriql can be the single source of truth for your metadata and let your teams build, collaborate, and test their data models in a vendor-neutral environment where they don't need to fear of being vendor locked in. For Tableau, the workflow is as follows:
+
+1. You model the data with Metriql.
+2. Go to dashboard, click Tableau and select the dataset that you want to analyze.
+3. Once you download the [TDS file](https://help.tableau.com/current/pro/desktop/en-us/environ_filesandfolders.htm#:~:text=Extract%20Your%20Data.-,Data%20Source%20(.tds),-%E2%80%93%20Tableau%20data%20source), double-click it and enter your credentials.
+
+That's all! You will see all your dimensions & measures in an organized way, and as you drag & drop fields into the canvas, Tableau sends the queries to Metriql that re-writes the query for your target data warehouse. You don't need to learn Tableau expressions or manually create fields anymore! [See how the integration works](https://metriql.com/integrations/bi-tools/tableau)
 
 -----
