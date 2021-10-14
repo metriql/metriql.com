@@ -11,7 +11,7 @@ hide_table_of_contents: false
 **Short answer:** If you're a customer of both these tools, yes, it's terrific news for you! Otherwise, there are more flexible and cheaper solutions than LookML to create a semantic layer for Tableau.
 <!--truncate-->
 
-We all heard the big news yesterday. Thanks to the new integration between these two, users will access Looker's semantic layer from Tableau. It means users can model their data using LookML and later use these models in either Tableau or Looker to explore and visualize their data.
+We all heard the [big news](https://www.tableau.com/about/blog/2021/10/expanding-google-partnership-tableau-integrations-looker-bigquery) yesterday. Thanks to the new integration between these two, users will access Looker's semantic layer from Tableau. It means users can model their data using LookML and later use these models in either Tableau or Looker to explore and visualize their data.
 
 Today, Tableau and Looker could be the most popular BI tools, without a doubt. They both offer something unique that users can't find in other BI tools: Tableau's advanced visualization capabilities and Looker's semantic layer, aka LookML. This integration brings the best of both tools together. 
 
