@@ -4,7 +4,7 @@ author: Emre Semercioglu
 author_title: Core Team
 author_url: https://github.com/emresemercioglu
 author_image_url: https://avatars.githubusercontent.com/u/24774762?v=4
-tags: [tutorial]
+tags: [vision]
 hide_table_of_contents: false
 ---
 
