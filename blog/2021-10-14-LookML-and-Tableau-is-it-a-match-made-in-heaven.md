@@ -8,7 +8,7 @@ tags: [tutorial]
 hide_table_of_contents: false
 ---
 
-Short answer: If you're a customer of both these tools, yes, it's terrific news for you! Otherwise, there are more flexible and cheaper solutions than LookML to create a semantic layer for Tableau.
+**Short answer:** If you're a customer of both these tools, yes, it's terrific news for you! Otherwise, there are more flexible and cheaper solutions than LookML to create a semantic layer for Tableau.
 <!--truncate-->
 
 We all heard the big news yesterday. Thanks to the new integration between these two, users will access Looker's semantic layer from Tableau. It means users can model their data using LookML and later use these models in either Tableau or Looker to explore and visualize their data.
@@ -21,7 +21,7 @@ Today, In the modern data stack, companies tend to collect all their data into a
 
 If the company wants to use Tableau in a live connection with their data warehouse, they can define their datasets using LookML and connect to this semantic layer from Tableau. That seems like a great strategy at first, but this approach has some difficulties: You can't just use LookML; you need to purchase the whole Looker platform. 
 
-Looker isn't a cheap product; it's an enterprise product and is considered one of the most expensive tools in the market because it comes with extensive capabilities: Self-service Data exploration and visualization, semantic layer(LookML), Looker actions, etc. If your company has already purchased both of these tools, you can easily use this integration without paying extra money, which is excellent! However, if your company was only using Tableau, it probably doesn't make sense to buy Looker just for the sake of using the LookML semantic layer. There are better and free alternatives of LookML that you can use to create a universal semantic layer. (looking at you, dbt and Metriql)
+Looker isn't a cheap product; it's an enterprise product and is considered one of the most expensive tools in the market because it comes with extensive capabilities: Self-service Data exploration and visualization, semantic layer(LookML), Looker actions, etc. If your company has already purchased both of these tools, you can easily use this integration without paying extra money, which is excellent! However, if your company was only using Tableau, it probably doesn't make sense to buy Looker just for the sake of using the LookML semantic layer. There are better and free alternatives of LookML that you can use to create a universal semantic layer. (looking at you, **dbt** and **Metriql**)
 
 [dbt](https://www.getdbt.com) is an open-source transformation tool that enables data teams to transform, test and document data in the cloud data warehouses. [Metriql](https://metriql.com) is also an open-source project that lets companies create a semantic layer of their data by extending dbt for metrics definitions and syncing these data models to their preferred BI tools through [integrations](https://metriql.com/integrations/bi-tools/index). Instead of purchasing Looker, you can set up dbt and Metriql for free, create a universal semantic layer and expose your data not only to Tableau but all other BI and data tools that your company wants to use.
 
