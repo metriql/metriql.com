@@ -102,6 +102,9 @@ Authorization: Basic username:password
 }
 ```
 
-To enable multi-tenant mode, you should pass either `METRIQL_MULTI_TENANT_URL=https://metriql-auth.mydomain.com/metriql/auth` environment variable or `--multi-tenant-url=https://metriql-auth.mydomain.com/metriql/auth` argument starting the Metriql server.
+To enable multi-tenant mode, you should pass either:
+
+1. `METRIQL_MULTI_TENANT_URL=https://metriql-auth.mydomain.com/metriql/auth` environment variable,
+2.  `--multi-tenant-url=https://metriql-auth.mydomain.com/metriql/auth` argument starting the Metriql server.
 
 Metriql caches the `manifest.json` file for each user depending on the `updated_at` property. In addition to that we cache the successful auth requests to speed up queries. By default the cache duration is 10 minutes but you can configure it using the `METRIQL_MULTI_TENANT_CACHE_DURATION` environment variable.
