@@ -7,6 +7,14 @@ If you want to consume the data or share your metrics via REST API, metriql has 
 
 Please see [REST API](/rest-api) for specification.
 
+:::info
+If you're using BigQuery with `gcloud` CLI and test Metriql locally, you should map the credentials as follows:
+
+```
+-v "${HOME}/.config/gcloud:/root/.config/gcloud"
+```
+:::
+
 ### ./metriql.sh serve --help
 ```shell
 Usage: commands serve [OPTIONS]

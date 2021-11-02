@@ -10,8 +10,6 @@ Metriql CLI has two commands:
 
 * [`serve`](serve) creates an HTTP server that lets you connect your datasets from your data tools.
 
-The CLI interacts with the dbt via Metadata API. You need to run `dbt compile` and generate `target/manifest.json` and pass the URI of the file as an option.
-
 # Installation
 
 Please note that you need to [install dbt](https://docs.getdbt.com/dbt-cli/installation) to use metriql. 
@@ -94,3 +92,37 @@ If you want to run the application via an IDE, the main class should be `com.met
 </TabItem>
 
 </Tabs>
+
+
+## Supported dbt deployments
+
+The CLI interacts with the dbt via Metadata API. You need to run `dbt compile` and generate the `target/manifest.json` file separately from Metriql and pass the URI of the `manifest.json` file as an option. 
+Metriql uses `DBT_MANIFEST_JSON` environment variable and `--manifest-json` argument when accessing the manifest.json file URI. The following URI schemes are valid at the moment:
+
+### `file`
+If you're running dbt and Metriql locally in the same environment, you can pass the manifest file location as file URI.
+
+Example:
+```
+file:/Users/myuser/Code/metriql-demo-tpch/target/manifest.json
+```
+
+### `http` and `https`
+
+If your dbt Docs is public or you expose manifest.json in a public way, you can pass the URL when starting Metriql.
+
+Example:
+```
+https://metriql.github.io/metriql-public-demo/manifest.json
+```
+
+### `dbt-cloud`
+If you're running dbt via dbt Cloud, you can access the manifest.json file via dbt Cloud API. 
+You need to generate an API token on [dbt Cloud](https://cloud.getdbt.com/#/profile/api/) and and pass the Job id to Metriql so that it can interact with the API to fetch the manifest.json artifact.
+Please note that you need to be on a paid plan to be able to use the API.
+
+Example:
+```
+dbt-cloud://600685b9b9c62dfz8d9696e03ed8e1c15364dcd8@cloud.getdbt.com/30390?job_id=37095
+```
+

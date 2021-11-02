@@ -14,21 +14,24 @@ While metriql is a relatively new project, we're working on integrating BI tools
 | [Looker](/integrations/bi-tools/looker)             | Ready  ✅  | [Trino + LookML project](https://docs.looker.com/setup-and-management/database-config/prestodb) |
 | [Tableau](/integrations/bi-tools/tableau)            | Ready  ✅  |  [Presto](https://help.tableau.com/current/pro/desktop/en-us/examples_presto.htm)  |
 | [Redash](/integrations/bi-tools/redash)           | Ready  ✅ | [Trino / Presto](https://redash.io/data-sources/presto) |
+| [SeekTable](/integrations/bi-tools/seektable)           | Ready  ✅ | [Trino / Presto](https://www.seektable.com/help/presto-trino-pivot-table) |
 | [Superset](/integrations/bi-tools/superset)           | Ready  ✅ | [Trino](https://superset.apache.org/docs/databases/trino) |
 | [Mode Analytics](/integrations/bi-tools/mode)           | Ready  ✅ | [Trino](https://mode.com/help/articles/supported-databases/#trino) |
 | [Sisense Cloud (formerly Periscope)](/integrations/bi-tools/sisense-cloud)           | Ready  ✅  | [Presto](https://www.sisense.com/data-connectors/presto/)  |   
 | [Thoughtspot](/integrations/bi-tools/thoughtspot)           | (Partially) Ready  ✅  | [Presto](https://docs.thoughtspot.com/6.2/data-integrate/dataflow/dataflow-presto.html)  |   
-| Metabase           | [🚧 In Progress](https://github.com/metriql/metriql/issues/13)  | [Trino / Presto](https://www.metabase.com/docs/latest/administration-guide/01-managing-databases.html#officially-supported-databases)  |
+| [Metabase](/integrations/bi-tools/metabase)           | Ready  ✅  | [Trino / Presto](https://www.metabase.com/docs/latest/administration-guide/01-managing-databases.html#officially-supported-databases)  |
 | Power BI           | [🚧 In Progress](https://github.com/metriql/metriql/issues/7)  | XMLA server |   
 | Qlik           | [🙋 Needs testing](#needs-testing)  | [Presto](https://help.qlik.com/en-US/connectors/Subsystems/ODBC_connector_help/Content/Connectors_ODBC/Presto/Create-Presto-connection.htm)  |   
 | MicroStrategy           | [🙋 Needs testing](#needs-testing) | [Presto](https://community.microstrategy.com/s/article/How-to-Connect-to-Presto?language=en_US)  |   
 
+
 | Data Application            | Status             | Integration Method  |
 |--------------------|--------------------|---------------------|
-| [Google Sheets](/integrations/services/google-sheets) | Ready  ✅  | [Marketplace Add-on](https://developers.google.com/workspace/add-ons/editors/sheets) |
+| [Google Sheets](/integrations/services/google-sheets) | Ready  ✅  | [Marketplace Add-on](https://gsuite.google.com/marketplace/app/metriql/218048854372) |
 | Zapier             | Queued  | [Partner Integration](https://platform.zapier.com/partners/lifecycle-planning) |
 | Airtable             | Queued  | [Developer App](https://www.airtable.com/developers/apps/guides/building-a-new-app) |
 | Slack             | Queued  | [Bolt API](https://api.slack.com/start/building/bolt-python) |
+
 
 | SQL Client            | Status             | Integration Method  |
 |--------------------|--------------------|---------------------|
