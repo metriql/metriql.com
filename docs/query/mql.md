@@ -63,4 +63,4 @@ If you're using [Aggregates](/introduction/aggregates), Metriql automatically ut
 Metriql's JDBC driver makes use of MQL under the hood. While your BI tool thinks it's connecting to a Trino cluster, metriql doesn't have an execution engine. It just understands the SQL syntax and re-writes it to be executed on your database.
 :::
 
-<img src="/img/metriql-mql-diagram.svg" alt="Metriql MQL Diagram"/>
+<img src="/img/metriql-mql-diagram.png" alt="Metriql MQL Diagram"/>
