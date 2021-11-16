@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # MQL
 
-MQL is a SQL syntax that only supports a subset of the ANSI SQL standard. It lets us query the models directly using SQL interface. Let's say that you have [source here](/query/segmentation). You can run the following query:
+MQL is a SQL syntax that only supports a subset of the ANSI SQL standard. It lets us query the models directly using SQL interface. Let's say that you have [models here](https://github.com/metriql/metriql-public-demo/blob/main/models/ecommerce/seeds.yml) and you can run the following query:
 
 ```sql
 select o_clerk, total_orders FROM "ref('orders')"
