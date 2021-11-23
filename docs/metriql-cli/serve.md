@@ -78,6 +78,24 @@ Options:
   --help                           Show this message and exit
 ```
 
+### Authorization and Permission Management
+
+By default, Metriql uses the credentials defined in your dbt profiles `~/.dbt/profiles.yml` file. However; since Metriql is exposed to your users, you may want to use different authentification methods. Here are the alternatives:
+
+#### Parametrizing username & password with `--pass-credentials-to-datasource`
+
+If you pass the relevant config when starting Metriql, it will pass the username & password to datasource crendentials for connecting the databases. It can help you audit the queries and apply the relevant permissions for your users directly in your database. That way, you will create the users directly in your database, apply relevant permissions to them and Metriql will automatically pass the user credentials when connecting the datasource.
+
+#### JWT tokens in REST API
+If you would like to use Metriql for embedded analytics use-cases, you can enable JWT tokens to authentificate the users in your single page application. Please refer to [REST API documentation](https://metriql.com/integrations/rest-api/#authorization) to learn more about it.
+
+#### Using variables in SQL datasets 
+When you pass `--var` parameter to the dbt project, it becomes available the [SQL context](https://metriql.com/reference/sql-context). In addition to that you can access the username of the current user referencing `{user}` variable in SQL expressions. If you use [ephemeral dbt models](https://docs.getdbt.com/docs/building-a-dbt-project/building-models/materializations#ephemeral), Metriql compiles the SQL queries on the fly before executing them in your database so you can parametrize the table references, add additional WHERE conditions depending on the current user.
+
+#### Using multi-tenant deployment
+If you want to have different datasets for different users or use different database credentials for each user, you can use multi-tenant deployment. It's the preferred solution if you're building a system for exposing Metriql to your customers. Please see the [following section](#multi-tenant deployment).
+
+
 ### Multi-tenant deployment
 
 By default, Metriql reads your `manifest.json` file and dbt adapter using the configuration you passed when starting Metriql. If you would like to use Metriql for your users in multi-tenant mode, you can use the same Metriql deployment to access multiple databases and dbt projects for your customers. You need to develop an API endpoint that returns the `manifest.json` URI under `manifest` and dbt adapter under `connection_parameters` depending on the [Basic access authorization](https://en.wikipedia.org/wiki/Basic_access_authentication). Here is an example response:
