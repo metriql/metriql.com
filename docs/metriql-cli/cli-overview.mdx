@@ -99,6 +99,11 @@ If you want to run the application via an IDE, the main class should be `com.met
 The CLI interacts with the dbt via Metadata API. You need to run `dbt compile` and generate the `target/manifest.json` file separately from Metriql and pass the URI of the `manifest.json` file as an option. 
 Metriql uses `DBT_MANIFEST_JSON` environment variable and `--manifest-json` argument when accessing the manifest.json file URI. The following URI schemes are valid at the moment:
 
+
+:::info
+If you want to update the datasets without restarting Metriql, you can use Metriql's [Update Manifest API endpoint](https://metriql.com/rest-api-endpoints#operation/UpdateManifest) to fetch the manifest.json from the source URL.
+:::
+
 ### `file`
 If you're running dbt and Metriql locally in the same environment, you can pass the manifest file location as file URI.
 
