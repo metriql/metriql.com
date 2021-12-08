@@ -13,7 +13,7 @@ A dataset represents a dataset in your data warehouse. metriql automatically cre
 
 ## Create datasets from dbt metrics
 
-:::warning
+:::info
 The feature is in beta and the API is unstable for now.
 :::
 
