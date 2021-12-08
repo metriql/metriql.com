@@ -11,7 +11,16 @@ A dataset represents a dataset in your data warehouse. metriql automatically cre
 
 **relation** defines a join in between the datasets. metriql automatically generates SQL join logic to bring in all fields from another dataset correctly then the user analyzes a specific dataset.
 
-## Integrate existing dbt models
+## Create datasets from dbt metrics
+
+:::warning
+The feature is in beta and the API is unstable for now.
+:::
+
+We support dbt's metrics natively. The datasets that is created via dbt metrics only have single measures and the dimensions are inherited from the base model / source / seed if you use `meta.metriql` in them. Please refer to dbt's metrics feature to [learn more about the definitions](https://docs.getdbt.com/docs/building-a-dbt-project/metrics).
+
+
+## Create datasets from dbt models
 
 You can map your columns as dimensions and measures under the `meta` property of `columns` as follows:
 
@@ -52,7 +61,7 @@ models:
 
 You can see the full list of properties that you can use under `model.meta` and `column.meta` [here](/reference/dataset.md).
 
-## Mapping sources as models
+## Create datasets from dbt sources
 
 In case you want to create models that point to tables in your database, you can make use of dbt's source properties as follows:
 
@@ -86,7 +95,7 @@ models:
 	        userId: user_id
 ```
 
-## Integrating seeds into your models
+## Create datasets from dbt seeds
 
 #### Exposing your seeds to the end-users
 Since seeds are usually used to enrich the data, we don't create models from `seeds` by default. However; you can expose them to the end-users if you enable the `seeds` to have appeared in dbt docs:
