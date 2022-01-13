@@ -46,7 +46,7 @@ You can query the data using as follows:
 [measures](introduction#measure): ["total_users"]
 [dimensions](introduction#dimension): ["country"]
 [filters](introduction#filter)
-  - {dimension: nps, operator: greater_than, value: 10}
+  - {dimension: nps, operator: greater_than, value: 10
 limit: 1000
 ```
 </TabItem>
