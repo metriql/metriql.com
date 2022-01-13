@@ -96,7 +96,7 @@ You can filter datasets by their dimensions and measures. There are different op
 You can reference dimensions in the filter as shown below. You can also reference mappings with `:` prefix. For example, use [`:user_id`](/reference/mapping#user_id) in dimension if you want to filter by user_id.
 ```yml
 filters: 
- - dimensions: country # adds a WHERE condition to the query.
+ - dimension: country # adds a WHERE condition to the query.
    [operator](#operator): equals
    value: value_for_operator
 ```
