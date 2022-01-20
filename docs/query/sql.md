@@ -34,8 +34,6 @@ The following Jinja functions are available in the context:
 
 It generates the SQL query for the `report type` given the report options. See the [available report types](/query/introduction).
 
-
-
 ##### var(name : string)
 
 It returns the variable given by `--vars` options to the REST server.

@@ -9,7 +9,8 @@ Metriql supports [Trino](http://trino.io) (formerly Prestodb) JDBC driver. If yo
 By default, JDBC connector uses [MQL](/query/mql) reporting type. That enables BI tools to use [Aggregates](/introduction/aggregates) without any extra step, but MQL syntax is limited by design. If you want to run ad-hoc SQL queries via the JDBC connector, you can switch mode as follows:
 
 ```sql
--- @mode:sql
+SET SESSION query_mode = 'sql';
+
 with nps_by_customer AS (
     {{sql('segmentation', dataset = 'source('first_dataset', 'users')', measures=['nps'], dimensions=['plan_type'], )}}
 )
@@ -20,4 +21,10 @@ If you want to use Metriql's JDBC connector, you can [download the driver](https
 
 ```
 jdbc:trino:YOUR_METRIQL_URL
+```
+
+If you want to set the query mode globally, you can pass it as connection parameter as follows:
+
+```
+jdbc:trino:YOUR_METRIQL_URL?sessionProperties=query_mode:mql
 ```
