@@ -73,25 +73,9 @@ docker run -it -p "${METRIQL_PORT}:5656" -v "${DBT_PROJECT_DIR}:/root/app" -v "$
 
 </TabItem>
 
-<TabItem value="source">
-
-``` bash
-git clone https://github.com/metriql/metriql.git
-cd metriql
-./mvnw clean install -DskipTests
-```
-
-Run the following command:
-
-``` bash
-target/metriql-*-bundle/metriql-*/bin/metriql --help
-```
-
-If you want to run the application via an IDE, the main class should be `com.metriql.ServiceStarterKt`, pass `--help` as program arguments:
-
-</TabItem>
-
 </Tabs>
+
+P.S: If you're a developer and you would like to contribute Metriql, please [refer to the documentation for running Metriql in your IDE](https://github.com/metriql/metriql/blob/master/README.md#running-metriql-in-your-ide).
 
 
 ## Supported dbt deployments
