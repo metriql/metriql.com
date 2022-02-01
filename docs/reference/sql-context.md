@@ -42,9 +42,9 @@ When composing fields in SQL type, an additional variable is injected into the J
 
 To access other fields you can choose to access fields over a model, or the field is in the same model you access them as follows:
 
-* `{dimension.dimension_name}`
-* `{measure.measure_name}`
-* `{relation.relation_name}`
+* `{dimension.dimension_name}` compiles the dimension `dimension_name` of the current model to SQL
+* `{measure.measure_name}` compiles the measure `measure_name` of the current model to SQL
+* `{relation.relation_name}` returns the `relation_name` of the current model, you can access the fields of the target relation using `{relation.relation_name.measure.measure_name}` or `{relation.relation_name.dimension.dimension_name}` to compile fields from target relations.
 
 For example, composing a measure that aggregates a dimension: `SUM({dimension.price})`. Using this convention, the measure is rendered dynamically thus any changes to the dimension will affect how the measure is being rendered.
 
