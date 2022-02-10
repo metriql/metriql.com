@@ -159,7 +159,8 @@ If you define `always_filters` for a `view`, the system pushes the relevant filt
 ```yml
 models:
   - name: pageview_events
-    extens: ref('all_events')
+    always_filters: 
+      - {dimension: event_type, operator: equals, value: 'pageview'}
 ```
 
 ### `extends`
@@ -169,5 +170,5 @@ If you want to re-use the `dimensions`, `measures`, `relations`, and `mappings` 
 ```yml
 models:
   - name: pageview_events
-    extens: ref('all_events')
+    extends: ref('all_events')
 ```
