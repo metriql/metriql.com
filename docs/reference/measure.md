@@ -10,7 +10,7 @@ Measures are the business metrics that calculate a value for a model. Here are a
 
 ### `dimension: | column: | sql:`
 
-You should set either `dimension`, `column`, or `sql` in order to define the measures under `model.meta.metriql.measures`. If it's not set, the measure simply counts the all rows (i.e. `count(*)`). Here are a few examples:
+You should set either `dimension`, `column`, or `sql` to define the measures under `meta.metriql.measures`. If not set, the measure counts all rows (i.e. `count(*)`). Here are a few examples:
 
 
 ```yml title="models/events.yml"
