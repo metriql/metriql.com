@@ -15,17 +15,19 @@ You should set either `dimension`, `column`, or `sql` in order to define the mea
 
 ```yml title="models/events.yml"
 models:
-   - name: events
-     meta:
-        metriql:
-          measures:
-			   total_rows:
-				   aggregation: count
-				unique_users:
-				   aggregation: count_unique
-				   dimension: user_id
-				unique_users_total_rows_ratio:
-				   sql: {measure.total_rows}/{measure.unique_users}
+  - name: events
+    meta:
+      metriql:
+        measures:
+          total_rows:
+            aggregation: count
+          unique_users:
+            aggregation: count_unique
+            dimension: user_id
+          sql_example:
+            sql: "sum(distinct {TABLE}.col1)"
+          unique_users_total_rows_ratio:
+            sql: "{measure.total_rows}/{measure.unique_users}"
 ```
 
 Please note that these fields are not required under `column.meta` as they point to the relevant `column`.
