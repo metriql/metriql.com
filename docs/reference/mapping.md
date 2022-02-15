@@ -16,7 +16,11 @@ mappings:
 ```
 
 ##  `event_timestamp`: 
-If this model is a time-series data, you can set the value that points to a dimension with the `timestamp` type, and the Explores will have a date picker and enforce the user to set the value of the date picker in the UI.
+If the dataset represents time-series data, you can set the value that points to a dimension with the `timestamp` type, the implications are:
+* [Aggregates](/introduction/aggregates) will create `incremental` dbt model instead of `table` models to process the data incrementally.
+* The downstream tools that support time-series data will be syncronized to utilize the timestamp dimension.
 
 ##  `user_id`: 
- If your model represents user data such as a customer event type (ex: `pageview` or `transaction`), you can set the mapping dimension the unlock features such as funnel and retention explores.
+ If your dataset represents user data such as a customer event type (ex: `pageview` or `transaction`), you can set the user_id the unlock product analytics features. The implications are:
+* You will be able to use Funnel and Retention report types.
+* The downstream tools that support user data will be syncronized.
