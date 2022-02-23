@@ -18,7 +18,7 @@ mappings:
 ##  `event_timestamp`: 
 If the dataset represents time-series data, you can set the value that points to a dimension with the `timestamp` type, the implications are:
 * [Aggregates](/introduction/aggregates) will create `incremental` dbt model instead of `table` models to process the data incrementally.
-* The downstream tools that support time-series data will be syncronized to utilize the timestamp dimension.
+* The downstream tools that support time-series data will be synchronized to utilize the timestamp dimension.
   * For example, [Data Studio](https://support.google.com/datastudio/answer/7059697?hl=en#zippy=%2Cin-this-article) and [Superset](https://preset.io/blog/2020-06-26-timeseries-chart/) has an optional timestamp column that lets you drilldown different granularies and Metriql maps the event_timestamp to their native timeseries mapping.
 
 ##  `user_id`: 
