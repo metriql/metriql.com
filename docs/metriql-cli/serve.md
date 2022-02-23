@@ -126,3 +126,10 @@ To enable multi-tenant mode, you should pass either:
 2.  `--multi-tenant-url=https://metriql-auth.mydomain.com/metriql/auth` argument.
 
 Metriql caches the `manifest.json` file for each user depending on the `updated_at` property. In addition to that we cache the successful auth requests to speed up queries. By default the cache duration is 10 minutes but you can configure it using the `METRIQL_MULTI_TENANT_CACHE_DURATION` environment variable.
+
+## Deploying to Production
+
+Metriql is stateless so you can use Kubernetes or a managed solution such as Heroku to deploy Metriql and run it behind a load balancer. There is two things to consider when you're running Metriql behind a load balancer:
+
+* __Session affinity (sticky cookies)__: If the client queries are taking longer than 60 seconds, you need to poll the system to fetch the query status and result but all the Metriql instances keep status of the queries running inside the same container. Therefore, the client needs to hit the same container to be able to access the query results. Most of the cloud prodivers ([1](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/sticky-sessions.html), [2](https://cloud.google.com/load-balancing/docs/backend-service#client_ip_affinity)) support this feature out of the box.
+* Metriql caches the queries and their results and reuse it if two clients run the same query concurrently or within the certain timeframe such as an hour. We're working on optional Redis support for query caches if you're running Metriql in a distributed environment.
