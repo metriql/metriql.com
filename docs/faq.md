@@ -43,4 +43,8 @@ If your data is already modeled, you can use dbt's [sources](https://docs.getdbt
 
 No, it does not. If you have `table` or `incremental` models, you need to run dbt yourself. We suggest using [dbt Cloud](https://cloud.getdbt.com/) from Fishtown Analytics, but you can also run dbt locally or use a CI system such as Github Actions or Gitlab CI if you don't want to use a Cloud IDE.
 
+#### 7. Is there any performance hit using Metriql versus directly executing the queries on target database?
+
+Metriql acts as a proxy for the queries and doesn't do any processing itself. It maintains a connection pool for different credentials to the target data warehouse so ideally there is no performance hit using Metriql.
+
 #### If you have other questions, join the conversation on [Slack](https://join.slack.com/t/metriql/shared_invite/zt-tz1nzvyd-ker8LGcBQmzrwvfAkFO1qQ).
