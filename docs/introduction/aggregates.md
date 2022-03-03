@@ -113,3 +113,7 @@ If the dbt model table doesn't exist, metriql prepends the following comment to 
   Unable to use materialize source_events_pageview_event_counts: The target table metriql_aggregates.source_events_pageview_event_counts doesn't exist
 */
 ```
+
+:::info
+`aggregation` field is required for measures that you use in Aggregates.
+:::
