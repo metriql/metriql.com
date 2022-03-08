@@ -172,3 +172,12 @@ models:
   - name: pageview_events
     extends: ref('all_events')
 ```
+
+### `name`
+
+:::danger
+If you use the property in dbt resource files, you won't be able to reference your models with `ref` or sources with `source` syntax.
+:::
+
+The unique identifier of the dataset. The name lets you reference the dataset from other dataset. 
+The names must be lowercase and does not have any special character except `_`. Metriql will complain if the dataset names that has whitespace, non-ascii, or any upppercase character.
