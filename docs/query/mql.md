@@ -84,4 +84,6 @@ SELECT "dimension_name::month" FROM dataset_name
 
 ## Data flow:
 
+On the left side, Metriql doesn't utilize aggregates, instead compile the query that uses fact table. On the right side, since we have `aggregates` in our dataset, Metriql utilize the dimensional table.
+
 <img src="/img/metriql-mql-diagram.png" alt="Metriql MQL Diagram"/>
