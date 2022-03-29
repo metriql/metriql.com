@@ -64,6 +64,23 @@ Metriql's JDBC driver makes use of MQL under the hood. While your BI tool thinks
 :::
 
 
+## Sample queries:
+
+#### Return datasets:
+
+```sql
+SHOW TABLES
+```
+
+#### Return fields in a dataset
+```sql
+SHOW COLUMNS FROM metriql.dataset_name
+```
+
+#### Access timeframes in a dimension field:
+```
+SELECT "dimension_name::month" FROM dataset_name
+```
 
 ## Data flow:
 
