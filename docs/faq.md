@@ -31,9 +31,9 @@ Most of the data people feel comfortable with Python, and some even hate the JVM
 
 [<b>Cube.js</b>](http://cube.dev) is a backend for embedded applications. It lets data people define the metrics in Javascript and build an API for their data. Cube has integrations with most of the front-end frameworks so that you can build custom user interfaces for your internal applications. They also have a two-level caching mechanism similar to Metriql's [Aggregates](/introduction/aggregates), but they ingest the data into its own storage, built with Rust. Cube is more suitable if your data is already modeled and you're building a high concurrency analytical application as it doesn't provide data lineage and ingest the data through its own storage. 
 
-#### 4. What's Rakam, and how it's related to metriql?
+#### 4. What's LiveRamp, and how is it related to metriql?
 
-Rakam, Inc. is the company that built metriql. We have been using dbt Core internally for the last 2 years, and we believe in [their viewpoint](https://docs.getdbt.com/docs/about/viewpoint). We tested metriql for our customers and found out that it can also be used outside of Rakam. We're also using tons of open-source technologies, and the founders also have [open-source background](https://github.com/rakam-io/rakam-api). We decided to open-source metriql under a vendor-neutral organization using the same open-source license as dbt Core.
+LiveRamp (NYSE: RAMP) is a San Francisco based SaaS company that offers a data enablement platform that connects offline and online data and turns them into actionable insights for many Fortune 500 companies. LiveRamp acquired Rakam and Metriql in December 2021 and since then, Metriql has been developed and maintained by the LiveRamp teams.
 
 #### 5. Do I need to use dbt Core for metriql?
 

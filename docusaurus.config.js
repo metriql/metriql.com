@@ -197,7 +197,7 @@ module.exports = {
       //   src: 'img/oss_logo.png',
       //   href: 'https://rakam.io',
       // },
-      copyright: `From the makers of <a href="https://rakam.io" target="_blank">rakam</a><br><a href="/careers">Careers</a> · <a href="/privacypolicy">Privacy Policy</a> · <a href="/termsofuse">Terms of Usage</a>`,
+      copyright: `By <a href="https://liveramp.com" target="_blank">LiveRamp</a><br><a href="/privacypolicy">Privacy Policy</a> · <a href="/termsofuse">Terms of Usage</a>`,
     },
   },
   presets: [
