@@ -78,7 +78,7 @@ SHOW COLUMNS FROM metriql.dataset_name
 ```
 
 #### Access timeframes in a dimension field:
-```
+```sql
 SELECT "dimension_name::month" FROM dataset_name
 ```
 
