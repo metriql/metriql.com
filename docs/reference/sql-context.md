@@ -53,6 +53,7 @@ For example, composing a measure that aggregates a dimension: `SUM({dimension.pr
 * `{TABLE}`: The current datasets' name
 * `{aq}`: Alias quote for the target database. Ex: `"` for PostgreSQL and ``` for BigQuery.
 * `{user}`: The user attributes context. 
+<!-- * [TrinoFunctions](https://github.com/metriql/metriql/blob/master/src/main/java/com/metriql/warehouse/spi/function/RFunction.kt) via {{mql.function_name}} -->
 
 ## Only available in `relation.sql`
 
