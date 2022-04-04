@@ -94,14 +94,26 @@ dimension_name::[month_of_year](/reference/dimension#timeframes)
 You can filter datasets by their dimensions and measures. There are different operators available for different types.
 
 You can reference dimensions in the filter as shown below. You can also reference mappings with `:` prefix. For example, use [`:user_id`](/reference/mapping#user_id) in dimension if you want to filter by user_id.
+
 ```yml
 filters: 
- - dimension: country # adds a WHERE condition to the query.
+ - dimension: country # compiles to `WHERE country = 'USA'`
    [operator](#operator): equals
-   value: value_for_operator
+   value: USA
+ - [ # compiles to `WHERE city = 'San Franscisco' OR city = 'New York'`
+    {dimension: city, operator: equals, value: San Francisco},
+    {dimension: city, operator: equals, value: New York}
+   ]
+```
+
+If the value is an array, Metriql will merge the filters with `OR` otherwise; use `AND`. For the query above, Metriql will compile it to the following SQL expression:
+
+```sql
+WHERE country = 'USA' AND (city = 'San Franscisco' OR city = 'New York')
 ```
 
 or, you can reference a measure in the filter:
+
 ```yml
 filters: 
  - measure: total_revenue # adds a HAVING condition to the query
