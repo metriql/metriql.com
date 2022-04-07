@@ -72,7 +72,7 @@ For the `events` dataset here, `total_events` and `total_revenue` are the availa
 
 ## `dimension`
 
-metriql automatically maps all your columns as dimensions. If the column name has non-ascii characters, you should define `name` of the dimension explicitly to be able to reference as follows:
+metriql automatically maps all your columns as dimensions. If the column name has non-alphanumeric characters, you should define `name` of the dimension explicitly to be able to reference as follows:
 
 ```yml
 columns:
