@@ -3,10 +3,14 @@ title: "Dataset properties"
 sidebar_position: 1
 ---
 
+:::warn
+Metriql will ignore the dbt resources that doesn't have `meta.metriql` property.
+:::
+
 <File name='models/schema.yml'>
 
 ```yml
-models:
+models: # can be seeds, sources, and metrics as well.
   - name: customers
     description: List of customers
     meta:
@@ -176,7 +180,7 @@ models:
 ### `name`
 
 :::danger
-If you use the property in dbt resource files, you won't be able to reference your models with `ref` or sources with `source` syntax.
+If you use the `name` property in dbt resource files, you won't be able to reference your models with `ref` or sources with `source` syntax.
 :::
 
 The unique identifier of the dataset. The name lets you reference the dataset from other dataset. 
