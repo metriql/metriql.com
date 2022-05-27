@@ -3,7 +3,7 @@ title: "Dataset properties"
 sidebar_position: 1
 ---
 
-:::warn
+:::note
 Metriql will ignore the dbt resources that doesn't have `meta.metriql` property.
 :::
 
