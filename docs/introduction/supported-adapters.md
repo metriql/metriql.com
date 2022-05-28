@@ -18,6 +18,7 @@ metriql doesn't support all the dbt adapters at the moment because, unlike dbt, 
 | Mysql       | 0.08-beta     | ❌                | `segmentation`, `sql`                        |                                                            |
 | SQL Server  | 0.08-beta     | ❌                | `segmentation`, `sql`                        |                                                            |
 | Azure SQL   | 0.08-beta     | ❌                | `segmentation`, `sql`                        |                                                            |
+| Clickhouse   | 0.12-beta     | ❌                | `segmentation`, `sql`               |                                                            | [See dbt](https://docs.getdbt.com/docs/available-adapters)
 
 # Creating a new adapter
 
