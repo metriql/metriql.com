@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Querying datasets
 
-When you model the data and create datasets, you can analyze the data using the REST API or JDBC Adapter. metriql provides different reporting features for different use-cases and lets you interact with the data in different ways.
+When you model the data and create datasets, you can analyze the data using the REST API or JDBC Adapter. Metriql provides different reporting features for different use-cases and lets you interact with the data in different ways.
 
 You can use the `measure` and `dimension` references of your datasets, filter the data using them and calculate different metrics depending on the report type. See the available report types:
 
@@ -18,7 +18,7 @@ You can use the `measure` and `dimension` references of your datasets, filter th
 
 
 :::tip
-If you're using metriql in a BI tool, you will most likely be executing [Segmentation](segmentation) queries.
+If you're using Metriql in a BI tool, you will most likely be executing [Segmentation](segmentation) queries.
 :::
 
 ---
@@ -72,7 +72,7 @@ For the `events` dataset here, `total_events` and `total_revenue` are the availa
 
 ## `dimension`
 
-metriql automatically maps all your columns as dimensions. If the column name has non-alphanumeric characters, you should define `name` of the dimension explicitly to be able to reference as follows:
+Metriql automatically maps all your columns as dimensions. If the column name has non-alphanumeric characters, you should define `name` of the dimension explicitly to be able to reference as follows:
 
 ```yml
 columns:
@@ -123,7 +123,7 @@ filters:
 
 ### Operator
 
-For different [field types](/reference/field#type), metriql offers different operators to filter the data.
+For different [field types](/reference/field#type), Metriql offers different operators to filter the data.
 
 #### For all types:
 
@@ -172,9 +172,9 @@ WHERE
     AND created_at < CAST(DATEADD(DAY, 1, to_date(date_trunc('day', CURRENT_TIMESTAMP)) AS TIMESTAMP))
 ```
 
-metriql filters the data from the beginning of the previous day to the end of the current day for `1 day`.
+Metriql filters the data from the beginning of the previous day to the end of the current day for `1 day`.
 
-The date period can be either `minute`, `hour`, `day`, `week`, `month`, or `year`. metriql also supports the plural versions such as `minutes`.
+The date period can be either `minute`, `hour`, `day`, `week`, `month`, or `year`. Metriql also supports the plural versions such as `minutes`.
 
 ##### Absolute values
 
@@ -220,7 +220,7 @@ If you set the timezone defined in your config file, the time value will be shif
 filters: [{dimension: items, operator: includes, value: 'array_item'}]
 ```
 
-metriql actually has types `array_*` for all primitive types and the value can be set based on the primitive type as follows:
+Metriql actually has types `array_*` for all primitive types and the value can be set based on the primitive type as follows:
 
 ```yml
 filters: [{dimension: array_integer_dimension, operator: includes, value: 4}]

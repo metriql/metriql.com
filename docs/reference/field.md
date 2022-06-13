@@ -14,7 +14,7 @@ name: total_events
 ```
 
 ### `type:`
-The metriql type of the field.
+The Metriql type of the field.
 
 Available values are: 
 
@@ -57,7 +57,7 @@ hidden: false
 
 ### `report:`
 
-An object that defines how the value will be shown to the end user. Currently, metriql supports `format_numbers`.
+An object that defines how the value will be shown to the end user. Currently, Metriql supports `format_numbers`.
 
 Example:
 

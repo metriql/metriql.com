@@ -13,7 +13,7 @@
  import styles from './styles.module.css';
 
  /*
-  * Taken from docs.getdbt.com to make metriql documentation more user-friendly to dbt users:
+  * Taken from docs.getdbt.com to make Metriql documentation more user-friendly to dbt users:
   */
  import Changelog from '@site/src/components/changelog';
  import Collapsible from '@site/src/components/collapsible';

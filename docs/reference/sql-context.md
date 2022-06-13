@@ -3,7 +3,7 @@ title: "SQL Context"
 sidebar_position: 100
 ---
 
-The Jinja context is available in all `sql` definitions such as `view.sql`, `measure.sql`, `dimension.sql`, and `relation.sql` properties. Please note that the Jinja context is different from [dbt Jinja context](https://docs.getdbt.com/docs/building-a-dbt-project/jinja-macros), dbt compiles your code for once and doesn't run on-demand whereas metriql compiles Jinja variables on the fly when the user runs a query.
+The Jinja context is available in all `sql` definitions such as `view.sql`, `measure.sql`, `dimension.sql`, and `relation.sql` properties. Please note that the Jinja context is different from [dbt Jinja context](https://docs.getdbt.com/docs/building-a-dbt-project/jinja-macros), dbt compiles your code for once and doesn't run on-demand whereas Metriql compiles Jinja variables on the fly when the user runs a query.
 
 Benefits of using dynamic SQL contexts:
 

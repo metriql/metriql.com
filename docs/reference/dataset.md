@@ -169,7 +169,7 @@ models:
 
 ### `extends`
 
-If you want to re-use the `dimensions`, `measures`, `relations`, and `mappings` of another model or source in a dbt project, you can extend from it. When you extend from another dbt model, metriql automatically re-use the fields in the current model. If you have additional fields, it tries to merge all the fields that are defined in the current model.
+If you want to re-use the `dimensions`, `measures`, `relations`, and `mappings` of another model or source in a dbt project, you can extend from it. When you extend from another dbt model, Metriql automatically re-use the fields in the current model. If you have additional fields, it tries to merge all the fields that are defined in the current model.
 
 ```yml
 models:

@@ -3,13 +3,13 @@ title: "Creating Datasets"
 sidebar_position: 3
 ---
 
-A dataset represents a dataset in your data warehouse. metriql automatically creates datasets from your dbt [`models`](https://docs.getdbt.com/docs/building-a-dbt-project/building-models), [`sources`](https://docs.getdbt.com/docs/building-a-dbt-project/using-sources), and [`seeds`](https://docs.getdbt.com/docs/building-a-dbt-project/seeds). A dataset has three important properties:
+A dataset represents a dataset in your data warehouse. Metriql automatically creates datasets from your dbt [`models`](https://docs.getdbt.com/docs/building-a-dbt-project/building-models), [`sources`](https://docs.getdbt.com/docs/building-a-dbt-project/using-sources), and [`seeds`](https://docs.getdbt.com/docs/building-a-dbt-project/seeds). A dataset has three important properties:
 
 **dimension** lets you drill down into the dataset, it can be used to filter query results. It can be either a column in your table or an SQL expression that processes a single row and returns a value.
 
 **measure** is a field that uses an SQL aggregate function, such as `count`, `sum`, or `average`. Measures can be used to aggregate dimensions. For example, measures for a `Sales` model might include total items sold (a count), total sales price (a sum), and the average sales price (an average). 
 
-**relation** defines a join in between the datasets. metriql automatically generates SQL join logic to bring in all fields from another dataset correctly then the user analyzes a specific dataset.
+**relation** defines a join in between the datasets. Metriql automatically generates SQL join logic to bring in all fields from another dataset correctly then the user analyzes a specific dataset.
 
 ## Create datasets from dbt metrics
 
@@ -82,7 +82,7 @@ sources:
                 type: string
 ```
 
-If you're analyzing the time-series data, you can also define `mappings` so that metriql understands your data in a better way and lets you access specific features such as funnel and retention:
+If you're analyzing the time-series data, you can also define `mappings` so that Metriql understands your data in a better way and lets you access specific features such as funnel and retention:
 
 
 ```yml
@@ -129,13 +129,13 @@ models:
             relationship: many_to_many
 ```
 
-metriql automatically creates the relation from `pageview` to a hidden `countries` model so that the users can drill down by `user_friendly_name` when they're analyzing `pageviews`.
+Metriql automatically creates the relation from `pageview` to a hidden `countries` model so that the users can drill down by `user_friendly_name` when they're analyzing `pageviews`.
 
 ### Supported tests
 
 We make use of your dbt test definitions in order to understand your data in a better way. Here is the list of column tests we currently support:
 
 * `unique` marks the dimension as primary key. 
-<!-- * metriql needs a primary key dimension to calculate [symmetric aggregates](/reference/relation/#symmetric-aggregates) as there must be a unique key in a model. -->
+<!-- * Metriql needs a primary key dimension to calculate [symmetric aggregates](/reference/relation/#symmetric-aggregates) as there must be a unique key in a model. -->
 * `not_null` hides the `is not set` filter to the user in the user interface.
-* `accepted_values` makes metriql suggests the values to the end-user in the user interface. It disables the automatic suggestion in favor of performance.
+* `accepted_values` makes Metriql suggests the values to the end-user in the user interface. It disables the automatic suggestion in favor of performance.

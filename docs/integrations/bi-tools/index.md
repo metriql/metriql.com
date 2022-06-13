@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Introduction
 
-While metriql is a relatively new project, we're working on integrating BI tools using our low-level integrations such as [REST API](rest-api) and [JDBC driver](jdbc-driver). If your BI tool already integrates with Trino (formerly Presto), you can use the metriql URL and port to connect your metriql server. Note that metriql doesn't embed Trino; it acts as Trino for the BI tools. However, it rewrites the query and directly runs it on your database.
+While Metriql is a relatively new project, we're working on integrating BI tools using our low-level integrations such as [REST API](rest-api) and [JDBC driver](jdbc-driver). If your BI tool already integrates with Trino (formerly Presto), you can use the Metriql URL and port to connect your Metriql server. Note that Metriql doesn't embed Trino; it acts as Trino for the BI tools. However, it rewrites the query and directly runs it on your database.
 
 
 | BI Tool            | Status             | Integration Method  |
@@ -46,6 +46,6 @@ Let us know if you would like to suggest a new integration on [Github](https://g
 
 ## Needs testing?
 
-If the BI tool already supports Trino or Presto, you can connect to Metriql using that interface. If you use Metriql URL and port, Metriql will expose all your datasets inside them as regular database tables & columns. You can reference your measures & dimensions using [MQL reporting type](/query/mql), Metriql will parse the query and compile it to SQL for the target data warehouse. For the BI tools that don't have a free trial, we're not able to test and verify if metriql is working fine. I appreciate it if you would like to test and share a short demo video in that case!
+If the BI tool already supports Trino or Presto, you can connect to Metriql using that interface. If you use Metriql URL and port, Metriql will expose all your datasets inside them as regular database tables & columns. You can reference your measures & dimensions using [MQL reporting type](/query/mql), Metriql will parse the query and compile it to SQL for the target data warehouse. For the BI tools that don't have a free trial, we're not able to test and verify if Metriql is working fine. I appreciate it if you would like to test and share a short demo video in that case!
 
 Please note that all the integrations are in the alpha stage at the moment. You can also see our roadmap for the integrations [here](https://github.com/metriql/metriql/projects/1).
