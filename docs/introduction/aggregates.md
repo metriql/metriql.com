@@ -5,7 +5,7 @@ sidebar_position: 4
 
 Exposing huge datasets to BI tools is often either expensive or slow (or both). Aggregates speed up your BI and other data tools by creating roll-up models inside your dbt project from your dbt `sources`, `models`, and `seeds`. 
 
-Metriql creates roll-up models programmatically when you define `aggregates` in your dbt resource files. The roll-up tables are not exposed to end-users. Instead, metriql re-writes your queries if the users run `segmentation` queries to use the roll-up tables. They're handy for the following cases:
+Metriql creates roll-up models programmatically when you define `aggregates` in your dbt resource files. The roll-up tables are not exposed to end-users. Instead, Metriql re-writes your queries if the users run `segmentation` queries to use the roll-up tables. They're handy for the following cases:
 
 1. Dealing with time-series data and looking for a way to access non-technical people to analyze the data. (i.e. customer event data)
 2. Building consumer-facing applications that need to run queries in low latency. (i.e. embedded analytics)
@@ -41,7 +41,7 @@ sources:
                 aggregation: approximate_unique
 ```
 
-When you create the model above for Snowflake adapter, metriql will create a dbt model called `source_events_pageview_event_counts` with the following SQL:
+When you create the model above for Snowflake adapter, Metriql will create a dbt model called `source_events_pageview_event_counts` with the following SQL:
 
 ```sql
 {{ config(materialized='incremental') }}
@@ -59,7 +59,7 @@ GROUP BY 1
 {% endif %}
 ```
 
-metriql automatically creates an `incremental` model because you have `event_timestamp` mapping as it's aware that the dataset represents a time-series data. If you don't have the `event_timestamp` mapping, we use `table` materialization. 
+Metriql automatically creates an `incremental` model because you have `event_timestamp` mapping as it's aware that the dataset represents a time-series data. If you don't have the `event_timestamp` mapping, we use `table` materialization. 
 
 :::info
 If your model has an `event_timestamp` mapping, we require the dimension to be included in the `aggregate.dimensions` in order to be able to use in our `segmentation` reports because we require a date filter in the user interface.
@@ -76,7 +76,7 @@ filters:
    - {dimension: platform, operator: equals, value: Android}
 ```
 
-metriql figures out that this data is available in `source_events_pageview_event_counts` model and makes use of this aggregated table instead of the `pageview` table by re-writing the SQL query as follows:
+Metriql figures out that this data is available in `source_events_pageview_event_counts` model and makes use of this aggregated table instead of the `pageview` table by re-writing the SQL query as follows:
 
 ```sql
 SELECT date_trunc('week', occurred_at_day), 
@@ -89,7 +89,7 @@ WHERE platform = 'Android' and
 GROUP BY 1
 ```
 
-If you wouldn't have `event_counts` aggregate or run the dbt models, metriql runs the following query:
+If you wouldn't have `event_counts` aggregate or run the dbt models, Metriql runs the following query:
 
 ```sql
 SELECT date_trunc('week', occurred_at), 
@@ -106,7 +106,7 @@ It can speed up the reports dramatically based on the number of rows in the `eve
 
 ---
 
-If the dbt model table doesn't exist, metriql prepends the following comment to the generated query and runs the query on raw data.
+If the dbt model table doesn't exist, Metriql prepends the following comment to the generated query and runs the query on raw data.
 
 ```sql
 /*
