@@ -153,7 +153,7 @@ models:
 
 ### `aggregates:`
 
-Aggregates should be defined under `<model | seed | source>.meta.metriql.aggregates`. You can see the [Aggregate properties](aggregate-properties) or learn more about the concept on [Aggregates](/introduction/aggregates).
+Aggregates should be defined under `<model | seed | source>.meta.metriql.aggregates`. You can see the [Aggregate properties](/introduction/aggregates) or learn more about the concept on [Aggregates](/introduction/aggregates).
 
 
 ### `always_filters:`
