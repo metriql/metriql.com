@@ -183,7 +183,7 @@
                    "additionalProperties":true,
                    "properties":{
                       "metriql":{
-                         "$ref":"https://app.rakam.io/schema/model.schema.json"
+                         "$ref":"https://app.rakam.io/schema/dbt.schema.json"
                       }
                    }
                 }
@@ -204,7 +204,7 @@
                 "meta": {
                                             "properties": {
                                               "metriql": {
-                                                "$ref":"https://app.rakam.io/schema/model.schema.json"
+                                                "$ref":"https://app.rakam.io/schema/dbt.schema.json"
                                               }
                                             }
                                            },
@@ -241,7 +241,7 @@
                    "meta": {
                                                "properties": {
                                                  "metriql": {
-                                                   "$ref":"https://app.rakam.io/schema/model.schema.json"
+                                                   "$ref":"https://app.rakam.io/schema/dbt.schema.json"
                                                  }
                                                }
                                               },
@@ -290,7 +290,7 @@
                             "meta": {
                              "properties": {
                                "metriql": {
-                                 "$ref":"https://app.rakam.io/schema/model.schema.json"
+                                 "$ref":"https://app.rakam.io/schema/dbt.schema.json"
                                }
                              }
                             },
