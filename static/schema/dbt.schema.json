@@ -101,10 +101,10 @@
                                          "type":"string"
                                       },
                                       "type":{
-                                         "$ref":"https://app.rakam.io/schema/model.schema.json#/definitions/relationType"
+                                         "$ref":"https://metriql.com/schema/model.schema.json#/definitions/relationType"
                                       },
                                       "relationship":{
-                                         "$ref":"https://app.rakam.io/schema/model.schema.json#/definitions/relationship"
+                                         "$ref":"https://metriql.com/schema/model.schema.json#/definitions/relationship"
                                       }
                                   }
                                }
@@ -126,10 +126,10 @@
                 "additionalProperties":true,
                 "properties":{
                    "rakam.dimension":{
-                      "$ref":"https://app.rakam.io/schema/model.schema.json#/definitions/dimension"
+                      "$ref":"https://metriql.com/schema/model.schema.json#/definitions/dimension"
                    },
                    "rakam.measure":{
-                      "$ref":"https://app.rakam.io/schema/model.schema.json#/definitions/measure"
+                      "$ref":"https://metriql.com/schema/model.schema.json#/definitions/measure"
                    }
                 }
              }
@@ -183,7 +183,7 @@
                    "additionalProperties":true,
                    "properties":{
                       "metriql":{
-                         "$ref":"https://app.rakam.io/schema/dbt.schema.json"
+                         "$ref":"https://metriql.com/schema/dbt.schema.json"
                       }
                    }
                 }
@@ -204,7 +204,7 @@
                 "meta": {
                                             "properties": {
                                               "metriql": {
-                                                "$ref":"https://app.rakam.io/schema/dbt.schema.json"
+                                                "$ref":"https://metriql.com/schema/dbt.schema.json"
                                               }
                                             }
                                            },
@@ -241,7 +241,7 @@
                    "meta": {
                                                "properties": {
                                                  "metriql": {
-                                                   "$ref":"https://app.rakam.io/schema/dbt.schema.json"
+                                                   "$ref":"https://metriql.com/schema/dbt.schema.json"
                                                  }
                                                }
                                               },
@@ -290,7 +290,7 @@
                             "meta": {
                              "properties": {
                                "metriql": {
-                                 "$ref":"https://app.rakam.io/schema/dbt.schema.json"
+                                 "$ref":"https://metriql.com/schema/dbt.schema.json"
                                }
                              }
                             },
