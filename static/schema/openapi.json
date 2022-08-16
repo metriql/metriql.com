@@ -26,7 +26,7 @@
              ]
            },
            "report": {
-             "$ref": "https://app.rakam.io/schema/report-options/segmentation.json"
+             "$ref": "https://metriql.com/schema/report-options/segmentation.json"
            }
          }
        },
@@ -38,7 +38,7 @@
              ]
            },
            "report": {
-             "$ref": "https://app.rakam.io/schema/report-options/funnel.json"
+             "$ref": "https://metriql.com/schema/report-options/funnel.json"
            }
          }
        },
@@ -50,7 +50,7 @@
              ]
            },
            "report": {
-             "$ref": "https://app.rakam.io/schema/report-options/retention.json"
+             "$ref": "https://metriql.com/schema/report-options/retention.json"
            }
          }
        },
@@ -62,7 +62,7 @@
              ]
            },
            "report": {
-             "$ref": "https://app.rakam.io/schema/report-options/sql.json"
+             "$ref": "https://metriql.com/schema/report-options/sql.json"
            }
          }
        },
@@ -302,7 +302,7 @@
                "application/json": {
                  "schema": {
                    "items": {
-                     "$ref": "https://app.rakam.io/schema/report-options/dbt.schema.json"
+                     "$ref": "https://metriql.com/schema/dbt.schema.json"
                    },
                    "type": "array"
                  }
