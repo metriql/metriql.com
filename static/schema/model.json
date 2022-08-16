@@ -1,6 +1,6 @@
 {
 	"type": "object",
-	"id": "https://app.rakam.io/schema/model.schema.json",
+	"id": "https://metriql.com/schema/model.schema.json",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "The analytics model definition",
 	"definitions": {
@@ -124,7 +124,7 @@
                                 		"aggregates":{
                                                                                 "type":"object",
                                                                                 "additionalProperties":{
-                                                                                   "$ref":"https://app.rakam.io/schema/report-options/segmentation.json"
+                                                                                   "$ref":"https://metriql.com/schema/report-options/segmentation.json"
                                                                                 }
                                                                              },
 		"materializes": {
@@ -134,7 +134,7 @@
 				"segmentation": {
 					"type": "object",
 					"additionalProperties": {
-						"$ref": "https://app.rakam.io/schema/report-options/segmentation.json"
+						"$ref": "https://metriql.com/schema/report-options/segmentation.json"
 					}
 				}
 			}
