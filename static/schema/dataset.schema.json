@@ -1,8 +1,8 @@
 {
 	"type": "object",
-	"id": "https://metriql.com/schema/model.schema.json",
+	"id": "https://metriql.com/schema/dataset.schema.json",
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"title": "The analytics model definition",
+	"title": "The analytics dataset definition",
 	"definitions": {
 	  "dateTimeframes": {
 	         "enum": [
@@ -51,14 +51,14 @@
                       "right_join",
                       "full_join"
                     ],
-                    "title": "Defines how should we join to the target model",
+                    "title": "Defines how should we join to the target dataset",
                     "default": "leftJoin"
                   },
                   "relations" : {
                                 			"type": "object",
                                 			"examples": [{
                                 				"relationName": {
-                                					"model": "campaign",
+                                					"dataset": "campaign",
                                 					"target": "id",
                                 					"source": "campaign_id"
                                 				}
@@ -80,9 +80,9 @@
                                 					"hidden": {
                                 						"$ref": "#/definitions/hidden"
                                 					},
-                                					"model": {
+                                					"dataset": {
                                 						"type": "string",
-                                						"title": "The target model of the relation",
+                                						"title": "The target dataset of the relation",
                                 						"examples": [
                                 							"campaign"
                                 						]
@@ -105,14 +105,14 @@
                                 					},
                                 					"target": {
                                 						"type": "string",
-                                						"title": "The column of the target model",
+                                						"title": "The column of the target dataset",
                                 						"examples": [
                                 							"id"
                                 						]
                                 					},
                                 					"source": {
                                 						"type": "string",
-                                						"title": "The dimension of the source model",
+                                						"title": "The dimension of the source dataset",
                                 						"examples": [
                                 							"campaign_id"
                                 						]
@@ -164,7 +164,7 @@
                					},
                					"dimension": {
                						"type": "string",
-               						"title": "The dimension name in the same model",
+               						"title": "The dimension name in the same dataset",
                						"examples": [
                							"dimension1"
                						]
@@ -230,16 +230,16 @@
 		"mappings": {
 			"type": ["null", "object"],
 			"examples": [{
-				"event_timestamp": "_time"
+				"time_series": "_time"
 			}],
 			"additionalProperties": true,
 			"properties": {
-				"event_timestamp": {
+				"time_series": {
 					"description": "The timestamp dimension for time-series data. It enforces the date filter in segmentation page and also being used by funnel and retention reports.",
 					"type": "string"
 				},
 				"user_id": {
-					"description": "The dimension that points to user identifier for event models. Used by funnel and retention reports.",
+					"description": "The dimension that points to user identifier for event datasets. Used by funnel and retention reports.",
 					"type": "string"
 				},
 				"device_id": {
@@ -327,9 +327,6 @@
                  				"properties": {
                  					"label": {
                  						"$ref": "#/definitions/label"
-                 					},
-                 					"pivot": {
-                 						"type": "boolean"
                  					},
                  					"name": {
                  						"type": "string"
@@ -513,14 +510,14 @@
 		},
 		"sql": {
 			"type": "string",
-			"title": "The source SQL query of the model",
+			"title": "The source SQL query of the dataset",
 			"examples": [
 				"select 1"
 			]
 		},
 		"persist": {
 			"type": "object",
-			"title": "Materialize the model in the database"
+			"title": "Materialize the dataset in the database"
 		},
 		"target": {
 			"type": "object",
@@ -547,7 +544,7 @@
 				},
 				"table": {
 					"type": "string",
-					"title": "The source table of the model"
+					"title": "The source table of the dataset"
 				}
 			}
 		},
@@ -762,6 +759,6 @@
 		}
 	},
 	"errorMessage1": {
-		"required": "The model definition must be an object with required property `name` and either `target` or `sql` property that defines the data source"
+		"required": "The dataset definition must be an object with required property `name` and either `target` or `sql` property that defines the data source"
 	}
 }

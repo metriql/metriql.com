@@ -289,7 +289,7 @@
          ]
        }
      },
-     "/v0/metadata": {
+     "/v1/metadata": {
        "get": {
          "description": "Get dataset schema",
          "operationId": "Metadata",
@@ -300,7 +300,7 @@
                "application/json": {
                  "schema": {
                    "items": {
-                     "$ref": "https://metriql.com/schema/model.schema.json"
+                     "$ref": "https://metriql.com/schema/dataset.schema.json"
                    },
                    "type": "array"
                  }
@@ -314,7 +314,7 @@
          ]
        }
      },
-     "/v0/query": {
+     "/v1/query": {
        "post": {
          "operationId": "ExecuteQuery",
          "externalDocs": {
@@ -384,7 +384,7 @@
          "summary": "Execute query"
        }
      },
-     "/v0/sql": {
+     "/v1/sql": {
       "post": {
         "operationId": "CompileQuery",
         "externalDocs": {
@@ -437,7 +437,7 @@
         "summary": "Compile SQL query"
       }
     },
-     "/v0/update-manifest": {
+     "/v1/update-manifest": {
        "put": {
          "description": "",
          "operationId": "UpdateManifest",

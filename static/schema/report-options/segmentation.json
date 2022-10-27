@@ -40,31 +40,31 @@
               "type": "string",
               "examples": [
                 "user_type",
-                ":event_timestamp"
+                ":time_series"
               ]
             },
             "operator": {
               "anyOf": [
                 {
-                  "$ref": "https://metriql.com/schema/model.schema.json#/definitions/anyOperators"
+                  "$ref": "https://metriql.com/schema/dataset.schema.json#/definitions/anyOperators"
                 },
                 {
-                  "$ref": "https://metriql.com/schema/model.schema.json#/definitions/numberOperators"
+                  "$ref": "https://metriql.com/schema/dataset.schema.json#/definitions/numberOperators"
                 },
                 {
-                  "$ref": "https://metriql.com/schema/model.schema.json#/definitions/dateOperators"
+                  "$ref": "https://metriql.com/schema/dataset.schema.json#/definitions/dateOperators"
                 },
                 {
-                  "$ref": "https://metriql.com/schema/model.schema.json#/definitions/arrayOperators"
+                  "$ref": "https://metriql.com/schema/dataset.schema.json#/definitions/arrayOperators"
                 },
                 {
-                  "$ref": "https://metriql.com/schema/model.schema.json#/definitions/timeOperators"
+                  "$ref": "https://metriql.com/schema/dataset.schema.json#/definitions/timeOperators"
                 },
                 {
-                  "$ref": "https://metriql.com/schema/model.schema.json#/definitions/booleanOperators"
+                  "$ref": "https://metriql.com/schema/dataset.schema.json#/definitions/booleanOperators"
                 },
                 {
-                  "$ref": "https://metriql.com/schema/model.schema.json#/definitions/timestampOperators"
+                  "$ref": "https://metriql.com/schema/dataset.schema.json#/definitions/timestampOperators"
                 }
               ]
             }
@@ -129,33 +129,7 @@
             "columnOptions": null
           }
         ],
-        "properties": {
-          "chartOptions": {
-            "type": "object",
-            "examples": [
-              {
-                "interactive": true,
-                "columnOptions": [],
-                "type": "area",
-                "showLabels": true,
-                "showLegend": false
-              }
-            ],
-            "additionalProperties": true
-          },
-          "tableOptions": {
-            "type": "object",
-            "examples": [
-              {
-                "columnOptions": []
-              }
-            ],
-            "additionalProperties": true
-          },
-          "columnOptions": {
-            "type": "array"
-          }
-        }
+        "additionalProperties": true
       },
       "limit": {
         "type": "integer",
