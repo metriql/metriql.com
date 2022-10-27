@@ -5,3 +5,9 @@
 [[redirects]]
   from = "/slack"
   to = "https://join.slack.com/t/metriql/shared_invite/zt-tz1nzvyd-ker8LGcBQmzrwvfAkFO1qQ"
+
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/schema/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
