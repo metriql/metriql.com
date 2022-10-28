@@ -82,7 +82,7 @@ Learn more about the filter operators [here](/query/introduction/#filter).
 
 ### `window:`
 
-If you use [WINDOW operations](https://en.wikipedia.org/wiki/Window_function_(SQL)) in your `sql` expressions, you must set this property to `true` so that metriql constructs the SQL queries using a subquery. 
+If you use [WINDOW operations](https://en.wikipedia.org/wiki/Window_function_(SQL)) in your `sql` expressions, you must set this property to `true` so that Metriql constructs the SQL queries using a subquery. 
 
 ```yml
 revenue_increase:

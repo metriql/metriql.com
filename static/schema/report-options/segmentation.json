@@ -1,0 +1,173 @@
+{
+    "id": "https://metriql.com/schema/report-options/segmentation.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "The segmentation query model definition",
+    "additionalProperties": false,
+    "type": "object",
+    "definitions": {
+      "filter": {
+        "type": "array",
+        "description": "The filter for the dataset. See [filter reference](https://metriql.com/query/introduction#filter) for details.",
+        "items": {
+          "type": "object",
+          "examples": [
+            {
+              "measure": "total_transactions",
+              "operator": "greater_than",
+              "value": 1000
+            }
+          ],
+          "oneOf": [
+            {
+              "required": [
+                "measure"
+              ]
+            },
+            {
+              "required": [
+                "dimension"
+              ]
+            }
+          ],
+          "properties": {
+            "measure": {
+              "type": "string",
+              "examples": [
+                "total_transactions"
+              ]
+            },
+            "dimension": {
+              "type": "string",
+              "examples": [
+                "user_type",
+                ":event_timestamp"
+              ]
+            },
+            "operator": {
+              "anyOf": [
+                {
+                  "$ref": "https://metriql.com/schema/model.schema.json#/definitions/anyOperators"
+                },
+                {
+                  "$ref": "https://metriql.com/schema/model.schema.json#/definitions/numberOperators"
+                },
+                {
+                  "$ref": "https://metriql.com/schema/model.schema.json#/definitions/dateOperators"
+                },
+                {
+                  "$ref": "https://metriql.com/schema/model.schema.json#/definitions/arrayOperators"
+                },
+                {
+                  "$ref": "https://metriql.com/schema/model.schema.json#/definitions/timeOperators"
+                },
+                {
+                  "$ref": "https://metriql.com/schema/model.schema.json#/definitions/booleanOperators"
+                },
+                {
+                  "$ref": "https://metriql.com/schema/model.schema.json#/definitions/timestampOperators"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "dimension": {
+        "type": "string",
+        "description": "Dimension references that you want to drill-down for the selected dataset. See [dimension reference](https://metriql.com/query/introduction#dimension)"
+      },
+      "measure": {
+        "type": "string",
+        "description": "Measure references that you want to calculate for the selected dataset. See [measure reference](https://metriql.com/query/introduction#measure)"
+      }
+    },
+    "properties": {
+      "dataset": {
+        "type": "string",
+        "description": "The dataset that will be analyzed. See [dataset reference](https://metriql.com/query/introduction#dimension)",
+        "examples": [
+          "in_app_purchase"
+        ]
+      },
+      "dimensions": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/dimension",
+          "examples": [
+            [
+              "event_timestamp::day",
+              "user_type"
+            ]
+          ]
+        }
+      },
+      "measures": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/measure",
+          "examples": [
+            [
+              "total_transactions"
+            ]
+          ]
+        }
+      },
+      "reportOptions": {
+        "type": "object",
+        "description": "The default report options that will be used when visualizing the data. Not appliable in REST API",
+        "examples": [
+          {
+            "chartOptions": {
+              "interactive": true,
+              "columnOptions": [],
+              "type": "area",
+              "showLabels": true,
+              "showLegend": false
+            },
+            "tableOptions": {
+              "columnOptions": []
+            },
+            "columnOptions": null
+          }
+        ],
+        "properties": {
+          "chartOptions": {
+            "type": "object",
+            "examples": [
+              {
+                "interactive": true,
+                "columnOptions": [],
+                "type": "area",
+                "showLabels": true,
+                "showLegend": false
+              }
+            ],
+            "additionalProperties": true
+          },
+          "tableOptions": {
+            "type": "object",
+            "examples": [
+              {
+                "columnOptions": []
+              }
+            ],
+            "additionalProperties": true
+          },
+          "columnOptions": {
+            "type": "array"
+          }
+        }
+      },
+      "limit": {
+        "type": "integer",
+        "description": "The maximum rows returned by the query.",
+        "maximum": 50000,
+        "default": 1000,
+        "examples": [
+          5000
+        ]
+      },
+      "filters": {
+        "$ref": "#/definitions/filter"
+      }
+    }
+  }

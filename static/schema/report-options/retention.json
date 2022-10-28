@@ -1,0 +1,53 @@
+{
+    "id": "https://metriql.com/schema/report-options/retention.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Retention Recipe Query",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "first_step": {
+        "$ref": "https://metriql.com/schema/report-options/funnel.json#/definitions/RecipeDataset"
+      },
+      "returning_step": {
+        "$ref": "https://metriql.com/schema/report-options/funnel.json#/definitions/RecipeDataset"
+      },
+      "dimension": {
+        "type": "string"
+      },
+      "approximate": {
+        "type": "boolean"
+      },
+      "date_unit": {
+  
+      },
+      "connector": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "first_step",
+      "returning_step"
+    ],
+    "definitions": {
+      "FilterReference": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "dimension": {},
+          "measure": {
+            "type": "string"
+          },
+          "mapping": {
+            "type": "string"
+          },
+          "operator": {
+            "type": "string"
+          },
+          "value": {}
+        },
+        "required": [
+          "operator"
+        ]
+      }
+    }
+  }

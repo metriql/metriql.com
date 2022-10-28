@@ -24,3 +24,16 @@ It's an array of query filters. Here is an example:
 filters:
    - {mapping|dimension: country, operator: 'equals', value: 'USA'}
 ```
+### `model_name`:
+
+Metriql generates the dbt model name automatically with the following convention:
+
+```
+{dataset_name}_{report_type}_{aggregate_name}
+```
+
+It's because the aggregate name doesn't necessarily need to be unique across all the datasets and report types. If you would like to override the generated model name, you can set the `model_name` for the aggregate explicitly.
+
+:::warning
+If you set the `model_name` for the aggregate, make sure that it's unique across all the metrics.
+:::

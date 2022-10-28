@@ -7,14 +7,14 @@ We call `measure`, `dimension`,  and `relation` properties as `field`. The follo
 
 ### `name:`
 The unique identifier of the metric. If you set the name, you can reference the metric from other metrics. 
-The names must be lowercase and does not have any special character except `_`. Metriql will complain if the field names that has whitespace, non-ascii, or any upppercase character.
+The names must be lowercase and does not have any special character except `_`. Metriql will complain if the field names that has whitespace, non-alphanumeric, or any upppercase character.
 
 ```yml
 name: total_events
 ```
 
 ### `type:`
-The metriql type of the field.
+The Metriql type of the field.
 
 Available values are: 
 
@@ -57,7 +57,7 @@ hidden: false
 
 ### `report:`
 
-An object that defines how the value will be shown to the end user. Currently, metriql supports `format_numbers`.
+An object that defines how the value will be shown to the end user. Currently, Metriql supports `format_numbers`.
 
 Example:
 

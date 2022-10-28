@@ -10,9 +10,9 @@ sidebar_position: 2
 
 <br/><br/>
 
-All dbt projects are also valid metriql projects. metriql creates [datasets](/introduction/creating-datasets) from all your dbt `models`, `seeds`, and `sources` if you have `meta.metriql` property for these dbt resources. The only missing part is the metric (aka measure) definitions. metriql makes use of dbt's `meta` properties so you can model your data by adding extra properties to the [`meta`](https://docs.getdbt.com/reference/resource-properties/meta) field. 
+All dbt projects are also valid Metriql projects. Metriql creates [datasets](/introduction/creating-datasets) from all your dbt `models`, `seeds`, and `sources` if you have `meta.metriql` property for these dbt resources. The only missing part is the metric (aka measure) definitions. Metriql makes use of dbt's `meta` properties so you can model your data by adding extra properties to the [`meta`](https://docs.getdbt.com/reference/resource-properties/meta) field. 
 
-metriql automatically creates dimensions for each column definitions in your resource files and you can add your custom metric definitions under `meta` property as follows:
+Metriql automatically creates dimensions for each column definitions in your resource files and you can add your custom metric definitions under `meta` property as follows:
 
 ```yml
 models:
@@ -51,7 +51,7 @@ models:
 	            type: string
 ```
 
-Congratulations, you created your first dataset in dbt! Now, we need to use metriql CLI to expose out dataset:
+Congratulations, you created your first dataset in dbt! Now, we need to use Metriql CLI to expose out dataset:
 
 * Run [`metriql serve`](/metriql-cli/cli-overview#installation) command.
 

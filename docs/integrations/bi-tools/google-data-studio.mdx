@@ -6,27 +6,27 @@ This integration is currently in beta and not verified by Google yet so it's not
 :::
 -->
 
-metriql has a community connector for Google Data Studio that converts Google Data Studio queries into metriql queries (segmentation) which are run directly on your data warehouse and let you visualize the data in Google Data Studio. The metriql connector needs you to login through Google OAuth and enter your metriql URL and credentials to access your data. In order to run queries efficiently, the connector uses [segmentation](/query/segmentation) feature so you need to [deploy Metriql](/metriql-cli/serve) to your environment. 
+Metriql has a community connector for Google Data Studio that converts Google Data Studio queries into Metriql queries (segmentation) which are run directly on your data warehouse and let you visualize the data in Google Data Studio. The Metriql connector needs you to login through Google OAuth and enter your Metriql URL and credentials to access your data. In order to run queries efficiently, the connector uses [segmentation](/query/segmentation) feature so you need to [deploy Metriql](/metriql-cli/serve) to your environment. 
 
 <YoutubeVideo id="1Ra8F5qf4ko" />
 
 #### Step 1:
-<a href="https://datastudio.google.com/datasources/create?connectorId=AKfycbw8o0F6LEr0epNSNVWqNzlqo7R-6jRYxxSxBspzyg2Xi6SDFItLN_aM3l_U56Z0obwS" target="_blank">Connect your metriql on Google Data Studio</a>
+<a href="https://datastudio.google.com/datasources/create?connectorId=AKfycbw8o0F6LEr0epNSNVWqNzlqo7R-6jRYxxSxBspzyg2Xi6SDFItLN_aM3l_U56Z0obwS" target="_blank">Connect your Metriql on Google Data Studio</a>
 
 #### Step 2:
 
-You need to deploy metriql to a public environment and use the URL in Google Data Studio as follows:
+You need to deploy Metriql to a public environment and use the URL in Google Data Studio as follows:
 
 <img src="/img/integrations/gds-login.png" alt="Google Data Studio Login Screen" style={{maxWidth: '600px'}}/>
 
-1. Please add the `/api/v0` suffix to your metriql URL. If you're using metriql locally, you can use [a tunneling service](https://github.com/anderspitman/awesome-tunneling) to expose your local port to the internet and use the public URL in Google Data Studio.
+1. Please add the `/api/v0` suffix to your Metriql URL. If you're using Metriql locally, you can use [a tunneling service](https://github.com/anderspitman/awesome-tunneling) to expose your local port to the internet and use the public URL in Google Data Studio.
 
 2. If you don't have a password, you can skip the password input.
 
 
 #### Step 3:
 
-Once you connect to your metriql deployment, Google Data Studio connectors lists all the dataset available to the user as follows:
+Once you connect to your Metriql deployment, Google Data Studio connectors lists all the dataset available to the user as follows:
 
 <img src="/img/integrations/gds-parameters.png" alt="Google Data Studio Parameter Screen" style={{maxWidth: '600px'}}/>
 
@@ -48,13 +48,13 @@ Please refer to the [Google Data Studio documentation](https://developers.google
 
 Congratulations, you're ready to create reports! 🎉
 
-If your metriql deployment runs behind the firewall, you need to whitelist [Google Data Studio IPs](https://support.google.com/datastudio/answer/7288010?hl=en&ref_topic=7332343#zippy=%2Cin-this-article#notes) in your firewall. 
+If your Metriql deployment runs behind the firewall, you need to whitelist [Google Data Studio IPs](https://support.google.com/datastudio/answer/7288010?hl=en&ref_topic=7332343#zippy=%2Cin-this-article#notes) in your firewall. 
 
 ## Limitations
 
-1. Since metriql doesn't support ad-hoc aggregations on dimensions, you should not drag & drop dimensions into metric as seen in the picture. Google Data Studio calculates the `sum(o_orderkey)` itself while `total_orders` is a measure defined in the metriql. If you have more than the maximum rows parameter, the value of `sum(o_orderkey)` won't be correct.
+1. Since Metriql doesn't support ad-hoc aggregations on dimensions, you should not drag & drop dimensions into metric as seen in the picture. Google Data Studio calculates the `sum(o_orderkey)` itself while `total_orders` is a measure defined in the metriql. If you have more than the maximum rows parameter, the value of `sum(o_orderkey)` won't be correct.
 
-2. You can only use the fields in dimension & metric in the sorting. Google Data Studio doesn't pushdown this information to the connector so if you have a sorting field that is not being used as part of dimension & metric, metriql treats the sorting field as a dimension field.
+2. You can only use the fields in dimension & metric in the sorting. Google Data Studio doesn't pushdown this information to the connector so if you have a sorting field that is not being used as part of dimension & metric, Metriql treats the sorting field as a dimension field.
 
 3. You should not be using a DATE dimension in filter if it's not included in the dimensions section. We filed the bug to Google Data Studio, you can find the relevant info here: https://support.google.com/datastudio/thread/121049694/forfilteronly-field-is-not-set-for-date-filters?hl=en
 

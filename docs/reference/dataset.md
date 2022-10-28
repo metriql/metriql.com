@@ -3,10 +3,14 @@ title: "Dataset properties"
 sidebar_position: 1
 ---
 
+:::note
+Metriql will ignore the dbt resources that doesn't have `meta.metriql` property.
+:::
+
 <File name='models/schema.yml'>
 
 ```yml
-models:
+models: # can be seeds, sources, and metrics as well.
   - name: customers
     description: List of customers
     meta:
@@ -149,7 +153,7 @@ models:
 
 ### `aggregates:`
 
-Aggregates should be defined under `<model | seed | source>.meta.metriql.aggregates`. You can see the [Aggregate properties](aggregate-properties) or learn more about the concept on [Aggregates](/introduction/aggregates).
+Aggregates should be defined under `<model | seed | source>.meta.metriql.aggregates`. You can see the [Aggregate properties](/introduction/aggregates) or learn more about the concept on [Aggregates](/introduction/aggregates).
 
 
 ### `always_filters:`
@@ -165,7 +169,7 @@ models:
 
 ### `extends`
 
-If you want to re-use the `dimensions`, `measures`, `relations`, and `mappings` of another model or source in a dbt project, you can extend from it. When you extend from another dbt model, metriql automatically re-use the fields in the current model. If you have additional fields, it tries to merge all the fields that are defined in the current model.
+If you want to re-use the `dimensions`, `measures`, `relations`, and `mappings` of another model or source in a dbt project, you can extend from it. When you extend from another dbt model, Metriql automatically re-use the fields in the current model. If you have additional fields, it tries to merge all the fields that are defined in the current model.
 
 ```yml
 models:
@@ -176,7 +180,7 @@ models:
 ### `name`
 
 :::danger
-If you use the property in dbt resource files, you won't be able to reference your models with `ref` or sources with `source` syntax.
+If you use the `name` property in dbt resource files, you won't be able to reference your models with `ref` or sources with `source` syntax.
 :::
 
 The unique identifier of the dataset. The name lets you reference the dataset from other dataset. 

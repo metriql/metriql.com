@@ -45,8 +45,8 @@ You can query the data using as follows:
 [dataset](introduction#dataset): source('first_dataset', 'users')
 [measures](introduction#measure): ["total_users"]
 [dimensions](introduction#dimension): ["country"]
-[filters](introduction#filter)
-  - {dimension: nps, operator: greater_than, value: 10
+[filters](introduction#filter):
+  - {dimension: nps, operator: greater_than, value: 10}
 limit: 1000
 ```
 </TabItem>
@@ -67,7 +67,7 @@ select * from top_users_by_country
 </Tabs>
 
 
-The metriql queries above compile to the following query when you use the REST API SQL or JDBC API:
+The Metriql queries above compile to the following query when you use the REST API SQL or JDBC API:
 
 ```sql
 with top_users_by_country AS (

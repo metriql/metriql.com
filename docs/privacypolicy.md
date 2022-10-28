@@ -6,7 +6,7 @@ hide_in_sidebar: true
 
 # Privacy Policy
 
-Thank you for choosing to be part of our community at metriql (“Company”, “we”, “us”, or “our”). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regards to your personal information, please contact us at support@rakam.io.
+Thank you for choosing to be part of our community at Metriql (“Company”, “we”, “us”, or “our”). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regards to your personal information, please contact us at support@rakam.io.
 When you visit our website https://www.metriql.com (the "Website"), and more generally, use any of our services (the "Services", which include the Website), we appreciate that you are trusting us with your personal information. We take your privacy very seriously. In this privacy notice, we seek to explain to you in the clearest way possible what information we collect, how we use it and what rights you have in relation to it. We hope you take some time to read through it carefully, as it is important. If there are any terms in this privacy notice that you do not agree with, please discontinue use of our Services immediately.
 This privacy notice applies to all information collected through our Services (which, as described above, includes our Website), as well as any related services, sales, marketing or events.
 Please read this privacy notice carefully as it will help you understand what we do with the information that we collect.
@@ -26,8 +26,8 @@ In Short: Some information — such as your Internet Protocol (IP) address and/o
  
 We automatically collect certain information when you visit, use or navigate the Website. This information does not reveal your specific identity (like your name or contact information) but may include device and usage information, such as your IP address, browser and device characteristics, operating system, language preferences, referring URLs, device name, country, location, information about who and when you use our Website and other technical information. This information is primarily needed to maintain the security and operation of our Website, and for our internal analytics and reporting purposes.
 
-metriql connectors may have rights to access your Google Account to verify the user by his/her email address. metriql does not share your data with any third party companies. You can revoke metriql’s right to access your data at any point from your Google account control panel (https://security.google.com/settings/security/permissions).
-metriql can cache your data for the time required to serve you in an efficient manner. In almost all cases, data remains in short-lived encrypted caches and never leaves your environment.
+Metriql connectors may have rights to access your Google Account to verify the user by his/her email address. Metriql does not share your data with any third party companies. You can revoke metriql’s right to access your data at any point from your Google account control panel (https://security.google.com/settings/security/permissions).
+Metriql can cache your data for the time required to serve you in an efficient manner. In almost all cases, data remains in short-lived encrypted caches and never leaves your environment.
  
 Like many businesses, we also collect information through cookies and similar technologies.  
  
@@ -221,7 +221,7 @@ We may disclose your personal information with our service providers pursuant to
  
 We may use your personal information for our own business purposes, such as for undertaking internal research for technological development and demonstration. This is not considered to be "selling" your personal data.
  
-metriql has not disclosed or sold any personal information to third parties for a business or commercial purpose in the preceding twelve (12) months. metriql will not sell personal information in the future belonging to website visitors, users and other consumers.
+Metriql has not disclosed or sold any personal information to third parties for a business or commercial purpose in the preceding twelve (12) months. Metriql will not sell personal information in the future belonging to website visitors, users and other consumers.
  
 Your rights with respect to your personal data
  

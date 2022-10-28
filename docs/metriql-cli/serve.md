@@ -58,7 +58,7 @@ Options:
   --timezone TEXT                  The timezone that will be used running
                                    queries on your data warehouse
   --api-auth-secret-base64 TEXT    Your JWT secret key in Base64 format.
-                                   metriql supports various algorithms such as
+                                   Metriql supports various algorithms such as
                                    HS256 and RS256 and identifies the key
                                    parsing the content.
   --api-auth-username-password TEXT
@@ -68,7 +68,7 @@ Options:
                                    Pass username & password to datasource
                                    configs
   --catalog-file TEXT              Metriql catalog file
-  --api-auth-secret-file TEXT      If you're using metriql locally, you can
+  --api-auth-secret-file TEXT      If you're using Metriql locally, you can
                                    set the private key file or API secret as a
                                    file argument.
   --manifest-json TEXT             The URI of the manifest.json, `file`,

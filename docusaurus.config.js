@@ -218,7 +218,7 @@ module.exports = {
         },
         blog: {
           blogTitle: 'Metriql Blog',
-          blogDescription: 'Blog posts about metriql',
+          blogDescription: 'Blog posts about Metriql',
           blogSidebarCount: 0
         },
       },

@@ -4,7 +4,7 @@ sidebar_position: 3
 ---
 Dimensions let you drill down a model by filtering, grouping, and pivoting. They're basically SQL expressions that are referenced in the `GROUP BY` clause. 
 
-By default, if you don't have `columns` property in your [YML definitions](https://docs.getdbt.com/reference/model-properties), metriql creates dimensions from all your columns by converting their column names to dimension names. If your dimension names doesn't conform the [convention](field#name), we lowercase all the characters and strip the special ones from the name. For example, if your column name is `Country ISO`, the dimension name becomes `country_iso`. The best practice is to define the `columns` property under the dbt resources since automatically converting columns to dimensions may cause inconsistencies and break your existing reports in your BI tools.
+By default, if you don't have `columns` property in your [YML definitions](https://docs.getdbt.com/reference/model-properties), Metriql creates dimensions from all your columns by converting their column names to dimension names. If your dimension names doesn't conform the [convention](field#name), we lowercase all the characters and strip the special ones from the name. For example, if your column name is `Country ISO`, the dimension name becomes `country_iso`. The best practice is to define the `columns` property under the dbt resources since automatically converting columns to dimensions may cause inconsistencies and break your existing reports in your BI tools.
 
 You can define the dimensions using `meta.metriql.dimensions` and `columns.meta`. Here is an example that use both methods:
 
@@ -25,7 +25,7 @@ models:
 
 ```
 
-Defining `type` under `metriql.dimension` is optional but recommended. If you don't define the type, metriql discovers the type by running a metadata query in your database.
+Defining `type` under `metriql.dimension` is optional but recommended. If you don't define the type, Metriql discovers the type by running a metadata query in your database.
 
 Here is the list of properties that you can use to define dimensions:
 
