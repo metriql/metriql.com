@@ -4,129 +4,137 @@
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "The analytics dataset definition",
 	"definitions": {
-	  "dateTimeframes": {
-	         "enum": [
-                     											"week",
-                     											"month",
-                     											"year",
-                     											"hour_of_day",
-                     											"day_of_month",
-                     											"week_of_year",
-                     											"month_of_year",
-                     											"quarter_of_year",
-                     											"day_of_week"
-                     										]
-	  },
-	  "timestampTimeframes": {
-	        "enum": [
-                           											"hour",
-                           											"day",
-                           											"week",
-                           											"month",
-                           											"year",
-                           											"hourOfDay",
-                           											"dayOfMonth",
-                           											"weekOfYear",
-                           											"monthOfYear",
-                           											"quarterOfYear",
-                           											"dayOfWeek"
-                           										]
-	  },
+		"dateTimeframes": {
+			"enum": [
+				"week",
+				"month",
+				"year",
+				"hour_of_day",
+				"day_of_month",
+				"week_of_year",
+				"month_of_year",
+				"quarter_of_year",
+				"day_of_week"
+			]
+		},
+		"timestampTimeframes": {
+			"enum": [
+				"hour",
+				"day",
+				"week",
+				"month",
+				"year",
+				"hour_of_day",
+				"day_of_month",
+				"week_of_year",
+				"month_of_year",
+				"quarter_of_year",
+				"day_of_week"
+			]
+		},
 		"relationship": {
-                    						"type": "string",
-                    						"enum": [
-                    							"one_to_one",
-                    							"one_to_many",
-                    							"many_to_one",
-                    							"many_to_many"
-                    						],
-                    						"title": "The Relation Type",
-                    						"default": "one_to_one"
-                    					},
+			"type": "string",
+			"enum": [
+				"one_to_one",
+				"one_to_many",
+				"many_to_one",
+				"many_to_many"
+			],
+			"title": "The Relation Type",
+			"default": "one_to_one"
+		},
 		"relationType": {
-                    "type": "string",
-                    "enum": [
-                      "left_join",
-                      "inner_join",
-                      "right_join",
-                      "full_join"
-                    ],
-                    "title": "Defines how should we join to the target dataset",
-                    "default": "leftJoin"
-                  },
-                  "relations" : {
-                                			"type": "object",
-                                			"examples": [{
-                                				"relationName": {
-                                					"dataset": "campaign",
-                                					"target": "id",
-                                					"source": "campaign_id"
-                                				}
-                                			}],
-                                			"additionalProperties": {
-                                				"type": "object",
-                                				"additionalProperties": false,
-                                				"required": ["to"],
-                                				"properties": {
-                                					"label": {
-                                						"$ref": "#/definitions/label"
-                                					},
-                                					"description": {
-                                						"$ref": "#/definitions/description"
-                                					},
-                                					"to": {
-                                                                          						"type": "string"
-                                                                          					},
-                                					"hidden": {
-                                						"$ref": "#/definitions/hidden"
-                                					},
-                                					"dataset": {
-                                						"type": "string",
-                                						"title": "The target dataset of the relation",
-                                						"examples": [
-                                							"campaign"
-                                						]
-                                					},
-                                					"relationship": {"$ref": "#/definitions/relationship"},
-                                					"sql": {
-                                						"type": "string",
-                                						"title": "The SQL expression join relation to the target table",
-                                						"examples": [
-                                							"{{TABLE}}.campaign_id = {{TARGET}}.id"
-                                						]
-                                					},
-                                					"sourceColumn": {
-                                						"deprecated": true,
-                                						"type": "string"
-                                					},
-                                					"targetColumn": {
-                                						"deprecated": true,
-                                						"type": "string"
-                                					},
-                                					"target": {
-                                						"type": "string",
-                                						"title": "The column of the target dataset",
-                                						"examples": [
-                                							"id"
-                                						]
-                                					},
-                                					"source": {
-                                						"type": "string",
-                                						"title": "The dimension of the source dataset",
-                                						"examples": [
-                                							"campaign_id"
-                                						]
-                                					},
-                                					"type": {"$ref": "#/definitions/relationType"}
-                                				}
-                                			}
-                                		},
-                                		"aggregates":{
-                                                                                "type":"object",
-                                                                                "additionalProperties":{
-                                                                                   "$ref":"https://metriql.com/schema/report-options/segmentation.json"
-                                                                                }
-                                                                             },
+			"type": "string",
+			"enum": [
+				"left_join",
+				"inner_join",
+				"right_join",
+				"full_join"
+			],
+			"title": "Defines how should we join to the target dataset",
+			"default": "leftJoin"
+		},
+		"relations": {
+			"type": "object",
+			"examples": [
+				{
+					"relationName": {
+						"dataset": "campaign",
+						"target": "id",
+						"source": "campaign_id"
+					}
+				}
+			],
+			"additionalProperties": {
+				"type": "object",
+				"additionalProperties": false,
+				"required": [
+					"to"
+				],
+				"properties": {
+					"label": {
+						"$ref": "#/definitions/label"
+					},
+					"description": {
+						"$ref": "#/definitions/description"
+					},
+					"to": {
+						"type": "string"
+					},
+					"hidden": {
+						"$ref": "#/definitions/hidden"
+					},
+					"dataset": {
+						"type": "string",
+						"title": "The target dataset of the relation",
+						"examples": [
+							"campaign"
+						]
+					},
+					"relationship": {
+						"$ref": "#/definitions/relationship"
+					},
+					"sql": {
+						"type": "string",
+						"title": "The SQL expression join relation to the target table",
+						"examples": [
+							"{{TABLE}}.campaign_id = {{TARGET}}.id"
+						]
+					},
+					"sourceColumn": {
+						"deprecated": true,
+						"type": "string"
+					},
+					"targetColumn": {
+						"deprecated": true,
+						"type": "string"
+					},
+					"target": {
+						"type": "string",
+						"title": "The column of the target dataset",
+						"examples": [
+							"id"
+						]
+					},
+					"source": {
+						"type": "string",
+						"title": "The dimension of the source dataset",
+						"examples": [
+							"campaign_id"
+						]
+					},
+					"type": {
+						"$ref": "#/definitions/relationType"
+					}
+				}
+			}
+		},
+		"aggregates": {
+			"type": "object",
+			"additionalProperties": {
+				"$ref": "https://metriql.com/schema/report-options/segmentation.json"
+			}
+		},
 		"materializes": {
 			"type": "object",
 			"additionalProperties": false,
@@ -140,86 +148,90 @@
 			}
 		},
 		"measure": {
-               				"type": "object",
-               				"additionalProperties": false,
-               				"properties": {
-               					"label": {
-               						"$ref": "#/definitions/label"
-               					},
-               					"type": {
-               						"$ref": "#/definitions/type"
-               					},
-               					"description": {
-               						"$ref": "#/definitions/description"
-               					},
-               					"hidden": {
-               						"$ref": "#/definitions/hidden"
-               					},
-               					"name": {
-                                       						"type": "string"
-                                       					},
-               					"category": {
-               						"type": "string",
-               						"minLength": 1
-               					},
-               					"dimension": {
-               						"type": "string",
-               						"title": "The dimension name in the same dataset",
-               						"examples": [
-               							"dimension1"
-               						]
-               					},
-               					"column": {
-               						"type": "string",
-               						"title": "The column of the measure",
-               						"description": "The column must be present the the source table",
-               						"examples": [
-               							"total_spent"
-               						]
-               					},
-               					"sql": {
-               						"type": "string",
-               						"title": "The SQL expression of the measure",
-               						"description": "The SQL expression must evaulate to a number value",
-               						"examples": [
-               							"total_spent / 2"
-               						]
-               					},
-               					"filters": {
-               						"$ref": "#/definitions/filters"
-               					},
-               					"aggregation": {
-               						"type": "string",
-               						"title": "The aggregation function that will calculate the final value.",
-               						"enum": [
-               							"count",
-               							"countUnique",
-               							"count_unique",
-               							"sum",
-               							"minimum",
-               							"maximum",
-               							"average",
-               							"approximateUnique",
-               							"approximate_unique"
-               						]
-               					},
-               					"report": {
-               						"$ref": "#/definitions/report"
-               					}
-               				}
-               			},
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"label": {
+					"$ref": "#/definitions/label"
+				},
+				"type": {
+					"$ref": "#/definitions/type"
+				},
+				"description": {
+					"$ref": "#/definitions/description"
+				},
+				"hidden": {
+					"$ref": "#/definitions/hidden"
+				},
+				"name": {
+					"type": "string"
+				},
+				"category": {
+					"type": "string",
+					"minLength": 1
+				},
+				"dimension": {
+					"type": "string",
+					"title": "The dimension name in the same dataset",
+					"examples": [
+						"dimension1"
+					]
+				},
+				"column": {
+					"type": "string",
+					"title": "The column of the measure",
+					"description": "The column must be present the the source table",
+					"examples": [
+						"total_spent"
+					]
+				},
+				"sql": {
+					"type": "string",
+					"title": "The SQL expression of the measure",
+					"description": "The SQL expression must evaulate to a number value",
+					"examples": [
+						"total_spent / 2"
+					]
+				},
+				"filters": {
+					"$ref": "#/definitions/filters"
+				},
+				"aggregation": {
+					"type": "string",
+					"title": "The aggregation function that will calculate the final value.",
+					"enum": [
+						"count",
+						"countUnique",
+						"count_unique",
+						"sum",
+						"minimum",
+						"maximum",
+						"average",
+						"approximateUnique",
+						"approximate_unique"
+					]
+				},
+				"report": {
+					"$ref": "#/definitions/report"
+				}
+			}
+		},
 		"measures": {
 			"type": "object",
-			"examples": [{
-				"measureName": {
-					"sql": "total_spent",
-					"aggregation": "sum",
-					"report": {
-						"prefix": "$"
+			"examples": [
+				{
+					"measureName": {
+						"sql": "total_spent",
+						"aggregation": "sum",
+						"report": {
+							"prefix": "$"
+						}
 					}
 				}
-			}],
-			"additionalProperties": {"$ref": "#/definitions/measure"}
+			],
+			"additionalProperties": {
+				"$ref": "#/definitions/measure"
+			}
 		},
 		"alwaysFilters": {
 			"type": "array",
@@ -228,10 +240,15 @@
 			}
 		},
 		"mappings": {
-			"type": ["null", "object"],
-			"examples": [{
-				"time_series": "_time"
-			}],
+			"type": [
+				"null",
+				"object"
+			],
+			"examples": [
+				{
+					"time_series": "_time"
+				}
+			],
 			"additionalProperties": true,
 			"properties": {
 				"time_series": {
@@ -243,146 +260,153 @@
 					"type": "string"
 				},
 				"device_id": {
-        					"type": "string"
-        				},
-        				"session_id": {
-                					"type": "string"
-                				},
+					"type": "string"
+				},
+				"session_id": {
+					"type": "string"
+				},
 				"incremental": {
 					"type": "string"
 				}
 			}
 		},
 		"dimension": {
-                 				"type": ["null", "object"],
-                 				"dependencies": {
-                 					"timeframes": [
-                 						"type"
-                 					]
-                 				},
-                 				"allOf": [{
-                 						"if": {
-                 							"properties": {
-                 								"type": {
-                 									"const": "timestamp"
-                 								}
-                 							}
-                 						},
-                 						"then": {
-                 							"properties": {
-                 								"timeframes": {
-                 									"type": "array",
-                 									"uniqueItems": true,
-                 									"items": {
-                                                   										"$ref": "#/definitions/timestampTimeframes"
-                                                   									}
-
-                 								}
-                 							}
-                 						}
-                 					},
-                 					{
-                 						"if": {
-                 							"properties": {
-                 								"type": {
-                 									"const": "date"
-                 								}
-                 							}
-                 						},
-                 						"then": {
-                 							"properties": {
-                 								"timeframes": {
-                 									"type": "array",
-                 									"uniqueItems": true,
-                 									"items": {
-                 										"$ref": "#/definitions/dateTimeframes"
-                 									}
-                 								}
-                 							}
-                 						}
-                 					},
-                 					{
-                 						"if": {
-                 							"properties": {
-                 								"type": {
-                 									"not": {
-                 										"enum": [
-                 											"timestamp",
-                 											"date"
-                 										]
-                 									}
-                 								}
-                 							}
-                 						},
-                 						"then": {
-                 							"properties": {
-                 								"timeframes": {
-                 									"type": "null"
-                 								}
-                 							}
-                 						}
-                 					}
-                 				],
-                 				"additionalProperties": false,
-                 				"properties": {
-                 					"label": {
-                 						"$ref": "#/definitions/label"
-                 					},
-                 					"name": {
-                 						"type": "string"
-                 					},
-                 					"primary": {
-                 						"type": "boolean"
-                 					},
-                 					"description": {
-                 						"$ref": "#/definitions/description"
-                 					},
-                 					"hidden": {
-                 						"$ref": "#/definitions/hidden"
-                 					},
-                 					"category": {
-                 						"type": "string",
-                 						"minLength": 1
-                 					},
-                 					"sql": {
-                 						"type": "string",
-                 						"title": "The SQL expression of the dimension",
-                 						"examples": [
-                 							"concat(campaign_start_date, '-', campaign_name)"
-                 						]
-                 					},
-                 					"column": {
-                 						"type": "string",
-                 						"title": "The column of the dimension",
-                 						"description": "The column must be present the the source table",
-                 						"examples": [
-                 							"campaign_name"
-                 						]
-                 					},
-                 					"pivotable": {
-                 						"type": "boolean",
-                 						"title": "If the dimension can used for pivoting",
-                 						"default": true
-                 					},
-                 					"type": {
-                 						"$ref": "#/definitions/type"
-                 					},
-                 					"timeframes": {
-                 						"type": "array"
-                 					},
-                 					"report": {
-                 						"$ref": "#/definitions/report"
-                 					}
-                 				}
-                 			},
+			"type": [
+				"null",
+				"object"
+			],
+			"dependencies": {
+				"timeframes": [
+					"type"
+				]
+			},
+			"allOf": [
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "timestamp"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"timeframes": {
+								"type": "array",
+								"uniqueItems": true,
+								"items": {
+									"$ref": "#/definitions/timestampTimeframes"
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "date"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"timeframes": {
+								"type": "array",
+								"uniqueItems": true,
+								"items": {
+									"$ref": "#/definitions/dateTimeframes"
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"not": {
+									"enum": [
+										"timestamp",
+										"date"
+									]
+								}
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"timeframes": {
+								"type": "null"
+							}
+						}
+					}
+				}
+			],
+			"additionalProperties": false,
+			"properties": {
+				"label": {
+					"$ref": "#/definitions/label"
+				},
+				"name": {
+					"type": "string"
+				},
+				"primary": {
+					"type": "boolean"
+				},
+				"description": {
+					"$ref": "#/definitions/description"
+				},
+				"hidden": {
+					"$ref": "#/definitions/hidden"
+				},
+				"category": {
+					"type": "string",
+					"minLength": 1
+				},
+				"sql": {
+					"type": "string",
+					"title": "The SQL expression of the dimension",
+					"examples": [
+						"concat(campaign_start_date, '-', campaign_name)"
+					]
+				},
+				"column": {
+					"type": "string",
+					"title": "The column of the dimension",
+					"description": "The column must be present the the source table",
+					"examples": [
+						"campaign_name"
+					]
+				},
+				"pivotable": {
+					"type": "boolean",
+					"title": "If the dimension can used for pivoting",
+					"default": true
+				},
+				"type": {
+					"$ref": "#/definitions/type"
+				},
+				"timeframes": {
+					"type": "array"
+				},
+				"report": {
+					"$ref": "#/definitions/report"
+				}
+			}
+		},
 		"dimensions": {
 			"type": "object",
-			"examples": [{
-				"dimensionName": {
-					"column": "campaign_name"
+			"examples": [
+				{
+					"dimensionName": {
+						"column": "campaign_name"
+					}
 				}
-			}],
-			"additionalProperties": {"$ref": "#/definitions/dimension"}
+			],
+			"additionalProperties": {
+				"$ref": "#/definitions/dimension"
+			}
 		},
 		"hidden": {
 			"type": "boolean",
@@ -525,13 +549,15 @@
 			"required": [
 				"table"
 			],
-			"defaultSnippets": [{
-				"body": {
-					"$1": {
-						"table": "$2"
+			"defaultSnippets": [
+				{
+					"body": {
+						"$1": {
+							"table": "$2"
+						}
 					}
 				}
-			}],
+			],
 			"additionalProperties": false,
 			"properties": {
 				"database": {
@@ -558,7 +584,8 @@
 					"operator",
 					"valueType"
 				],
-				"allOf": [{
+				"allOf": [
+					{
 						"if": {
 							"properties": {
 								"valueType": {
@@ -751,10 +778,13 @@
 		"measures": {
 			"$ref": "#/definitions/measures"
 		},
-		"relations": {"$ref": "#/definitions/relations"},
+		"relations": {
+			"$ref": "#/definitions/relations"
+		},
 		"materializes": {
 			"$ref": "#/definitions/materializes"
-		}, "aggregates": {
+		},
+		"aggregates": {
 			"$ref": "#/definitions/aggregates"
 		}
 	},

@@ -95,7 +95,12 @@
           "examples": [
             [
               "event_timestamp::day",
-              "user_type"
+              "user_type",
+              {
+                "name": "signed_up_at",
+                "timeframe": "day",
+                "relation": "customer"
+              }
             ]
           ]
         }
