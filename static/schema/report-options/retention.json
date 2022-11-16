@@ -1,15 +1,15 @@
 {
     "id": "https://metriql.com/schema/report-options/retention.json",
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Retention Recipe Query",
+    "title": "Retention query model definition",
     "type": "object",
     "additionalProperties": false,
     "properties": {
       "first_step": {
-        "$ref": "https://metriql.com/schema/report-options/funnel.json#/definitions/RecipeDataset"
+        "$ref": "https://metriql.com/schema/query.schema.json#/definitions/filteredDataset"
       },
       "returning_step": {
-        "$ref": "https://metriql.com/schema/report-options/funnel.json#/definitions/RecipeDataset"
+        "$ref": "https://metriql.com/schema/query.schema.json#/definitions/filteredDataset"
       },
       "dimension": {
         "type": "string"
@@ -18,36 +18,14 @@
         "type": "boolean"
       },
       "date_unit": {
-  
+          "enum": ["day", "week", "month"]
       },
       "connector": {
-        "type": "string"
+        "$ref": "https://metriql.com/schema/query.schema.json#/definitions/dimension"
       }
     },
     "required": [
       "first_step",
       "returning_step"
-    ],
-    "definitions": {
-      "FilterReference": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "dimension": {},
-          "measure": {
-            "type": "string"
-          },
-          "mapping": {
-            "type": "string"
-          },
-          "operator": {
-            "type": "string"
-          },
-          "value": {}
-        },
-        "required": [
-          "operator"
-        ]
-      }
-    }
+    ]
   }

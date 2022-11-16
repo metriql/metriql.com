@@ -1,0 +1,797 @@
+{
+	"type": "object",
+	"id": "https://metriql.com/schema/dataset.schema.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "The analytics dataset definition",
+	"definitions": {
+		"dateTimeframes": {
+			"enum": [
+				"week",
+				"month",
+				"year",
+				"hour_of_day",
+				"day_of_month",
+				"week_of_year",
+				"month_of_year",
+				"quarter_of_year",
+				"day_of_week"
+			]
+		},
+		"timestampTimeframes": {
+			"enum": [
+				"hour",
+				"day",
+				"week",
+				"month",
+				"year",
+				"hour_of_day",
+				"day_of_month",
+				"week_of_year",
+				"month_of_year",
+				"quarter_of_year",
+				"day_of_week"
+			]
+		},
+		"timeframes": {
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/dateTimeframes"
+				},
+				{
+					"$ref": "#/definitions/timestampTimeframes"
+				}
+			]
+		},
+
+		"relationship": {
+			"type": "string",
+			"enum": [
+				"one_to_one",
+				"one_to_many",
+				"many_to_one",
+				"many_to_many"
+			],
+			"title": "The Relation Type",
+			"default": "one_to_one"
+		},
+		"relationType": {
+			"type": "string",
+			"enum": [
+				"left_join",
+				"inner_join",
+				"right_join",
+				"full_join"
+			],
+			"title": "Defines how should we join to the target dataset",
+			"default": "leftJoin"
+		},
+		"relations": {
+			"type": "object",
+			"examples": [
+				{
+					"relationName": {
+						"dataset": "campaign",
+						"target": "id",
+						"source": "campaign_id"
+					}
+				}
+			],
+			"additionalProperties": {
+				"type": "object",
+				"additionalProperties": false,
+				"required": [
+					"to"
+				],
+				"properties": {
+					"label": {
+						"$ref": "#/definitions/label"
+					},
+					"description": {
+						"$ref": "#/definitions/description"
+					},
+					"to": {
+						"type": "string"
+					},
+					"hidden": {
+						"$ref": "#/definitions/hidden"
+					},
+					"dataset": {
+						"type": "string",
+						"title": "The target dataset of the relation",
+						"examples": [
+							"campaign"
+						]
+					},
+					"relationship": {
+						"$ref": "#/definitions/relationship"
+					},
+					"sql": {
+						"type": "string",
+						"title": "The SQL expression join relation to the target table",
+						"examples": [
+							"{{TABLE}}.campaign_id = {{TARGET}}.id"
+						]
+					},
+					"sourceColumn": {
+						"deprecated": true,
+						"type": "string"
+					},
+					"targetColumn": {
+						"deprecated": true,
+						"type": "string"
+					},
+					"target": {
+						"type": "string",
+						"title": "The column of the target dataset",
+						"examples": [
+							"id"
+						]
+					},
+					"source": {
+						"type": "string",
+						"title": "The dimension of the source dataset",
+						"examples": [
+							"campaign_id"
+						]
+					},
+					"type": {
+						"$ref": "#/definitions/relationType"
+					}
+				}
+			}
+		},
+		"materializes": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"segmentation": {
+					"type": "object",
+					"additionalProperties": {
+						"$ref": "https://metriql.com/schema/report-options/segmentation.json"
+					}
+				}
+			}
+		},
+		"measure": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"label": {
+					"$ref": "#/definitions/label"
+				},
+				"type": {
+					"$ref": "#/definitions/type"
+				},
+				"description": {
+					"$ref": "#/definitions/description"
+				},
+				"hidden": {
+					"$ref": "#/definitions/hidden"
+				},
+				"name": {
+					"type": "string"
+				},
+				"category": {
+					"type": "string",
+					"minLength": 1
+				},
+				"dimension": {
+					"type": "string",
+					"title": "The dimension name in the same dataset",
+					"examples": [
+						"dimension1"
+					]
+				},
+				"column": {
+					"type": "string",
+					"title": "The column of the measure",
+					"description": "The column must be present the the source table",
+					"examples": [
+						"total_spent"
+					]
+				},
+				"sql": {
+					"type": "string",
+					"title": "The SQL expression of the measure",
+					"description": "The SQL expression must evaulate to a number value",
+					"examples": [
+						"total_spent / 2"
+					]
+				},
+				"filters": {
+					"$ref": "https://metriql.com/schema/query.schema.json#/definitions/filter"
+				},
+				"aggregation": {
+					"type": "string",
+					"title": "The aggregation function that will calculate the final value.",
+					"enum": [
+						"count",
+						"countUnique",
+						"count_unique",
+						"sum",
+						"minimum",
+						"maximum",
+						"average",
+						"approximateUnique",
+						"approximate_unique"
+					]
+				},
+				"report": {
+					"$ref": "#/definitions/report"
+				}
+			}
+		},
+		"measures": {
+			"type": "object",
+			"examples": [
+				{
+					"measureName": {
+						"sql": "total_spent",
+						"aggregation": "sum",
+						"report": {
+							"prefix": "$"
+						}
+					}
+				}
+			],
+			"additionalProperties": {
+				"$ref": "#/definitions/measure"
+			}
+		},
+		"alwaysFilters": {
+			"type": "array",
+			"items": {
+				"$ref": "https://metriql.com/schema/query.schema.json#/definitions/filter"
+			}
+		},
+		"mappings": {
+			"type": [
+				"null",
+				"object"
+			],
+			"examples": [
+				{
+					"time_series": "_time"
+				}
+			],
+			"additionalProperties": true,
+			"properties": {
+				"time_series": {
+					"description": "The timestamp dimension for time-series data. It enforces the date filter in segmentation page and also being used by funnel and retention reports.",
+					"type": "string"
+				},
+				"user_id": {
+					"description": "The dimension that points to user identifier for event datasets. Used by funnel and retention reports.",
+					"type": "string"
+				},
+				"device_id": {
+					"type": "string"
+				},
+				"session_id": {
+					"type": "string"
+				},
+				"incremental": {
+					"type": "string"
+				}
+			}
+		},
+		"dimension": {
+			"type": [
+				"null",
+				"object"
+			],
+			"dependencies": {
+				"timeframes": [
+					"type"
+				]
+			},
+			"allOf": [
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "timestamp"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"timeframes": {
+								"type": "array",
+								"uniqueItems": true,
+								"items": {
+									"$ref": "#/definitions/timestampTimeframes"
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"const": "date"
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"timeframes": {
+								"type": "array",
+								"uniqueItems": true,
+								"items": {
+									"$ref": "#/definitions/dateTimeframes"
+								}
+							}
+						}
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"type": {
+								"not": {
+									"enum": [
+										"timestamp",
+										"date"
+									]
+								}
+							}
+						}
+					},
+					"then": {
+						"properties": {
+							"timeframes": {
+								"type": "null"
+							}
+						}
+					}
+				}
+			],
+			"additionalProperties": false,
+			"properties": {
+				"label": {
+					"$ref": "#/definitions/label"
+				},
+				"name": {
+					"type": "string"
+				},
+				"primary": {
+					"type": "boolean"
+				},
+				"description": {
+					"$ref": "#/definitions/description"
+				},
+				"hidden": {
+					"$ref": "#/definitions/hidden"
+				},
+				"category": {
+					"type": "string",
+					"minLength": 1
+				},
+				"sql": {
+					"type": "string",
+					"title": "The SQL expression of the dimension",
+					"examples": [
+						"concat(campaign_start_date, '-', campaign_name)"
+					]
+				},
+				"column": {
+					"type": "string",
+					"title": "The column of the dimension",
+					"description": "The column must be present the the source table",
+					"examples": [
+						"campaign_name"
+					]
+				},
+				"pivotable": {
+					"type": "boolean",
+					"title": "If the dimension can used for pivoting",
+					"default": true
+				},
+				"type": {
+					"$ref": "#/definitions/type"
+				},
+				"timeframes": {
+					"type": "array"
+				},
+				"report": {
+					"$ref": "#/definitions/report"
+				}
+			}
+		},
+		"dimensions": {
+			"type": "object",
+			"examples": [
+				{
+					"dimensionName": {
+						"column": "campaign_name"
+					}
+				}
+			],
+			"additionalProperties": {
+				"$ref": "#/definitions/dimension"
+			}
+		},
+		"hidden": {
+			"type": "boolean",
+			"default": false
+		},
+		"label": {
+			"type": [
+				"null",
+				"string"
+			],
+			"title": "The label that will be visible in UI",
+			"minLength": 2
+		},
+		"description": {
+			"type": "string",
+			"title": "The description will be used in UI"
+		},
+		"stringOperators": {
+			"type": "string",
+			"enum": [
+				"equals",
+				"notEquals",
+				"not_equals",
+				"in",
+				"contains",
+				"startsWith",
+				"starts_with",
+				"endsWith",
+				"not_contains",
+				"notContains"
+			]
+		},
+		"anyOperators": {
+			"type": "string",
+			"enum": [
+				"is_set",
+				"is_not_set"
+			]
+		},
+		"numberOperators": {
+			"type": "string",
+			"enum": [
+				"equals",
+				"less_than",
+				"greater_than"
+			]
+		},
+		"dateOperators": {
+			"type": "string",
+			"enum": [
+				"equals",
+				"less_than",
+				"greater_than",
+				"between"
+			]
+		},
+		"arrayOperators": {
+			"type": "string",
+			"enum": [
+				"includes",
+				"not_includes"
+			]
+		},
+		"timeOperators": {
+			"type": "string",
+			"enum": [
+				"includes",
+				"not_includes"
+			]
+		},
+		"booleanOperators": {
+			"type": "string",
+			"enum": [
+				"is"
+			]
+		},
+		"timestampOperators": {
+			"type": "string",
+			"enum": [
+				"equals",
+				"less_than",
+				"greater_than",
+				"between"
+			]
+		},
+		"type": {
+			"type": "string",
+			"enum": [
+				"string",
+				"integer",
+				"double",
+				"long",
+				"boolean",
+				"date",
+				"time",
+				"decimal",
+				"timestamp",
+				"unknown",
+				"map_string",
+				"array_string"
+			]
+		},
+		"report": {
+			"type": "object",
+			"title": "Defines how should we show the value of the metric in user interface",
+			"additionalProperties": true,
+			"properties": {
+				"suffix": {
+					"type": "string",
+					"title": "The value will be added to the dimension value as suffix",
+					"default": "",
+					"examples": [
+						"USD"
+					]
+				},
+				"prefix": {
+					"type": "string",
+					"title": "The value will be added to the dimension value as prefix",
+					"default": "",
+					"examples": [
+						"$"
+					]
+				}
+			}
+		},
+		"sql": {
+			"type": "string",
+			"title": "The source SQL query of the dataset",
+			"examples": [
+				"select 1"
+			]
+		},
+		"persist": {
+			"type": "object",
+			"title": "Materialize the dataset in the database"
+		},
+		"target": {
+			"type": "object",
+			"title": "Defines the target table in the database",
+			"required": [
+				"table"
+			],
+			"defaultSnippets": [
+				{
+					"body": {
+						"$1": {
+							"table": "$2"
+						}
+					}
+				}
+			],
+			"additionalProperties": false,
+			"properties": {
+				"database": {
+					"type": "string",
+					"title": "The database of the target table if applicable"
+				},
+				"schema": {
+					"type": "string",
+					"title": "The schema of the target table  if applicable"
+				},
+				"table": {
+					"type": "string",
+					"title": "The source table of the dataset"
+				}
+			}
+		},
+		"filters": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"title": "The list of filters",
+				"required": [
+					"dimension",
+					"operator",
+					"valueType"
+				],
+				"allOf": [
+					{
+						"if": {
+							"properties": {
+								"valueType": {
+									"const": "string"
+								}
+							}
+						},
+						"then": {
+							"properties": {
+								"operator": {
+									"$ref": "#/definitions/stringOperators"
+								}
+							},
+							"required": [
+								"operator"
+							]
+						}
+					},
+					{
+						"if": {
+							"properties": {
+								"valueType": {
+									"enum": [
+										"integer",
+										"double",
+										"long"
+									]
+								}
+							}
+						},
+						"then": {
+							"properties": {
+								"operator": {
+									"$ref": "#/definitions/numberOperators"
+								}
+							},
+							"required": [
+								"operator"
+							]
+						}
+					},
+					{
+						"if": {
+							"properties": {
+								"valueType": {
+									"const": "timestamp"
+								}
+							}
+						},
+						"then": {
+							"properties": {
+								"operator": {
+									"$ref": "#/definitions/timestampOperators"
+								}
+							},
+							"required": [
+								"operator"
+							]
+						}
+					},
+					{
+						"if": {
+							"properties": {
+								"valueType": {
+									"const": "date"
+								}
+							}
+						},
+						"then": {
+							"properties": {
+								"operator": {
+									"$ref": "#/definitions/dateOperators"
+								}
+							},
+							"required": [
+								"operator"
+							]
+						}
+					},
+					{
+						"if": {
+							"properties": {
+								"valueType": {
+									"const": "boolean"
+								}
+							}
+						},
+						"then": {
+							"properties": {
+								"operator": {
+									"$ref": "#/definitions/booleanOperators"
+								}
+							},
+							"required": [
+								"operator"
+							]
+						}
+					},
+					{
+						"if": {
+							"properties": {
+								"valueType": {
+									"const": "time"
+								}
+							}
+						},
+						"then": {
+							"properties": {
+								"operator": {
+									"$ref": "#/definitions/timeOperators"
+								}
+							},
+							"required": [
+								"operator"
+							]
+						}
+					},
+					{
+						"if": {
+							"properties": {
+								"valueType": {
+									"pattern": "^array+"
+								}
+							}
+						},
+						"then": {
+							"properties": {
+								"operator": {
+									"$ref": "#/definitions/arrayOperators"
+								}
+							},
+							"required": [
+								"operator"
+							]
+						}
+					}
+				],
+				"additionalProperties": false,
+				"properties": {
+					"dimension": {
+						"type": "string",
+						"examples": [
+							"campaign_name"
+						]
+					},
+					"valueType": {
+						"$ref": "#/definitions/type"
+					},
+					"value": {
+						"title": "The value that will be passed to the operator. Note that if operator is not isSet or isNotSet, this value is required."
+					}
+				}
+			}
+		}
+	},
+	"additionalProperties": false,
+	"properties": {
+		"name": {
+			"type": "string",
+			"minLength": 1
+		},
+		"target": {
+			"$ref": "#/definitions/target"
+		},
+		"sql": {
+			"$ref": "#/definitions/sql"
+		},
+		"persist": {
+			"$ref": "#/definitions/persist"
+		},
+		"label": {
+			"$ref": "#/definitions/label"
+		},
+		"description": {
+			"$ref": "#/definitions/description"
+		},
+		"hidden": {
+			"$ref": "#/definitions/hidden"
+		},
+		"category": {
+			"type": "string",
+			"minLength": 1
+		},
+		"mappings": {
+			"$ref": "#/definitions/mappings"
+		},
+		"dimensions": {
+			"$ref": "#/definitions/dimensions"
+		},
+		"measures": {
+			"$ref": "#/definitions/measures"
+		},
+		"relations": {
+			"$ref": "#/definitions/relations"
+		},
+		"materializes": {
+			"$ref": "#/definitions/materializes"
+		}
+	},
+	"errorMessage1": {
+		"required": "The dataset definition must be an object with required property `name` and either `target` or `sql` property that defines the data source"
+	}
+}

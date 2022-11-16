@@ -1,0 +1,136 @@
+{
+    "id": "https://metriql.com/schema/query.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "The analytics common query values",
+    "definitions": {
+        "dimension": {
+            "type": [
+                "string",
+                "object"
+            ],
+            "description": "Dimension reference that you want to calculate for the selected dataset. See [dimension reference](https://metriql.com/query/introduction#dimension)",
+            "additionalProperties": {
+                "name": "string",
+                "timeframe": {
+                    "$ref": "https://metriql.com/schema/dataset.schema.json#/definitions/timeframe"
+                },
+                "relation": "string"
+            }
+        },
+        "measure": {
+            "type": [
+                "string",
+                "object"
+            ],
+            "description": "Measure reference that you want to calculate for the selected dataset. See [measure reference](https://metriql.com/query/introduction#measure)",
+            "additionalProperties": {
+                "name": "string",
+                "relation": "string"
+            }
+        },
+        "dataset": {
+            "type": "string",
+            "description": "The dataset that will be analyzed. See [dataset reference](https://metriql.com/query/introduction#dataset)",
+            "examples": [
+                "in_app_purchase"
+            ]
+        },
+        "filteredDataset": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "dataset": {
+                    "$ref": "#/definitions/dataset"
+                },
+                "filters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/filter"
+                    }
+                }
+            },
+            "required": [
+                "dataset"
+            ]
+        },
+        "queryLimit": {
+            "type": "integer",
+            "description": "The maximum rows returned by the query.",
+            "maximum": 50000,
+            "default": 1000,
+            "examples": [
+                5000
+            ]
+        },
+        "filter": {
+            "properties": {
+                "and": {
+                    "$ref": "#/definitions/nestedFilter"
+                },
+                "or": {
+                    "$ref": "#/definitions/nestedFilter"
+                }
+            }
+        },
+        "nestedFilter": {
+            "type": "array",
+            "items": {
+                "anyOf": [
+                    {
+                        "$ref": "#/definitions/nestedFilter"
+                    },
+                    {
+                        "$ref": "#/definitions/filterExpression"
+                    }
+                ]
+            }
+        },
+        "filterExpression": {
+            "type": "object",
+            "description": "The filter for the dataset. See [filter reference](https://metriql.com/query/introduction#filter) for details.",
+            "additionalProperties": false,
+            "examples": [
+                {
+                    "measure": "total_transactions",
+                    "operator": "greater_than",
+                    "value": 1000
+                }
+            ],
+            "properties": {
+                "dimension": {
+                    "$ref": "#/definitions/dimension"
+                },
+                "measure": {
+                    "$ref": "#/definitions/measure"
+                },
+                "mapping": {
+                    "type": "string"
+                },
+                "operator": {
+                    "type": "string"
+                },
+                "value": {}
+            },
+            "oneOf": [
+                {
+                    "required": [
+                        "measure"
+                    ]
+                },
+                {
+                    "required": [
+                        "mapping"
+                    ]
+                },
+                {
+                    "required": [
+                        "dimension"
+                    ]
+                }
+            ],
+            "required": [
+                "operator"
+            ]
+        }
+    }
+}

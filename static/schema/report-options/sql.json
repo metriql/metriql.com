@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "id": "https://metriql.com/schema/report-options/sql.json",
-    "title": "Sql Report Options",
+    "title": "SQL query model definition",
     "type": "object",
     "additionalProperties": false,
     "properties": {
@@ -9,66 +9,22 @@
         "type": "string"
       },
       "query_options": {
-        "$ref": "#/definitions/QueryOptions"
-      },
-      "report_options": {
-        "$ref": "#/definitions/ReportOptions"
-      },
-      "version": {
-        "type": "number"
-      }
-    },
-    "required": [
-      "query"
-    ],
-    "definitions": {
-      "QueryOptions": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
           "limit": {
-            "type": "integer"
+            "$ref": "https://metriql.com/schema/query.schema.json#/definitions/queryLimit"
           },
-          "default_database": {
+          "defaultDatabase": {
             "type": "string"
           },
-          "default_schema": {
+          "defaultSchema": {
             "type": "string"
-          },
-          "use_cache": {
-            "type": "boolean"
-          }
-        }
-      },
-      "ReportOptions": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "measures": {
-            "type": "array",
-            "items": {
-              "type": "integer"
-            }
-          },
-          "dimensions": {
-            "type": "array",
-            "items": {
-              "type": "integer"
-            }
-          },
-          "pivots": {
-            "type": "array",
-            "items": {
-              "type": "integer"
-            }
-          },
-          "chartOptions": {},
-          "tableOptions": {},
-          "columnOptions": {
-            "type": "array",
-            "items": {}
           }
         }
       }
-    }
+    },
+    "required": [
+      "query"
+    ]
   }
