@@ -32,6 +32,18 @@
 				"day_of_week"
 			]
 		},
+		"timeframes": {
+			"type": "string",
+			"anyOf": [
+				{
+					"$ref": "#/definitions/dateTimeframes"
+				},
+				{
+					"$ref": "#/definitions/timestampTimeframes"
+				}
+			]
+		},
+
 		"relationship": {
 			"type": "string",
 			"enum": [
@@ -129,12 +141,6 @@
 				}
 			}
 		},
-		"aggregates": {
-			"type": "object",
-			"additionalProperties": {
-				"$ref": "https://metriql.com/schema/report-options/segmentation.json"
-			}
-		},
 		"materializes": {
 			"type": "object",
 			"additionalProperties": false,
@@ -194,7 +200,7 @@
 					]
 				},
 				"filters": {
-					"$ref": "#/definitions/filters"
+					"$ref": "https://metriql.com/schema/query.schema.json#/definitions/filter"
 				},
 				"aggregation": {
 					"type": "string",
@@ -236,7 +242,7 @@
 		"alwaysFilters": {
 			"type": "array",
 			"items": {
-				"$ref": "#/definitions/filters"
+				"$ref": "https://metriql.com/schema/query.schema.json#/definitions/filter"
 			}
 		},
 		"mappings": {
@@ -783,9 +789,6 @@
 		},
 		"materializes": {
 			"$ref": "#/definitions/materializes"
-		},
-		"aggregates": {
-			"$ref": "#/definitions/aggregates"
 		}
 	},
 	"errorMessage1": {

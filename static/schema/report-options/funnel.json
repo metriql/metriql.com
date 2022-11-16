@@ -1,89 +1,19 @@
 {
-    "id": "https://metriql.com/schema/report-options/funnel.json",
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Funnel Recipe Query",
-    "type": "object",
-    "additionalProperties": false,
-    "properties": {
-      "steps": {
-        "type": "array",
-        "items": {
-          "$ref": "#/definitions/RecipeDataset"
-        }
-      },
-      "excludedSteps": {
-        "type": "array",
-        "items": {
-          "$ref": "#/definitions/ExcludedStep"
-        }
-      },
-      "dimension": {
-        "$ref": "#/definitions/FunnelDimension"
-      },
-      "window": {
-        "$ref": "#/definitions/FunnelWindow"
-      },
-      "connector": {
-        "type": "string"
-      },
-      "strictlyOrdered": {
-        "type": "boolean"
-      },
-      "approximate": {
-        "type": "boolean"
-      },
-      "defaultDateRange": {
-        "type": "integer"
+  "id": "https://metriql.com/schema/report-options/funnel.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Funnel query model definition",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "steps": {
+      "type": "array",
+      "items": {
+        "$ref": "https://metriql.com/schema/query.schema.json#/definitions/filteredDataset"
       }
     },
-    "required": [
-      "steps"
-    ],
-    "definitions": {
-      "RecipeDataset": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "dataset": {
-            "type": "string"
-          },
-          "filters": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/FilterReference"
-            }
-          }
-        },
-        "required": [
-          "dataset"
-        ]
-      },
-      "FilterReference": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "dimension": {},
-          "measure": {
-            "type": "string"
-          },
-          "mapping": {
-            "type": "string"
-          },
-          "operator": {
-            "type": "string"
-          },
-          "value": {}
-        },
-        "oneOf": [
-          {"required": ["measure"]},
-          {"required": ["mapping"]},
-          {"required": ["dimension"]}
-        ],
-        "required": [
-          "operator"
-        ]
-      },
-      "ExcludedStep": {
+    "excludedSteps": {
+      "type": "array",
+      "items": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -91,40 +21,61 @@
             "type": "integer"
           },
           "step": {
-            "$ref": "#/definitions/RecipeDataset"
+            "$ref": "https://metriql.com/schema/query.schema.json#/definitions/filteredDataset"
           }
         },
         "required": [
           "step"
         ]
-      },
-      "FunnelDimension": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "step": {
-            "type": "integer"
-          },
-          "dimension": {}
-        },
-        "required": [
-          "step",
-          "dimension"
-        ]
-      },
-      "FunnelWindow": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "value": {
-            "type": "integer"
-          },
-          "type": {}
-        },
-        "required": [
-          "value",
-          "type"
-        ]
       }
+    },
+    "dimension": {
+      "$ref": "#/definitions/funnelDimension"
+    },
+    "window": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": "integer"
+        },
+        "type": {}
+      },
+      "required": [
+        "value",
+        "type"
+      ]
+    },
+    "connector": {
+      "type": "string"
+    },
+    "strictlyOrdered": {
+      "type": "boolean"
+    },
+    "approximate": {
+      "type": "boolean"
+    },
+    "defaultDateRange": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "steps"
+  ],
+  "definitions": {
+    "funnelDimension": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "step": {
+          "type": "integer"
+        },
+        "dimension": {}
+      },
+      "required": [
+        "step",
+        "dimension"
+      ]
     }
   }
+}

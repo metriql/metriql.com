@@ -4,149 +4,27 @@
     "title": "The segmentation query model definition",
     "additionalProperties": false,
     "type": "object",
-    "definitions": {
-      "filter": {
-        "type": "array",
-        "description": "The filter for the dataset. See [filter reference](https://metriql.com/query/introduction#filter) for details.",
-        "items": {
-          "type": "object",
-          "examples": [
-            {
-              "measure": "total_transactions",
-              "operator": "greater_than",
-              "value": 1000
-            }
-          ],
-          "oneOf": [
-            {
-              "required": [
-                "measure"
-              ]
-            },
-            {
-              "required": [
-                "dimension"
-              ]
-            }
-          ],
-          "properties": {
-            "measure": {
-              "type": "string",
-              "examples": [
-                "total_transactions"
-              ]
-            },
-            "dimension": {
-              "type": "string",
-              "examples": [
-                "user_type",
-                ":time_series"
-              ]
-            },
-            "operator": {
-              "anyOf": [
-                {
-                  "$ref": "https://metriql.com/schema/dataset.schema.json#/definitions/anyOperators"
-                },
-                {
-                  "$ref": "https://metriql.com/schema/dataset.schema.json#/definitions/numberOperators"
-                },
-                {
-                  "$ref": "https://metriql.com/schema/dataset.schema.json#/definitions/dateOperators"
-                },
-                {
-                  "$ref": "https://metriql.com/schema/dataset.schema.json#/definitions/arrayOperators"
-                },
-                {
-                  "$ref": "https://metriql.com/schema/dataset.schema.json#/definitions/timeOperators"
-                },
-                {
-                  "$ref": "https://metriql.com/schema/dataset.schema.json#/definitions/booleanOperators"
-                },
-                {
-                  "$ref": "https://metriql.com/schema/dataset.schema.json#/definitions/timestampOperators"
-                }
-              ]
-            }
-          }
-        }
-      },
-      "dimension": {
-        "type": "string",
-        "description": "Dimension references that you want to drill-down for the selected dataset. See [dimension reference](https://metriql.com/query/introduction#dimension)"
-      },
-      "measure": {
-        "type": "string",
-        "description": "Measure references that you want to calculate for the selected dataset. See [measure reference](https://metriql.com/query/introduction#measure)"
-      }
-    },
     "properties": {
       "dataset": {
-        "type": "string",
-        "description": "The dataset that will be analyzed. See [dataset reference](https://metriql.com/query/introduction#dimension)",
-        "examples": [
-          "in_app_purchase"
-        ]
+        "$ref": "https://metriql.com/schema/query.schema.json#/definitions/dataset"
       },
       "dimensions": {
         "type": "array",
         "items": {
-          "$ref": "#/definitions/dimension",
-          "examples": [
-            [
-              "event_timestamp::day",
-              "user_type",
-              {
-                "name": "signed_up_at",
-                "timeframe": "day",
-                "relation": "customer"
-              }
-            ]
-          ]
+          "$ref": "https://metriql.com/schema/query.schema.json#/definitions/dimension"
         }
       },
       "measures": {
         "type": "array",
         "items": {
-          "$ref": "#/definitions/measure",
-          "examples": [
-            [
-              "total_transactions"
-            ]
-          ]
+          "$ref": "https://metriql.com/schema/query.schema.json#/definitions/measure"
         }
       },
-      "reportOptions": {
-        "type": "object",
-        "description": "The default report options that will be used when visualizing the data. Not appliable in REST API",
-        "examples": [
-          {
-            "chartOptions": {
-              "interactive": true,
-              "columnOptions": [],
-              "type": "area",
-              "showLabels": true,
-              "showLegend": false
-            },
-            "tableOptions": {
-              "columnOptions": []
-            },
-            "columnOptions": null
-          }
-        ],
-        "additionalProperties": true
-      },
       "limit": {
-        "type": "integer",
-        "description": "The maximum rows returned by the query.",
-        "maximum": 50000,
-        "default": 1000,
-        "examples": [
-          5000
-        ]
+        "$ref": "https://metriql.com/schema/query.schema.json#/definitions/queryLimit"
       },
       "filters": {
-        "$ref": "#/definitions/filter"
+        "$ref": "https://metriql.com/schema/query.schema.json#/definitions/filter"
       }
     }
   }
