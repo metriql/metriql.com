@@ -97,13 +97,13 @@ You can reference dimensions in the filter as shown below. You can also referenc
 
 ```yml
 filters: 
- - dimension: country # compiles to `WHERE country = 'USA'`
-   [operator](#operator): equals
-   value: USA
- - [ # compiles to `WHERE city = 'San Franscisco' OR city = 'New York'`
-    {dimension: city, operator: equals, value: San Francisco},
-    {dimension: city, operator: equals, value: New York}
-   ]
+ and:
+  - dimension: country 
+    operator: equals
+    value: USA
+  - or:
+      - {dimension: city, operator: equals, value: San Francisco}
+      - {dimension: city, operator: equals, value: New York}
 ```
 
 If the value is an array, Metriql will merge the filters with `OR` otherwise; use `AND`. For the query above, Metriql will compile it to the following SQL expression:
@@ -120,6 +120,8 @@ filters:
    [operator](#operator): equals
    value: value_for_operator
 ```
+
+The filter object can either have `and` and `or` property that is an array or a single filter that has one of `measure`, `dimension`, and `mapping` with `operator` and `value` properties.
 
 ### Operator
 
