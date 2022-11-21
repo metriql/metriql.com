@@ -12,7 +12,7 @@
             "additionalProperties": {
                 "name": "string",
                 "timeframe": {
-                    "$ref": "https://metriql.com/schema/dataset.schema.json#/definitions/timeframe"
+                    "$ref": "https://metriql.com/schema/dataset.schema.json#/definitions/timeframes"
                 },
                 "relation": "string"
             }
@@ -63,6 +63,30 @@
             ]
         },
         "filter": {
+            "examples": [
+                {
+                    "and": [
+                        {
+                            "dimension": "gender",
+                            "operator": "equals",
+                            "value": "female"
+                        },
+                        {
+                            "or": [
+                                {
+                                    "dimension": "age",
+                                    "operator": "is_set"
+                                },
+                                {
+                                    "dimension": "country",
+                                    "operator": "equals",
+                                    "value": "UK"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
             "properties": {
                 "and": {
                     "$ref": "#/definitions/nestedFilter"
@@ -70,7 +94,19 @@
                 "or": {
                     "$ref": "#/definitions/nestedFilter"
                 }
-            }
+            },
+            "oneOf": [
+                {
+                    "required": [
+                        "and"
+                    ]
+                },
+                {
+                    "required": [
+                        "or"
+                    ]
+                }
+            ]
         },
         "nestedFilter": {
             "type": "array",
