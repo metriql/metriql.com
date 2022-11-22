@@ -89,10 +89,10 @@
             ],
             "properties": {
                 "and": {
-                    "$ref": "#/definitions/nestedFilter"
+                    "$ref": "#/definitions/filterList"
                 },
                 "or": {
-                    "$ref": "#/definitions/nestedFilter"
+                    "$ref": "#/definitions/filterList"
                 }
             },
             "oneOf": [
@@ -108,12 +108,12 @@
                 }
             ]
         },
-        "nestedFilter": {
+        "filterList": {
             "type": "array",
             "items": {
-                "anyOf": [
+                "oneOf": [
                     {
-                        "$ref": "#/definitions/nestedFilter"
+                        "$ref": "#/definitions/filter"
                     },
                     {
                         "$ref": "#/definitions/filterExpression"
