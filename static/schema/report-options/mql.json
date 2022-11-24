@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://metriql.com/schema/report-options/mql.json",
+    "title": "MQL query model definition",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "query": {
+        "type": "string"
+      },
+      "query_options": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "limit": {
+            "$ref": "https://metriql.com/schema/query.schema.json#/definitions/queryLimit"
+          },
+          "defaultDatabase": {
+            "type": "string"
+          },
+          "defaultSchema": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "required": [
+      "query"
+    ]
+  }

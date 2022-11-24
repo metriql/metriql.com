@@ -26,6 +26,7 @@
     "core-js": "^3.6.4",
     "file-loader": "^6.2.0",
     "parse-numeric-range": "^0.0.2",
+    "rapidoc": "^9.3.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.0",
     "redoc": "^2.0.0-rc.53",
