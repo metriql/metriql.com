@@ -3,7 +3,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "The segmentation query model definition",
     "additionalProperties": false,
-    "examples": [
+    "example": [
       {
         "dataset": "transactions",
         "dimensions": ["country"],
