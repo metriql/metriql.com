@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import Redoc from '@theme/Redoc';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import "rapidoc";
 
