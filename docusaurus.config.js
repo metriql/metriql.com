@@ -257,6 +257,7 @@ module.exports = {
   ],
   scripts: [
     'https://code.jquery.com/jquery-3.4.1.min.js',
+    'https://unpkg.com/rapidoc/dist/rapidoc-min.js'
   ],
   stylesheets: [
     '/css/search.css',
