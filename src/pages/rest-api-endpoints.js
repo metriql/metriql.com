@@ -10,6 +10,7 @@ function CustomPage() {
     <Layout title="Open API Docs" description="Open API Reference Docs for API">
       <rapi-doc
       style={{ height: "100vh", width: "100%" }}
+      theme="light"
       spec-url="https://metriql.com/schema/openapi.json"
       render-style="focused"
     />
