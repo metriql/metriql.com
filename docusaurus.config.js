@@ -222,27 +222,7 @@ module.exports = {
           blogSidebarCount: 0
         },
       },
-    ],
-    [
-      'redocusaurus',
-      {
-        debug: Boolean(process.env.DEBUG || process.env.CI),
-        specs: [
-          {
-            specUrl: 'https://redocly.github.io/redoc/openapi.yaml',
-            routePath: '/using-spec-url/',
-          },
-          // {
-          //   spec: 'openapi.yaml',
-          //   routePath: '/using-spec-yaml/',
-          // },
-        ],
-        theme: {
-          primaryColor: '#1890ff',
-          redocOptions: { hideDownloadButton: false },
-        },
-      },
-    ],
+    ]
   ],
   plugins: [
     path.resolve('plugins/svg'),
