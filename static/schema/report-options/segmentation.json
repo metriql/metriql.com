@@ -3,7 +3,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "The segmentation query model definition",
     "additionalProperties": false,
-    "example": [
+    "example": 
       {
         "dataset": "transactions",
         "dimensions": ["country"],
@@ -13,8 +13,7 @@
             {"dimension": "continent", "operator": "equals", "value": "Europe"}
           ]
         }
-      }
-    ],
+      },
     "type": "object",
     "properties": {
       "dataset": {
