@@ -3,6 +3,18 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "The segmentation query model definition",
     "additionalProperties": false,
+    "examples": [
+      {
+        "dataset": "transactions",
+        "dimensions": ["country"],
+        "measures": ["distinct_users"],
+        "filter": {
+          "and": [
+            {"dimension": "continent", "operator": "equals", "value": "Europe"}
+          ]
+        }
+      }
+    ],
     "type": "object",
     "properties": {
       "dataset": {

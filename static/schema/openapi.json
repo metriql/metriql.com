@@ -128,15 +128,14 @@
         "properties": {
           "message": {
             "type": "string"
-          },
-          "success": {
-            "type": "boolean"
           }
         },
-        "required": [
-          "success"
-        ],
-        "type": "object"
+        "type": "object",
+        "examples": [
+          {
+            "message": "Successfully done!"
+          }
+        ]
       },
       "TaskTicketObject": {
         "properties": {
@@ -246,7 +245,7 @@
     },
     "/v1/execute/segmentation": {
       "post": {
-        "operationId": "ExecuteQuery",
+        "operationId": "ExecuteSegmentationQuery",
         "externalDocs": {
           "description": "Learn more about report types",
           "url": "https://metriql.com/query/introduction"
@@ -289,62 +288,62 @@
             }
           }
         },
-        "summary": "Execute query"
+        "summary": "Execute segmentation query",
+        "tags": [
+          "execute"
+        ]
       }
     },
-    "tags": [
-      "execute"
-    ]
-  },
-  "/v1/compile/segmentation": {
-    "post": {
-      "operationId": "CompileQuery",
-      "externalDocs": {
-        "description": "Learn more about report types",
-        "url": "https://metriql.com/query/introduction"
-      },
-      "parameters": [
-        {
-          "in": "query",
-          "name": "useCache",
-          "schema": {
-            "type": "boolean"
-          }
+    "/v1/compile/segmentation": {
+      "post": {
+        "operationId": "CompileQuery",
+        "externalDocs": {
+          "description": "Learn more about report types",
+          "url": "https://metriql.com/query/introduction"
         },
-        {
-          "in": "query",
-          "name": "initialWaitInSeconds",
-          "schema": {
-            "default": 50,
-            "type": "integer"
-          }
-        }
-      ],
-      "requestBody": {
-        "content": {
-          "application/json": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "useCache",
             "schema": {
-              "$ref": "https://metriql.com/schema/report-options/segmentation.json"
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "initialWaitInSeconds",
+            "schema": {
+              "default": 50,
+              "type": "integer"
             }
           }
-        }
-      },
-      "responses": {
-        "200": {
-          "description": "Successful request",
+        ],
+        "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "https://metriql.com/schema/dataset.schema.json#/definitions/sqlQuery"
+                "$ref": "https://metriql.com/schema/report-options/segmentation.json"
               }
             }
           }
-        }
-      },
-      "summary": "Compile segmentation"
-    },
-    "tags": [
-      "compile"
-    ]
+        },
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://metriql.com/schema/dataset.schema.json#/definitions/sqlQuery"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Compile segmentation",
+        "tags": [
+          "compile"
+        ]
+      }
+    }
   }
 }

@@ -13,6 +13,7 @@ function CustomPage() {
       <rapi-doc
       style={{ height: "100vh", width: "100%" }}
       spec-url="http://localhost:3000/schema/openapi.json"
+      render-style="focused"
     />
     </Layout> 
   );

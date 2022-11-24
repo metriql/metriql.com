@@ -3,7 +3,11 @@
     "id": "https://metriql.com/schema/report-options/mql.json",
     "title": "MQL query model definition",
     "type": "object",
-    "additionalProperties": false,
+    "examples": [
+        {
+          "query": "select * from \"ref('my_model')\""
+        }
+      ],
     "properties": {
       "query": {
         "type": "string"

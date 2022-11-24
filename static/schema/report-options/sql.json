@@ -4,6 +4,11 @@
     "title": "SQL query model definition",
     "type": "object",
     "additionalProperties": false,
+    "examples": [
+      {
+        "query": "select 1"
+      }
+    ],
     "properties": {
       "query": {
         "type": "string"
