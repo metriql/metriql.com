@@ -256,7 +256,8 @@
             "name": "useCache",
             "schema": {
               "type": "boolean"
-            }
+            },
+            "default": true
           },
           {
             "in": "query",
@@ -296,28 +297,11 @@
     },
     "/v1/compile/segmentation": {
       "post": {
-        "operationId": "CompileQuery",
+        "operationId": "CompileSegmentationQuery",
         "externalDocs": {
           "description": "Learn more about report types",
           "url": "https://metriql.com/query/introduction"
         },
-        "parameters": [
-          {
-            "in": "query",
-            "name": "useCache",
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
-            "in": "query",
-            "name": "initialWaitInSeconds",
-            "schema": {
-              "default": 50,
-              "type": "integer"
-            }
-          }
-        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -339,7 +323,7 @@
             }
           }
         },
-        "summary": "Compile segmentation",
+        "summary": "Compile segmentation query",
         "tags": [
           "compile"
         ]
