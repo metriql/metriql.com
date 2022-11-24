@@ -328,92 +328,92 @@
           "compile"
         ]
       }
-    }
-  },
-  "/v1/execute/mql": {
-    "post": {
-      "operationId": "ExecuteMqlQuery",
-      "externalDocs": {
-        "description": "Learn more about report types",
-        "url": "https://metriql.com/query/introduction"
-      },
-      "parameters": [
-        {
-          "in": "query",
-          "name": "useCache",
-          "schema": {
-            "type": "boolean"
-          },
-          "default": true
+    },
+    "/v1/execute/mql": {
+      "post": {
+        "operationId": "ExecuteMqlQuery",
+        "externalDocs": {
+          "description": "Learn more about report types",
+          "url": "https://metriql.com/query/introduction"
         },
-        {
-          "in": "query",
-          "name": "initialWaitInSeconds",
-          "schema": {
-            "default": 50,
-            "type": "integer"
-          }
-        }
-      ],
-      "requestBody": {
-        "content": {
-          "application/json": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "useCache",
             "schema": {
-              "$ref": "https://metriql.com/schema/report-options/mql.json"
+              "type": "boolean"
+            },
+            "default": true
+          },
+          {
+            "in": "query",
+            "name": "initialWaitInSeconds",
+            "schema": {
+              "default": 50,
+              "type": "integer"
             }
           }
-        }
-      },
-      "responses": {
-        "200": {
-          "description": "Successful request",
+        ],
+        "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TaskTicketQueryResult"
+                "$ref": "https://metriql.com/schema/report-options/mql.json"
               }
             }
           }
-        }
-      },
-      "summary": "Execute MQL query",
-      "tags": [
-        "execute"
-      ]
-    }
-  },
-  "/v1/compile/mql": {
-    "post": {
-      "operationId": "CompileMqlQuery",
-      "externalDocs": {
-        "description": "Learn more about report types",
-        "url": "https://metriql.com/query/introduction"
-      },
-      "requestBody": {
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "https://metriql.com/schema/report-options/mql.json"
+        },
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskTicketQueryResult"
+                }
+              }
             }
           }
-        }
-      },
-      "responses": {
-        "200": {
-          "description": "Successful request",
+        },
+        "summary": "Execute MQL query",
+        "tags": [
+          "execute"
+        ]
+      }
+    },
+    "/v1/compile/mql": {
+      "post": {
+        "operationId": "CompileMqlQuery",
+        "externalDocs": {
+          "description": "Learn more about report types",
+          "url": "https://metriql.com/query/introduction"
+        },
+        "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "https://metriql.com/schema/dataset.schema.json#/definitions/sqlQuery"
+                "$ref": "https://metriql.com/schema/report-options/mql.json"
               }
             }
           }
-        }
-      },
-      "summary": "Compile MQL query",
-      "tags": [
-        "compile"
-      ]
+        },
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://metriql.com/schema/dataset.schema.json#/definitions/sqlQuery"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Compile MQL query",
+        "tags": [
+          "compile"
+        ]
+      }
     }
   }
 }
