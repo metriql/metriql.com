@@ -38,7 +38,7 @@
           "sqlState": {
             "type": "string"
           }
-        },
+        }, 
         "type": "object"
       },
       "QueryColumn": {
